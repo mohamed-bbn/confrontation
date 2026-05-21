@@ -1,0 +1,392 @@
+@import 'helpers/mixins';
+@import 'helpers/variables';
+@import 'layout/header';
+@import 'layout/slider';
+$direction:rtl;
+$right:left;
+$left:right;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ul,
+li,
+hr,
+strong,
+b,
+input,
+select,
+textarea,
+.highcharts-title,
+.highcharts-axis-labels,
+.highcharts-yaxis-title {
+    direction: $direction;
+    text-align: $left;
+    font: normal 400 15px/28px "Readex Pro", sans-serif;
+}
+
+.che-box {
+    padding-left: $zero !important;
+    padding-right: 22px !important;
+    input[type="radio"],
+    input[type="checkbox"] {
+        right: $auto !important;
+        left: 9000px !important;
+    }
+    input[type="checkbox"]+.label-text:before,
+    input[type="radio"]+.label-text:before {
+        left: $auto !important;
+        right: $zero !important;
+    }
+}
+
+select.form-control {
+    -webkit-appearance: none;
+    background: $white url(../images/arrow.svg) left 12px center no-repeat !important;
+}
+
+textarea.form-control {
+    padding: 0.75rem !important;
+}
+
+.header {
+    .burger {
+        left: auto;
+        right: 118px;
+        &-line {
+            left: auto;
+            right: $zero;
+        }
+    }
+    .site-header {
+        .bg {
+            border-radius: $zero $zero $zero 60px;
+            @media (max-width: 999px) {
+                display: none;
+            }
+            &.tow {
+                border-radius: $zero 60px $zero $zero;
+            }
+        }
+    }
+    .navbar {
+        &.active {
+            left: auto;
+            right: 0px;
+        }
+        .logo {
+            @media screen and (max-width: 999px) {
+                left: auto;
+                right: $com-spacing-3;
+            }
+        }
+        .cancel {
+            right: auto;
+            left: 18px;
+        }
+        @media screen and (max-width: 999px) {
+            left: auto;
+            right: -100%;
+        }
+    }
+    // Menu
+    .menu {
+        &-link {
+            &::after {
+                left: auto;
+                right: $zero;
+            }
+        }
+    }
+    // Submenu
+    .submenu {
+        left: auto;
+        right: $zero;
+    }
+    // Burger
+    // Overlay
+    .formsearch {
+        .form-control {
+            padding-right: 0.75rem;
+            padding-left: $com-spacing-8;
+        }
+        .btnsearch {
+            right: auto;
+            left: $com-spacing-3;
+        }
+    }
+    .btncart {
+        .number {
+            right: auto;
+            left: $zero;
+        }
+    }
+}
+
+//////////////////////// End header
+.faq {
+    .accordion {
+        .accordion-item {
+            .accordion-header {
+                padding: $com-spacing-6;
+                padding-left: $com-spacing-9;
+                &:after {
+                    right: $auto;
+                    left: $com-spacing-6;
+                }
+            }
+        }
+    }
+}
+
+.steps {
+    .minphoto {
+        &::after {
+            left: auto;
+            right: 0px;
+        }
+    }
+}
+
+.item-news {
+    .item {
+        .content {
+            left: $auto;
+            right: $com-spacing-5;
+        }
+    }
+}
+
+.product-card {
+    .subcard {
+        .action {
+            left: auto;
+            right: $com-spacing-3;
+        }
+    }
+    .itemaction {
+        .quick-view,
+        .addfavorite,
+        .addcart,
+        .remova,
+        .removeitem {
+            border-right: 0px;
+            border-left: 1px solid $ofwhite;
+            .tooltip-text {
+                right: auto;
+                left: -50%;
+                &::after {
+                    right: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+        .quick-view {
+            border: 0;
+        }
+    }
+}
+
+.fashion-slider,
+.fashion-slider2,
+.fashion-slider3,
+.fashion-slider4,
+.product-details .gallery {
+    direction: ltr;
+}
+
+.fashion-slider .product-card,
+.fashion-slider2 .product-card,
+.fashion-slider3 .product-card,
+.fashion-slider4 .product-card {
+    direction: rtl;
+}
+
+.modal {
+    .btnclose {
+        right: auto;
+        left: $com-spacing-3;
+    }
+}
+
+.banner {
+    .inner {
+        direction: ltr;
+        .text {
+            direction: rtl;
+        }
+    }
+}
+
+.item-product {
+    .itemproduct {
+        @media (max-width: 999px) {
+            left: auto;
+            right: -100%;
+            &.active {
+                left: auto;
+                right: $zero;
+            }
+        }
+        .close-sidebar {
+            right: $auto;
+            left: $com-spacing-4;
+            top: $com-spacing-4;
+        }
+    }
+}
+
+.checkouts {
+    &::after {
+        right: $auto;
+        left: $zero;
+    }
+    .item {
+        .flexproperty {
+            .num {
+                right: $auto;
+                left: $com-spacing-1;
+            }
+        }
+    }
+    .onitem {
+        .field {
+            select.form-control {
+                background: #e1ddd4 url(../images/arrow.svg) left 12px center no-repeat !important;
+            }
+        }
+    }
+}
+
+.item-cart {
+    .item {
+        .items-list {
+            li {
+                .che-box {
+                    left: auto;
+                    right: $com-spacing-4;
+                }
+            }
+        }
+    }
+}
+
+.item-profile {
+    .infouser {
+        background: $darkgreen url(../images/bglogo2.png) no-repeat left bottom;
+        .user {
+            .imgcent {
+                .file-bro {
+                    right: auto;
+                    left: -4px;
+                }
+            }
+        }
+    }
+    .listmenuuser {
+        a {
+            &::before {
+                left: $auto;
+                right: $zero;
+            }
+        }
+    }
+    .table {
+        .tooltip-text {
+            right: auto;
+            left: -72%;
+            &::after {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+.loginpage,
+.forgot,
+.sign-up {
+    .back {
+        svg {
+            rotate: 180deg;
+        }
+    }
+}
+
+.item-news .item .bottom svg {
+    rotate: 180deg;
+}
+
+.field {
+    .icon {
+        left: auto;
+        right: $com-spacing-3;
+    }
+    .form-control {
+        padding-left: 0.75rem;
+        padding-right: 38px;
+    }
+    .position-relative {
+        .icon-pass {
+            right: $auto;
+            left: $com-spacing-3;
+        }
+    }
+}
+
+.icon-pass {
+    right: $auto;
+    left: $com-spacing-6;
+}
+
+.offer-item {
+    .item {
+        a {
+            svg {
+                rotate: 180deg;
+            }
+        }
+    }
+}
+
+.scrollTopBtn {
+    right: auto;
+    left: -100px;
+    &.show {
+        right: auto;
+        left: $com-spacing-3;
+    }
+}
+
+.maplink li a:before {
+    right: auto;
+    left: 0px;
+}
+
+.footer {
+    .formemail {
+        .formsearch {
+            .form-control {
+                padding-right: 0.75rem;
+                padding-left: 112px;
+            }
+            .bottom {
+                right: $auto;
+                left: $zero;
+                border-radius: 0.375rem $zero $zero 0.375rem;
+            }
+        }
+    }
+    .item-whatsapp {
+        left: $auto;
+        right: $com-spacing-3;
+    }
+}

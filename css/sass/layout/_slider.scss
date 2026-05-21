@@ -1,0 +1,75 @@
+ .item-slider {
+     background: $purple url(../images/slider.png) no-repeat center bottom;
+     margin-top: -20px;
+     padding-bottom: 300px;
+     min-height: 755px;
+     background-size: 150% 100%;
+     @media (max-width: 999px) {
+         background: $purple;
+         padding: $com-spacing-8 $zero;
+         min-height: inherit;
+     }
+     .line {
+         position: absolute;
+         right: $zero;
+         bottom: 90px;
+         @media (max-width: 999px) {
+             display: none;
+         }
+         img {
+             max-width: 73%;
+             @media (min-width: 1600px) {
+                 max-width: 90%;
+             }
+             @media (min-width: 1900px) {
+                 max-width: $fullwidth;
+             }
+         }
+     }
+     .container {
+         @media (max-width: 999px) {}
+         .logo {
+             margin: 70px $auto $zero $auto;
+             width: 236px;
+             img {
+                 width: $fullwidth;
+             }
+         }
+         .title {
+             text-align: center;
+             margin-top: 38px;
+         }
+         p {
+             color: $white;
+             text-align: center;
+             font-size: 22px;
+             font-weight: 400;
+             margin-top: $com-spacing-5;
+             @media (max-width: 999px) {}
+         }
+         .bottoms {
+             @include flex;
+             position: relative;
+             flex-wrap: wrap;
+             margin-top: 38px;
+             gap: $com-spacing-4;
+             @media (max-width: 999px) {
+                 gap: $com-spacing-2;
+                 justify-content: center;
+             }
+             .bottom {
+                 min-width: 161px;
+                 height: 56px;
+                 border-radius: 10px;
+                 border: 2px solid $blak;
+                 &.play {
+                     background: $orange;
+                     min-width: 80px;
+                 }
+                 &:hover {
+                     box-shadow: 6px 10px 0px #000000;
+                 }
+             }
+         }
+     }
+ }

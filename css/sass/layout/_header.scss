@@ -1,0 +1,235 @@
+.header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: $fullwidth;
+    background: $purple;
+    height: 88px;
+    border-radius: $zero $zero 20px 20px;
+    border-bottom: 1px solid $white;
+    z-index: 1002;
+    @media (max-width: 999px) {
+        height: auto;
+        padding: $com-spacing-3 $zero;
+    }
+    &.sticky {
+        position: fixed;
+        top: $zero;
+        left: $zero;
+        @media (max-width: 1100px) {}
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: 1199px) {}
+    }
+    .burger {
+        position: absolute;
+        left: 12px;
+        display: none;
+        cursor: pointer;
+        user-select: none;
+        width: 24px;
+        height: 1rem;
+        background: transparent;
+        @media (max-width: 999px) {
+            display: block;
+        }
+        &-line {
+            position: absolute;
+            display: block;
+            left: $zero;
+            width: 100%;
+            height: 2px;
+            opacity: 1;
+            border: none;
+            outline: none;
+            background: $white;
+            &:nth-child(1) {
+                top: 0px;
+            }
+            &:nth-child(2) {
+                top: 0.5rem;
+                width: 80%;
+            }
+            &:nth-child(3) {
+                top: 1rem;
+                width: 60%;
+            }
+        }
+        // Responsive Media Query
+    }
+    .logo {
+        margin-bottom: -58px;
+        @media (max-width: 999px) {
+            margin: $zero;
+        }
+        img {
+            max-width: 175px;
+            @media (max-width: 999px) {
+                max-width: 110px;
+            }
+        }
+    }
+    // Overlay
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 9;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.35s ease-in-out;
+        background-color: rgba(0, 0, 0, 0.65);
+        // Responsive Media Query
+        @media only screen and (max-width: 1100px) {
+            &.active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    /* End NavMenu */
+    .menu-actions {
+        display: flex;
+        align-items: center;
+        gap: $com-spacing-5;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (max-width: 999px) {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 290px;
+            height: 100%;
+            z-index: 10;
+            opacity: 0;
+            overflow: hidden;
+            overflow-y: auto;
+            visibility: hidden;
+            padding: $com-spacing-5;
+            background: $purple;
+            &.active {
+                right: 0rem;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .logo,
+        .cancel {
+            display: none;
+            margin: $zero;
+            @media (max-width: 999px) {
+                display: block;
+            }
+        }
+        .logo {
+            @media (max-width: 999px) {
+                margin-bottom: $com-spacing-9;
+            }
+        }
+        .cancel {
+            position: absolute;
+            left: $com-spacing-5;
+            top: $com-spacing-5;
+        }
+        .bottom {
+            @media (max-width: 999px) {
+                min-width: $fullwidth;
+                margin-top: $com-spacing-4;
+            }
+        }
+        .play {
+            @include bottom;
+            background: $orange;
+            min-width: 124px;
+            @media (max-width: 999px) {
+                min-width: $fullwidth;
+            }
+        }
+        .itemlink {
+            color: $white;
+            font-size: 25px;
+            font-weight: 600;
+            @include transition(all 0.5s ease-in-out 0s);
+            @media (max-width: 999px) {
+                display: block;
+                margin-bottom: $com-spacing-4;
+                font-size: 20px;
+                font-weight: 500;
+            }
+            &:hover {
+                color: $orange;
+            }
+        }
+        .dropdown {
+            .dropdown-toggle {
+                @include flex;
+                @include transition(all 0.5s ease-in-out 0s);
+                line-height: 1;
+                cursor: pointer;
+                position: relative;
+                min-width: 50px;
+                max-width: 50px;
+                height: 50px;
+                border-radius: 60px;
+                background: $red;
+                border: 3px solid $blak;
+                @media (max-width: 999px) {
+                    margin-top: $com-spacing-4;
+                }
+                &::after {
+                    display: none;
+                }
+            }
+            .dropdown-menu {
+                left: $zero !important;
+                right: $auto !important;
+                padding: $zero;
+                transform: $none !important;
+                top: 68px !important;
+                margin: $zero;
+                @include transition(all 0.5s ease-in-out 0s);
+                border: $zero;
+                padding-top: 6px;
+                width: 168px;
+                overflow: hidden;
+                @include border-radius(10px);
+                @include prefixer (box-shadow, 0px 0px 10px rgba(0, 0, 0, 0.1), webkit moz o ms);
+                text-align: start;
+                z-index: 2;
+                @media (max-width: 999px) {
+                    position: relative !important;
+                    width: $fullwidth;
+                    top: auto !important;
+                    margin-top: $com-spacing-2 !important;
+                }
+                .dropdown-item {
+                    @include transition(all 0.5s ease-in-out 0s);
+                    background: $none !important;
+                    color: $blak;
+                    font-size: 20px;
+                    font-weight: 700;
+                    margin-bottom: $com-spacing-4;
+                    &:last-child {
+                        border: $zero;
+                        border-top: 1px dotted #FFE6E6;
+                        padding: $com-spacing-3;
+                        color: $red;
+                        margin: $zero;
+                    }
+                    &.active,
+                    &:hover {
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//////////////////////// End header

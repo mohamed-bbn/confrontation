@@ -1,0 +1,220 @@
+@import 'helpers/mixins';
+@import 'helpers/variables';
+@import 'layout/header';
+@import 'layout/slider';
+@import 'layout/main';
+@import 'layout/error404';
+@import 'layout/signup';
+@import 'layout/footer';
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+img,
+ul,
+li,
+hr,
+strong,
+b,
+input,
+select,
+textarea,
+.highcharts-title,
+.highcharts-axis-labels,
+.highcharts-yaxis-title {
+    @include reset;
+}
+
+body {
+    background: $white;
+    @include transition(all 0.5s ease-in-out 0s);
+}
+
+@font-face {
+    font-family: 'graphik-arabic-regular';
+    src: url('../font/graphik-arabic-regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: $white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $purple;
+    cursor: pointer;
+}
+
+.che-box {
+    @include check-box;
+}
+
+textarea.form-control {
+    height: 160px;
+    resize: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: $zero;
+}
+
+
+/* Firefox */
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+section {
+    @include section;
+}
+
+.title {
+    @include title;
+}
+
+.bottom {
+    @include bottom;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    border: $zero;
+    margin: $zero;
+    margin-top: $com-spacing-3;
+    padding: $com-spacing-4;
+    border-radius: 4px;
+    gap: $com-spacing-2;
+    height: 60px;
+    p {
+        color: $white;
+        text-transform: capitalize;
+        margin: $zero !important;
+    }
+    &.alert-success {
+        background: linear-gradient(303.91deg, #1F7A66 7.57%, #60B3A7 94.39%);
+    }
+    &.alert-danger {
+        background: linear-gradient(303.91deg, #C24848 7.57%, #D34A4A 94.39%);
+    }
+}
+
+.form-control {
+    @include input
+}
+
+select.form-control {
+    -webkit-appearance: none;
+    background: $white url(../images/arrow.svg) right 12px center no-repeat !important;
+}
+
+.pagination {
+    width: $fullwidth;
+    margin-top: $com-spacing-6;
+    justify-content: center;
+    overflow: hidden;
+    gap: $com-spacing-2;
+    @media (max-width: 999px) {}
+    li {
+        display: $inline;
+        a,
+        span {
+            @include flex;
+            text-align: center;
+            color: $blak;
+            @include border-radius(4px !important);
+            min-width: 38px;
+            height: 38px;
+            border: $zero;
+            background: $white;
+            text-transform: capitalize;
+            @include transition(all 0.5s ease-in-out 0s);
+            color: $blak;
+            &:focus {
+                box-shadow: none !important;
+            }
+        }
+        &:first-child,
+        &:last-child {
+            a {
+                color: $purple;
+                svg {
+                    max-width: 12px;
+                    height: 12px;
+                    fill: $purple;
+                }
+            }
+        }
+    }
+    .page-link.active,
+    .page-link:hover {
+        background: $purple !important;
+        color: $white !important;
+        svg {
+            fill: $white;
+        }
+    }
+}
+
+.maplink {
+    @include maplink;
+}
+
+.map-back {
+    @include map-back;
+}
+
+.social {
+    @include social;
+}
+
+.slider-loader {
+    @include flex;
+    position: absolute;
+    left: $zero;
+    right: $zero;
+    width: 40px;
+    height: $fullwidth;
+    margin: $zero auto;
+    z-index: 10;
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid $ofwhite;
+        border-top: 4px solid $purple;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.slick-loading {
+    visibility: hidden;
+}
+
+.slick-loaded {
+    visibility: visible;
+    transition: visibility 0s 0s, opacity 0.3s ease;
+}

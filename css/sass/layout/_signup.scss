@@ -1,0 +1,253 @@
+.item-login,
+.item-signup,
+.item-forgot,
+.otp-verification {
+    background: $white;
+    overflow: hidden;
+    .img {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        @include position(fixed, $top: 0px, $right: 0px);
+        width: 50%;
+        height: 100vh;
+        padding: $com-spacing-6;
+        background-color: #fcf9f5;
+        background-image: radial-gradient(circle at 50% 0%, rgba(245, 213, 190, 0.4) 0%, transparent 60%), radial-gradient(circle at 0% 0%, rgba(201, 162, 54, 0.05) 0%, transparent 50%);
+        overflow: hidden;
+        img {
+            max-width: 435px;
+        }
+        .logo {
+            position: absolute;
+            left: $com-spacing-6;
+            top: $com-spacing-6;
+            display: flex;
+            align-items: center;
+            gap: $com-spacing-2;
+            img {
+                max-width: 152px;
+                @include transition(all 0.5s ease-in-out 0s);
+            }
+            .title {
+                text-transform: uppercase;
+                font-weight: 200;
+                line-height: 1;
+                span {
+                    display: block;
+                    color: $blak;
+                    letter-spacing: 6px;
+                    font-size: 20px;
+                }
+            }
+        }
+        @media (max-width: 999px) {
+            display: $none;
+        }
+        .inner {
+            width: $fullwidth;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            .title {
+                font-size: 40px;
+                line-height: 56px;
+                color: $white;
+                text-align: center;
+            }
+        }
+    }
+    .boxform {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 50%;
+        margin-inline-end: 50%;
+        height: 100vh;
+        padding: $zero 122px;
+        @media (max-width: 1199px) {
+            padding: $com-spacing-6 80px;
+        }
+        @media (max-width: 999px) {
+            height: $auto;
+            margin: $zero auto;
+            padding: 0;
+        }
+        @media (max-width:550px) {
+            width: $fullwidth;
+            padding: 0px 12px;
+        }
+        .inner {
+            width: $fullwidth;
+        }
+        .back {
+            display: flex;
+            align-items: center;
+            gap: $com-spacing-2;
+            position: absolute;
+            top: $com-spacing-6;
+            left: $com-spacing-6;
+            @media (max-width: 999px) {
+                top: $zero;
+                left: $com-spacing-3;
+            }
+        }
+        .title {
+            text-align: center;
+            @media (max-width: 999px) {
+                margin-top: 50px;
+            }
+        }
+        p.text {
+            margin-top: $com-spacing-2;
+            text-align: center;
+            @media (max-width: 999px) {
+                display: none;
+            }
+        }
+        .field {
+            position: relative;
+            @media (max-width: 999px) {
+                max-width: $fullwidth;
+                flex: $fullwidth;
+            }
+            &.flex {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .che-box {
+                    span.label-text {
+                        display: flex;
+                        a {
+                            display: $block;
+                            color: $blak;
+                            text-decoration: underline;
+                            margin-left: $com-spacing-1;
+                            &:hover {
+                                text-decoration: $none;
+                            }
+                        }
+                    }
+                }
+                .forgetlink {
+                    display: $block;
+                    color: $blak;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            p {
+                text-align: center;
+                margin: $zero;
+                margin-top: $com-spacing-6;
+                a {
+                    color: $beige;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .floating-label {
+                position: absolute;
+                left: $com-spacing-6;
+                padding: $zero $com-spacing-2;
+                top: $com-spacing-3;
+                background: $white;
+                width: calc(100% - 78px);
+                margin: $zero;
+                pointer-events: none;
+                text-transform: capitalize;
+                @include transition(all 0.5s ease-in-out 0s);
+                @media (max-width: 999px) {}
+            }
+            &.f-box {
+                display: flex;
+                p {
+                    margin-right: $com-spacing-7;
+                }
+                .che-box {
+                    width: $auto;
+                    margin: $zero;
+                    margin-right: $com-spacing-7;
+                    &:last-child {
+                        margin: $zero;
+                    }
+                }
+            }
+            .form-control:focus~.floating-label,
+            .form-control:not(:focus):valid~.floating-label {
+                top: -15px;
+                width: auto;
+                color: $blak;
+            }
+            .bottom {
+                width: $fullwidth;
+                height: 54px;
+                text-transform: uppercase;
+            }
+            .icon-pass {
+                position: absolute;
+                top: 16px;
+                right: 30px;
+                z-index: 10;
+                cursor: pointer;
+                @include transition(all 0.5s ease-in-out 0s);
+                svg {
+                    width: 24px;
+                    fill: $blak;
+                }
+            }
+            .icon-pass.eye-slash.icon-pass {
+                display: none;
+                svg {
+                    stroke: $beige;
+                    fill: $none
+                }
+            }
+        }
+        .or {
+            @extend .text;
+            margin: $com-spacing-6 $zero !important;
+        }
+    }
+}
+
+.item-login,
+.item-forgot,
+.otp-verification {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.item-signup {
+    .boxform {
+        height: auto;
+        overflow-x: scroll;
+        @media (max-width: 667px) {}
+        .label-text {
+            a {
+                color: $beige;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+.otp-verification {
+    .row {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+    .field {
+        padding: 0 4px;
+    }
+    .w-item {
+        max-width: 16.66666667% !important;
+    }
+}
+
+//  End signup & login & forget

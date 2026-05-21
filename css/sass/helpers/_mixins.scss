@@ -1,0 +1,635 @@
+@mixin reset {
+    direction: $direction;
+    text-align: start;
+    margin: $zero;
+    padding: $zero;
+    border: $zero;
+    text-decoration: $none;
+    list-style: $none;
+    color: $colortext;
+    font: normal 400 16px/28px "graphik-arabic-regular";
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin overlay {
+    content: '';
+    @include position(absolute, $top: 0, $left: 0, $right: auto, $bottom: auto);
+    width: $fullwidth;
+    height: $fullwidth;
+}
+
+@mixin section {
+    position: relative;
+    width: $fullwidth;
+    padding: $com-spacing-8 $zero;
+    @media (max-width: 999px) {
+        padding: $com-spacing-6 $zero;
+    }
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;
+}
+
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+}
+
+@mixin scale($degscale) {
+    -webkit-transform: scale($degscale);
+    -moz-transform: scale($degscale);
+    -ms-transform: scale($degscale);
+    -o-transform: scale($degscale);
+    transform: scale($degscale);
+}
+
+@mixin bottom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $com-spacing-1;
+    position: relative;
+    overflow: hidden;
+    color: $white;
+    outline: $none;
+    outline-style: $none;
+    border: $zero;
+    text-align: center;
+    background: $red;
+    font-weight: 700;
+    font-size: 20px;
+    border-radius: 60px;
+    border: 3px solid $blak;
+    // @include transition(all 0.5s ease-in-out 0s);
+    cursor: pointer;
+    z-index: 1;
+    min-width: 188px;
+    padding: $com-spacing-2 $com-spacing-6;
+    @include transition(all 0.1s ease-in-out 0s);
+    @media (max-width: 999px) {
+        font-weight: 500;
+    }
+    &:hover {
+        transform: translate(2px, -3px);
+        box-shadow: 0px 10px 0px #000000;
+    }
+    &:focus {
+        outline: $none;
+        outline-style: $none;
+    }
+}
+
+@mixin prefixer ($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+    #{$property}: $value;
+}
+
+@mixin keyFrame ($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin social {
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $com-spacing-1;
+    a {
+        @include flex;
+        position: relative;
+        min-width: 40px;
+        max-width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #ffffff1c;
+        @include transition(all 0.5s ease-in-out 0s);
+        svg {
+            fill: $white;
+            width: 18px;
+            height: 18px;
+            @include transition(all 0.5s ease-in-out 0s);
+        }
+        &.icon-twitter path {
+            fill: $white !important;
+        }
+        @each $type in $social {
+            &.icon-#{nth($type, 1)} {
+                &:hover {
+                    background: nth($type, 2);
+                }
+            }
+        }
+    }
+}
+
+@mixin social-shear {
+    @include flex;
+    flex-wrap: wrap;
+    gap: $com-spacing-2;
+    a {
+        @include flex;
+        position: relative;
+        @include transition(all 0.5s ease-in-out 0s);
+        color: $white;
+        min-width: 40px;
+        max-width: 40px;
+        height: 40px;
+        transform: rotate(0);
+        border-radius: 8px;
+        text-transform: capitalize;
+        &:before {
+            @include overlay;
+            border-radius: 8px;
+            transform: scale(0.0);
+            background: $ofwhite;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transition: all 0.4s cubic-bezier(0.62, 0.21, 0.45, 1.52);
+            z-index: -1;
+        }
+        span {
+            @media (max-width: 767px) {
+                display: $none;
+            }
+        }
+        svg {
+            fill: $white;
+            width: 16px;
+            height: 16px;
+        }
+        @each $type in $social {
+            &.icon-#{nth($type, 1)} {
+                background: nth($type, 2);
+                &:hover {
+                    // transform: rotate(360deg);
+                    @include prefixer (box-shadow, 4px 4px 60px rgba(0, 0, 0, 0.1), webkit moz o ms);
+                    &::before {
+                        transform: scaleX(1.0);
+                    }
+                    svg,
+                    &.icon-twitter path {
+                        fill: nth($type, 2) !important;
+                    }
+                }
+                &.icon-twitter path {
+                    fill: $white !important;
+                }
+            }
+        }
+    }
+}
+
+@mixin input {
+    height: 52px;
+    text-transform: $none;
+    border: 1px solid #E8E8E8;
+    @include transition(all 0.5s ease-in-out 0s);
+    &:focus,
+    &:hover,
+    &:focus-visible {
+        border-color: $beige;
+        outline: 0;
+        outline-style: $none;
+        box-shadow: none;
+    }
+}
+
+@mixin title {
+    @include position(relative);
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $orange;
+    @include transition(all 0.5s ease-in-out 0s);
+    @media (max-width: 999px) {
+        font-size: 28px;
+    }
+    span {
+        color: $beige;
+    }
+}
+
+@mixin scroll {
+    position: relative;
+    width: $fullwidth;
+    .scroll-box {
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        gap: $com-spacing-2;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        cursor: grab;
+        user-select: none;
+        &.listlinks {
+            a {
+                min-width: 105px;
+                text-align: center;
+                color: #727272;
+                padding: $com-spacing-3;
+                border-radius: 20px;
+                white-space: nowrap;
+                text-transform: capitalize;
+                @include transition(all 0.5s ease-in-out 0s);
+                &:hover,
+                &.active {
+                    background: $orange;
+                    color: $white;
+                    svg {
+                        path {
+                            fill: $white;
+                        }
+                    }
+                }
+                svg {
+                    display: block;
+                    margin: $zero $auto;
+                    width: 32px;
+                    height: 32px;
+                    path {
+                        @include transition(all 0.5s ease-in-out 0s);
+                    }
+                }
+            }
+        }
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .arrow {
+        @include flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: $white;
+        box-shadow: 0px 0px 10px #00000026;
+        color: #000;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        z-index: 5;
+        border: 1px solid $orange;
+        @include transition(all 0.5s ease-in-out 0s);
+        &:hover {
+            background: $ofwhite;
+        }
+    }
+    .arrow.left {
+        left: $com-spacing-1;
+        svg {
+            rotate: 88deg;
+        }
+    }
+    .arrow.right {
+        right: $com-spacing-1;
+        svg {
+            rotate: -88deg;
+        }
+    }
+    .arrow.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@mixin hyprlink {
+    display: block;
+    @include position(relative);
+    color: #b3b3b3;
+    text-transform: capitalize;
+    @include transition(all 0.5s ease-in-out 0s);
+    &:hover {
+        color: $white;
+    }
+}
+
+@mixin map-back {
+    @include flex;
+    min-height: 200px;
+    background: $darkgreen url(../images/bglogo2.png) no-repeat right bottom;
+    @media (max-width: 999px) {
+        min-height: 100px;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $com-spacing-3;
+        flex-wrap: wrap;
+        z-index: 10;
+    }
+    .title {
+        color: $white;
+        font-weight: 400;
+        @media (max-width: 999px) {
+            text-align: center;
+        }
+    }
+    p {
+        margin-top: $com-spacing-1;
+        color: $white;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .bottom {
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        gap: $com-spacing-1;
+        padding: $com-spacing-1 $com-spacing-3;
+    }
+}
+
+@mixin maplink {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $com-spacing-1;
+    margin-bottom: $com-spacing-3;
+    li {
+        display: $inline;
+        color: #838383;
+        @include transition(all 0.5s ease-in-out 0s);
+        a {
+            color: $burgundy;
+            position: relative;
+            padding-inline-end: $com-spacing-4;
+            @include transition(all 0.5s ease-in-out 0s);
+            &:hover {
+                text-decoration: underline;
+            }
+            &:before {
+                @include position(absolute, $top: -3px, $left: $zero);
+                content: "/";
+                display: $inline;
+                color: $burgundy;
+            }
+        }
+    }
+}
+
+@mixin styleslider {
+    @include position(relative);
+    direction: ltr;
+    .slick-list {
+        @include position(relative);
+        display: $block;
+        overflow: hidden;
+        outline: $none;
+        margin: $zero -8px;
+        .slick-track {
+            @include position(relative, $top: 0, $left: auto, $right: auto, $bottom: auto);
+            display: $block;
+            overflow: hidden;
+            &:after,
+            &:before {
+                display: table;
+                content: '';
+            }
+        } /// End .slick-track
+    } /// End .Slick-list
+    .slick-prev,
+    .slick-next {
+        @include position(absolute, $top: 50%);
+        cursor: pointer;
+        border: $zero;
+        padding: $zero;
+        outline: $none;
+        background: $white;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        margin-top: -18px;
+        z-index: 5;
+        display: none !important;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (min-width: 1280px) {}
+        &:hover {
+            background: $darkgreen;
+            svg {
+                fill: $ofwhite;
+            }
+        }
+        svg {
+            width: 12px;
+            height: 12px;
+            fill: $darkgreen;
+            @include transition(all 0.5s ease-in-out 0s);
+        }
+    }
+    .slick-next {
+        right: -48px;
+    }
+    .slick-prev {
+        left: -48px;
+    }
+    .slick-dots {
+        @include flex;
+        margin-top: $com-spacing-4;
+        @media (max-width: 999px) {}
+        li {
+            @include position(relative);
+            display: $inline;
+            margin: $zero 2px;
+            padding: $zero;
+            cursor: pointer;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            @include transition(all 0.5s ease-in-out 0s);
+            button {
+                font-size: $zero;
+                line-height: $zero;
+                display: $block;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: $zero;
+                outline: $none;
+                background: #7f044394;
+                padding: $zero;
+            }
+        }
+        li.slick-active {
+            width: 26px;
+            border-radius: 8px;
+            background: $burgundy;
+            button {
+                background: $none;
+            }
+        }
+    }
+}
+
+@mixin check-box {
+    position: relative;
+    cursor: pointer;
+    padding-inline-start: 28px;
+    margin: $zero !important;
+    input[type="checkbox"],
+    input[type="radio"] {
+        @include position(absolute, $right: 9000px);
+    }
+    input[type="checkbox"]+.label-text:before,
+    input[type="radio"]+.label-text:before {
+        content: ' ';
+        border: 1px solid #E8E8E8;
+        background: $white;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        z-index: 1;
+        top: 4px;
+        left: $zero;
+        border-radius: 4px;
+    }
+    input[type="radio"]+.label-text:before {
+        @include border-radius(50%);
+    }
+    input[type="radio"]:checked+.label-text:before {
+        background: $darkgreen;
+        box-shadow: inset 0 0 0px 4px $white;
+        border: 1px solid $darkgreen;
+    }
+    input[type="checkbox"]:checked+.label-text:before {
+        background: $beige url(../images/tick.svg) no-repeat center center;
+        border: 1px solid $beige;
+    }
+    span.label-text {
+        color: $darkgreen;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (max-width: 991px) {}
+    }
+    // @keyframes effect {
+    //     0% {
+    //         transform: scale(0);
+    //     }
+    //     25% {
+    //         transform: scale(1.3);
+    //     }
+    //     75% {
+    //         transform: scale(1.4);
+    //     }
+    //     100% {
+    //         transform: scale(1);
+    //     }
+    // }
+}
+
+@mixin carditem {}
+
+@mixin slidercarousel {
+    height: $fullwidth;
+    overflow: hidden;
+    &:hover {
+        .carousel-control-next {
+            right: $com-spacing-6;
+        }
+        .carousel-control-prev {
+            left: $com-spacing-6;
+        }
+    }
+    .carousel-inner {
+        height: $fullwidth;
+    }
+    .carousel-item {
+        overflow: hidden;
+        height: $fullwidth;
+        background: $ofwhite;
+        &::after {
+            @include overlay;
+            background: linear-gradient(to left, black, #00000021);
+        }
+        img {
+            width: $fullwidth;
+            height: $fullwidth;
+            object-fit: cover;
+        }
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 44px;
+        height: 44px;
+        top: 50%;
+        background: #cec7b373;
+        opacity: 1;
+        margin-top: -24px;
+        border-radius: 50%;
+        @include transition(all 0.5s ease-in-out 0s);
+        @media (max-width: 999px) {
+            display: $none;
+        }
+        svg {
+            width: 18px;
+            height: 18px;
+            fill: $white;
+            @include transition(all 0.5s ease-in-out 0s);
+        }
+        &:hover {
+            background: $beige;
+            svg {
+                fill: $blak;
+            }
+        }
+    }
+    .carousel-control-next {
+        right: -90px;
+    }
+    .carousel-control-prev {
+        left: -90px;
+        svg {
+            @include rotate(180deg);
+        }
+    }
+    .carousel-indicators {
+        padding: $zero;
+        margin: $zero;
+        gap: $com-spacing-2;
+        margin-top: $com-spacing-4;
+        li {
+            min-width: 20px;
+            max-width: 20px;
+            height: 20px;
+            background: #fff
+        }
+    }
+}
