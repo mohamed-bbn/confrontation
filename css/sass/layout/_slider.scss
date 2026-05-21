@@ -47,29 +47,30 @@
              margin-top: $com-spacing-5;
              @media (max-width: 999px) {}
          }
-         .bottoms {
-             @include flex;
-             position: relative;
-             flex-wrap: wrap;
-             margin-top: 38px;
-             gap: $com-spacing-4;
-             @media (max-width: 999px) {
-                 gap: $com-spacing-2;
-                 justify-content: center;
-             }
-             .bottom {
-                 min-width: 161px;
-                 height: 56px;
-                 border-radius: 10px;
-                 border: 2px solid $blak;
-                 &.play {
-                     background: $orange;
-                     min-width: 80px;
-                 }
-                 &:hover {
-                     box-shadow: 6px 10px 0px #000000;
-                 }
-             }
+     }
+ }
+ 
+ .bottoms {
+     @include flex;
+     position: relative;
+     flex-wrap: wrap;
+     margin-top: 38px;
+     gap: $com-spacing-4;
+     @media (max-width: 999px) {
+         gap: $com-spacing-2;
+         justify-content: center;
+     }
+     .bottom {
+         min-width: 161px;
+         height: 56px;
+         border-radius: 10px;
+         border: 2px solid $blak;
+         &.play {
+             background: $orange;
+             min-width: 80px;
+         }
+         &:hover {
+             box-shadow: 6px 10px 0px #000000;
          }
      }
  }

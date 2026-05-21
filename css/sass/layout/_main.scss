@@ -28,10 +28,91 @@
              width: $fullwidth;
          }
      }
+     .title {
+         @media (max-width: 999px) {
+             text-align: center;
+         }
+     }
      p {
          font-size: 22px;
          font-weight: 700;
          color: $blak;
          margin-top: $com-spacing-2;
+         @media (max-width: 999px) {
+             font-size: 20px;
+             font-weight: 500;
+             text-align: center;
+         }
+     }
+ }
+ 
+ .item-howplay {
+     background: url(../images/howplay.png) no-repeat center center;
+     background-size: $fullwidth $fullwidth;
+     padding: 200px $zero;
+     @media (max-width: 999px) {
+         background: $purple;
+         padding: $com-spacing-6 $zero;
+     }
+     .line {
+         display: flex;
+         justify-content: flex-end;
+         position: absolute;
+         left: $zero;
+         bottom: 150px;
+         @media (max-width: 999px) {
+             display: none;
+         }
+         img {
+             max-width: 73%;
+             @media (min-width: 1600px) {
+                 max-width: 90%;
+             }
+             @media (min-width: 1900px) {
+                 max-width: $fullwidth;
+             }
+         }
+     }
+     .container {
+         max-width: 1170px;
+         display: grid;
+         align-items: center;
+         grid-template-columns: 1fr 451px;
+         gap: 160px;
+         @media (max-width: 999px) {
+             grid-template-columns: 1fr;
+             gap: $com-spacing-6;
+         }
+     }
+     .bottoms {
+         justify-content: flex-start;
+         @media (max-width: 999px) {
+             justify-content: center;
+         }
+     }
+     .title {
+         @media (max-width: 999px) {
+             text-align: center;
+         }
+     }
+     p {
+         font-size: 22px;
+         font-weight: 700;
+         color: $white;
+         margin-top: $com-spacing-2;
+         @media (max-width: 999px) {
+             text-align: center;
+             font-size: 20px;
+             font-weight: 500;
+         }
+     }
+     .photo {
+         @include flex;
+         @media (max-width: 999px) {
+             order: -1;
+         }
+         img {
+             max-width: $fullwidth;
+         }
      }
  }
