@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header {
   display: flex;
   align-items: center;
@@ -21,9 +22,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between; }
+    @media (max-width: 999px) {
+      .header .container {
+        justify-content: end; } }
   .header .burger {
     position: absolute;
-    left: 12px;
+    right: 12px;
     display: none;
     cursor: pointer;
     user-select: none;
@@ -36,7 +40,7 @@
     .header .burger-line {
       position: absolute;
       display: block;
-      left: 0px;
+      right: 0px;
       width: 100%;
       height: 2px;
       opacity: 1;
@@ -837,6 +841,89 @@
           .item-means .cards-container .game-card .inner .card-center-cloud img {
             max-width: 100%; }
 
+.modal {
+  padding: 12px; }
+  .modal .modal-dialog {
+    max-width: 822px; }
+    .modal .modal-dialog .modal-content {
+      gap: 12px;
+      background: #A26FF1;
+      border-radius: 30px;
+      overflow: hidden; }
+      .modal .modal-dialog .modal-content .btn-close {
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        background: none;
+        left: 24px;
+        top: 24px;
+        opacity: 1;
+        z-index: 10; }
+      .modal .modal-dialog .modal-content .modal-body {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 24px; }
+        @media (max-width: 700px) {
+          .modal .modal-dialog .modal-content .modal-body {
+            display: block; } }
+      .modal .modal-dialog .modal-content .title {
+        color: #300669; }
+      .modal .modal-dialog .modal-content p {
+        font-size: 18px;
+        color: #300669; }
+      .modal .modal-dialog .modal-content ol {
+        margin: 0px;
+        margin-top: 16px;
+        padding: 0px;
+        padding-inline-start: 16px; }
+        .modal .modal-dialog .modal-content ol li {
+          color: #fff;
+          list-style: arabic-indic;
+          font-size: 18px; }
+      .modal .modal-dialog .modal-content .list {
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #FFFFFF33; }
+        .modal .modal-dialog .modal-content .list p {
+          color: #fff; }
+        .modal .modal-dialog .modal-content .list ul {
+          margin: 0px;
+          margin-top: 16px;
+          padding: 0px;
+          padding-inline-start: 20px; }
+          .modal .modal-dialog .modal-content .list ul li {
+            color: #fff;
+            list-style: disc;
+            font-size: 18px; }
+      .modal .modal-dialog .modal-content .photo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        min-width: 370px;
+        max-width: 370px;
+        height: 370px;
+        background: #8C52DD;
+        border-radius: 50%;
+        margin: 0px 0px -100px -82px;
+        padding-inline-start: 42px; }
+        @media (max-width: 700px) {
+          .modal .modal-dialog .modal-content .photo {
+            margin: 0px;
+            min-width: 224px;
+            max-width: 224px;
+            height: 224px;
+            padding: 16px;
+            justify-content: center;
+            margin-top: 24px; } }
+        .modal .modal-dialog .modal-content .photo img {
+          max-width: 245px;
+          max-height: 178px; }
+          @media (max-width: 700px) {
+            .modal .modal-dialog .modal-content .photo img {
+              max-width: 150px;
+              max-height: 128px; } }
+
 .error404 {
   position: relative;
   width: 100%;
@@ -1314,7 +1401,7 @@ body {
 
 @font-face {
   font-family: 'graphik-arabic-regular';
-  src: url("../font/graphik-arabic-regular.otf") format("truetype");
+  src: url("../font/graphik-arabic-regular.woff") format("truetype");
   font-weight: normal;
   font-style: normal; }
 @font-face {
@@ -1380,6 +1467,10 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0px; }
+
+input::-webkit-input-placeholder {
+  transform: translateY(-2px);
+  /* بيرفع النص المؤقت لفوق */ }
 
 /* Firefox */
 input[type="number"] {

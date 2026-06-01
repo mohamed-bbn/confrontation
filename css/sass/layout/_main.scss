@@ -520,3 +520,101 @@
         }
     }
 }
+
+.modal {
+    padding: $com-spacing-3;
+    .modal-dialog {
+        max-width: 822px;
+        .modal-content {
+            gap: $com-spacing-3;
+            background: #A26FF1;
+            border-radius: 30px;
+            overflow: hidden;
+            .btn-close {
+                position: absolute;
+                width: 42px;
+                height: 42px;
+                background: none;
+                left: $com-spacing-6;
+                top: $com-spacing-6;
+                opacity: 1;
+                z-index: 10;
+            }
+            .modal-body {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                padding: $com-spacing-6;
+                @media (max-width: 700px) {
+                    display: block;
+                }
+            }
+            .title {
+                color: #300669;
+            }
+            p {
+                font-size: 18px;
+                color: #300669;
+            }
+            ol {
+                margin: $zero;
+                margin-top: $com-spacing-4;
+                padding: $zero;
+                padding-inline-start: $com-spacing-4;
+                li {
+                    color: $white;
+                    list-style: arabic-indic;
+                    font-size: 18px;
+                }
+            }
+            .list {
+                margin-top: $com-spacing-4;
+                padding-top: $com-spacing-4;
+                border-top: 1px solid #FFFFFF33;
+                p {
+                    color: $white;
+                }
+                ul {
+                    margin: $zero;
+                    margin-top: $com-spacing-4;
+                    padding: $zero;
+                    padding-inline-start: $com-spacing-5;
+                    li {
+                        color: $white;
+                        list-style: disc;
+                        font-size: 18px;
+                    }
+                }
+            }
+            .photo {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                min-width: 370px;
+                max-width: 370px;
+                height: 370px;
+                background: #8C52DD;
+                border-radius: 50%;
+                margin: $zero $zero -100px -82px;
+                padding-inline-start: 42px;
+                @media (max-width: 700px) {
+                    margin: $zero;
+                    min-width: 224px;
+                    max-width: 224px;
+                    height: 224px;
+                    padding: $com-spacing-4;
+                    justify-content: center;
+                    margin-top: $com-spacing-6;
+                }
+                img {
+                    max-width: 245px;
+                    max-height: 178px;
+                    @media (max-width: 700px) {
+                        max-width: 150px;
+                        max-height: 128px;
+                    }
+                }
+            }
+        }
+    }
+}
