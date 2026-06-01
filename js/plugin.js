@@ -79,6 +79,10 @@ $(window).on("load", function() {
         $(this).siblings(".eye.icon-pass").show();
     });
 
+    /*----------------------------------------
+      SHOW Password
+    ----------------------------------------*/
+
 
     function initializeSlider(selector, options) {
         $(selector)
@@ -107,6 +111,10 @@ $(window).on("load", function() {
     });
 
 
+    /*----------------------------------------
+      Slider
+    ----------------------------------------*/
+
     $('.menu-row').click(function() {
         var targetColor = $(this).data('target');
         $('.menu-row').removeClass('active-row');
@@ -130,18 +138,9 @@ $(window).on("load", function() {
     });
 
 
-    $(".eye.icon-pass").click(function() {
-        $(this).siblings("input.pass").attr("type", "text");
-        $(this).hide();
-        $(this).siblings(".eye-slash.icon-pass").show();
-    });
-
-    $(".eye-slash.icon-pass").click(function() {
-        $(this).siblings("input.pass").attr("type", "password");
-        $(this).hide();
-        $(this).siblings(".eye.icon-pass").show();
-    });
-
+    /*----------------------------------------
+       Slider Card Home
+     ----------------------------------------*/
 
 
 
@@ -187,26 +186,101 @@ $(window).on("load", function() {
         $(this).removeClass('input-error');
         $(this).siblings('.error-message').hide();
     });
-    $('.field').on('click', '.icon-pass', function() {
-        let parentField = $(this).closest('.field');
-        let passInput = parentField.find('.pass-field');
-        let eyeSlash = parentField.find('.eye-slash');
-        let eye = parentField.find('.eye');
+    // $('.field').on('click', '.icon-pass', function() {
+    //     let parentField = $(this).closest('.field');
+    //     let passInput = parentField.find('.pass-field');
+    //     let eyeSlash = parentField.find('.eye-slash');
+    //     let eye = parentField.find('.eye');
 
-        if (passInput.attr('type') === 'password') {
-            passInput.attr('type', 'text');
-            eyeSlash.hide();
-            eye.show();
-        } else {
-            passInput.attr('type', 'password');
-            eye.hide();
-            eyeSlash.show();
+    //     if (passInput.attr('type') === 'password') {
+    //         passInput.attr('type', 'text');
+    //         eyeSlash.hide();
+    //         eye.show();
+    //     } else {
+    //         passInput.attr('type', 'password');
+    //         eye.hide();
+    //         eyeSlash.show();
+    //     }
+    // });
+
+    /*----------------------------------------
+       Form
+     ----------------------------------------*/
+
+
+    $('#couponInput').on('input', function() {
+        var sanitizeValue = $(this).val().replace(/[^0-9]/g, '');
+        $(this).val(sanitizeValue);
+        var isEmpty = $.trim($(this).val()) === "";
+        $('#submitBtn').prop('disabled', isEmpty);
+    });
+
+    /*----------------------------------------
+      Input Code
+     ----------------------------------------*/
+
+
+    $('#trigger-upload').on('click', function() {
+        $('#image-uploader').click();
+    });
+
+    $('#image-uploader').on('change', function(event) {
+        var file = event.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#profile-img').attr('src', e.target.result);
+            };
+            reader.readAsDataURL(file);
         }
     });
 
+    $('.btn-edit').on('click', function() {
+        var $row = $(this).closest('.input-row');
+        var $input = $row.find('.form-control');
+        $(this).hide();
+        $row.find('.action-buttons').css('display', 'flex');
+        $input.removeAttr('readonly').focus();
+        $input.data('old-val', $input.val());
+    });
 
+    $('.btn-save').on('click', function() {
+        var $row = $(this).closest('.input-row');
+        var $input = $row.find('.form-control');
+        var $editBtn = $row.find('.btn-edit');
+        var $actionBtns = $row.find('.action-buttons');
+        $input.attr('readonly', true);
+        $actionBtns.hide();
+        $editBtn.show();
 
+        // console.log("تم حفظ القيمة الجديدة: " + $input.val());
+    });
 
+    $('.btn-cancel').on('click', function() {
+        var $row = $(this).closest('.input-row');
+        var $input = $row.find('.form-control');
+        var $editBtn = $row.find('.btn-edit');
+        var $actionBtns = $row.find('.action-buttons');
+        $input.val($input.data('old-val'));
+        $input.attr('readonly', true);
+        $actionBtns.hide();
+        $editBtn.show();
+    });
+
+    /*----------------------------------------
+      Input trigger-upload
+     ----------------------------------------*/
+
+    let countdownValue = 10;
+    const $timeElement = $('.time');
+    const countdown = setInterval(function() {
+        countdownValue--;
+        $timeElement.text(countdownValue);
+        if (countdownValue <= 0) {
+            clearInterval(countdown);
+            $timeElement.addClass('stop-animation');
+        }
+    }, 1000);
 
 
 }); // END window.load

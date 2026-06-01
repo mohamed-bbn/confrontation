@@ -253,6 +253,74 @@
         .header .menu-actions .dropdown .dropdown-menu .dropdown-item.active, .header .menu-actions .dropdown .dropdown-menu .dropdown-item:hover {
           color: #FE0000; }
 
+.header-competition {
+  padding: 16px 0px;
+  border-bottom: 7px solid #FFCB0C; }
+  .header-competition .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px; }
+  .header-competition .logo img {
+    max-width: 175px; }
+    @media (max-width: 999px) {
+      .header-competition .logo img {
+        max-width: 110px; } }
+  .header-competition .btn-actions {
+    display: flex;
+    align-items: center;
+    gap: 48px; }
+    @media (max-width: 1199px) {
+      .header-competition .btn-actions {
+        display: none; } }
+    .header-competition .btn-actions .flex {
+      display: flex;
+      align-items: center;
+      gap: 16px; }
+      .header-competition .btn-actions .flex .bottom {
+        min-width: 142px;
+        max-width: 142px;
+        padding: 0px;
+        height: 52px;
+        border-radius: 10px;
+        box-shadow: 5.1px 5.1px 0px 0px #000000;
+        transform: none !important; }
+        .header-competition .btn-actions .flex .bottom.green {
+          background: #0BB458; }
+        .header-competition .btn-actions .flex .bottom.purple {
+          background: #4D2B81; }
+      .header-competition .btn-actions .flex .itemnumber {
+        font-size: 60px;
+        font-weight: 900;
+        color: #FF7D75;
+        text-shadow: -3.85px -3.85px 0 #000, 3.85px -3.85px 0 #000, -3.85px 3.85px 0 #000, 3.85px 3.85px 0 #000, 0px -3.85px 0 #000, 0px 3.85px 0 #000, -3.85px 0px 0 #000, 3.85px 0px 0 #000; }
+      .header-competition .btn-actions .flex:last-child .itemnumber {
+        color: #FFCB0C; }
+  .header-competition .actions {
+    display: flex;
+    align-items: center;
+    gap: 24px; }
+    .header-competition .actions .title {
+      font-family: 'graphicschool-regular';
+      color: #000;
+      text-shadow: -1px 1px 0 #FFCB0C, 1px -1px 0 #FFCB0C, -1px 1px 0 #FFCB0C, 1px 1px 0 #FFCB0C, 0px 1px 0 #000, 0px 1px 0 #FFCB0C, -1px 0px 0 #FFCB0C, 1px 0px 0 #FFCB0C; }
+      @media (max-width: 550px) {
+        .header-competition .actions .title {
+          display: none; } }
+    .header-competition .actions .itemlink {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #155DFC;
+      color: #fff;
+      min-width: 126px;
+      max-width: 126px;
+      height: 40px;
+      border-radius: 10px;
+      padding: 8px;
+      border: 2px solid #000; }
+
 .item-slider {
   background: #4D2B81 url(../images/slider.png) no-repeat center bottom;
   margin-top: -20px;
