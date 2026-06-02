@@ -1,14 +1,26 @@
 .item-about {
-    background: url(../images/about.png) no-repeat center bottom;
+    background: url(../images/about.jpg) no-repeat center center;
+    background-size: $fullwidth $fullwidth;
     padding: 150px $zero;
-    margin-top: -72px;
-    background-size: 100% 100%;
+    margin-top: 216px;
     @media (max-width: 999px) {
-        background: $purple;
         padding: $com-spacing-8 $zero;
-        min-height: inherit;
         background: #f4f4f4;
         margin: $zero;
+    }
+    .bg-icon {
+        position: absolute;
+        top: $zero;
+        left: $zero;
+        width: $fullwidth;
+        height: auto;
+        z-index: -1;
+        @media (max-width: 1199px) {
+            bottom: -112px;
+        }
+        @media (max-width: 600px) {
+            bottom: -41px;
+        }
     }
     .container {
         max-width: 1170px;
@@ -47,7 +59,7 @@
 }
 
 .item-howplay {
-    background: url(../images/howplay.png) no-repeat center center;
+    background: url(../images/howplay.jpg) no-repeat center center;
     background-size: $fullwidth $fullwidth;
     padding: 200px $zero;
     @media (max-width: 999px) {
@@ -152,6 +164,7 @@
         background: #f1e9ff;
         box-shadow: 6px 4px 0px 0px $blak;
         border-radius: 20px;
+        cursor: pointer;
         .photo {
             @include flex;
             height: 282px;
@@ -199,7 +212,7 @@
 
 .item-packages {
     margin-top: -120px;
-    background: url(../images/howplay.png) no-repeat center center;
+    background: url(../images/howplay.jpg) no-repeat center center;
     background-size: $fullwidth $fullwidth;
     padding: 250px $zero 300px $zero;
     @media (max-width: 999px) {
@@ -975,7 +988,7 @@
             //     border: 3px solid $blak;
             //     text-shadow: -3.85px -3.85px 0 $blak, 3.85px -3.85px 0 $blak, -3.85px 3.85px 0 $blak, 3.85px 3.85px 0 $blak, 0px -3.85px 0 $blak, 0px 3.85px 0 $blak, -3.85px 0px 0 $blak, 3.85px 0px 0 $blak;
             // }
-            .time {
+            .circle-timer {
                 @include flex;
                 position: relative;
                 min-width: 108px;
@@ -983,37 +996,35 @@
                 height: 108px;
                 border-radius: 50%;
                 box-shadow: 5.1px 5.1px 0px 0px $blak;
-                background: #0BB458 url(../images/star.svg) no-repeat center center;
-                font-size: 60px;
-                font-weight: 900;
-                color: #CCF3DD;
+                background: #0BB458;
                 border: 3px solid $blak;
-                text-shadow: -3.85px -3.85px 0 $blak, 3.85px -3.85px 0 $blak, -3.85px 3.85px 0 $blak, 3.85px 3.85px 0 $blak, 0px -3.85px 0 $blak, 0px 3.85px 0 $blak, -3.85px 0px 0 $blak, 3.85px 0px 0 $blak;
                 z-index: 1;
                 overflow: hidden;
-                // &::before {
-                //     content: "";
-                //     position: absolute;
-                //     top: 0;
-                //     left: 0;
-                //     right: 0;
-                //     bottom: 0;
-                //     background: url(../images/star.svg) no-repeat center center;
-                //     background-size: contain;
-                //     z-index: -1;
-                //     /* الأنيميشن شغال علطول لفة كل ثانية، والسر كله في الـ cubic-bezier */
-                //     animation: rotateStar 1s cubic-bezier(0.25, 1, 0.20, 1) infinite;
-                // }
-                // &.stop-animation::before {
-                //     animation-play-state: paused;
-                // }
-            }
-            @keyframes rotateStar {
-                0% {
-                    transform: rotate(0deg);
+                .counter-text {
+                    font-size: 60px;
+                    font-weight: 900;
+                    color: #CCF3DD;
+                    user-select: none;
+                    text-shadow: -3.85px -3.85px 0 $blak, 3.85px -3.85px 0 $blak, -3.85px 3.85px 0 $blak, 3.85px 3.85px 0 $blak, 0px -3.85px 0 $blak, 0px 3.85px 0 $blak, -3.85px 0px 0 $blak, 3.85px 0px 0 $blak;
                 }
-                100% {
-                    transform: rotate(90deg);
+                .spin-effect {
+                    transform: rotate(72deg);
+                }
+                .star-container {
+                    @include flex;
+                    position: absolute;
+                    top: $zero;
+                    left: $zero;
+                    width: 104px;
+                    height: 104px;
+                    border-radius: 50%;
+                    z-index: -1;
+                    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    img {
+                        max-width: $fullwidth;
+                        max-height: $fullwidth;
+                        stroke-linejoin: round;
+                    }
                 }
             }
         }
@@ -1024,6 +1035,7 @@
             border-radius: 8px;
             background: #190D44;
             margin-top: 45px;
+            padding: $com-spacing-3;
             @media (max-width: 999px) {
                 margin-top: $com-spacing-6;
             }
@@ -1034,6 +1046,7 @@
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
                 color: transparent;
+                text-align: center;
             }
         }
         .subradio {
@@ -1085,10 +1098,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: $com-spacing-6;
         margin: 55px $zero -25px $zero;
-        @media (max-width: 767px) {
+        @media (max-width: 1199px) {
             margin-bottom: $zero;
+            overflow: hidden;
+            overflow-x: scroll;
         }
+        @media (max-width: 767px) {}
         .flex {
             display: flex;
             align-items: center;
@@ -1104,8 +1121,14 @@
                 flex-direction: column;
                 justify-content: space-between;
                 overflow: hidden;
-                zoom: 41%;
+                zoom: 46%;
                 transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0.1s;
+                @media (max-width: 1400px) {
+                    zoom: 30%;
+                }
+                @media (max-width: 1199px) {
+                    zoom: 18%;
+                }
                 @media (max-width: 767px) {
                     zoom: 18%;
                 }

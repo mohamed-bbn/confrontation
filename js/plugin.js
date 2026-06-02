@@ -271,14 +271,22 @@ $(window).on("load", function() {
       Input trigger-upload
      ----------------------------------------*/
 
-    let countdownValue = 10;
-    const $timeElement = $('.time');
-    const countdown = setInterval(function() {
-        countdownValue--;
-        $timeElement.text(countdownValue);
-        if (countdownValue <= 0) {
+    let count = 10;
+    const $starBg = $('#starBg');
+    const $numText = $('#num');
+    const countdown = setInterval(() => {
+        count--;
+        $numText.text(count);
+        $starBg.addClass('spin-effect');
+        setTimeout(() => {
+            $starBg.css('transition', 'none').removeClass('spin-effect');
+
+            setTimeout(() => {
+                $starBg.css('transition', 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)');
+            }, 50);
+        }, 300);
+        if (count === 0) {
             clearInterval(countdown);
-            $timeElement.addClass('stop-animation');
         }
     }, 1000);
 

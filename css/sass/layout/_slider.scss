@@ -1,18 +1,28 @@
  .item-slider {
-     background: $purple url(../images/slider.png) no-repeat center bottom;
+     background: $purple;
      margin-top: -20px;
-     padding-bottom: 300px;
-     min-height: 755px;
-     background-size: 150% 100%;
+     min-height: 564px;
      @media (max-width: 999px) {
-         background: $purple;
-         padding: $com-spacing-8 $zero;
          min-height: inherit;
+     }
+     .bg-icon {
+         position: absolute;
+         bottom: -212px;
+         left: $zero;
+         width: $fullwidth;
+         height: auto;
+         z-index: -1;
+         @media (max-width: 1199px) {
+             bottom: -112px;
+         }
+         @media (max-width: 600px) {
+             bottom: -41px;
+         }
      }
      .line {
          position: absolute;
          right: $zero;
-         bottom: 90px;
+         bottom: -116px;
          @media (max-width: 999px) {
              display: none;
          }
