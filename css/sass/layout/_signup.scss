@@ -387,7 +387,10 @@
                     background: #381b63;
                 }
                 @media (max-width: 500px) {
+                    min-width: 120px;
+                    height: 40px;
                     margin-top: $com-spacing-3;
+                    padding: $com-spacing-1 $com-spacing-6;
                 }
             }
             .icon-pass {
@@ -408,6 +411,11 @@
                     font-weight: 600;
                     height: 59px;
                     cursor: pointer;
+                    @media (max-width: 500px) {
+                        min-width: 120px;
+                        height: 40px;
+                        padding: $com-spacing-1 $com-spacing-5;
+                    }
                 }
                 .btn-cancel {
                     background: #e4e6ef;
@@ -418,6 +426,11 @@
                     border-radius: 10px;
                     font-weight: 600;
                     cursor: pointer;
+                    @media (max-width: 500px) {
+                        min-width: 120px;
+                        height: 40px;
+                        padding: $com-spacing-1 $com-spacing-5;
+                    }
                 }
             }
         }

@@ -289,7 +289,7 @@
         .header-competition .btn-actions .flex .bottom.green {
           background: #0BB458; }
         .header-competition .btn-actions .flex .bottom.purple {
-          background: #4D2B81; }
+          background: #C03FFF; }
       .header-competition .btn-actions .flex .itemnumber {
         font-size: 60px;
         font-weight: 900;
@@ -1284,7 +1284,7 @@
           .multible-choice .inner .subinner .flex .bottom.green {
             background: #0BB458; }
           .multible-choice .inner .subinner .flex .bottom.purple {
-            background: #4D2B81; }
+            background: #C03FFF; }
         .multible-choice .inner .subinner .flex .itemnumber {
           font-size: 60px;
           font-weight: 900;
@@ -1330,70 +1330,185 @@
             max-width: 100%;
             max-height: 100%;
             stroke-linejoin: round; }
-    .multible-choice .inner .question {
+    .multible-choice .inner .list-picture {
+      margin: 48px auto 0px auto;
+      max-width: 456px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px; }
+      @media (max-width: 999px) {
+        .multible-choice .inner .list-picture {
+          margin-top: 24px; } }
+      .multible-choice .inner .list-picture li {
+        height: 150px;
+        background: #320A54;
+        cursor: pointer; }
+        @media (max-width: 999px) {
+          .multible-choice .inner .list-picture li {
+            height: 100px; } }
+  .multible-choice .subradio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px; }
+    .multible-choice .subradio .che-box {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      min-height: 100px;
-      border-radius: 8px;
-      background: #190D44;
-      margin-top: 45px;
-      padding: 12px; }
+      height: 92px;
+      padding: 8px; }
       @media (max-width: 999px) {
-        .multible-choice .inner .question {
+        .multible-choice .subradio .che-box {
+          height: 62px; } }
+    .multible-choice .subradio .label-text {
+      text-align: center; }
+      .multible-choice .subradio .label-text::before {
+        display: none; }
+      .multible-choice .subradio .label-text:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #FF523C;
+        animation: effect 250ms ease-in;
+        border-radius: 8px; }
+    .multible-choice .subradio input[type="radio"]:checked + .label-text:after {
+      background: #0BB458; }
+  .multible-choice .subradio .text-chek {
+    position: relative;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 400;
+    z-index: 1; }
+    @media (max-width: 999px) {
+      .multible-choice .subradio .text-chek {
+        font-size: 30px; } }
+  .multible-choice .subradio .label-text::after {
+    border-radius: 8px; }
+  .multible-choice .question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100px;
+    border-radius: 8px;
+    background: #190D44;
+    margin-top: 45px;
+    padding: 12px; }
+    @media (max-width: 999px) {
+      .multible-choice .question {
+        margin-top: 24px; } }
+    .multible-choice .question .title {
+      font-family: 'graphicschool-regular';
+      background: linear-gradient(178.66deg, #FFFFFF 1.14%, #0BD4F3 151.17%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      text-align: center; }
+  .multible-choice .picture-question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 52px; }
+    @media (max-width: 1199px) {
+      .multible-choice .picture-question {
+        gap: 24px; } }
+    @media (max-width: 999px) {
+      .multible-choice .picture-question {
+        display: block; } }
+    .multible-choice .picture-question .question {
+      min-width: 523px;
+      max-width: 523px;
+      margin: 0px; }
+      @media (max-width: 1199px) {
+        .multible-choice .picture-question .question {
+          min-width: 423px;
+          max-width: 423px; } }
+      @media (max-width: 999px) {
+        .multible-choice .picture-question .question {
+          min-width: 100%;
+          max-width: 100%; } }
+    .multible-choice .picture-question .question-image {
+      order: -1;
+      min-width: 420px;
+      max-width: 420px;
+      height: 430px;
+      border-radius: 10px;
+      overflow: hidden; }
+      @media (max-width: 999px) {
+        .multible-choice .picture-question .question-image {
+          order: 0;
+          min-width: 100%;
+          max-width: 100%;
+          height: 330px;
           margin-top: 24px; } }
-      .multible-choice .inner .question .title {
-        font-family: 'graphicschool-regular';
-        background: linear-gradient(178.66deg, #FFFFFF 1.14%, #0BD4F3 151.17%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
-        text-align: center; }
-    .multible-choice .inner .subradio {
+      .multible-choice .picture-question .question-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+  .multible-choice .arrange-events {
+    margin: 0px auto;
+    max-width: 1083px; }
+    .multible-choice .arrange-events .subradio {
+      grid-template-columns: 1fr; }
+      .multible-choice .arrange-events .subradio .che-box {
+        height: 78px; }
+        @media (max-width: 999px) {
+          .multible-choice .arrange-events .subradio .che-box {
+            height: 62px; } }
+      .multible-choice .arrange-events .subradio .label-text:after {
+        background: #451959; }
+  .multible-choice .how-when {
+    margin: 0px auto;
+    max-width: 1192px; }
+    .multible-choice .how-when .question {
+      background: #FFCB0C;
+      border: 2px solid #000;
+      min-height: 67px; }
+      .multible-choice .how-when .question .title {
+        color: #000;
+        font-family: "graphik-arabic-regular";
+        font-size: 24px;
+        background: none;
+        -webkit-text-fill-color: inherit; }
+    .multible-choice .how-when .listquestion {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 26px;
       margin-top: 24px; }
-      .multible-choice .inner .subradio .che-box {
+      @media (max-width: 550px) {
+        .multible-choice .how-when .listquestion {
+          grid-template-columns: 1fr; } }
+      .multible-choice .how-when .listquestion li {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 92px;
-        padding: 8px; }
-        @media (max-width: 999px) {
-          .multible-choice .inner .subradio .che-box {
-            height: 62px; } }
-      .multible-choice .inner .subradio .label-text {
-        text-align: center; }
-        .multible-choice .inner .subradio .label-text::before {
-          display: none; }
-        .multible-choice .inner .subradio .label-text:after {
-          content: '';
+        background: #FFCB0C;
+        border: 2px solid #000;
+        border-radius: 8px;
+        padding: 20px;
+        font-size: 20px;
+        text-align: center;
+        color: #000; }
+        .multible-choice .how-when .listquestion li span {
           position: absolute;
-          top: 0;
-          right: auto;
-          bottom: auto;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: #FF523C;
-          animation: effect 250ms ease-in;
-          border-radius: 8px; }
-      .multible-choice .inner .subradio input[type="radio"]:checked + .label-text:after {
-        background: #0BB458; }
-    .multible-choice .inner .subradio .text-chek {
-      position: relative;
-      color: #fff;
-      font-size: 50px;
-      font-weight: 400;
-      z-index: 1; }
-      @media (max-width: 999px) {
-        .multible-choice .inner .subradio .text-chek {
-          font-size: 30px; } }
-    .multible-choice .inner .subradio .label-text::after {
-      border-radius: 8px; }
+          left: 12px;
+          top: -16px;
+          color: #fff;
+          box-shadow: 0px 10px 15px -3px #0000001A;
+          border: 1px solid #000;
+          background: #C03FFF;
+          font-size: 12px;
+          font-weight: 600;
+          border-radius: 4px;
+          padding: 0px 12px; }
   .multible-choice .container-fluid {
     display: flex;
     align-items: center;
@@ -1950,7 +2065,10 @@
         background: #381b63; }
       @media (max-width: 500px) {
         .profile-container .main-content .form-group .btn-edit {
-          margin-top: 12px; } }
+          min-width: 120px;
+          height: 40px;
+          margin-top: 12px;
+          padding: 4px 24px; } }
     .profile-container .main-content .form-group .icon-pass {
       top: 20px; }
     .profile-container .main-content .form-group .action-buttons {
@@ -1968,6 +2086,11 @@
         font-weight: 600;
         height: 59px;
         cursor: pointer; }
+        @media (max-width: 500px) {
+          .profile-container .main-content .form-group .action-buttons .btn-save {
+            min-width: 120px;
+            height: 40px;
+            padding: 4px 20px; } }
       .profile-container .main-content .form-group .action-buttons .btn-cancel {
         background: #e4e6ef;
         color: #7e8299;
@@ -1977,6 +2100,11 @@
         border-radius: 10px;
         font-weight: 600;
         cursor: pointer; }
+        @media (max-width: 500px) {
+          .profile-container .main-content .form-group .action-buttons .btn-cancel {
+            min-width: 120px;
+            height: 40px;
+            padding: 4px 20px; } }
   .profile-container .main-content .rowbox {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

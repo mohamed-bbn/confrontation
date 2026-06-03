@@ -138,6 +138,35 @@ $(window).on("load", function() {
     });
 
 
+    // var intervalTime = 3000; // 
+    // var autoPlayTimer;
+
+    // function startAutoPlay() {
+    //     autoPlayTimer = setInterval(function() {
+    //         var $rows = $('.menu-row');
+    //         var $activeRow = $('.menu-row.active-row');
+    //         var nextIndex = $rows.index($activeRow) + 1;
+
+    //        
+    //         if (nextIndex >= $rows.length) {
+    //             nextIndex = 0;
+    //         }
+
+    //         // 
+    //         $rows.eq(nextIndex).click();
+    //     }, intervalTime);
+    // }
+
+    // //
+    // startAutoPlay();
+
+    // // 
+    // $('.menu-row, .game-card').click(function() {
+    //     clearInterval(autoPlayTimer); // 
+    //     startAutoPlay(); //
+    // });
+
+
     /*----------------------------------------
        Slider Card Home
      ----------------------------------------*/
