@@ -44,6 +44,8 @@ $(window).on("load", function() {
         });
     }
     setActiveClass(".pagination", "li a");
+    setActiveClass(".item-pickgame", ".item");
+    setActiveClass(".itemlink", "a");
 
     /*----------------------------------------
       ACTIVE CLASS HANDLER
@@ -318,6 +320,42 @@ $(window).on("load", function() {
             clearInterval(countdown);
         }
     }, 1000);
+
+    /*----------------------------------------
+      starBg
+     ----------------------------------------*/
+
+
+    $('.team-box').each(function() {
+        var $teamBox = $(this);
+
+        $teamBox.find('.color-circle').click(function() {
+            $teamBox.find('.color-circle').removeClass('selected');
+            $(this).addClass('selected');
+        });
+    });
+
+    $('.tag .close-btn').click(function() {
+        $(this).parent('.tag').fadeOut(300, function() {
+            $(this).remove();
+            var currentTags = $('.tag').length;
+            $('#count-num').text(currentTags);
+        });
+    });
+
+    $('.start-btn').click(function() {
+        var team1Name = $('#team1 .input-field').val().trim();
+        var team2Name = $('#team2 .input-field').val().trim();
+        $('.custom-alert').fadeOut(100);
+
+        if (team1Name === "" || team2Name === "") {
+            $('#error-alert').fadeIn(300).delay(3000).fadeOut(300);
+        } else {
+            $('#team1-span').text(team1Name);
+            $('#team2-span').text(team2Name);
+            $('#success-alert').fadeIn(300).delay(4000).fadeOut(300);
+        }
+    });
 
 
 }); // END window.load
