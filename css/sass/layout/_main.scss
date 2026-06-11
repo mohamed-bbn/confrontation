@@ -1223,6 +1223,40 @@
                 }
             }
         }
+        .listknow {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 19px;
+            margin-top: $com-spacing-6;
+            @media (max-width: 999px) {
+                grid-template-columns: 1fr 1fr;
+                // gap: $com-spacing-3;
+            }
+            @media (max-width: 550px) {
+                grid-template-columns: 1fr;
+                // gap: $com-spacing-3;
+            }
+            li {
+                position: relative;
+                background: #FFCB0C;
+                border: 2px solid $blak;
+                border-radius: 8px;
+                padding: $com-spacing-5;
+                padding-top: $com-spacing-5;
+                font-size: 25px;
+                font-weight: 500;
+                text-align: center;
+                color: $blak;
+                cursor: pointer;
+                span {
+                    display: block;
+                    font-size: 60px;
+                    font-weight: 900;
+                    line-height: 1;
+                    margin-bottom: $com-spacing-3;
+                }
+            }
+        }
     }
     .container-fluid {
         display: flex;
@@ -1611,6 +1645,57 @@
         }
         &:active {
             transform: scale(0.98);
+        }
+    }
+}
+
+.popquestion {
+    .modal-dialog {
+        max-width: 694px;
+    }
+    .modal-header {
+        justify-content: space-between;
+        .btn-close {
+            margin: $zero;
+            width: 42px;
+            height: 42px;
+            opacity: 1;
+            border-radius: 60px;
+            background: #EBEBEB;
+            box-shadow: none !important;
+            padding: $zero;
+        }
+    }
+    .question-image {
+        margin: $zero $auto;
+        max-width: 420px;
+        height: 430px;
+        border-radius: 10px;
+        overflow: hidden;
+        @media (max-width: 999px) {
+            height: 330px;
+        }
+        img {
+            width: $fullwidth;
+            height: $fullwidth;
+            object-fit: cover;
+        }
+    }
+    .title {
+        color: $blak;
+        font-size: 20px;
+    }
+    p {
+        color: $orange;
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .modal-footer {
+        justify-content: center;
+        .bottom {
+            &:nth-child(1) {
+                background: #0BB458;
+            }
         }
     }
 }
