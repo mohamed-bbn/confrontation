@@ -256,30 +256,30 @@
 .header-competition {
   padding: 16px 0px;
   border-bottom: 7px solid #FFCB0C; }
+  @media (max-width: 550px) {
+    .header-competition {
+      zoom: 60%; } }
   .header-competition .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px; }
+    @media (max-width: 999px) {
+      .header-competition .container {
+        max-width: 100%; } }
   .header-competition .logo img {
     max-width: 175px; }
-    @media (max-width: 999px) {
-      .header-competition .logo img {
-        max-width: 110px; } }
   .header-competition .btn-actions {
     display: flex;
     align-items: center;
     gap: 48px; }
-    @media (max-width: 1199px) {
-      .header-competition .btn-actions {
-        display: none; } }
     .header-competition .btn-actions .flex {
       display: flex;
       align-items: center;
       gap: 16px; }
       .header-competition .btn-actions .flex .bottom {
-        min-width: 142px;
-        max-width: 142px;
+        min-width: 185px;
+        max-width: 185px;
         padding: 0px;
         height: 52px;
         border-radius: 10px;
@@ -304,7 +304,7 @@
       font-family: 'graphicschool-regular';
       color: #000;
       text-shadow: -1px 1px 0 #FFCB0C, 1px -1px 0 #FFCB0C, -1px 1px 0 #FFCB0C, 1px 1px 0 #FFCB0C, 0px 1px 0 #000, 0px 1px 0 #FFCB0C, -1px 0px 0 #FFCB0C, 1px 0px 0 #FFCB0C; }
-      @media (max-width: 550px) {
+      @media (max-width: 999px) {
         .header-competition .actions .title {
           display: none; } }
     .header-competition .actions .itemlink {

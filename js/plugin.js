@@ -303,24 +303,46 @@ $(window).on("load", function() {
      ----------------------------------------*/
 
     let count = 10;
+    const totalDuration = 10;
     const $starBg = $('#starBg');
-    const $numText = $('#num');
-    const countdown = setInterval(() => {
+
+    $('#progressBar').css('width', '0%');
+    $('#progressDot').css('left', '0%');
+
+    $('#num').text(count);
+
+    const countdown = setInterval(function() {
         count--;
-        $numText.text(count);
+
+        $('#num').text(count);
+
+        let fillPercentage = ((totalDuration - count) / totalDuration) * 100;
+        $('#progressBar').css('width', fillPercentage + '%');
+        $('#progressDot').css('left', fillPercentage + '%');
+
         $starBg.addClass('spin-effect');
         setTimeout(() => {
             $starBg.css('transition', 'none').removeClass('spin-effect');
-
             setTimeout(() => {
                 $starBg.css('transition', 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)');
             }, 50);
         }, 300);
+
+        $('#timerCircle').addClass('spin-effect');
+        setTimeout(function() {
+            $('#timerCircle').css('transition', 'none').removeClass('spin-effect');
+            setTimeout(function() {
+                $('#timerCircle').css('transition', 'background-color 0.3s ease');
+            }, 50);
+        }, 600);
+
+        if (count <= 3) {
+            $('#progressDot').addClass('danger-dot');
+        }
         if (count === 0) {
             clearInterval(countdown);
         }
     }, 1000);
-
     /*----------------------------------------
       starBg
      ----------------------------------------*/
@@ -356,6 +378,48 @@ $(window).on("load", function() {
             $('#success-alert').fadeIn(300).delay(4000).fadeOut(300);
         }
     });
+
+    /*----------------------------------------
+      Form
+     ----------------------------------------*/
+
+    $('.grid-box').on('click', function() {
+        $(this).addClass('hidden-box');
+    });
+
+    /*----------------------------------------
+      Form
+     ----------------------------------------*/
+
+
+    let nextNumber = 1;
+
+    $('.sort-item').on('click', function() {
+        let $this = $(this);
+
+        if (!$this.hasClass('selected')) {
+            $this.find('.number-badge').text(nextNumber);
+            $this.addClass('selected');
+            nextNumber++;
+
+        } else {
+            let removedNum = parseInt($this.find('.number-badge').text());
+            $this.removeClass('selected').find('.number-badge').text('');
+            $('.sort-item.selected').each(function() {
+                let $badge = $(this).find('.number-badge');
+                let currentNum = parseInt($badge.text());
+                if (currentNum > removedNum) {
+                    $badge.text(currentNum - 1);
+                }
+            });
+            nextNumber--;
+        }
+    });
+
+    /*----------------------------------------
+      sort-item
+     ----------------------------------------*/
+
 
 
 }); // END window.load
