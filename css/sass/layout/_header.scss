@@ -246,6 +246,7 @@
         align-items: center;
         justify-content: space-between;
         gap: $com-spacing-3;
+        max-width: 94%;
         @media (max-width: 999px) {
             max-width: $fullwidth;
         }
@@ -305,7 +306,7 @@
             font-family: 'graphicschool-regular';
             color: $blak;
             text-shadow: -1px 1px 0 #FFCB0C, 1px -1px 0 #FFCB0C, -1px 1px 0 #FFCB0C, 1px 1px 0 #FFCB0C, 0px 1px 0 #000, 0px 1px 0 #FFCB0C, -1px 0px 0 #FFCB0C, 1px 0px 0 #FFCB0C;
-            @media (max-width: 999px) {
+            @media (max-width: 1199px) {
                 display: none;
             }
         }
