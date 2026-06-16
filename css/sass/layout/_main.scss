@@ -920,11 +920,11 @@
 
 .multible-choice {
     display: grid;
-    grid-template-columns: 1fr 520px;
+    grid-template-columns: 1fr 521px;
     padding: $zero !important;
     min-height: calc(100% - 130px);
-    @media (min-width: 1900px) {
-        grid-template-columns: 1fr 590px;
+    @media (min-width: 1600px) {
+        min-height: calc(100% - 128px);
     }
     @media (max-width: 1199px) {
         grid-template-columns: 1fr;
@@ -948,7 +948,7 @@
             gap: $com-spacing-6;
             background: $white;
             border-radius: 10px;
-            padding: $com-spacing-6;
+            padding: 22px $com-spacing-6;
             @media (max-width: 767px) {
                 zoom: 70%;
             }
@@ -989,7 +989,7 @@
         .difference {
             background: $white;
             border-radius: 10px;
-            padding: $com-spacing-6;
+            padding: 22px 15px;
             margin-top: $com-spacing-6;
             @media (min-width: 1600px) {}
             @media (max-width: 999px) {
@@ -1046,7 +1046,7 @@
                     justify-content: space-between;
                     overflow: hidden;
                     transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0.1s;
-                    height: 156.4px;
+                    height: 162.4px;
                     @media (max-width: 1199px) {
                         height: 356.4px;
                         zoom: 80%;
@@ -1126,12 +1126,12 @@
                             }
                             img {
                                 max-width: 75%;
-                                @media (min-width: 1600px) {
-                                    max-width: $fullwidth;
-                                }
-                                @media (min-width: 1900px) {
-                                    max-width: 75%;
-                                }
+                                // @media (min-width: 1600px) {
+                                //     max-width: $fullwidth;
+                                // }
+                                // @media (min-width: 1900px) {
+                                //     max-width: 75%;
+                                // }
                                 @media (max-width: 1199px) {
                                     max-width: 90px;
                                 }
@@ -1883,12 +1883,12 @@
         border-radius: 12px;
         padding: $com-spacing-3;
         width: 268px;
-        @media (max-width: 1400px) {
-            position: relative;
-            margin: $com-spacing-6 $auto $zero $auto;
-            bottom: auto;
-            left: auto;
-        }
+        // @media (max-width: 1400px) {
+        //     position: relative;
+        //     margin: $com-spacing-6 $auto $zero $auto;
+        //     bottom: auto;
+        //     left: auto;
+        // }
         .title {
             color: $blak;
             font-size: 13px;
