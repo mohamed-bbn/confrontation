@@ -1994,12 +1994,6 @@
   .multible-choice .subpicture {
     margin: 0px auto;
     max-width: 532px; }
-    @media (min-width: 1600px) {
-      .multible-choice .subpicture {
-        margin-right: 100px; } }
-    @media (min-width: 1900px) {
-      .multible-choice .subpicture {
-        margin: 0px auto; } }
     .multible-choice .subpicture .flexinput {
       display: flex;
       align-items: center;
@@ -2088,16 +2082,17 @@
         text-align: center;
         opacity: 1;
         color: #FFFFFF4D;
-        border-radius: 4px; }
+        border-radius: 4px;
+        font-size: 30px; }
         .multible-choice .game-area .grid-overlay .grid-box span {
           display: block;
-          font-size: 10px;
+          font-size: 20px;
           font-weight: 700;
-          color: #FFCB0C; }
+          color: #FFCB0C;
+          margin-top: 8px; }
         .multible-choice .game-area .grid-overlay .grid-box.hidden-box {
           opacity: 0;
-          pointer-events: none;
-          /* إلغاء إمكانية الضغط عليه مرة تانية */ }
+          pointer-events: none; }
     .multible-choice .game-area .grid-box:active {
       transform: scale(0.95); }
   .multible-choice .question-value {
@@ -3154,13 +3149,18 @@ body {
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
   -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s; }
+
+.wrapper {
   zoom: 67.4%; }
   @media (min-width: 1600px) {
-    body {
+    .wrapper {
       zoom: 81%; } }
+  @media (min-width: 1800px) {
+    .wrapper {
+      zoom: 78%; } }
   @media (min-width: 1900px) {
-    body {
+    .wrapper {
       zoom: 99%; } }
 
 @font-face {

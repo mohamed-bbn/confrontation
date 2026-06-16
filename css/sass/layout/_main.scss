@@ -1763,12 +1763,12 @@
     .subpicture {
         margin: $zero $auto;
         max-width: 532px;
-        @media (min-width: 1600px) {
-            margin-right: 100px;
-        }
-        @media (min-width: 1900px) {
-            margin: $zero $auto;
-        }
+        // @media (min-width: 1600px) {
+        //     margin-right: 100px;
+        // }
+        // @media (min-width: 1900px) {
+        //     margin: $zero $auto;
+        // }
         .flexinput {
             display: flex;
             align-items: center;
@@ -1856,16 +1856,17 @@
                 opacity: 1;
                 color: #FFFFFF4D;
                 border-radius: 4px;
+                font-size: 30px;
                 span {
                     display: block;
-                    font-size: 10px;
+                    font-size: 20px;
                     font-weight: 700;
                     color: #FFCB0C;
+                    margin-top: $com-spacing-2;
                 }
                 &.hidden-box {
                     opacity: 0;
                     pointer-events: none;
-                    /* إلغاء إمكانية الضغط عليه مرة تانية */
                 }
             }
         }
