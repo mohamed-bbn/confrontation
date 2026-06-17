@@ -920,27 +920,39 @@
 
 .multible-choice {
     display: grid;
-    grid-template-columns: 1fr 521px;
+    grid-template-columns: 1fr 528px;
     padding: $zero !important;
-    min-height: calc(100% - 130px);
+    min-height: calc(100% - 129px);
     @media (min-width: 1600px) {
         min-height: calc(100% - 128px);
+    }
+    @media (min-width: 1900px) {
+        min-height: calc(100% - 129px);
     }
     @media (max-width: 1199px) {
         grid-template-columns: 1fr;
         height: inherit;
     }
     .auxiliary-means {
+        position: relative;
         background: $purple;
         border-right: 7px solid #FFCB0C;
         padding: 30px;
-        @media (max-width: 999px) {
+        @media (max-width: 1199px) {
+            margin: $zero $auto;
+            max-width: 521px;
             border: $zero;
-            width: $fullwidth;
-            margin-top: $com-spacing-6;
-            min-height: inherit;
             padding: $com-spacing-3;
         }
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     right: $zero;
+        //     top: $zero;
+        //     width: 7px;
+        //     height: $fullwidth;
+        //     background: #FFCB0C;
+        // }
         .subinner {
             display: flex;
             align-items: center;
@@ -964,6 +976,7 @@
                     height: 45px;
                     border-radius: 10px;
                     font-size: 17px;
+                    color: #CCF3DD;
                     box-shadow: 5.1px 5.1px 0px 0px $blak;
                     transform: none !important;
                     &.green {
@@ -992,7 +1005,7 @@
             padding: 22px 15px;
             margin-top: $com-spacing-6;
             @media (min-width: 1600px) {}
-            @media (max-width: 999px) {
+            @media (max-width: 1199px) {
                 margin-top: $com-spacing-3;
                 padding: $com-spacing-3;
             }
@@ -1011,6 +1024,7 @@
                     height: 45px;
                     border-radius: 10px;
                     font-size: 17px;
+                    color: #CCF3DD;
                     box-shadow: 5.1px 5.1px 0px 0px $blak;
                     transform: none !important;
                     @media (max-width: 650px) {
@@ -1028,8 +1042,8 @@
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 align-items: center;
-                gap: $com-spacing-2;
-                margin-top: $com-spacing-6;
+                gap: 5px;
+                margin-top: 18px;
                 .cancellation {
                     @include flex;
                     @include overlay;
@@ -1038,113 +1052,139 @@
                 }
                 .game-card {
                     position: relative;
-                    border-radius: 16px;
-                    cursor: pointer;
-                    padding: $com-spacing-1;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    overflow: hidden;
-                    transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0.1s;
-                    height: 162.4px;
+                    height: 168px;
                     @media (max-width: 1199px) {
-                        height: 356.4px;
-                        zoom: 80%;
+                        height: auto
                     }
-                    @media (max-width: 999px) {
-                        height: 300px;
-                        zoom: 70%;
+                    img {
+                        max-width: $fullwidth;
                     }
-                    @media (max-width: 550px) {
-                        zoom: 50%;
-                    }
-                    @media (max-width: 450px) {
-                        zoom: 32%;
-                    }
-                    &.active {}
-                    &.card-yellow {
-                        background: #F9AF19;
-                    }
-                    &.card-blue {
-                        background: #314AF7;
-                    }
-                    &.card-red {
-                        background: #F60037;
-                    }
-                    &.card-black {
-                        background: #212121;
-                    }
-                    &.card-gold {
-                        background: linear-gradient(90deg, #F2D87E 0%, #EBCA68 11%, #E3BD52 25%, #DFB445 39%, #DEB241 51%, #D3A93B 61%, #C9A036 78%, #C69E35 99%);
-                    }
-                    .inner {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        width: $fullwidth;
-                        height: $fullwidth;
-                        border: 1px solid $white;
-                        border-radius: 16px;
-                        padding: $com-spacing-2;
-                        margin: $zero !important;
-                        .card-header,
-                        .card-footer {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            .title {
-                                color: $white;
-                                font-size: 9px;
-                                // font-family: 'graphicschool-regular';
-                            }
-                            .card-badge {
-                                img {
-                                    max-width: 14px;
-                                }
-                            }
-                        }
-                        .card-footer {
-                            rotate: 180deg;
-                        }
-                        .card-center-cloud {
-                            @include flex;
-                            width: $fullwidth;
-                            height: 88px;
-                            margin: 0 auto;
-                            position: relative;
-                            padding: $com-spacing-4;
-                            background: url(../images/bg.png) no-repeat center center;
-                            background-size: $fullwidth $fullwidth;
-                            @media (min-width: 1600px) {
-                                height: 60px;
-                            }
-                            @media (min-width: 1900px) {
-                                height: 88px;
-                            }
+                    .cancellation {
+                        @include flex;
+                        @include overlay;
+                        background: #00000099;
+                        border-radius: 5px;
+                        z-index: 1;
+                        svg {
                             @media (max-width: 1199px) {
-                                height: 214.4px;
-                            }
-                            img {
-                                max-width: 75%;
-                                // @media (min-width: 1600px) {
-                                //     max-width: $fullwidth;
-                                // }
-                                // @media (min-width: 1900px) {
-                                //     max-width: 75%;
-                                // }
-                                @media (max-width: 1199px) {
-                                    max-width: 90px;
-                                }
+                                width: 30px;
+                                height: 30px;
                             }
                         }
                     }
                 }
+                // .game-card {
+                //     position: relative;
+                //     border-radius: 16px;
+                //     cursor: pointer;
+                //     padding: $com-spacing-1;
+                //     display: flex;
+                //     flex-direction: column;
+                //     justify-content: space-between;
+                //     overflow: hidden;
+                //     transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), z-index 0.1s;
+                //     height: 168px;
+                //     @media (max-width: 1199px) {
+                //         height: 356.4px;
+                //         zoom: 80%;
+                //     }
+                //     @media (max-width: 999px) {
+                //         height: 300px;
+                //         zoom: 70%;
+                //     }
+                //     @media (max-width: 550px) {
+                //         zoom: 50%;
+                //     }
+                //     @media (max-width: 450px) {
+                //         zoom: 32%;
+                //     }
+                //     &.active {}
+                //     &.card-yellow {
+                //         background: #F9AF19;
+                //     }
+                //     &.card-blue {
+                //         background: #314AF7;
+                //     }
+                //     &.card-red {
+                //         background: #F60037;
+                //     }
+                //     &.card-black {
+                //         background: #212121;
+                //     }
+                //     &.card-gold {
+                //         background: linear-gradient(90deg, #F2D87E 0%, #EBCA68 11%, #E3BD52 25%, #DFB445 39%, #DEB241 51%, #D3A93B 61%, #C9A036 78%, #C69E35 99%);
+                //     }
+                //     .inner {
+                //         display: flex;
+                //         flex-direction: column;
+                //         justify-content: space-between;
+                //         width: $fullwidth;
+                //         height: $fullwidth;
+                //         border: 1px solid $white;
+                //         border-radius: 16px;
+                //         padding: $com-spacing-2;
+                //         margin: $zero !important;
+                //         .card-header,
+                //         .card-footer {
+                //             display: flex;
+                //             justify-content: space-between;
+                //             align-items: center;
+                //             .title {
+                //                 color: $white;
+                //                 font-size: 10px;
+                //                 // font-family: 'graphicschool-regular';
+                //             }
+                //             .card-badge {
+                //                 img {
+                //                     max-width: 20px;
+                //                 }
+                //             }
+                //         }
+                //         .card-footer {
+                //             rotate: 180deg;
+                //         }
+                //         .card-center-cloud {
+                //             @include flex;
+                //             width: $fullwidth;
+                //             // height: 88px;
+                //             margin: 0 auto;
+                //             position: relative;
+                //             padding: $com-spacing-4;
+                //             background: url(../images/bg.png) no-repeat center center;
+                //             background-size: $fullwidth $fullwidth;
+                //             // @media (min-width: 1600px) {
+                //             //     height: 60px;
+                //             // }
+                //             // @media (min-width: 1900px) {
+                //             //     height: 88px;
+                //             // }
+                //             // @media (max-width: 1199px) {
+                //             //     height: 214.4px;
+                //             // }
+                //             img {
+                //                 max-width: 75%;
+                //                 // @media (min-width: 1600px) {
+                //                 //     max-width: $fullwidth;
+                //                 // }
+                //                 // @media (min-width: 1900px) {
+                //                 //     max-width: 75%;
+                //                 // }
+                //                 @media (max-width: 1199px) {
+                //                     max-width: 90px;
+                //                 }
+                //             }
+                //         }
+                //     }
+                // }
             }
         }
         .btnending {
             display: flex;
             justify-content: flex-end;
             margin-top: $com-spacing-6;
+            @media (max-width: 1199px) {
+                margin-top: $com-spacing-3;
+            }
             .ending {
                 @include flex;
                 gap: $com-spacing-2;
@@ -1155,6 +1195,9 @@
                 padding: $zero $com-spacing-3;
                 color: #F60037;
                 font: 700 14px/1 "graphik-arabic-regular";
+                @media (max-width: 1199px) {
+                    height: 42px
+                }
             }
         }
     }
@@ -1461,6 +1504,9 @@
             gap: $com-spacing-3;
             width: $fullwidth;
             margin-top: $com-spacing-6;
+            @media (max-width: 1199px) {
+                margin-top: $com-spacing-3;
+            }
             .sort-item {
                 background: #451959;
                 border-radius: 7px;
@@ -1884,12 +1930,12 @@
         border-radius: 12px;
         padding: $com-spacing-3;
         width: 268px;
-        // @media (max-width: 1400px) {
-        //     position: relative;
-        //     margin: $com-spacing-6 $auto $zero $auto;
-        //     bottom: auto;
-        //     left: auto;
-        // }
+        @media (max-width: 1350px) {
+            position: relative;
+            margin: $com-spacing-6 $auto $zero $auto;
+            bottom: auto;
+            left: auto;
+        }
         .title {
             color: $blak;
             font-size: 13px;

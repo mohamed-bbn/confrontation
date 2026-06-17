@@ -37,15 +37,17 @@ body {
 }
 
 .wrapper {
-    zoom: 67.4%;
+    @media (min-width: 1366px) {
+        zoom: 67.4%;
+    }
     @media (min-width: 1600px) {
         zoom: 81%;
     }
-    @media (min-width: 1800px) {
-        zoom: 78%;
-    }
     @media (min-width: 1900px) {
-        zoom: 99%;
+        zoom: 100%;
+    }
+    @media (max-width: 1199px) {
+        zoom: 100%;
     }
 }
 

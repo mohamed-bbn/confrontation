@@ -324,3 +324,121 @@
         }
     }
 }
+
+//////////////////////// End header
+// .header-competition {
+//     // padding: $com-spacing-4 $zero;
+//     padding: 11px 0px;
+//     border-bottom: 7px solid #FFCB0C;
+//     @media (min-width: 1900px) {
+//         padding: $com-spacing-4 $zero;
+//     }
+//     @media (max-width: 550px) {
+//         zoom: 60%;
+//     }
+//     .container {
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-between;
+//         gap: $com-spacing-3;
+//         max-width: 94%;
+//         @media (max-width: 999px) {
+//             max-width: $fullwidth;
+//         }
+//     }
+//     .logo {
+//         img {
+//             max-width: 132px;
+//             @media (min-width: 1900px) {
+//                 max-width: 175px;
+//             }
+//         }
+//     }
+//     .btn-actions {
+//         display: flex;
+//         align-items: center;
+//         gap: $com-spacing-8;
+//         // @media (max-width: 1199px) {
+//         //     display: none;
+//         // }
+//         .flex {
+//             display: flex;
+//             align-items: center;
+//             gap: $com-spacing-4;
+//             .bottom {
+//                 min-width: 125px;
+//                 max-width: 125px;
+//                 padding: $zero;
+//                 height: 35px;
+//                 font-size: 14px;
+//                 border-radius: 10px;
+//                 box-shadow: 5.1px 5.1px 0px 0px #000000;
+//                 transform: none !important;
+//                 @media (min-width: 1900px) {
+//                     min-width: 185px;
+//                     max-width: 185px;
+//                     height: 52px;
+//                     font-size: 20px;
+//                 }
+//                 &.green {
+//                     background: #0BB458;
+//                 }
+//                 &.purple {
+//                     background: #C03FFF;
+//                 }
+//             }
+//             .itemnumber {
+//                 font-size: 60px;
+//                 font-weight: 900;
+//                 color: #FF7D75;
+//                 text-shadow: -3.85px -3.85px 0 #000, 3.85px -3.85px 0 #000, -3.85px 3.85px 0 #000, 3.85px 3.85px 0 #000, 0px -3.85px 0 #000, 0px 3.85px 0 #000, -3.85px 0px 0 #000, 3.85px 0px 0 #000;
+//             }
+//             &:last-child {
+//                 .itemnumber {
+//                     color: #FFCB0C;
+//                 }
+//             }
+//         }
+//     }
+//     .actions {
+//         display: flex;
+//         align-items: center;
+//         gap: $com-spacing-6;
+//         .title {
+//             font-family: 'graphicschool-regular';
+//             color: $blak;
+//             font-size: 30px;
+//             text-shadow: -1px 1px 0 #FFCB0C, 1px -1px 0 #FFCB0C, -1px 1px 0 #FFCB0C, 1px 1px 0 #FFCB0C, 0px 1px 0 #000, 0px 1px 0 #FFCB0C, -1px 0px 0 #FFCB0C, 1px 0px 0 #FFCB0C;
+//             @media (min-width: 1900px) {
+//                 font-size: 42px;
+//             }
+//             @media (max-width: 1199px) {
+//                 display: none;
+//             }
+//         }
+//         .itemlink {
+//             @include flex;
+//             gap: $com-spacing-2;
+//             background: #155DFC;
+//             color: $white;
+//             min-width: 98px;
+//             max-width: 98px;
+//             height: 34px;
+//             font-size: 13px;
+//             font-weight: 700;
+//             border-radius: 10px;
+//             padding: $zero $com-spacing-1;
+//             border: 2px solid $blak;
+//             @media (min-width: 1900px) {
+//                 min-width: 126px;
+//                 max-width: 126px;
+//                 height: 40px;
+//                 font-size: 14px;
+//             }
+//             svg {
+//                 max-width: 20px;
+//                 max-height: 20px;
+//             }
+//         }
+//     }
+// }
