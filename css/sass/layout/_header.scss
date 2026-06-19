@@ -236,10 +236,13 @@
 
 //////////////////////// End header
 .header-competition {
-    padding: $com-spacing-4 $zero;
+    padding: 6px $zero;
     border-bottom: 7px solid #FFCB0C;
+    @media (min-width: 1900px) {
+        padding: 21px $zero;
+    }
     @media (max-width: 550px) {
-        zoom: 60%;
+        // zoom: 60%;
     }
     .container {
         display: flex;
@@ -253,7 +256,13 @@
     }
     .logo {
         img {
-            max-width: 175px;
+            max-width: 128px;
+            @media (min-width: 1900px) {
+                max-width: 185px;
+            }
+            @media (max-width: 550px) {
+                max-width: 80px;
+            }
             // @media (max-width: 999px) {
             //     max-width: 110px;
             // }
@@ -271,13 +280,22 @@
             align-items: center;
             gap: $com-spacing-4;
             .bottom {
-                min-width: 185px;
-                max-width: 185px;
+                min-width: 116px;
+                max-width: 116px;
                 padding: $zero;
-                height: 52px;
+                height: 32px;
+                color: #CCF3DD;
+                font-size: 13px;
                 border-radius: 10px;
-                box-shadow: 5.1px 5.1px 0px 0px #000000;
+                border: 1.59px solid $blak;
+                box-shadow: 3.19px 3.19px 0px 0px $blak;
                 transform: none !important;
+                @media (min-width: 1900px) {
+                    min-width: 185px;
+                    max-width: 185px;
+                    height: 52px;
+                    font-size: 20px;
+                }
                 &.green {
                     background: #0BB458;
                 }
@@ -305,22 +323,38 @@
         .title {
             font-family: 'graphicschool-regular';
             color: $blak;
+            font-size: 28px;
             text-shadow: -1px 1px 0 #FFCB0C, 1px -1px 0 #FFCB0C, -1px 1px 0 #FFCB0C, 1px 1px 0 #FFCB0C, 0px 1px 0 #000, 0px 1px 0 #FFCB0C, -1px 0px 0 #FFCB0C, 1px 0px 0 #FFCB0C;
-            @media (max-width: 1199px) {
+            @media (min-width: 1900px) {
+                font-size: 44px;
+            }
+            @media (max-width:999px) {
                 display: none;
             }
         }
         .itemlink {
             @include flex;
-            gap: $com-spacing-2;
+            gap: $com-spacing-1;
             background: #155DFC;
             color: $white;
-            min-width: 126px;
-            max-width: 126px;
-            height: 40px;
+            min-width: 80px;
+            max-width: 80px;
+            height: 25px;
             border-radius: 10px;
-            padding: $com-spacing-2;
-            border: 2px solid $blak;
+            font-size: 9px;
+            // padding: $com-spacing-2;
+            border: 1.25px solid $blak;
+            @media (min-width: 1900px) {
+                min-width: 126px;
+                max-width: 126px;
+                height: 40px;
+                font-size: 14px;
+            }
+            svg {
+                min-width: 12px;
+                max-width: 12px;
+                height: 12px;
+            }
         }
     }
 }

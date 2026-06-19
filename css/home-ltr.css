@@ -254,11 +254,11 @@
           color: #FE0000; }
 
 .header-competition {
-  padding: 16px 0px;
+  padding: 6px 0px;
   border-bottom: 7px solid #FFCB0C; }
-  @media (max-width: 550px) {
+  @media (min-width: 1900px) {
     .header-competition {
-      zoom: 60%; } }
+      padding: 21px 0px; } }
   .header-competition .container {
     display: flex;
     align-items: center;
@@ -269,7 +269,13 @@
       .header-competition .container {
         max-width: 100%; } }
   .header-competition .logo img {
-    max-width: 175px; }
+    max-width: 128px; }
+    @media (min-width: 1900px) {
+      .header-competition .logo img {
+        max-width: 185px; } }
+    @media (max-width: 550px) {
+      .header-competition .logo img {
+        max-width: 80px; } }
   .header-competition .btn-actions {
     display: flex;
     align-items: center;
@@ -279,13 +285,22 @@
       align-items: center;
       gap: 16px; }
       .header-competition .btn-actions .flex .bottom {
-        min-width: 185px;
-        max-width: 185px;
+        min-width: 116px;
+        max-width: 116px;
         padding: 0px;
-        height: 52px;
+        height: 32px;
+        color: #CCF3DD;
+        font-size: 13px;
         border-radius: 10px;
-        box-shadow: 5.1px 5.1px 0px 0px #000000;
+        border: 1.59px solid #000;
+        box-shadow: 3.19px 3.19px 0px 0px #000;
         transform: none !important; }
+        @media (min-width: 1900px) {
+          .header-competition .btn-actions .flex .bottom {
+            min-width: 185px;
+            max-width: 185px;
+            height: 52px;
+            font-size: 20px; } }
         .header-competition .btn-actions .flex .bottom.green {
           background: #0BB458; }
         .header-competition .btn-actions .flex .bottom.purple {
@@ -304,23 +319,37 @@
     .header-competition .actions .title {
       font-family: 'graphicschool-regular';
       color: #000;
+      font-size: 28px;
       text-shadow: -1px 1px 0 #FFCB0C, 1px -1px 0 #FFCB0C, -1px 1px 0 #FFCB0C, 1px 1px 0 #FFCB0C, 0px 1px 0 #000, 0px 1px 0 #FFCB0C, -1px 0px 0 #FFCB0C, 1px 0px 0 #FFCB0C; }
-      @media (max-width: 1199px) {
+      @media (min-width: 1900px) {
+        .header-competition .actions .title {
+          font-size: 44px; } }
+      @media (max-width: 999px) {
         .header-competition .actions .title {
           display: none; } }
     .header-competition .actions .itemlink {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 4px;
       background: #155DFC;
       color: #fff;
-      min-width: 126px;
-      max-width: 126px;
-      height: 40px;
+      min-width: 80px;
+      max-width: 80px;
+      height: 25px;
       border-radius: 10px;
-      padding: 8px;
-      border: 2px solid #000; }
+      font-size: 9px;
+      border: 1.25px solid #000; }
+      @media (min-width: 1900px) {
+        .header-competition .actions .itemlink {
+          min-width: 126px;
+          max-width: 126px;
+          height: 40px;
+          font-size: 14px; } }
+      .header-competition .actions .itemlink svg {
+        min-width: 12px;
+        max-width: 12px;
+        height: 12px; }
 
 .item-slider {
   background: #4D2B81;

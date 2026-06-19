@@ -348,36 +348,36 @@ $(window).on("load", function() {
      ----------------------------------------*/
 
 
-    $('.team-box').each(function() {
-        var $teamBox = $(this);
+    // $('.team-box').each(function() {
+    //     var $teamBox = $(this);
 
-        $teamBox.find('.color-circle').click(function() {
-            $teamBox.find('.color-circle').removeClass('selected');
-            $(this).addClass('selected');
-        });
-    });
+    //     $teamBox.find('.color-circle').click(function() {
+    //         $teamBox.find('.color-circle').removeClass('selected');
+    //         $(this).addClass('selected');
+    //     });
+    // });
 
-    $('.tag .close-btn').click(function() {
-        $(this).parent('.tag').fadeOut(300, function() {
-            $(this).remove();
-            var currentTags = $('.tag').length;
-            $('#count-num').text(currentTags);
-        });
-    });
+    // $('.tag .close-btn').click(function() {
+    //     $(this).parent('.tag').fadeOut(300, function() {
+    //         $(this).remove();
+    //         var currentTags = $('.tag').length;
+    //         $('#count-num').text(currentTags);
+    //     });
+    // });
 
-    $('.start-btn').click(function() {
-        var team1Name = $('#team1 .input-field').val().trim();
-        var team2Name = $('#team2 .input-field').val().trim();
-        $('.custom-alert').fadeOut(100);
+    // $('.start-btn').click(function() {
+    //     var team1Name = $('#team1 .input-field').val().trim();
+    //     var team2Name = $('#team2 .input-field').val().trim();
+    //     $('.custom-alert').fadeOut(100);
 
-        if (team1Name === "" || team2Name === "") {
-            $('#error-alert').fadeIn(300).delay(3000).fadeOut(300);
-        } else {
-            $('#team1-span').text(team1Name);
-            $('#team2-span').text(team2Name);
-            $('#success-alert').fadeIn(300).delay(4000).fadeOut(300);
-        }
-    });
+    //     if (team1Name === "" || team2Name === "") {
+    //         $('#error-alert').fadeIn(300).delay(3000).fadeOut(300);
+    //     } else {
+    //         $('#team1-span').text(team1Name);
+    //         $('#team2-span').text(team2Name);
+    //         $('#success-alert').fadeIn(300).delay(4000).fadeOut(300);
+    //     }
+    // });
 
     /*----------------------------------------
       Form
@@ -418,6 +418,65 @@ $(window).on("load", function() {
 
     /*----------------------------------------
       sort-item
+     ----------------------------------------*/
+
+    const $container = $('.filter-container');
+
+    function updateArrows() {
+        let scrollLeft = $container.scrollLeft();
+        let scrollWidth = $container[0].scrollWidth;
+        let width = $container.outerWidth();
+
+        if (scrollLeft >= 0) {
+            $('.arrow-right').addClass('disabled');
+        } else {
+            $('.arrow-right').removeClass('disabled');
+        }
+
+        if (Math.abs(scrollLeft) + width >= scrollWidth - 5) {
+            $('.arrow-left').addClass('disabled');
+        } else {
+            $('.arrow-left').removeClass('disabled');
+        }
+    }
+
+    updateArrows();
+    $container.on('scroll', updateArrows);
+    $(window).on('resize', updateArrows);
+
+    $('.arrow-right').click(function() {
+        $container.animate({
+            scrollLeft: $container.scrollLeft() + 200
+        }, 300);
+    });
+
+    $('.arrow-left').click(function() {
+        $container.animate({
+            scrollLeft: $container.scrollLeft() - 200
+        }, 300);
+    });
+
+    $('.filter-btn').click(function() {
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+
+        const filterValue = $(this).attr('data-filter');
+
+        if (filterValue == 'all') {
+            $('.card').removeClass('hide');
+        } else {
+            $('.card').each(function() {
+                if ($(this).attr('data-category') == filterValue) {
+                    $(this).removeClass('hide');
+                } else {
+                    $(this).addClass('hide');
+                }
+            });
+        }
+    });
+
+    /*----------------------------------------
+      filter
      ----------------------------------------*/
 
 
