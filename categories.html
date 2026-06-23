@@ -37,7 +37,7 @@
                         <path d="M6.66271 6.00002L11.8625 0.800231C12.0455 0.617161 12.0455 0.320349 11.8625 0.137303C11.6794 -0.0457441 11.3826 -0.0457675 11.1995 0.137303L5.99975 5.33709L0.799987 0.137303C0.616917 -0.0457675 0.320105 -0.0457675 0.137058 0.137303C-0.0459882 0.320373 -0.0460117 0.617185 0.137058 0.800231L5.33682 6L0.137058 11.1998C-0.0460117 11.3829 -0.0460117 11.6797 0.137058 11.8627C0.228582 11.9542 0.348558 12 0.468535 12C0.588511 12 0.708464 11.9542 0.800011 11.8627L5.99975 6.66295L11.1995 11.8627C11.291 11.9542 11.411 12 11.531 12C11.651 12 11.7709 11.9542 11.8625 11.8627C12.0455 11.6796 12.0455 11.3828 11.8625 11.1998L6.66271 6.00002Z" fill="#fff"></path>
                     </svg>
                 </span>
-                <a href="#" class="itemlink">كيف العب</a>
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="itemlink">كيف العب</a>
                 <a href="categories.html" class="itemlink">الفئات</a>
                 <a href="#" class="play">العب</a>
                 <a href="login.html" class="bottom">سجل دخولك</a>
@@ -86,6 +86,42 @@
         </div>
     </header>
     <!-- End header -->
+
+    <div class="modal popupcard fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="40" height="40" rx="20" fill="white" fill-opacity="0.5"/>
+                    <rect x="1" y="1" width="40" height="40" rx="20" stroke="#F5F5F5" stroke-width="2"/>
+                    <path d="M31.5 10.5L10.5 31.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.5 10.5L31.5 31.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+
+                <div class="modal-body">
+                    <div>
+                        <h5 class="title" id="exampleModalLabel"> خيارات من ثلاثة</h5>
+                        <p>اعثر على المختلف او احسب العدد</p>
+                        <ol>
+                            <li>تتكون اللعية من 3 جولات لكل فريق يتم فيها الاجابة على مجموعة من الاسئلة تتكون اللعية من 3 جولات لكل فريق يتم فيها الاجابة على مجموعة من الاسئلة تتكون اللعية من 3 جولات لكل فريق يتم فيها الاجابة على مجموعة من الاسئلة </li>
+                        </ol>
+                        <div class="list">
+                            <p> على شاشة المشاهدة</p>
+                            <ul>
+                                <li> الصورة بحجم كامل دون مشتتات</li>
+                                <li> المطلوب مكتوباً أعلى الصورة</li>
+                                <li> صورة الإجابة تظهر مكان الصورة الأصلية عند الكشف</li>
+                                <li> بطاقة النتيجة تظهر تحت السؤال</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal -->
 
 
     <section class="games-categories">

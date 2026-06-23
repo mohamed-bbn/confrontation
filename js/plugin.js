@@ -52,6 +52,11 @@ $(window).on("load", function() {
     ----------------------------------------*/
 
 
+    // $('.cancelselect,.modal ').click(function() {
+    //     $('.item-pickgame .item').removeClass('active')
+    // });
+
+
     $(window).scroll(function() {
         if ($(this).scrollTop() > 800) {
             $('.scrollTopBtn').addClass('show');
@@ -422,9 +427,12 @@ $(window).on("load", function() {
 
     const $container = $('.filter-container');
 
+    // تأكد إن العنصر موجود في الصفحة الأول عشان الكود ما يضربش لو الصفحة دي مفيهاش فلاتر
+    if ($container.length === 0) return;
+
     function updateArrows() {
         let scrollLeft = $container.scrollLeft();
-        let scrollWidth = $container[0].scrollWidth;
+        let scrollWidth = $container[0].scrollWidth; // هنا مش هتضرب لأننا اتأكدنا إنها موجودة
         let width = $container.outerWidth();
 
         if (scrollLeft >= 0) {
@@ -480,7 +488,19 @@ $(window).on("load", function() {
      ----------------------------------------*/
 
 
-
-
-
 }); // END window.load
+
+document.addEventListener('click', function(e) {
+    var abolitionBtn = e.target.closest('.abolition');
+
+    if (abolitionBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var card = abolitionBtn.closest('.game-card');
+        if (card) {
+            card.classList.remove('doneused');
+            // console.log('تم حذف الكلاس بنجاح!');
+        }
+    }
+});
