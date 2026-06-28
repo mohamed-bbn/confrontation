@@ -86,13 +86,20 @@
  }
  
  .after-pickgame {
-     padding-bottom: 160px;
+     padding: 32px $zero 148px $zero;
+     @media (max-width: 1199px) {
+         padding: $com-spacing-3 $zero 110px $zero;
+     }
      .inner {
          margin: $zero $auto;
-         max-width: 1097px;
+         max-width: 1211px;
          border: 0.9px solid #00000033;
          border-radius: 10px;
          padding: $com-spacing-5;
+         @media (max-width: 1199px) {
+             padding: $zero;
+             border: $zero;
+         }
          .back {
              display: inline-flex;
              align-items: center;
@@ -109,7 +116,55 @@
              .minhead {
                  display: flex;
                  align-items: center;
+                 justify-content: space-between;
                  gap: $com-spacing-3;
+                 .infoitem {
+                     position: relative;
+                     display: flex;
+                     align-items: center;
+                     &:hover {
+                         .tooltip-text {
+                             visibility: visible;
+                             opacity: 1;
+                         }
+                     }
+                     .tooltip-text {
+                         display: flex;
+                         align-items: center;
+                         visibility: hidden;
+                         width: 160px;
+                         background: #F60037;
+                         color: #fff;
+                         text-align: center;
+                         border-radius: 8px;
+                         padding: $com-spacing-2;
+                         position: absolute;
+                         z-index: 1;
+                         //  bottom: 30px;
+                         left: $com-spacing-7;
+                         font-size: 12px;
+                         line-height: 15px;
+                         //  transform: translateX(-50%);
+                         opacity: 0;
+                         transition: opacity 0.3s;
+                         border: 0.7px solid $blak;
+                         text-align: center;
+                         &::after {
+                             content: "";
+                             position: absolute;
+                             left: -5px;
+                             margin-left: -5px;
+                             border-width: 5px;
+                             border-style: solid;
+                             border-color: transparent $blak transparent transparent;
+                         }
+                     }
+                 }
+                 .flex {
+                     display: flex;
+                     align-items: center;
+                     gap: $com-spacing-3;
+                 }
                  .photo {
                      @include flex;
                      min-width: 32px;
@@ -161,17 +216,159 @@
                  }
              }
              .itemtours {
-                 display: flex;
-                 align-items: center;
-                 background: #C9C9C933;
-                 border: 0.9px solid #D0D0D0;
+                 background: $white;
+                 border: 1px solid #E5E7EB;
                  padding: $com-spacing-3;
                  gap: $com-spacing-8;
-                 border-radius: 8px;
+                 border-radius: 12px;
                  margin-top: $com-spacing-3;
+                 box-shadow: 0px 2px 10px 0px #0000000D;
                  .title {
-                     color: $purple;
-                     font-size: 20px;
+                     color: $blak;
+                     font-size: 16px;
+                 }
+                 .flexitem {
+                     position: relative;
+                     display: flex;
+                     align-items: center;
+                     justify-content: space-between;
+                     @media (max-width: 1199px) {
+                         align-items: flex-start;
+                     }
+                     .flexselect {
+                         position: relative;
+                         display: flex;
+                         align-items: center;
+                         @media (max-width: 1199px) {
+                             display: block;
+                         }
+                         .separator-arrow {
+                             @include flex;
+                             background: #F3F4F6;
+                             border: 1px solid #E5E7EB;
+                             border-radius: 60px;
+                             min-width: 24px;
+                             max-width: 24px;
+                             height: 24px;
+                         }
+                         .close-icon {
+                             @include flex;
+                             width: 20px;
+                             height: 20px;
+                             font-size: 14px;
+                             background: $white;
+                             border: 1px solid #E5E7EB;
+                             border-radius: 60px;
+                             color: #6B7280;
+                             cursor: pointer;
+                             font-weight: bold;
+                             line-height: 1;
+                             transition: all 0.2s ease;
+                             &:hover {
+                                 background: $red;
+                                 border-color: $red;
+                                 color: $white;
+                             }
+                         }
+                         .select-and-tags-container {
+                             display: flex;
+                             align-items: center;
+                             flex-wrap: wrap;
+                             order: -1;
+                             @media (max-width: 1199px) {
+                                 order: 0;
+                             }
+                         }
+                         .main-dropdown-trigger {
+                             position: relative;
+                             display: flex;
+                             align-items: center;
+                             flex-wrap: wrap;
+                             .dropdown-menu-custom {
+                                 display: none;
+                                 position: absolute;
+                                 top: 120%;
+                                 right: $zero;
+                                 background-color: $white;
+                                 border: 1px solid #E5E5ED;
+                                 border-radius: 12px;
+                                 box-shadow: 0px 8px 24px -4px #00000026;
+                                 z-index: 4;
+                                 min-width: 200px;
+                                 overflow: hidden;
+                                 .dropdown-item-custom {
+                                     display: flex;
+                                     align-items: center;
+                                     gap: $com-spacing-2;
+                                     padding: $com-spacing-1 $com-spacing-4;
+                                     font-size: 14px;
+                                     color: #1A1A1A;
+                                     cursor: pointer;
+                                     transition: background 0.2s;
+                                     margin-bottom: $com-spacing-1;
+                                     &:last-child {
+                                         margin: $zero;
+                                     }
+                                     &:hover,
+                                     &.selected-item {
+                                         color: #6B47ED;
+                                         background: #F5F2FF;
+                                     }
+                                     &.selected-item {
+                                         font-weight: bold;
+                                         .check-mark {
+                                             display: inline-block;
+                                         }
+                                     }
+                                 }
+                                 .check-mark {
+                                     display: none;
+                                     font-size: 14px;
+                                     color: #6B47ED;
+                                 }
+                             }
+                         }
+                         .select-btn,
+                         .selected-tag {
+                             @include flex;
+                             gap: $com-spacing-2;
+                             color: $blak;
+                             border: none;
+                             padding: $zero $com-spacing-3;
+                             border-radius: 60px;
+                             cursor: pointer;
+                             font-size: 14px;
+                             font-weight: 500;
+                             background: #F3F4F6;
+                             border: 1px solid #E5E7EB;
+                             height: 36px;
+                             transition: all 0.2s ease;
+                             margin-top: $com-spacing-2;
+                         }
+                         .selected-tag,
+                         .separator-arrow {
+                             margin-inline-end: $com-spacing-3;
+                             margin-top: $com-spacing-2;
+                         }
+                     }
+                     .thewinner {
+                         align-content: center;
+                         min-width: 75px;
+                         border: 1px solid #FDE68A;
+                         font-size: 14px;
+                         font-weight: 700;
+                         border-radius: 60px;
+                         background: #FEF3C7;
+                         color: #92400E;
+                         padding: $zero $com-spacing-3;
+                         gap: $com-spacing-1;
+                         box-shadow: 0px 2px 8px 0px #00000012;
+                         margin-top: $com-spacing-2;
+                         @media (max-width: 1199px) {
+                             position: absolute;
+                             left: $zero;
+                         }
+                     }
                  }
                  .innertours {
                      position: relative;
@@ -204,17 +401,6 @@
                              padding: $zero $com-spacing-3;
                          }
                      }
-                     .thewinner {
-                         @include flex;
-                         min-width: 127px;
-                         border: 1.23px solid #C6AEEB;
-                         font-size: 14.43px;
-                         border-radius: 60px;
-                         background: linear-gradient(270deg, #5A27D4 0%, #1E1A4A 100%);
-                         color: $white;
-                         padding: $zero $com-spacing-3;
-                         gap: $com-spacing-1;
-                     }
                  }
              }
          }
@@ -224,6 +410,9 @@
              border: 2px solid #4D2B814D;
              background: $purple;
              margin-top: $com-spacing-3;
+             @media (max-width: 1199px) {
+                 padding: $com-spacing-3;
+             }
              .title {
                  display: flex;
                  align-items: center;
@@ -236,17 +425,17 @@
                  grid-template-columns: repeat(2, 1fr);
                  gap: 28px;
                  margin-top: $com-spacing-5;
-                 .difference {
+                 @media (max-width: 999px) {
+                     grid-template-columns: repeat(1, 1fr);
+                     gap: $com-spacing-3;
+                 }
+                 .team-box {
                      background: $white;
                      border-radius: 9px;
                      padding: $com-spacing-3;
                      border: 0.9px solid #D2D2D2;
                      @media (min-width: 1600px) {}
                      @media (min-width: 1900px) {}
-                     @media (max-width: 1199px) {
-                         // margin-top: $com-spacing-3;
-                         // padding: $com-spacing-3;
-                     }
                      .headtitle {
                          display: flex;
                          align-items: center;
@@ -272,12 +461,8 @@
                              //     max-width: 137px;
                              //     height: 50px;
                              // }
-                             @media (max-width: 667px) {
-                                 min-width: 110px;
-                                 max-width: 110px;
-                                 height: 34px;
+                             @media (max-width: 999px) {
                                  font-size: 14px;
-                                 box-shadow: 3.1px 3.1px 0px 0px $blak;
                              }
                              &.yellow {
                                  background: #F9AF19;
@@ -300,19 +485,19 @@
                              }
                          }
                      }
-                     .flex {
+                     .cards-grid {
                          display: grid;
                          grid-template-columns: repeat(4, 1fr);
                          align-items: center;
-                         gap: $com-spacing-2;
+                         gap: 34px;
                          margin-top: 18px;
-                         @media (min-width: 1900px) {
-                             gap: 11px;
-                         }
-                         @media (max-width: 667px) {
+                         //  @media (min-width: 1900px) {
+                         //      gap: 11px;
+                         //  }
+                         @media (max-width: 1199px) {
                              gap: $com-spacing-1;
                          }
-                         .game-card {
+                         .card {
                              position: relative;
                              cursor: pointer;
                              border-radius: 3.44px;
@@ -422,35 +607,21 @@
                                      padding: 5px $zero;
                                  }
                              }
-                             &.card-yellow {
-                                 // border: 1.72px solid #F9AF19;
-                                 .photo {
-                                     background: #F9AF19;
-                                 }
+                             &.card[data-id="1"] {
+                                 background: #F9AF19;
                              }
-                             &.card-blue {
-                                 // border: 1.72px solid #314AF7;
-                                 .photo {
-                                     background: #314AF7;
-                                 }
+                             &.card[data-id="2"] {
+                                 background: #314AF7;
                              }
-                             &.card-red {
-                                 // border: 1.72px solid #F60037;
-                                 .photo {
-                                     background: #F60037;
-                                 }
+                             &.card[data-id="3"] {
+                                 background: #F60037;
                              }
-                             &.card-black {
-                                 // border: 1.72px solid #212121;
-                                 .photo {
-                                     background: #212121;
-                                 }
+                             &.card[data-id="4"] {
+                                 background: #212121;
                              }
-                             &.card-gold {
-                                 // border: 1.72px solid #F2D87E;
-                                 .photo {
-                                     background: linear-gradient(90deg, #F2D87E 0%, #EBCA68 11%, #E3BD52 25%, #DFB445 39%, #DEB241 51%, #D3A93B 61%, #C9A036 78%, #C69E35 99%);
-                                 }
+                             &.active,
+                             &:hover {
+                                 filter: grayscale(0%);
                              }
                          }
                      }

@@ -427,13 +427,20 @@
       box-shadow: 6px 10px 0px #000000; }
 
 .after-pickgame {
-  padding-bottom: 160px; }
+  padding: 32px 0px 148px 0px; }
+  @media (max-width: 1199px) {
+    .after-pickgame {
+      padding: 12px 0px 110px 0px; } }
   .after-pickgame .inner {
     margin: 0px auto;
-    max-width: 1097px;
+    max-width: 1211px;
     border: 0.9px solid #00000033;
     border-radius: 10px;
     padding: 20px; }
+    @media (max-width: 1199px) {
+      .after-pickgame .inner {
+        padding: 0px;
+        border: 0px; } }
     .after-pickgame .inner .back {
       display: inline-flex;
       align-items: center;
@@ -449,7 +456,46 @@
       .after-pickgame .inner .details .minhead {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 12px; }
+        .after-pickgame .inner .details .minhead .infoitem {
+          position: relative;
+          display: flex;
+          align-items: center; }
+          .after-pickgame .inner .details .minhead .infoitem:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1; }
+          .after-pickgame .inner .details .minhead .infoitem .tooltip-text {
+            display: flex;
+            align-items: center;
+            visibility: hidden;
+            width: 160px;
+            background: #F60037;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1;
+            left: 32px;
+            font-size: 12px;
+            line-height: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border: 0.7px solid #000;
+            text-align: center; }
+            .after-pickgame .inner .details .minhead .infoitem .tooltip-text::after {
+              content: "";
+              position: absolute;
+              left: -5px;
+              margin-left: -5px;
+              border-width: 5px;
+              border-style: solid;
+              border-color: transparent #000 transparent transparent; }
+        .after-pickgame .inner .details .minhead .flex {
+          display: flex;
+          align-items: center;
+          gap: 12px; }
         .after-pickgame .inner .details .minhead .photo {
           display: flex;
           align-items: center;
@@ -497,17 +543,147 @@
           line-height: 1;
           padding-inline-end: 12px; }
       .after-pickgame .inner .details .itemtours {
-        display: flex;
-        align-items: center;
-        background: #C9C9C933;
-        border: 0.9px solid #D0D0D0;
+        background: #fff;
+        border: 1px solid #E5E7EB;
         padding: 12px;
         gap: 48px;
-        border-radius: 8px;
-        margin-top: 12px; }
+        border-radius: 12px;
+        margin-top: 12px;
+        box-shadow: 0px 2px 10px 0px #0000000D; }
         .after-pickgame .inner .details .itemtours .title {
-          color: #4D2B81;
-          font-size: 20px; }
+          color: #000;
+          font-size: 16px; }
+        .after-pickgame .inner .details .itemtours .flexitem {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          @media (max-width: 1199px) {
+            .after-pickgame .inner .details .itemtours .flexitem {
+              align-items: flex-start; } }
+          .after-pickgame .inner .details .itemtours .flexitem .flexselect {
+            position: relative;
+            display: flex;
+            align-items: center; }
+            @media (max-width: 1199px) {
+              .after-pickgame .inner .details .itemtours .flexitem .flexselect {
+                display: block; } }
+            .after-pickgame .inner .details .itemtours .flexitem .flexselect .separator-arrow {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #F3F4F6;
+              border: 1px solid #E5E7EB;
+              border-radius: 60px;
+              min-width: 24px;
+              max-width: 24px;
+              height: 24px; }
+            .after-pickgame .inner .details .itemtours .flexitem .flexselect .close-icon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 20px;
+              height: 20px;
+              font-size: 14px;
+              background: #fff;
+              border: 1px solid #E5E7EB;
+              border-radius: 60px;
+              color: #6B7280;
+              cursor: pointer;
+              font-weight: bold;
+              line-height: 1;
+              transition: all 0.2s ease; }
+              .after-pickgame .inner .details .itemtours .flexitem .flexselect .close-icon:hover {
+                background: #FE0000;
+                border-color: #FE0000;
+                color: #fff; }
+            .after-pickgame .inner .details .itemtours .flexitem .flexselect .select-and-tags-container {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              order: -1; }
+              @media (max-width: 1199px) {
+                .after-pickgame .inner .details .itemtours .flexitem .flexselect .select-and-tags-container {
+                  order: 0; } }
+            .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger {
+              position: relative;
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap; }
+              .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger .dropdown-menu-custom {
+                display: none;
+                position: absolute;
+                top: 120%;
+                right: 0px;
+                background-color: #fff;
+                border: 1px solid #E5E5ED;
+                border-radius: 12px;
+                box-shadow: 0px 8px 24px -4px #00000026;
+                z-index: 4;
+                min-width: 200px;
+                overflow: hidden; }
+                .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger .dropdown-menu-custom .dropdown-item-custom {
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  padding: 4px 16px;
+                  font-size: 14px;
+                  color: #1A1A1A;
+                  cursor: pointer;
+                  transition: background 0.2s;
+                  margin-bottom: 4px; }
+                  .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger .dropdown-menu-custom .dropdown-item-custom:last-child {
+                    margin: 0px; }
+                  .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger .dropdown-menu-custom .dropdown-item-custom:hover, .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger .dropdown-menu-custom .dropdown-item-custom.selected-item {
+                    color: #6B47ED;
+                    background: #F5F2FF; }
+                  .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger .dropdown-menu-custom .dropdown-item-custom.selected-item {
+                    font-weight: bold; }
+                    .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger .dropdown-menu-custom .dropdown-item-custom.selected-item .check-mark {
+                      display: inline-block; }
+                .after-pickgame .inner .details .itemtours .flexitem .flexselect .main-dropdown-trigger .dropdown-menu-custom .check-mark {
+                  display: none;
+                  font-size: 14px;
+                  color: #6B47ED; }
+            .after-pickgame .inner .details .itemtours .flexitem .flexselect .select-btn,
+            .after-pickgame .inner .details .itemtours .flexitem .flexselect .selected-tag {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              color: #000;
+              border: none;
+              padding: 0px 12px;
+              border-radius: 60px;
+              cursor: pointer;
+              font-size: 14px;
+              font-weight: 500;
+              background: #F3F4F6;
+              border: 1px solid #E5E7EB;
+              height: 36px;
+              transition: all 0.2s ease;
+              margin-top: 8px; }
+            .after-pickgame .inner .details .itemtours .flexitem .flexselect .selected-tag,
+            .after-pickgame .inner .details .itemtours .flexitem .flexselect .separator-arrow {
+              margin-inline-end: 12px;
+              margin-top: 8px; }
+          .after-pickgame .inner .details .itemtours .flexitem .thewinner {
+            align-content: center;
+            min-width: 75px;
+            border: 1px solid #FDE68A;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 60px;
+            background: #FEF3C7;
+            color: #92400E;
+            padding: 0px 12px;
+            gap: 4px;
+            box-shadow: 0px 2px 8px 0px #00000012;
+            margin-top: 8px; }
+            @media (max-width: 1199px) {
+              .after-pickgame .inner .details .itemtours .flexitem .thewinner {
+                position: absolute;
+                left: 0px; } }
         .after-pickgame .inner .details .itemtours .innertours {
           position: relative;
           display: flex;
@@ -538,24 +714,15 @@
               background: #4D2B81;
               color: #fff;
               padding: 0px 12px; }
-          .after-pickgame .inner .details .itemtours .innertours .thewinner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 127px;
-            border: 1.23px solid #C6AEEB;
-            font-size: 14.43px;
-            border-radius: 60px;
-            background: linear-gradient(270deg, #5A27D4 0%, #1E1A4A 100%);
-            color: #fff;
-            padding: 0px 12px;
-            gap: 4px; }
     .after-pickgame .inner .item-help {
       border-radius: 10px;
       padding: 20px;
       border: 2px solid #4D2B814D;
       background: #4D2B81;
       margin-top: 12px; }
+      @media (max-width: 1199px) {
+        .after-pickgame .inner .item-help {
+          padding: 12px; } }
       .after-pickgame .inner .item-help .title {
         display: flex;
         align-items: center;
@@ -567,19 +734,23 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 28px;
         margin-top: 20px; }
-        .after-pickgame .inner .item-help .rowbox .difference {
+        @media (max-width: 999px) {
+          .after-pickgame .inner .item-help .rowbox {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 12px; } }
+        .after-pickgame .inner .item-help .rowbox .team-box {
           background: #fff;
           border-radius: 9px;
           padding: 12px;
           border: 0.9px solid #D2D2D2; }
-          .after-pickgame .inner .item-help .rowbox .difference .headtitle {
+          .after-pickgame .inner .item-help .rowbox .team-box .headtitle {
             display: flex;
             align-items: center;
             justify-content: space-between; }
-            .after-pickgame .inner .item-help .rowbox .difference .headtitle .title {
+            .after-pickgame .inner .item-help .rowbox .team-box .headtitle .title {
               color: #000;
               font-size: 20px; }
-            .after-pickgame .inner .item-help .rowbox .difference .headtitle .bottom {
+            .after-pickgame .inner .item-help .rowbox .team-box .headtitle .bottom {
               min-width: 93px;
               max-width: 93px;
               padding: 0px;
@@ -591,59 +762,52 @@
               cursor: default;
               box-shadow: 3.96px 3.96px 0px 0px #000;
               transform: none !important; }
-              @media (max-width: 667px) {
-                .after-pickgame .inner .item-help .rowbox .difference .headtitle .bottom {
-                  min-width: 110px;
-                  max-width: 110px;
-                  height: 34px;
-                  font-size: 14px;
-                  box-shadow: 3.1px 3.1px 0px 0px #000; } }
-              .after-pickgame .inner .item-help .rowbox .difference .headtitle .bottom.yellow {
+              @media (max-width: 999px) {
+                .after-pickgame .inner .item-help .rowbox .team-box .headtitle .bottom {
+                  font-size: 14px; } }
+              .after-pickgame .inner .item-help .rowbox .team-box .headtitle .bottom.yellow {
                 background: #F9AF19; }
-              .after-pickgame .inner .item-help .rowbox .difference .headtitle .bottom.red {
+              .after-pickgame .inner .item-help .rowbox .team-box .headtitle .bottom.red {
                 background: #F60037; }
-            .after-pickgame .inner .item-help .rowbox .difference .headtitle .itemnumber {
+            .after-pickgame .inner .item-help .rowbox .team-box .headtitle .itemnumber {
               font-size: 50px;
               font-weight: 900;
               color: #F9AF19;
               text-shadow: -3.85px -3.85px 0 #000, 3.85px -3.85px 0 #000, -3.85px 3.85px 0 #000, 3.85px 3.85px 0 #000, 0px -3.85px 0 #000, 0px 3.85px 0 #000, -3.85px 0px 0 #000, 3.85px 0px 0 #000; }
-              .after-pickgame .inner .item-help .rowbox .difference .headtitle .itemnumber.rednum {
+              .after-pickgame .inner .item-help .rowbox .team-box .headtitle .itemnumber.rednum {
                 color: #F60037; }
               @media (max-width: 667px) {
-                .after-pickgame .inner .item-help .rowbox .difference .headtitle .itemnumber {
+                .after-pickgame .inner .item-help .rowbox .team-box .headtitle .itemnumber {
                   font-size: 34px; } }
-          .after-pickgame .inner .item-help .rowbox .difference .flex {
+          .after-pickgame .inner .item-help .rowbox .team-box .cards-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             align-items: center;
-            gap: 8px;
+            gap: 34px;
             margin-top: 18px; }
-            @media (min-width: 1900px) {
-              .after-pickgame .inner .item-help .rowbox .difference .flex {
-                gap: 11px; } }
-            @media (max-width: 667px) {
-              .after-pickgame .inner .item-help .rowbox .difference .flex {
+            @media (max-width: 1199px) {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid {
                 gap: 4px; } }
-            .after-pickgame .inner .item-help .rowbox .difference .flex .game-card {
+            .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card {
               position: relative;
               cursor: pointer;
               border-radius: 3.44px;
               border: 1.72px solid #F9AF19;
               filter: grayscale(1);
               transition: filter 0.3s ease; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.doneused {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.doneused {
                 cursor: not-allowed; }
-                .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.doneused .photo,
-                .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.doneused .title {
+                .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.doneused .photo,
+                .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.doneused .title {
                   filter: blur(1px); }
-                .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.doneused:hover .tooltip-text {
+                .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.doneused:hover .tooltip-text {
                   visibility: visible;
                   opacity: 1; }
-                .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.doneused .cancel {
+                .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.doneused .cancel {
                   display: flex;
                   align-items: center;
                   justify-content: center; }
-                .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.doneused .tooltip-text {
+                .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.doneused .tooltip-text {
                   visibility: hidden;
                   width: 100%;
                   background: #F60037;
@@ -662,12 +826,12 @@
                   transition: opacity 0.3s;
                   border: 0.7px solid #000;
                   text-align: center; }
-                  .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.doneused .tooltip-text svg {
+                  .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.doneused .tooltip-text svg {
                     display: block;
                     margin: 0px auto 4px auto;
                     width: 15px;
                     height: 15px; }
-                  .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.doneused .tooltip-text::after {
+                  .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.doneused .tooltip-text::after {
                     content: "";
                     position: absolute;
                     top: 102%;
@@ -676,15 +840,15 @@
                     border-width: 5px;
                     border-style: solid;
                     border-color: #F60037 transparent transparent transparent; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .abolition {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .abolition {
                 position: absolute;
                 left: 8px;
                 top: 8px;
                 cursor: pointer; }
-                .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .abolition svg {
+                .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .abolition svg {
                   width: 20px !important;
                   height: 20px !important; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .cancel {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .cancel {
                 display: none;
                 content: '';
                 position: absolute;
@@ -696,22 +860,22 @@
                 height: 100%;
                 background: #00000099;
                 z-index: 1; }
-                .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .cancel svg {
+                .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .cancel svg {
                   width: 37px;
                   height: 37px; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .photo {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .photo {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 91px;
                 overflow: hidden; }
                 @media (max-width: 667px) {
-                  .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .photo {
+                  .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .photo {
                     height: auto;
                     padding: 12px; } }
-                .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .photo img {
+                .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .photo img {
                   max-width: 100%; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .title {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .title {
                 font-weight: 400;
                 font-size: 15.48px;
                 text-align: center;
@@ -721,19 +885,19 @@
                 white-space: nowrap;
                 justify-content: center; }
                 @media (max-width: 667px) {
-                  .after-pickgame .inner .item-help .rowbox .difference .flex .game-card .title {
+                  .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card .title {
                     font-size: 12px;
                     padding: 5px 0px; } }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.card-yellow .photo {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.card[data-id="1"] {
                 background: #F9AF19; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.card-blue .photo {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.card[data-id="2"] {
                 background: #314AF7; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.card-red .photo {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.card[data-id="3"] {
                 background: #F60037; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.card-black .photo {
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.card[data-id="4"] {
                 background: #212121; }
-              .after-pickgame .inner .item-help .rowbox .difference .flex .game-card.card-gold .photo {
-                background: linear-gradient(90deg, #F2D87E 0%, #EBCA68 11%, #E3BD52 25%, #DFB445 39%, #DEB241 51%, #D3A93B 61%, #C9A036 78%, #C69E35 99%); }
+              .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card.active, .after-pickgame .inner .item-help .rowbox .team-box .cards-grid .card:hover {
+                filter: grayscale(0%); }
     .after-pickgame .inner .btnstart {
       width: 100%;
       margin-top: 12px;

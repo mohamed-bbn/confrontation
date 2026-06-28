@@ -2518,8 +2518,53 @@
             height: auto;
         }
     }
+    .barfilter {
+        position: relative;
+        // display: flex;
+        gap: $com-spacing-6;
+        background: $purple;
+        border-radius: 50px;
+        padding: 17px $com-spacing-3;
+        .formsearch {
+            position: absolute;
+            top: 11px;
+            right: 11px;
+            display: flex;
+            align-items: center;
+            min-width: 200px;
+            max-width: 200px;
+            height: 40px;
+            border-radius: 60px;
+            margin: $zero;
+            overflow: hidden;
+            .form-control {
+                width: $fullwidth;
+                height: $fullwidth;
+                border: $zero;
+                box-shadow: $none;
+                outline: $none;
+                background: $ofwhite;
+                text-transform: $none;
+                padding-inline-start: 30px;
+            }
+            .icon {
+                @include position(absolute, $right: $com-spacing-3);
+                padding: $zero;
+                background: $none;
+                outline: $none;
+                outline-style: $none;
+                border: $zero;
+                cursor: pointer;
+                svg {
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+        }
+    }
     .filter-wrapper {
         position: relative;
+        margin-inline-start: 220px;
         &:hover {
             .scroll-arrow {
                 opacity: 1;
@@ -2552,10 +2597,10 @@
                 pointer-events: none;
             }
             &.arrow-right {
-                right: $com-spacing-2;
+                right: $zero;
             }
             &.arrow-left {
-                left: $com-spacing-2;
+                left: $zero;
                 svg {
                     rotate: 180deg;
                 }
@@ -2564,9 +2609,6 @@
         .filter-container {
             display: flex;
             gap: $com-spacing-6;
-            background: $purple;
-            border-radius: 50px;
-            padding: 11px $com-spacing-6;
             overflow-x: auto;
             white-space: nowrap;
             scroll-behavior: smooth;
@@ -2594,10 +2636,6 @@
     }
     .grid-container {
         position: relative;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        align-items: flex-start;
-        gap: 18px;
         transition: all 0.5s ease-in-out;
         min-width: 1001px;
         height: calc(100% - 62px);
@@ -2631,6 +2669,12 @@
             background-color: $purple;
             border-radius: 60px;
             margin-top: 23px;
+        }
+        .team-box {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            align-items: flex-start;
+            gap: $com-spacing-2;
         }
         .card {
             display: block;
@@ -2680,7 +2724,7 @@
                     }
                 }
             }
-            .icon {
+            .iconinfo {
                 position: absolute;
                 left: $zero;
                 top: -16px;
@@ -2703,6 +2747,17 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+        }
+    }
+    #noResults {
+        display: none;
+        text-align: center;
+        margin-top: $com-spacing-8;
+        color: $red;
+        font-size: 20px;
+        svg {
+            margin: $zero $auto $com-spacing-1 $auto;
+            display: block;
         }
     }
 }
@@ -2743,10 +2798,10 @@
     }
     .logo {
         img {
-            max-width: 142px;
-            @media (min-width: 1600px) {
-                max-width: 152px;
-            }
+            max-width: 143px;
+            // @media (min-width: 1600px) {
+            //     max-width: 152px;
+            // }
             @media (max-width: 1199px) {
                 max-width: 80px;
             }
@@ -2759,7 +2814,7 @@
         display: flex;
         align-items: center;
         gap: $com-spacing-5;
-        margin-bottom: 6px;
+        margin-bottom: 22px;
         @media (max-width: 1199px) {
             gap: $com-spacing-3;
         }
@@ -2785,6 +2840,7 @@
                 zoom: 66%;
             }
             .subcard {
+                position: relative;
                 @include flex;
                 background: $white;
                 border: 2px solid $blak;
@@ -2803,10 +2859,31 @@
                         height: 20px;
                     }
                 }
+                .title,
+                .iconinfo {
+                    display: none;
+                }
                 img {
                     max-width: $fullwidth;
                     max-height: $fullwidth;
                     // object-fit: cover;
+                }
+                // .photo {
+                //     align-content: center;
+                //     width: $fullwidth;
+                //     height: $fullwidth;
+                //     img {
+                //         max-width: $fullwidth;
+                //         max-height: $fullwidth;
+                //     }
+                // }
+                .remove-btn {
+                    position: absolute;
+                    top: $com-spacing-1;
+                    left: $com-spacing-1;
+                    width: 16px;
+                    height: 16px;
+                    cursor: pointer;
                 }
             }
         }
