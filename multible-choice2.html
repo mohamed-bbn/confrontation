@@ -12,11 +12,11 @@
 
 <body>
 
-
     <div id="welcome-splash">
         <img loading="lazy" src="images/splash.gif" alt="المواجهة">
     </div>
     <!-- ENd welcome-splash -->
+
 
     <header class="header-competition">
         <div class="container">
@@ -28,7 +28,7 @@
             <!-- ENd logo -->
 
             <div class="btn-actions">
-                <div class="innerbtn active">
+                <div class="innerbtn finish">
                     <span class="num">3/6</span>
                     <p class="text">المجموعة الأولى</p>
                     <ul class="circles">
@@ -42,12 +42,12 @@
                 </div>
                 <!-- End innerbtn -->
                 <i class="line"></i>
-                <div class="innerbtn">
+                <div class="innerbtn active">
                     <span class="num">0/4</span>
                     <p class="text">المجموعة الثانية</p>
                     <ul class="circles">
-                        <li></li>
-                        <li></li>
+                        <li class="active"></li>
+                        <li class="notactive"></li>
                         <li></li>
                         <li></li>
                     </ul>
@@ -114,7 +114,6 @@
     </header>
     <!-- End header -->
 
-
     <div class="modal popupcard fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -150,7 +149,6 @@
         </div>
     </div>
     <!-- End modal -->
-
 
     <section class="multible-choice">
         <div class="auxiliary-means">
@@ -249,7 +247,6 @@
         <!-- End auxiliary-means -->
         <div class="contentinner">
             <div class="inneroptions">
-
                 <div class="timer-container">
                     <div class="tabs-container">
                         <button class="tab-btn active" data-phase="purple" data-time="15">وقت قراءة السؤال</button>
@@ -279,53 +276,56 @@
                 </div>
                 <!-- End timer-container -->
                 <div class="question">
-                    <h3 class="title">رتب التالي ترتيبا زمنيا من الاقدم الى الاحدث ..</h3>
+                    <h3 class="title">من هو أفضل هداف في تاريخ كأس العالم؟</h3>
                 </div>
                 <!-- End question -->
-                <div class="sortable-list">
-                    <div class="sort-item" data-id="wine">
-                        <div class="number-badge"></div>
-                        <div class="item-text">نزول تحريم الخمر</div>
-                    </div>
-                    <div class="sort-item" data-id="friday">
-                        <div class="number-badge"></div>
-                        <div class="item-text">أول صلاة جمعة</div>
-                    </div>
-                    <div class="sort-item" data-id="hijab">
-                        <div class="number-badge"></div>
-                        <div class="item-text">نزول آية الحجاب</div>
-                    </div>
-                    <div class="sort-item" data-id="hajj">
-                        <div class="number-badge"></div>
-                        <div class="item-text">فرض الحج</div>
-                    </div>
+                <div class="subradio">
+                    <label class="che-box">
+                        <input type="radio" name="radio">
+                        <div class="label-text">   
+                              <i class="letters">أ</i>
+                            <span class="text-chek">بيليه</span>
+                        </div>
+                    </label>
+                    <!-- End che-box -->
+                    <label class="che-box">
+                        <input type="radio" name="radio">
+                        <div class="label-text">   
+                              <i class="letters">ب</i>
+                            <span class="text-chek">  كيليان مبابي</span>
+                        </div>
+                    </label>
+                    <!-- End che-box -->
+                    <label class="che-box">
+                        <input type="radio" name="radio">
+                        <div class="label-text">   
+                              <i class="letters">ج</i>
+                            <span class="text-chek">ليونيل ميسي</span>
+                        </div>
+                    </label>
+                    <!-- End che-box -->
                 </div>
-                <!-- End sortable-list -->
-            </div>
-            <!-- End arrange-events -->
 
+            </div>
+            <!-- End inneroptions -->
         </div>
-        <!-- End contentinner -->
+        <!-- End container -->
     </section>
     <!-- End multible-choice -->
 
 
     <footer class="footer-widget">
         <div class="container">
-            <nav class="footer-nav">
-                <a href="#">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1457_40796)"> <path d="M7.49923 3.99989V8.00021L10.1661 9.33365M14.1664 8.00021C14.1664 11.6824 11.1814 14.6674 7.49923 14.6674C3.81704 14.6674 0.832031 11.6824 0.832031 8.00021C0.832031 4.31801 3.81704 1.33301 7.49923 1.33301C11.1814 1.33301 14.1664 4.31801 14.1664 8.00021Z" stroke="white" stroke-width="2" stroke-linecap="round"/> </g> <defs> <clipPath id="clip0_1457_40796"> <rect width="16" height="16" fill="white"/> </clipPath> </defs> </svg>                    فرصة للفريق الاخر
-                </a>
-                <a href="#">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1457_40792)"> <path d="M6.66579 9.77379V10.8579C6.66327 11.0863 6.60211 11.3103 6.48816 11.5083C6.37422 11.7063 6.21131 11.8717 6.01507 11.9886C5.59847 12.2972 5.25957 12.6987 5.02532 13.1612C4.79106 13.6237 4.6679 14.1344 4.66563 14.6528M9.33267 9.77379V10.8579C9.33519 11.0863 9.39635 11.3103 9.5103 11.5083C9.62424 11.7063 9.78715 11.8717 9.98339 11.9886C10.4 12.2972 10.7389 12.6987 10.9731 13.1612C11.2074 13.6237 11.3306 14.1344 11.3328 14.6528M11.9996 6.00005H12.9996C13.4417 6.00005 13.8657 5.82444 14.1782 5.51185C14.4908 5.19927 14.6664 4.77531 14.6664 4.33325C14.6664 3.89119 14.4908 3.46723 14.1782 3.15464C13.8657 2.84206 13.4417 2.66645 12.9996 2.66645H11.9996M11.9996 6.00005C11.9996 7.061 11.5781 8.0785 10.8279 8.8287C10.0777 9.57891 9.06018 10.0004 7.99923 10.0004C6.93828 10.0004 5.92078 9.57891 5.17058 8.8287C4.42037 8.0785 3.99891 7.061 3.99891 6.00005M11.9996 6.00005V1.99973C11.9996 1.8229 11.9293 1.65332 11.8043 1.52829C11.6792 1.40325 11.5097 1.33301 11.3328 1.33301H4.66563C4.48881 1.33301 4.31922 1.40325 4.19419 1.52829C4.06916 1.65332 3.99891 1.8229 3.99891 1.99973V6.00005M3.99891 6.00005H2.99883C2.55677 6.00005 2.13281 5.82444 1.82023 5.51185C1.50764 5.19927 1.33203 4.77531 1.33203 4.33325C1.33203 3.89119 1.50764 3.46723 1.82023 3.15464C2.13281 2.84206 2.55677 2.66645 2.99883 2.66645H3.99891M2.66547 14.6674H13.333" stroke="white" stroke-width="2" stroke-linecap="round"/> </g> <defs> <clipPath id="clip0_1457_40792"> <rect width="16" height="16" fill="white"/> </clipPath> </defs> </svg>                    كشف الاجابة
-                </a>
-                <a href="#">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1 5.6672H10.3344M5.6672 10.3344L10.3344 5.6672L5.6672 1" stroke="white" stroke-width="2" stroke-linecap="round"/> </svg> اعادة
-                    الوقت
-                </a>
+            <h6 class="title">مين اللي جاوب صح ؟</h6>
+            <nav class="answered">
+                <a href="#">الفريق الاول </a>
+                <a href="#">الفريق الثاني </a>
+                <a href="#">ولا أحد</a>
             </nav>
         </div>
     </footer>
+
+
 
 
     <script src="js/jquery.js"></script>

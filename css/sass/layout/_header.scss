@@ -236,11 +236,11 @@
 }
 
 .header-competition {
-    padding: 6px $zero;
-    border-bottom: 7px solid #FFCB0C;
-    @media (min-width: 1900px) {
-        padding: 21px $zero;
-    }
+    display: flex;
+    align-items: center;
+    height: 85px;
+    border-bottom: 1px solid #00000033;
+    @media (min-width: 1900px) {}
     @media (max-width: 550px) {
         // zoom: 60%;
     }
@@ -249,113 +249,145 @@
         align-items: center;
         justify-content: space-between;
         gap: $com-spacing-3;
-        max-width: 94%;
-        @media (max-width: 999px) {
-            max-width: $fullwidth;
-        }
+        max-width: $fullwidth;
+        @media (max-width: 999px) {}
     }
     .logo {
         img {
-            max-width: 128px;
-            @media (min-width: 1900px) {
-                max-width: 185px;
-            }
-            @media (max-width: 550px) {
+            max-width: 111px;
+            @media (max-width: 999px) {
                 max-width: 80px;
             }
-            // @media (max-width: 999px) {
-            //     max-width: 110px;
-            // }
         }
     }
     .btn-actions {
         display: flex;
         align-items: center;
-        gap: $com-spacing-8;
-        // @media (max-width: 1199px) {
-        //     display: none;
-        // }
-        .flex {
-            display: flex;
-            align-items: center;
-            gap: $com-spacing-4;
-            .bottom {
-                min-width: 116px;
-                max-width: 116px;
-                padding: $zero;
-                height: 32px;
-                color: #CCF3DD;
-                font-size: 13px;
-                border-radius: 10px;
-                border: 1.59px solid $blak;
-                box-shadow: 3.19px 3.19px 0px 0px $blak;
-                transform: none !important;
-                @media (min-width: 1900px) {
-                    min-width: 185px;
-                    max-width: 185px;
-                    height: 52px;
-                    font-size: 20px;
-                }
-                &.green {
-                    background: #0BB458;
-                }
-                &.purple {
-                    background: #C03FFF;
+        gap: 2px;
+        @media (min-width: 1600px) {
+            gap: 7px;
+        }
+        .cup {
+            img {
+                width: 79px;
+                height: 64px
+            }
+        }
+        .innerbtn {
+            @include flex;
+            gap: $com-spacing-1;
+            background: #EDEDF5;
+            height: 42px;
+            border-radius: 8.88px;
+            padding: $com-spacing-2;
+            @media (min-width: 1600px) {
+                padding: $com-spacing-3;
+            }
+            .num {
+                color: #8C8CA6B2;
+                font-size: 8.88px;
+                font-weight: 400;
+            }
+            .text {
+                color: #8C8CA6;
+                font-size: 10px;
+                white-space: nowrap;
+            }
+            .circles {
+                display: flex;
+                align-items: center;
+                gap: 3.55px;
+                li {
+                    min-width: 10px;
+                    max-width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: #155DFC;
+                    background: #8C8CA640;
                 }
             }
-            .itemnumber {
-                font-size: 60px;
-                font-weight: 900;
-                color: #FF7D75;
-                text-shadow: -3.85px -3.85px 0 #000, 3.85px -3.85px 0 #000, -3.85px 3.85px 0 #000, 3.85px 3.85px 0 #000, 0px -3.85px 0 #000, 0px 3.85px 0 #000, -3.85px 0px 0 #000, 3.85px 0px 0 #000;
-            }
-            &:last-child {
-                .itemnumber {
-                    color: #FFCB0C;
+            &.active {
+                background: $white;
+                border: 1.78px solid #6E40ED;
+                box-shadow: 0px 2.66px 8.88px 0px #6E40ED2E;
+                .num {
+                    color: #6E40ED;
+                }
+                .text {
+                    color: $blak;
+                }
+                .circles {
+                    li {
+                        &.active {
+                            background: #6E40ED;
+                        }
+                        &.notactive {
+                            background: $white;
+                            border: 1.78px solid #6E40ED;
+                        }
+                    }
                 }
             }
+            &.finish {
+                background: #0A996B14;
+                border: 1.78px solid #0A996B59;
+                .num {
+                    color: #0A996B;
+                }
+                .text {
+                    color: #0A7352;
+                }
+                .circles {
+                    li {
+                        background: #0A996B;
+                    }
+                }
+            }
+        }
+        .line {
+            min-width: 17px;
+            max-width: 17px;
+            height: 1.77px;
+            border-radius: 1.78px;
+            background: #8C8CA633;
         }
     }
     .actions {
         display: flex;
         align-items: center;
-        gap: $com-spacing-6;
-        .title {
-            font-family: 'graphicschool-regular';
-            color: $blak;
-            font-size: 28px;
-            text-shadow: -1px 1px 0 #FFCB0C, 1px -1px 0 #FFCB0C, -1px 1px 0 #FFCB0C, 1px 1px 0 #FFCB0C, 0px 1px 0 #000, 0px 1px 0 #FFCB0C, -1px 0px 0 #FFCB0C, 1px 0px 0 #FFCB0C;
-            @media (min-width: 1900px) {
-                font-size: 44px;
-            }
-            @media (max-width:999px) {
-                display: none;
-            }
-        }
-        .itemlink {
+        gap: 6px;
+        a {
             @include flex;
             gap: $com-spacing-1;
             background: #155DFC;
             color: $white;
-            min-width: 80px;
-            max-width: 80px;
-            height: 25px;
-            border-radius: 10px;
-            font-size: 9px;
+            min-width: 84px;
+            max-width: 84px;
+            height: 26px;
+            border-radius: 6.66px;
+            font-size: 10px;
             // padding: $com-spacing-2;
             cursor: pointer;
-            border: 1.25px solid $blak;
+            border: 1.48px solid $blak;
+            @include transition(all 0.1s ease-in-out 0s);
             @media (min-width: 1900px) {
-                min-width: 126px;
-                max-width: 126px;
-                height: 40px;
-                font-size: 14px;
+                font-size: 13.32px;
             }
             svg {
                 min-width: 12px;
                 max-width: 12px;
                 height: 12px;
             }
+            &:hover {
+                transform: translate(1px, -2px);
+            }
+        }
+        .sharing {
+            background: $white;
+            color: #155DFC;
+        }
+        .exit {
+            background: #EF4444;
         }
     }
 }

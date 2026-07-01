@@ -255,103 +255,126 @@
           color: #FE0000; }
 
 .header-competition {
-  padding: 6px 0px;
-  border-bottom: 7px solid #FFCB0C; }
-  @media (min-width: 1900px) {
-    .header-competition {
-      padding: 21px 0px; } }
+  display: flex;
+  align-items: center;
+  height: 85px;
+  border-bottom: 1px solid #00000033; }
   .header-competition .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    max-width: 94%; }
-    @media (max-width: 999px) {
-      .header-competition .container {
-        max-width: 100%; } }
+    max-width: 100%; }
   .header-competition .logo img {
-    max-width: 128px; }
-    @media (min-width: 1900px) {
-      .header-competition .logo img {
-        max-width: 185px; } }
-    @media (max-width: 550px) {
+    max-width: 111px; }
+    @media (max-width: 999px) {
       .header-competition .logo img {
         max-width: 80px; } }
   .header-competition .btn-actions {
     display: flex;
     align-items: center;
-    gap: 48px; }
-    .header-competition .btn-actions .flex {
+    gap: 2px; }
+    @media (min-width: 1600px) {
+      .header-competition .btn-actions {
+        gap: 7px; } }
+    .header-competition .btn-actions .cup img {
+      width: 79px;
+      height: 64px; }
+    .header-competition .btn-actions .innerbtn {
       display: flex;
       align-items: center;
-      gap: 16px; }
-      .header-competition .btn-actions .flex .bottom {
-        min-width: 116px;
-        max-width: 116px;
-        padding: 0px;
-        height: 32px;
-        color: #CCF3DD;
-        font-size: 13px;
-        border-radius: 10px;
-        border: 1.59px solid #000;
-        box-shadow: 3.19px 3.19px 0px 0px #000;
-        transform: none !important; }
-        @media (min-width: 1900px) {
-          .header-competition .btn-actions .flex .bottom {
-            min-width: 185px;
-            max-width: 185px;
-            height: 52px;
-            font-size: 20px; } }
-        .header-competition .btn-actions .flex .bottom.green {
-          background: #0BB458; }
-        .header-competition .btn-actions .flex .bottom.purple {
-          background: #C03FFF; }
-      .header-competition .btn-actions .flex .itemnumber {
-        font-size: 60px;
-        font-weight: 900;
-        color: #FF7D75;
-        text-shadow: -3.85px -3.85px 0 #000, 3.85px -3.85px 0 #000, -3.85px 3.85px 0 #000, 3.85px 3.85px 0 #000, 0px -3.85px 0 #000, 0px 3.85px 0 #000, -3.85px 0px 0 #000, 3.85px 0px 0 #000; }
-      .header-competition .btn-actions .flex:last-child .itemnumber {
-        color: #FFCB0C; }
+      justify-content: center;
+      gap: 4px;
+      background: #EDEDF5;
+      height: 42px;
+      border-radius: 8.88px;
+      padding: 8px; }
+      @media (min-width: 1600px) {
+        .header-competition .btn-actions .innerbtn {
+          padding: 12px; } }
+      .header-competition .btn-actions .innerbtn .num {
+        color: #8C8CA6B2;
+        font-size: 8.88px;
+        font-weight: 400; }
+      .header-competition .btn-actions .innerbtn .text {
+        color: #8C8CA6;
+        font-size: 10px;
+        white-space: nowrap; }
+      .header-competition .btn-actions .innerbtn .circles {
+        display: flex;
+        align-items: center;
+        gap: 3.55px; }
+        .header-competition .btn-actions .innerbtn .circles li {
+          min-width: 10px;
+          max-width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #155DFC;
+          background: #8C8CA640; }
+      .header-competition .btn-actions .innerbtn.active {
+        background: #fff;
+        border: 1.78px solid #6E40ED;
+        box-shadow: 0px 2.66px 8.88px 0px #6E40ED2E; }
+        .header-competition .btn-actions .innerbtn.active .num {
+          color: #6E40ED; }
+        .header-competition .btn-actions .innerbtn.active .text {
+          color: #000; }
+        .header-competition .btn-actions .innerbtn.active .circles li.active {
+          background: #6E40ED; }
+        .header-competition .btn-actions .innerbtn.active .circles li.notactive {
+          background: #fff;
+          border: 1.78px solid #6E40ED; }
+      .header-competition .btn-actions .innerbtn.finish {
+        background: #0A996B14;
+        border: 1.78px solid #0A996B59; }
+        .header-competition .btn-actions .innerbtn.finish .num {
+          color: #0A996B; }
+        .header-competition .btn-actions .innerbtn.finish .text {
+          color: #0A7352; }
+        .header-competition .btn-actions .innerbtn.finish .circles li {
+          background: #0A996B; }
+    .header-competition .btn-actions .line {
+      min-width: 17px;
+      max-width: 17px;
+      height: 1.77px;
+      border-radius: 1.78px;
+      background: #8C8CA633; }
   .header-competition .actions {
     display: flex;
     align-items: center;
-    gap: 24px; }
-    .header-competition .actions .title {
-      font-family: 'graphicschool-regular';
-      color: #000;
-      font-size: 28px;
-      text-shadow: -1px 1px 0 #FFCB0C, 1px -1px 0 #FFCB0C, -1px 1px 0 #FFCB0C, 1px 1px 0 #FFCB0C, 0px 1px 0 #000, 0px 1px 0 #FFCB0C, -1px 0px 0 #FFCB0C, 1px 0px 0 #FFCB0C; }
-      @media (min-width: 1900px) {
-        .header-competition .actions .title {
-          font-size: 44px; } }
-      @media (max-width: 999px) {
-        .header-competition .actions .title {
-          display: none; } }
-    .header-competition .actions .itemlink {
+    gap: 6px; }
+    .header-competition .actions a {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 4px;
       background: #155DFC;
       color: #fff;
-      min-width: 80px;
-      max-width: 80px;
-      height: 25px;
-      border-radius: 10px;
-      font-size: 9px;
+      min-width: 84px;
+      max-width: 84px;
+      height: 26px;
+      border-radius: 6.66px;
+      font-size: 10px;
       cursor: pointer;
-      border: 1.25px solid #000; }
+      border: 1.48px solid #000;
+      -moz-transition: all 0.1s ease-in-out 0s;
+      -o-transition: all 0.1s ease-in-out 0s;
+      -webkit-transition: all 0.1s ease-in-out 0s;
+      transition: all 0.1s ease-in-out 0s; }
       @media (min-width: 1900px) {
-        .header-competition .actions .itemlink {
-          min-width: 126px;
-          max-width: 126px;
-          height: 40px;
-          font-size: 14px; } }
-      .header-competition .actions .itemlink svg {
+        .header-competition .actions a {
+          font-size: 13.32px; } }
+      .header-competition .actions a svg {
         min-width: 12px;
         max-width: 12px;
         height: 12px; }
+      .header-competition .actions a:hover {
+        transform: translate(1px, -2px); }
+    .header-competition .actions .sharing {
+      background: #fff;
+      color: #155DFC; }
+    .header-competition .actions .exit {
+      background: #EF4444; }
 
 .item-slider {
   background: #4D2B81;

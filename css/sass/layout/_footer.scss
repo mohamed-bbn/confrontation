@@ -116,3 +116,99 @@
     box-shadow: 0px -16px 0px 0px #ededed;
     border-radius: 40px 40px $zero $zero;
 }
+
+.footer-widget {
+    position: relative;
+    width: $fullwidth;
+    height: 88px;
+    background: $purple;
+    .container {
+        @include flex;
+        gap: $com-spacing-4;
+        height: $fullwidth;
+    }
+    .title {
+        color: $white;
+        font-size: 32px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        left: $zero;
+        top: $zero;
+        width: 200px;
+        height: $fullwidth;
+        background: url(../images/f-l.svg) no-repeat;
+        background-size: $fullwidth $fullwidth;
+        @media (min-width: 1600px) {
+            width: 350px;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        right: $zero;
+        top: $zero;
+        width: 200px;
+        height: $fullwidth;
+        background: url(../images/f-r.svg) no-repeat;
+        background-size: $fullwidth $fullwidth;
+        @media (min-width: 1600px) {
+            width: 327px;
+        }
+    }
+    .footer-nav {
+        @include flex;
+        gap: $com-spacing-4;
+        a {
+            @include flex;
+            gap: 10px;
+            min-width: 169px;
+            height: 48px;
+            border: 2px solid $white;
+            border-radius: 8px;
+            color: $white;
+            font-size: 14px;
+            font-weight: 700;
+            @include transition(all 0.1s ease-in-out 0s);
+            &:hover {
+                transform: translate(1px, -2px);
+            }
+            &:nth-child(2) {
+                background: #00D166;
+                border: 2px solid #00D166;
+            }
+            &:nth-child(3) {
+                background: #FFFFFF26;
+            }
+        }
+    }
+    .answered {
+        @include flex;
+        gap: $com-spacing-4;
+        a {
+            @include flex;
+            gap: 10px;
+            min-width: 136px;
+            max-width: 136px;
+            height: 50px;
+            border: 2.46px solid $blak;
+            border-radius: 10px;
+            color: $blak;
+            font-size: 20px;
+            font-weight: 700;
+            background: #F9AF19;
+            @include transition(all 0.1s ease-in-out 0s);
+            &:hover {
+                transform: translate(1px, -2px);
+            }
+            &:nth-child(2) {
+                background: #F60037;
+                color: $white;
+            }
+            &:nth-child(3) {
+                background: $white;
+            }
+        }
+    }
+}

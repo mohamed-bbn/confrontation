@@ -254,50 +254,81 @@ $(document).ready(function() {
     /*----------------------------------------
       COUNTDOWN TIMER & PROGRESS BAR
     ----------------------------------------*/
-    let count = 10;
-    const totalDuration = 10;
-    const $starBg = $('#starBg');
-    const $timerCircle = $('#timerCircle');
-    const $progressBar = $('#progressBar');
-    const $progressDot = $('#progressDot');
+    let timerInterval;
+    let totalTime = 15;
+    let timeLeft = totalTime * 1000;
+    let isRunning = false;
+    const step = 100;
 
-    $progressBar.css('width', '0%');
-    $progressDot.css('left', '0%');
-    $('#num').text(count);
+    function updateTimerUI() {
+        let totalTimeMs = totalTime * 1000;
+        let percentage = ((totalTimeMs - timeLeft) / totalTimeMs) * 100;
 
-    const countdown = setInterval(function() {
-        count--;
-        $('#num').text(count);
+        if (percentage > 100) percentage = 100;
+        if (percentage < 0) percentage = 0;
 
-        let fillPercentage = ((totalDuration - count) / totalDuration) * 100;
-        $progressBar.css('width', fillPercentage + '%');
-        $progressDot.css('left', fillPercentage + '%');
+        $('#progressBar').css('width', percentage + '%');
+        $('#progressHandle').css('right', percentage + '%');
+        let secondsToShow = Math.ceil(timeLeft / 1000);
+        let seconds = secondsToShow < 10 ? '0' + secondsToShow : secondsToShow;
+        $('#timerText').text(`00:${seconds}`);
+    }
 
-        // Spin animation effects
-        $starBg.addClass('spin-effect');
-        setTimeout(() => {
-            $starBg.css('transition', 'none').removeClass('spin-effect');
-            setTimeout(() => {
-                $starBg.css('transition', 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)');
-            }, 50);
-        }, 300);
+    function startTimer() {
+        if (isRunning) return;
+        isRunning = true;
+        $('#playIcon').text('⏸');
 
-        $timerCircle.addClass('spin-effect');
-        setTimeout(function() {
-            $timerCircle.css('transition', 'none').removeClass('spin-effect');
-            setTimeout(function() {
-                $timerCircle.css('transition', 'background-color 0.3s ease');
-            }, 50);
-        }, 600);
+        timerInterval = setInterval(function() {
+            if (timeLeft > 0) {
+                timeLeft -= step;
+                updateTimerUI();
+            } else {
+                clearInterval(timerInterval);
+                isRunning = false;
+                $('#playIcon').text('▶');
+                timeLeft = 0;
+                updateTimerUI();
+            }
+        }, step);
+    }
 
-        if (count <= 3) {
-            $progressDot.addClass('danger-dot');
+    function pauseTimer() {
+        clearInterval(timerInterval);
+        isRunning = false;
+        $('#playIcon').text('▶');
+    }
+
+    $('#timeBadge').click(function() {
+        if (isRunning) {
+            pauseTimer();
+        } else {
+            startTimer();
         }
-        if (count === 0) {
-            clearInterval(countdown);
-        }
-    }, 1000);
+    });
 
+    $('.tab-btn').click(function() {
+        pauseTimer();
+        $('.tab-btn').removeClass('active');
+        $(this).addClass('active');
+        let currentPhase = $(this).data('phase');
+        totalTime = parseInt($(this).data('time'));
+        timeLeft = totalTime * 1000;
+        $('#progressBar, #timeBadge').removeClass('bg-purple bg-green bg-red');
+        if (currentPhase === 'purple') {
+            $('#progressBar, #timeBadge').addClass('bg-purple');
+        } else if (currentPhase === 'green') {
+            $('#progressBar, #timeBadge').addClass('bg-green');
+        } else if (currentPhase === 'red') {
+            $('#progressBar, #timeBadge').addClass('bg-red');
+        }
+
+        updateTimerUI();
+        startTimer();
+    });
+
+    updateTimerUI();
+    startTimer();
 
     /*----------------------------------------
       GRID BOX HIDDEN TOGGLE
@@ -517,7 +548,9 @@ $(document).ready(function() {
        FILTER INPUT SEARCH
      ----------------------------------------*/
 
-
+    setTimeout(function() {
+        $('#welcome-splash').fadeOut(1000);
+    }, 1000);
 
 
 }); // END window.load
