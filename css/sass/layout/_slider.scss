@@ -213,6 +213,7 @@
                      border-inline-end: 1px solid #00000033;
                      line-height: 1;
                      padding-inline-end: $com-spacing-3;
+                     white-space: nowrap;
                  }
              }
              .itemtours {
@@ -634,5 +635,340 @@
              border: 2.44px solid #b3b3b3;
              background: #fbdabc;
          }
+     }
+ }
+ 
+ .cards-teams {
+     position: fixed;
+     left: $zero;
+     bottom: $zero;
+     height: 142px;
+     padding: $zero !important;
+     z-index: 10;
+     @media (max-width: 1199px) {
+         height: 78px;
+     }
+     &::before {
+         content: "";
+         position: absolute;
+         left: $zero;
+         bottom: $zero;
+         width: $fullwidth;
+         height: $fullwidth;
+         background: url(../images/bgcards.png) no-repeat center center;
+         background-size: $fullwidth $fullwidth;
+     }
+     .container {
+         display: flex;
+         align-items: flex-end;
+         justify-content: space-between;
+         @media (min-width: 1600px) {
+             // margin-top: -54px;
+         }
+         @media (max-width: 999px) {
+             margin-top: -50px;
+         }
+         @media (max-width:450px) {
+             margin-top: -10px;
+         }
+     }
+     .logo {
+         img {
+             max-width: 143px;
+             // @media (min-width: 1600px) {
+             //     max-width: 152px;
+             // }
+             @media (max-width: 1199px) {
+                 max-width: 80px;
+             }
+             @media (max-width: 450px) {
+                 max-width: 60px;
+             }
+         }
+     }
+     .item-team {
+         display: flex;
+         align-items: center;
+         gap: $com-spacing-5;
+         margin-bottom: 22px;
+         @media (max-width: 1199px) {
+             gap: $com-spacing-3;
+         }
+         @media (max-width: 999px) {
+             display: block;
+             margin: $zero;
+         }
+         &:nth-child(1) {
+             .cards {
+                 order: -1;
+             }
+         }
+         .cards {
+             display: flex;
+             gap: $com-spacing-2;
+             @media (max-width: 1199px) {
+                 gap: $com-spacing-1;
+             }
+             @media (max-width: 999px) {
+                 margin-top: $com-spacing-4;
+             }
+             @media (max-width:450px) {
+                 zoom: 66%;
+             }
+             .subcard {
+                 position: relative;
+                 @include flex;
+                 background: $white;
+                 border: 2px solid $blak;
+                 min-width: 82.33px;
+                 max-width: 82.33px;
+                 height: 103.66px;
+                 border-radius: 5px;
+                 padding: $com-spacing-2;
+                 overflow: hidden;
+                 @media (max-width: 1199px) {
+                     min-width: 52px;
+                     max-width: 52px;
+                     height: 64px;
+                     svg {
+                         width: 20px;
+                         height: 20px;
+                     }
+                 }
+                 .title,
+                 .iconinfo {
+                     display: none;
+                 }
+                 img {
+                     max-width: $fullwidth;
+                     max-height: $fullwidth;
+                     // object-fit: cover;
+                 }
+                 // .photo {
+                 //     align-content: center;
+                 //     width: $fullwidth;
+                 //     height: $fullwidth;
+                 //     img {
+                 //         max-width: $fullwidth;
+                 //         max-height: $fullwidth;
+                 //     }
+                 // }
+                 .remove-btn {
+                     position: absolute;
+                     top: $com-spacing-1;
+                     left: $com-spacing-1;
+                     width: 16px;
+                     height: 16px;
+                     cursor: pointer;
+                 }
+             }
+         }
+         .bottom {
+             min-width: 123px;
+             max-width: 123px;
+             padding: $zero;
+             height: 44px;
+             border-radius: 10px;
+             font-size: 18px;
+             color: #CCF3DD;
+             cursor: default;
+             box-shadow: 5.1px 5.1px 0px 0px $blak;
+             transform: none !important;
+             @media (max-width: 1199px) {
+                 min-width: 102px;
+                 max-width: 102px;
+                 height: 39px;
+                 font-size: 14px;
+             }
+             @media (max-width:450px) {
+                 zoom: 80%;
+             }
+             &.green {
+                 background: #0BB458;
+             }
+             &.purple {
+                 background: #C03FFF;
+             }
+         }
+     }
+ }
+ 
+ .item-winner {
+     position: relative;
+     width: $fullwidth;
+     height: 100vh;
+     padding-top: $com-spacing-5;
+     background: $purple url('../images/brother.png') no-repeat left bottom/cover;
+     @media (min-width: 1600px) {
+         padding-top: 55px;
+     }
+     @media (max-width: 999px) {
+         padding-top: $com-spacing-6;
+     }
+     // background: radial-gradient(72.45% 72.45% at 50% 36.59%, #5D33AF 25%, #57309E 50%, #4D2B81 100%);
+     // &::before {
+     //     content: "";
+     //     position: absolute;
+     //     left: $zero;
+     //     bottom: $zero;
+     //     width: $fullwidth;
+     //     height: 483px;
+     //     background: $purple url('../images/brother.png') no-repeat;
+     //     background-size: $fullwidth $fullwidth;
+     // }
+     .headerwinner {
+         width: $fullwidth;
+         .container {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+         }
+         .logo {
+             img {
+                 max-width: 148px;
+                 @media (max-width: 999px) {
+                     max-width: 100px;
+                 }
+             }
+         }
+         .bottom {
+             min-width: 128px;
+             height: 42px;
+             background: $orange;
+         }
+     }
+     // .photo {
+     //     position: absolute;
+     //     left: $zero;
+     //     bottom: $zero;
+     //     width: 600px;
+     //     height: 50%;
+     // }
+     .item {
+         margin-top: $com-spacing-7;
+         margin-inline-start: 28px;
+         @media (min-width: 1600px) {
+             margin-top: $com-spacing-9;
+         }
+         @media (min-width: 1900px) {
+             margin-top: 132px;
+         }
+         @media (max-width: 999px) {
+             margin: $zero;
+             margin-top: $com-spacing-6;
+             width: $fullwidth;
+         }
+         .flex {
+             display: grid;
+             grid-template-columns: repeat(2, 1fr);
+             gap: 38px;
+             @media (max-width: 999px) {
+                 gap: $com-spacing-6;
+             }
+             @media (max-width: 450px) {
+                 gap: $com-spacing-3;
+                 grid-template-columns: repeat(1, 1fr);
+             }
+         }
+         .subitem {
+             min-width: 300px;
+             max-width: 300px;
+             height: 254px;
+             border: 2px solid $blak;
+             box-shadow: 10px 4px 0px 0px $blak;
+             padding: $com-spacing-4;
+             border-radius: 10px;
+             overflow: hidden;
+             @media (min-width: 1600px) {
+                 min-width: 366px;
+                 max-width: 366px;
+             }
+             @media (max-width: 999px) {
+                 min-width: inherit;
+                 max-width: inherit;
+                 height: auto;
+             }
+             @media (max-width: 450px) {
+                 padding: $com-spacing-3;
+             }
+             .title {
+                 font-size: 52px;
+                 font-weight: 900;
+                 text-align: center;
+                 color: $white;
+                 text-shadow: 2px 2px 0 $blak, 4px 4px 0 $blak, 6px 6px 0 $blak;
+                 @media (max-width: 450px) {
+                     font-size: 32px;
+                 }
+             }
+             &:nth-child(1) {
+                 background: #F9AF19;
+             }
+             &:nth-child(2) {
+                 background: #F60037;
+                 .title,
+                 .number {
+                     color: #FF7D75;
+                 }
+             }
+             .team {
+                 margin: $com-spacing-3 $auto $zero $auto;
+                 @include flex;
+                 width: 138px;
+                 height: 50px;
+                 background: $white;
+                 border: 2.46px solid $blak;
+                 box-shadow: 4.92px 4.92px 0px 0px $blak;
+                 border-radius: 10px;
+                 font-size: 20px;
+                 font-weight: 700;
+                 color: $blak;
+                 @media (max-width: 450px) {
+                     font-size: 18px;
+                     width: 118px;
+                     height: 40px;
+                     margin-top: $com-spacing-2;
+                 }
+             }
+             .number {
+                 font-size: 52px;
+                 font-weight: 900;
+                 line-height: 1;
+                 text-align: center;
+                 color: $white;
+                 text-shadow: 2px 2px 0 $blak, 4px 4px 0 $blak, 6px 6px 0 $blak;
+                 margin-top: $com-spacing-4;
+                 @media (max-width: 450px) {
+                     font-size: 32px;
+                     margin-top: $com-spacing-2;
+                 }
+             }
+         }
+         .text-center {
+             margin-top: $com-spacing-6;
+             @media (min-width: 1600px) {
+                 margin-top: $com-spacing-8;
+             }
+             @media (max-width: 450px) {
+                 margin-top: $com-spacing-2;
+             }
+         }
+         .bottom {
+             background: $orange;
+         }
+     }
+ }
+ 
+ #welcome-splash {
+     position: fixed;
+     top: $zero;
+     left: $zero;
+     width: $fullwidth;
+     height: $fullwidth;
+     background: #e6e6e6;
+     z-index: 9999;
+     img {
+         width: $fullwidth;
+         height: $fullwidth;
      }
  }

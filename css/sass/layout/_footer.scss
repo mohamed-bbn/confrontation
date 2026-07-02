@@ -122,14 +122,22 @@
     width: $fullwidth;
     height: 88px;
     background: $purple;
+    overflow: hidden;
     .container {
         @include flex;
+        flex-wrap: wrap;
         gap: $com-spacing-4;
         height: $fullwidth;
+        @media (max-width: 1300px) {
+            gap: $com-spacing-1;
+        }
     }
     .title {
         color: $white;
         font-size: 32px;
+        @media (max-width: 1300px) {
+            font-size: 24px;
+        }
     }
     &::before {
         content: "";
@@ -142,6 +150,9 @@
         background-size: $fullwidth $fullwidth;
         @media (min-width: 1600px) {
             width: 350px;
+        }
+        @media (max-width: 1300px) {
+            left: -100px;
         }
     }
     &::after {
@@ -156,39 +167,61 @@
         @media (min-width: 1600px) {
             width: 327px;
         }
+        @media (max-width: 1300px) {
+            right: -100px;
+        }
     }
     .footer-nav {
+        position: relative;
         @include flex;
         gap: $com-spacing-4;
+        z-index: 1;
         a {
             @include flex;
             gap: 10px;
-            min-width: 169px;
-            height: 48px;
-            border: 2px solid $white;
-            border-radius: 8px;
+            min-width: 197px;
+            height: 52px;
+            border-radius: 15.77px;
             color: $white;
-            font-size: 14px;
+            font-size: 16.84px;
             font-weight: 700;
+            cursor: pointer;
             @include transition(all 0.1s ease-in-out 0s);
+            @media (min-width: 1600px) {
+                min-width: 273px;
+                height: 62px;
+            }
+            @media (max-width: 1300px) {
+                min-width: 162px;
+                height: 48px;
+            }
             &:hover {
                 transform: translate(1px, -2px);
             }
-            &:nth-child(2) {
-                background: #00D166;
-                border: 2px solid #00D166;
+            &.blue {
+                border: 2.78px solid #99A6FF;
+                background: #314AF7;
             }
-            &:nth-child(3) {
-                background: #FFFFFF26;
+            &.red {
+                display: none;
+                border: 3.69px solid #FF7E9B;
+                background: #F60037;
+                @media (max-width: 1300px) {
+                    display: flex;
+                }
             }
         }
     }
     .answered {
+        position: relative;
         @include flex;
         gap: $com-spacing-4;
+        z-index: 1;
+        @media (max-width: 1300px) {
+            gap: $com-spacing-2;
+        }
         a {
             @include flex;
-            gap: 10px;
             min-width: 136px;
             max-width: 136px;
             height: 50px;
@@ -199,6 +232,12 @@
             font-weight: 700;
             background: #F9AF19;
             @include transition(all 0.1s ease-in-out 0s);
+            @media (max-width: 1300px) {
+                min-width: 100px;
+                max-width: 100px;
+                height: 38px;
+                font-size: 16px;
+            }
             &:hover {
                 transform: translate(1px, -2px);
             }

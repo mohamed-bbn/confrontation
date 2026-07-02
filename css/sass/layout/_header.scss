@@ -244,6 +244,9 @@
     @media (max-width: 550px) {
         // zoom: 60%;
     }
+    @media (max-width: 1300px) {
+        height: 74px;
+    }
     .container {
         display: flex;
         align-items: center;
@@ -255,9 +258,9 @@
     .logo {
         img {
             max-width: 111px;
-            @media (max-width: 999px) {
-                max-width: 80px;
-            }
+            // @media (max-width: 999px) {
+            //     max-width: 80px;
+            // }
         }
     }
     .btn-actions {
@@ -266,6 +269,9 @@
         gap: 2px;
         @media (min-width: 1600px) {
             gap: 7px;
+        }
+        @media (max-width: 1300px) {
+            display: none;
         }
         .cup {
             img {
@@ -372,6 +378,10 @@
             @include transition(all 0.1s ease-in-out 0s);
             @media (min-width: 1900px) {
                 font-size: 13.32px;
+            }
+            @media (max-width: 999px) {
+                min-width: 64px;
+                max-width: 64px;
             }
             svg {
                 min-width: 12px;

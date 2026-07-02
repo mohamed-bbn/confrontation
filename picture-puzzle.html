@@ -12,18 +12,13 @@
 
 <body>
 
+    <div id="welcome-splash">
+        <img loading="lazy" src="images/splash.gif" alt="المواجهة">
+    </div>
+    <!-- ENd welcome-splash -->
 
     <header class="header-competition">
         <div class="container">
-            <div class="btn-actions">
-                <div class="flex">
-                    <div class="bottom green"> دور الفريق : الاول</div>
-                </div>
-                <!-- <div class="flex">
-                    <div class="bottom purple"> دور الفريق : الثانى</div>
-                </div> -->
-            </div>
-            <!-- End bottoms -->
             <div class="logo">
                 <a href="index.html" title="المواجهة">
                     <img loading="lazy" src="images/logo.png" alt="المواجهة">
@@ -31,13 +26,89 @@
             </div>
             <!-- ENd logo -->
 
-            <div class="actions">
-                <h1 class="title"> الصور المقطعة</h1>
-                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="itemlink">  
+            <div class="btn-actions">
+                <div class="innerbtn active">
+                    <span class="num">3/6</span>
+                    <p class="text">المجموعة الأولى</p>
+                    <ul class="circles">
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="notactive"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="innerbtn">
+                    <span class="num">0/4</span>
+                    <p class="text">المجموعة الثانية</p>
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="innerbtn">
+                    <span class="num">0/3</span>
+                    <p class="text">المجموعة الثالثة</p>
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="innerbtn">
+                    <span class="num">0/2</span>
+                    <p class="text">المجموعة الرابعة</p>
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="innerbtn">
+                    <span class="num">0/1</span>
+                    <p class="text">المجموعة الخامسة</p>
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="cup">
+                    <img loading="lazy" src="images/cup2.png" alt="المواجهة">
+                </div>
+                <!-- End cup -->
+            </div>
+            <!-- End btn-actions -->
+
+
+
+
+            <nav class="actions">
+                <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="itemlink"> 
                     شرح اللعبة
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_334_8836)"> <path d="M9.99935 18.3334C14.6017 18.3334 18.3327 14.6025 18.3327 10.0001C18.3327 5.39771 14.6017 1.66675 9.99935 1.66675C5.39698 1.66675 1.66602 5.39771 1.66602 10.0001C1.66602 14.6025 5.39698 18.3334 9.99935 18.3334Z" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/> <path d="M7.57422 7.49999C7.77014 6.94304 8.15685 6.47341 8.66585 6.17426C9.17485 5.87512 9.7733 5.76577 10.3552 5.86558C10.9371 5.96539 11.4649 6.26792 11.8451 6.71959C12.2253 7.17126 12.4334 7.74292 12.4326 8.33332C12.4326 9.99999 9.93255 10.8333 9.93255 10.8333" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/> <path d="M10 14.1667H10.0083" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/> </g> <defs> <clipPath id="clip0_334_8836"> <rect width="20" height="20" fill="white"/> </clipPath> </defs> </svg>
                 </a>
-            </div>
+                <a href="#" class="sharing"> 
+                   مشاركة
+                   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"> <g clip-path="url(#clip0_1457_18135)"> <path d="M7.40156 1.84961V9.24961M4.31823 4.93294L7.40156 1.84961L10.4849 4.93294M12.9516 9.24961V11.7163C12.9516 12.0434 12.8216 12.3571 12.5903 12.5884C12.359 12.8197 12.0453 12.9496 11.7182 12.9496H3.0849C2.7578 12.9496 2.44409 12.8197 2.2128 12.5884C1.9815 12.3571 1.85156 12.0434 1.85156 11.7163V9.24961" stroke="#155DFC" stroke-width="2" stroke-linecap="round"/> </g> <defs> <clipPath id="clip0_1457_18135"> <rect width="14.8" height="14.8" fill="white"/> </clipPath> </defs> </svg>
+                 </a>
+                <a href="#" class="exit"> 
+                   خروج
+                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9.01667 3.46667L12.1 6.55L9.01667 9.63333M12.1 6.55H4.7M4.7 12.1H2.23333C1.90623 12.1 1.59253 11.9701 1.36123 11.7388C1.12994 11.5075 1 11.1938 1 10.8667V2.23333C1 1.90623 1.12994 1.59253 1.36123 1.36123C1.59253 1.12994 1.90623 1 2.23333 1H4.7" stroke="white" stroke-width="2" stroke-linecap="round"/> </svg>
+                </a>
+            </nav>
+            <!-- End actions -->
         </div>
     </header>
     <!-- End header -->
@@ -79,209 +150,275 @@
     <!-- End modal -->
 
     <section class="multible-choice">
-        <div class="contentinner">
-            <div class="picture-puzzle">
-                <h2 class="title mobile-title">الصور المقطعة</h2>
-
-                <div class="timer-wrapper">
-                    <div class="progress-container">
-                        <div class="progress-bar" id="progressBar"></div>
-                        <div class="progress-dot" id="progressDot"></div>
-                    </div>
-                    <div class="circle-timer" id="timerCircle">
-                        <div class="star-container" id="starBg">
-                            <img loading="lazy" src="images/star.svg" alt="المواجهة">
-                        </div>
-                        <div class="counter-text" id="num">10</div>
-                    </div>
-                    <!-- End circle-timer -->
-                </div>
-                <!-- End subinner -->
-                <div class="subpicture">
-                    <div class="game-area">
-                        <img loading="lazy" src="images/qatar.jpg" class="main-target-image" alt="المواجهة">
-                        <div class="grid-overlay">
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                            <div class="grid-box">
-                                <div>
-                                    ?
-                                    <span>مجاني</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End game-area -->
-                    <div class="flexinput">
-                        <a href="#" class="bottom">تخطي</a>
-                        <div class="anybox">
-                            🎁 اضغط أي مربع — الأول مجاني!
-                        </div>
-                        <!-- End anybox -->
-                    </div>
-                    <!-- End flexinput -->
-                    <a href="#" class="btnanswer">كشف الإجابة</a>
-                </div>
-                <!-- ENd subpicture -->
-                <div class="question-value">
-                    <h5 class="title">قيمة السؤال الحالية</h5>
-                    <div class="number">9</div>
-                    <span>نقطة</span>
-                </div>
-                <!-- ENd question-value -->
-            </div>
-            <!-- End picture-puzzle -->
-
-        </div>
-        <!-- End container -->
-
         <div class="auxiliary-means">
-            <div class="difference">
-                <div class="headtitle">
-                    <div class="bottom yellow">الفريق الاول</div>
-                    <span class="itemnumber">0</span>
+            <div class="minhead">
+                <div>
+                    <h2 class="title">وسائل المساعدة </h2>
+                    <p>اختر الفريق واستخدم أداة المساعدة</p>
                 </div>
-                <!-- End headtitle -->
-                <div class="flex">
-                    <a href="#" class="game-card card-yellow doneused">
-                        <div class="photo">
-                            <img loading="lazy" src="images/card-yellow.png" alt="المواجهة">
+                <a class="btn-close cancellation">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.188447 0.205087C0.309266 0.0844183 0.473041 0.0166402 0.643798 0.0166402C0.814556 0.0166402 0.978331 0.0844183 1.09915 0.205087L5.79872 4.90466L10.4983 0.205087C10.5573 0.141779 10.6284 0.0910007 10.7075 0.0557823C10.7865 0.0205639 10.8718 0.00162681 10.9584 0.000100283C11.0449 -0.00142625 11.1308 0.0144891 11.211 0.0468972C11.2913 0.0793054 11.3642 0.127542 11.4254 0.18873C11.4865 0.249918 11.5348 0.322803 11.5672 0.403038C11.5996 0.483273 11.6155 0.569213 11.614 0.655733C11.6125 0.742252 11.5935 0.827577 11.5583 0.906619C11.5231 0.985661 11.4723 1.0568 11.409 1.11579L6.70943 5.81536L11.409 10.5149C11.4723 10.5739 11.5231 10.6451 11.5583 10.7241C11.5935 10.8031 11.6125 10.8885 11.614 10.975C11.6155 11.0615 11.5996 11.1475 11.5672 11.2277C11.5348 11.3079 11.4865 11.3808 11.4254 11.442C11.3642 11.5032 11.2913 11.5514 11.211 11.5838C11.1308 11.6162 11.0449 11.6322 10.9584 11.6306C10.8718 11.6291 10.7865 11.6102 10.7075 11.5749C10.6284 11.5397 10.5573 11.4889 10.4983 11.4256L5.79872 6.72607L1.09915 11.4256C0.977 11.5395 0.815439 11.6014 0.648504 11.5985C0.48157 11.5955 0.322295 11.5279 0.204236 11.4098C0.0861775 11.2918 0.018552 11.1325 0.0156066 10.9656C0.0126613 10.7986 0.074626 10.6371 0.188447 10.5149L4.88802 5.81536L0.188447 1.11579C0.0677781 0.994972 0 0.831196 0 0.660439C0 0.489681 0.0677781 0.325906 0.188447 0.205087Z" fill="black"></path>
+                    </svg>
+                </a>
+            </div>
+            <!-- End minhead -->
+            <div class="cup"><img loading="lazy" src="images/cup.png" alt="المواجهة"></div>
+            <div class="items-responsive">
+                <div class="inner-responsive">
+                    <div class="difference">
+                        <div class="headtitle">
+                            <div class="bottom yellow">الفريق الاول</div>
+                            <span class="itemnumber">0</span>
                         </div>
-                        <h3 class="title">تغيير السؤال</h3>
-                        <div class="cancel">
-                            <span class="tooltip-text">
+                        <!-- End headtitle -->
+                        <div class="flex">
+                            <a href="#" class="game-card card-yellow doneused">
+                                <div class="photo">
+                                    <img loading="lazy" src="images/card-yellow.png" alt="المواجهة">
+                                </div>
+                                <h3 class="title">تغيير السؤال</h3>
+                                <div class="cancel">
+                                    <span class="tooltip-text">
                                 <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.41797 0.877197C12.5837 0.877197 15.9609 4.25441 15.9609 8.42017C15.9609 12.5859 12.5838 15.9631 8.41797 15.9631C4.25219 15.9631 0.875 12.5859 0.875 8.42017C0.875036 4.25441 4.25221 0.877197 8.41797 0.877197ZM8.41797 1.92993C4.83348 1.92993 1.92777 4.83569 1.92773 8.42017C1.92773 12.0047 4.83346 14.9104 8.41797 14.9104C12.0025 14.9104 14.9082 12.0047 14.9082 8.42017C14.9082 4.83569 12.0025 1.92993 8.41797 1.92993ZM7.91016 7.19263C8.05408 7.19257 8.21043 7.19254 8.3418 7.21021C8.49561 7.23094 8.69215 7.2842 8.85742 7.44946C9.02269 7.61485 9.07599 7.81127 9.09668 7.96509C9.11433 8.09635 9.11431 8.25192 9.11426 8.39575V11.929C9.11403 12.2194 8.87839 12.4543 8.58789 12.4543C8.2974 12.4543 8.06175 12.2194 8.06152 11.929V8.42017C8.06152 8.35068 8.06133 8.29408 8.06055 8.24536C8.01199 8.24458 7.95587 8.24438 7.88672 8.24438C7.59622 8.24438 7.36057 8.00944 7.36035 7.71899C7.36035 7.42836 7.59608 7.19263 7.88672 7.19263C7.89449 7.19263 7.90231 7.19263 7.91016 7.19263ZM8.41895 4.91235C8.80636 4.91244 9.12008 5.2261 9.12012 5.61353C9.12012 6.00099 8.80639 6.31559 8.41895 6.31567H8.41211C8.02477 6.31547 7.71094 6.00091 7.71094 5.61353C7.71098 5.22617 8.02479 4.91256 8.41211 4.91235H8.41895Z" fill="white"/>
                                 </svg>
                                 لا يمكنك إستخدام هذه الوسيلة في هذا السؤال
                             </span>
-                            <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.39636 26.0731C2.20636 26.0332 2.89528 26.6576 2.93543 27.4677C3.13718 31.5386 3.74034 33.5966 5.14441 35.0009C6.54864 36.405 8.60666 37.008 12.6776 37.2098C13.4878 37.25 14.1123 37.9397 14.0721 38.7499C14.0319 39.56 13.3422 40.1846 12.5321 40.1444C8.37975 39.9385 5.31042 39.3218 3.06726 37.079C0.824063 34.8357 0.207643 31.7658 0.00183258 27.6132C-0.0383192 26.803 0.58619 26.1133 1.39636 26.0731ZM38.8993 26.0887C39.6353 26.2005 40.1821 26.8536 40.1444 27.6132C39.9385 31.7655 39.3217 34.8348 37.079 37.078C34.8357 39.321 31.7658 39.9385 27.6132 40.1444C26.803 40.1846 26.1134 39.56 26.0731 38.7499C26.033 37.9397 26.6575 37.25 27.4677 37.2098C31.5383 37.008 33.5966 36.4056 35.0009 35.0018L36.8837 30.6981L35.2557 34.7303C36.0843 33.7837 36.5987 32.5388 36.9042 30.6493L38.8993 26.0887ZM14.6952 10.743C17.5211 6.52997 23.5757 7.06073 25.7284 11.247C26.2831 12.3258 26.4175 13.5314 26.4491 14.538C26.4646 15.0325 26.4554 15.5189 26.4452 15.954C26.8015 16.0502 27.1742 16.1942 27.5438 16.4061C28.5228 16.9674 29.3307 17.9192 29.828 19.3514L29.8466 19.4061L29.8612 19.4608C30.5296 22.012 30.41 25.8106 30.0272 27.9413L30.0136 28.0175L29.9921 28.0917C29.5432 29.6335 28.7683 30.7844 27.5409 31.4833C26.3879 32.1397 25.0326 32.2762 23.6962 32.2762C23.4295 32.2762 23.0401 32.2776 22.5712 32.2792C20.2826 32.2869 16.0894 32.3015 14.9042 32.201C12.9673 32.0368 10.6925 30.7168 10.1259 27.8202L10.122 27.8007L10.119 27.7802C9.52595 24.2198 9.89828 20.9378 10.3173 19.4384L10.329 19.3983L10.3417 19.3602C10.3469 19.345 10.3529 19.3293 10.3583 19.3134C10.5439 18.7672 10.8598 17.8358 11.5985 17.0809C12.1405 16.5272 12.8318 16.1363 13.6864 15.9325C13.6773 15.395 13.6759 14.8041 13.7079 14.2528C13.7713 13.1608 13.9708 11.8231 14.6952 10.743ZM36.9042 30.6493L36.8837 30.6981L36.9052 30.6425C36.9048 30.6447 36.9045 30.647 36.9042 30.6493ZM36.9052 30.6425C37.0503 29.7427 37.1489 28.6971 37.2098 27.4677C37.25 26.6575 37.9397 26.033 38.7499 26.0731L36.9052 30.6425ZM24.8807 18.705C23.4009 18.6227 17.8943 18.6006 15.2372 18.7059L15.2079 18.7069H15.1786C14.2148 18.707 13.861 18.9693 13.6981 19.1356C13.473 19.3656 13.3342 19.6901 13.1366 20.2665C12.8412 21.3594 12.4984 24.1658 13.0126 27.2753C13.2882 28.6429 14.2802 29.2003 15.1522 29.2743C16.1872 29.362 20.1101 29.3499 22.4384 29.3427C22.9507 29.3411 23.386 29.3387 23.6962 29.3387C24.9073 29.3387 25.6218 29.1958 26.0878 28.9305C26.4698 28.713 26.8547 28.315 27.1503 27.3436C27.4701 25.4853 27.538 22.252 27.0341 20.2626C26.7419 19.4523 26.3663 19.1175 26.0829 18.955C25.76 18.7699 25.3783 18.7069 24.9628 18.7069H24.9218L24.8807 18.705ZM23.1161 12.5897C21.9787 10.3784 18.7051 10.0384 17.1346 12.3798C16.864 12.7835 16.6964 13.4606 16.6405 14.4237C16.6143 14.8752 16.6129 15.3037 16.62 15.7284C18.7822 15.6857 21.6364 15.6894 23.5126 15.7245C23.5205 15.3506 23.5248 14.9871 23.5136 14.6298C23.4861 13.7579 23.3686 13.0808 23.1161 12.5897ZM12.5321 0.00183258C13.3423 -0.0383189 14.032 0.58619 14.0721 1.39636L10.0399 3.16101C7.64229 3.47944 6.20635 4.08248 5.14441 5.14441L9.75086 3.28797L4.8905 5.41589C3.66656 6.81395 3.12459 8.86116 2.93543 12.6776C2.89528 13.4877 2.20637 14.1121 1.39636 14.0721C0.58619 14.032 -0.0383189 13.3423 0.00183258 12.5321C0.20766 8.37962 0.824115 5.31043 3.06726 3.06726C5.31043 0.82412 8.37962 0.207659 12.5321 0.00183258ZM27.6132 0.00183258C31.7656 0.207636 34.8348 0.824242 37.078 3.06726C39.321 5.31043 39.9385 8.37961 40.1444 12.5321C40.1846 13.3422 39.56 14.0319 38.7499 14.0721C37.9397 14.1123 37.25 13.4878 37.2098 12.6776C37.008 8.60665 36.405 6.54864 35.0009 5.14441C33.5966 3.74034 31.5386 3.13718 27.4677 2.93543C26.6576 2.89528 26.0332 2.20636 26.0731 1.39636C26.1133 0.58619 26.803 -0.0383192 27.6132 0.00183258ZM9.75086 3.28797L10.0399 3.16101C10.0519 3.15942 10.064 3.15771 10.0761 3.15613L9.75086 3.28797ZM14.0721 1.54675C14.0335 2.29 13.437 2.89779 12.6776 2.93543C11.7008 2.98384 10.8399 3.056 10.0761 3.15613L14.0721 1.54675Z" fill="white"/>
                             </svg>
+                                </div>
+                            </a>
+                            <!-- End game-card -->
+                            <a href="#" class="game-card card-blue">
+                                <div class="photo">
+                                    <img loading="lazy" src="images/card-blue.png" alt="المواجهة">
+                                </div>
+                                <h3 class="title"> سؤال إضافي</h3>
+                            </a>
+                            <!-- End game-card -->
+                            <a href="#" class="game-card card-red">
+                                <div class="photo">
+                                    <img loading="lazy" src="images/card-red.png" alt="المواجهة">
+                                </div>
+                                <h3 class="title"> حذف اجابتين</h3>
+                            </a>
+                            <!-- End game-card -->
+                            <a href="#" class="game-card card-black">
+                                <div class="photo">
+                                    <img loading="lazy" src="images/card-black.png" alt="المواجهة">
+                                </div>
+                                <h3 class="title"> تحويل السؤال</h3>
+                            </a>
+                            <!-- End game-card -->
                         </div>
-                    </a>
-                    <!-- End game-card -->
-                    <a href="#" class="game-card card-blue">
-                        <div class="photo">
-                            <img loading="lazy" src="images/card-blue.png" alt="المواجهة">
+                        <!-- End flex -->
+                        <a href="#"></a>
+                    </div>
+                    <!-- End difference -->
+                    <div class="difference">
+                        <div class="headtitle">
+                            <div class="bottom red">الفريق الثانى</div>
+                            <span class="itemnumber rednum">0</span>
                         </div>
-                        <h3 class="title"> سؤال إضافي</h3>
-                    </a>
-                    <!-- End game-card -->
-                    <a href="#" class="game-card card-red">
-                        <div class="photo">
-                            <img loading="lazy" src="images/card-red.png" alt="المواجهة">
+                        <!-- End headtitle -->
+                        <div class="flex">
+                            <a href="#" class="game-card card-yellow">
+                                <div class="photo">
+                                    <img loading="lazy" src="images/card-yellow.png" alt="المواجهة">
+                                </div>
+                                <h3 class="title">تغيير السؤال</h3>
+                            </a>
+                            <!-- End game-card -->
+                            <a href="#" class="game-card card-blue">
+                                <div class="photo">
+                                    <img loading="lazy" src="images/card-blue.png" alt="المواجهة">
+                                </div>
+                                <h3 class="title"> سؤال إضافي</h3>
+                            </a>
+                            <!-- End game-card -->
+                            <a href="#" class="game-card card-red">
+                                <div class="photo">
+                                    <img loading="lazy" src="images/card-red.png" alt="المواجهة">
+                                </div>
+                                <h3 class="title"> حذف اجابتين</h3>
+                            </a>
+                            <!-- End game-card -->
+                            <a href="#" class="game-card card-black">
+                                <div class="photo">
+                                    <img loading="lazy" src="images/card-black.png" alt="المواجهة">
+                                </div>
+                                <h3 class="title"> تحويل السؤال</h3>
+                            </a>
+                            <!-- End game-card -->
                         </div>
-                        <h3 class="title"> حذف اجابتين</h3>
-                    </a>
-                    <!-- End game-card -->
-                    <a href="#" class="game-card card-black">
-                        <div class="photo">
-                            <img loading="lazy" src="images/card-black.png" alt="المواجهة">
-                        </div>
-                        <h3 class="title"> تحويل السؤال</h3>
-                    </a>
-                    <!-- End game-card -->
+                        <!-- End flex -->
+                    </div>
+                    <!-- End difference -->
                 </div>
-                <!-- End flex -->
+                <!-- End inner-responsive -->
+                <nav class="btnaction">
+                    <a href="#" class="blue">تـأكيد</a>
+                    <a class="cancellation">الغاء </a>
+                </nav>
             </div>
-            <!-- End difference -->
-            <div class="difference">
-                <div class="headtitle">
-                    <div class="bottom red">الفريق الثانى</div>
-                    <span class="itemnumber rednum">0</span>
-                </div>
-                <!-- End headtitle -->
-                <div class="flex">
-                    <a href="#" class="game-card card-yellow">
-                        <div class="photo">
-                            <img loading="lazy" src="images/card-yellow.png" alt="المواجهة">
-                        </div>
-                        <h3 class="title">تغيير السؤال</h3>
-                    </a>
-                    <!-- End game-card -->
-                    <a href="#" class="game-card card-blue">
-                        <div class="photo">
-                            <img loading="lazy" src="images/card-blue.png" alt="المواجهة">
-                        </div>
-                        <h3 class="title"> سؤال إضافي</h3>
-                    </a>
-                    <!-- End game-card -->
-                    <a href="#" class="game-card card-red">
-                        <div class="photo">
-                            <img loading="lazy" src="images/card-red.png" alt="المواجهة">
-                        </div>
-                        <h3 class="title"> حذف اجابتين</h3>
-                    </a>
-                    <!-- End game-card -->
-                    <a href="#" class="game-card card-black">
-                        <div class="photo">
-                            <img loading="lazy" src="images/card-black.png" alt="المواجهة">
-                        </div>
-                        <h3 class="title"> تحويل السؤال</h3>
-                    </a>
-                    <!-- End game-card -->
-                </div>
-                <!-- End flex -->
-            </div>
-            <!-- End difference -->
-            <a href="#" class="ending">
-                إنهاء اللعبة
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.95801 0C13.9056 1.15448e-07 17.916 4.01143 17.916 8.95898C17.9158 13.9063 13.9054 17.917 8.95801 17.917C4.01062 17.917 0.000263431 13.9063 0 8.95898C0 4.01143 4.01046 0 8.95801 0ZM8.95801 1.25C4.70081 1.25 1.25 4.70179 1.25 8.95898C1.25026 13.216 4.70098 16.667 8.95801 16.667C13.215 16.667 16.6658 13.216 16.666 8.95898C16.666 4.70179 13.2152 1.25 8.95801 1.25ZM11.0156 6.0166C11.2597 5.77251 11.6563 5.77254 11.9004 6.0166C12.1441 6.26061 12.1441 6.65637 11.9004 6.90039L9.8418 8.95898L11.8994 11.0166C12.1435 11.2607 12.1435 11.6563 11.8994 11.9004C11.6553 12.1444 11.2597 12.1444 11.0156 11.9004L8.95801 9.84277L6.90039 11.9004C6.65632 12.1444 6.26068 12.1444 6.0166 11.9004C5.77256 11.6563 5.77255 11.2607 6.0166 11.0166L8.07422 8.95898L6.01562 6.90039C5.77187 6.65637 5.77188 6.26061 6.01562 6.0166C6.25972 5.77254 6.65633 5.77251 6.90039 6.0166L8.95801 8.0752L11.0156 6.0166Z" fill="#F60037"></path>
-                </svg>
-            </a>
+            <!-- End items-responsive -->
+
         </div>
         <!-- End auxiliary-means -->
+        <div class="bg-overlay"></div>
+        <!-- End overlay -->
+        <div class="contentinner">
+            <div class="btn-actions">
+                <div class="innerbtn active">
+                    <span class="num">3/6</span>
+                    <p class="text">المجموعة الأولى</p>
+                    <ul class="circles">
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="active"></li>
+                        <li class="notactive"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="innerbtn">
+                    <span class="num">0/4</span>
+                    <p class="text">المجموعة الثانية</p>
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="innerbtn">
+                    <span class="num">0/3</span>
+                    <p class="text">المجموعة الثالثة</p>
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="innerbtn">
+                    <span class="num">0/2</span>
+                    <p class="text">المجموعة الرابعة</p>
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="innerbtn">
+                    <span class="num">0/1</span>
+                    <p class="text">المجموعة الخامسة</p>
+                    <ul class="circles">
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- End innerbtn -->
+                <i class="line"></i>
+                <div class="cup">
+                    <img loading="lazy" src="images/cup2.png" alt="المواجهة">
+                </div>
+                <!-- End cup -->
+            </div>
+            <!-- End btn-actions -->
+            <div class="inneroptions">
+                <div class="timer-container">
+                    <div class="tabs-container">
+                        <button class="tab-btn active" data-phase="purple" data-time="15">وقت قراءة السؤال</button>
+                        <i class="bar"></i>
+                        <button class="tab-btn" data-phase="green" data-time="10">وقت الإجابة</button>
+                        <i class="bar"></i>
+                        <button class="tab-btn" data-phase="red" data-time="5">فرصة للفريق التالي</button>
+                    </div>
+                    <!-- End tabs-container -->
+                    <div class="progress-wrapper">
+                        <div id="timeBadge" class="time-badge bg-purple">
+                            <span class="icon">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1943 0C18.9292 0 24.3894 5.45955 24.3896 12.1943C24.3896 13.0281 24.3056 13.8442 24.1455 14.6328C24.0236 15.2326 23.4387 15.6197 22.8389 15.498C22.2388 15.3762 21.8509 14.7914 21.9727 14.1914C22.1034 13.5472 22.1719 12.8792 22.1719 12.1943C22.1717 6.68409 17.7046 2.2168 12.1943 2.2168C6.68422 2.21701 2.21701 6.68422 2.2168 12.1943C2.2168 17.7046 6.68409 22.1717 12.1943 22.1719C12.5407 22.1719 12.8831 22.1544 13.2197 22.1201C13.8287 22.058 14.3733 22.5014 14.4355 23.1104C14.4976 23.7195 14.0534 24.2641 13.4443 24.3262C13.0332 24.3681 12.6159 24.3896 12.1943 24.3896C5.45955 24.3894 0 18.9292 0 12.1943C0.000210152 5.45968 5.45968 0.000210147 12.1943 0ZM17.3965 14.749C17.6642 14.7661 17.9266 14.8495 18.1572 14.9404C18.6043 15.1168 19.1758 15.4249 19.8447 15.7861L21.2227 16.5312C22.0967 17.0032 22.8412 17.4047 23.3584 17.7979C23.9012 18.2106 24.3906 18.7612 24.3906 19.5674C24.3905 20.3735 23.9011 20.9233 23.3584 21.3359C22.8412 21.7292 22.0969 22.1315 21.2227 22.6035L19.8447 23.3477C19.1758 23.709 18.6043 24.018 18.1572 24.1943C17.9266 24.2853 17.6642 24.3676 17.3965 24.3848C17.1078 24.4032 16.7669 24.3465 16.4717 24.1055C16.0001 23.7202 15.8678 23.1902 15.8838 22.7344C15.8989 22.3062 16.0422 21.8862 16.1895 21.5459C16.3413 21.195 16.5291 20.8585 16.6885 20.5859C16.7531 20.4755 16.8093 20.3815 16.8574 20.3008C16.941 20.1606 17.0008 20.0588 17.043 19.9766C17.1819 19.7059 17.1915 19.607 17.1914 19.5654C17.1913 19.5231 17.1807 19.4256 17.043 19.1572C17.0008 19.0751 16.9409 18.9739 16.8574 18.834C16.8093 18.7532 16.7531 18.6594 16.6885 18.5488C16.5291 18.2761 16.3414 17.9391 16.1895 17.5879C16.0423 17.2476 15.8989 16.8285 15.8838 16.4004C15.8677 15.9445 16.0001 15.4146 16.4717 15.0293C16.7669 14.7882 17.1078 14.7306 17.3965 14.749ZM12.1973 6.52148C12.8236 6.52169 13.3311 7.02987 13.3311 7.65625V11.7236L14.7002 13.0928C15.1432 13.5358 15.1432 14.2543 14.7002 14.6973C14.2572 15.1399 13.5396 15.14 13.0967 14.6973L11.3945 12.9951C11.182 12.7824 11.0625 12.4941 11.0625 12.1934V7.65625C11.0625 7.02974 11.5708 6.52148 12.1973 6.52148Z" fill="white"/>
+                                </svg>
+                            </span>
+                            <span id="timerText">00:15</span>
+                            <span id="playIcon">▶</span>
+                        </div>
+
+                        <div class="progress-outer">
+                            <div id="progressBar" class="progress-bar bg-purple"></div>
+                            <div id="progressHandle" class="progress-handle"></div>
+                        </div>
+                    </div>
+                    <!-- ENd progress-wrapper -->
+                </div>
+                <!-- End timer-container -->
+                <div class="subpicture">
+                    <div class="game-area">
+                        <img loading="lazy" src="images/qatar.jpg" class="main-target-image" alt="المواجهة">
+                        <div class="grid-overlay">
+                            <div class="grid-box"> ? </div>
+                            <div class="grid-box"> ? </div>
+                            <div class="grid-box"> ? </div>
+                            <div class="grid-box"> ? </div>
+                            <div class="grid-box"> ? </div>
+                            <div class="grid-box"> ? </div>
+                            <div class="grid-box"> ? </div>
+                            <div class="grid-box"> ? </div>
+                            <div class="grid-box"> ? </div>
+                        </div>
+                    </div>
+                    <!-- End game-area -->
+                    <div class="anybox"> 🎁 اضغط أي مربع — الأول مجاني! </div>
+                    <!-- End anybox -->
+                    <div class="item-value">
+                        <h4 class="title green">برج ايفل</h4>
+                        <div class="question-value">
+                            <h5 class="title">قيمة السؤال الحالية</h5>
+                            <div class="number">9</div>
+                            <span>نقطة</span>
+                        </div>
+                        <!-- ENd question-value -->
+                    </div>
+                    <!-- End item-value -->
+                </div>
+                <!-- ENd subpicture -->
+            </div>
+            <!-- End picture-puzzle -->
+        </div>
+        <!-- End container -->
     </section>
     <!-- End multible-choice -->
 
+
+    <footer class="footer-widget">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="#" class="blue">
+                    كشف الاجابة
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M14.4376 0.167059C15.7148 0.338782 16.7282 0.69787 17.5244 1.49408C18.3206 2.2903 18.6797 3.30368 18.8514 4.5809C19.007 5.73827 19.0181 7.19742 19.0189 9.02729L19.019 9.56232C19.019 11.5948 19.019 13.1912 18.8514 14.4376C18.6797 15.7148 18.3206 16.7282 17.5244 17.5244C16.7282 18.3206 15.7148 18.6797 14.4376 18.8514C13.2803 19.007 11.8211 19.0181 9.99121 19.0189L9.45618 19.019C7.42369 19.019 5.82729 19.019 4.5809 18.8514C3.30368 18.6797 2.2903 18.3206 1.49408 17.5244C0.69787 16.7282 0.338782 15.7148 0.167059 14.4376C0.0234469 13.3693 0.00293087 12.0438 0 10.4069L0 8.61157C0.00293087 6.97474 0.0234469 5.64925 0.167059 4.5809C0.338782 3.30368 0.69787 2.2903 1.49408 1.49408C2.2903 0.69787 3.30368 0.338782 4.5809 0.167059C5.64925 0.0234469 6.97474 0.00293087 8.61157 0L10.4069 0C12.0438 0.00293087 13.3693 0.0234469 14.4376 0.167059ZM9.51342 12.7565C8.99498 12.7565 8.58147 13.1718 8.58147 13.6843C8.58147 14.1967 8.99498 14.612 9.50507 14.612C10.0235 14.612 10.437 14.1967 10.437 13.6843C10.437 13.1718 10.0235 12.7565 9.51342 12.7565ZM9.50925 4.40646C7.97201 4.40646 6.72591 5.65261 6.72591 7.1898C6.72591 7.70221 7.1413 8.11758 7.65369 8.11758C8.1661 8.11758 8.58147 7.70221 8.58147 7.1898L8.58771 7.0816C8.6413 6.62019 9.03344 6.26202 9.50925 6.26202C10.0217 6.26202 10.437 6.67741 10.437 7.1898C10.437 7.37589 10.3832 7.54657 10.2906 7.69052C10.1811 7.86077 10.0417 8.0403 9.87006 8.25359L9.78693 8.35658C9.64294 8.53452 9.48021 8.73595 9.33186 8.93978C8.98301 9.41926 8.58147 10.083 8.58147 10.9009C8.58147 11.4133 8.99684 11.8287 9.50925 11.8287C10.0217 11.8287 10.437 11.4133 10.437 10.9009C10.437 10.694 10.539 10.4345 10.8323 10.0315C10.9503 9.86932 11.0776 9.71169 11.2209 9.5343L11.3157 9.41684C11.4889 9.2016 11.6833 8.95518 11.8511 8.69457C12.1305 8.26018 12.2926 7.74248 12.2926 7.1898C12.2926 5.65261 11.0465 4.40646 9.50925 4.40646Z" fill="white"/>
+                    </svg>
+                </a>
+                <a class="red btn-tools">
+                     وسائل المساعدة
+                     <svg width="24" height="27" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.4238 0.0639948C9.30277 -0.0758497 8.3132 -0.0103029 7.39943 0.500518C6.23741 1.15032 5.64118 2.27608 5.13869 3.73782C4.77605 3.75872 4.439 3.78767 4.12697 3.82962C3.02098 3.97837 2.08926 4.29702 1.34963 5.03665C0.61009 5.77634 0.292282 6.70794 0.143574 7.81399C0.000335693 8.8794 -5.72205e-06 10.234 1.90735e-05 11.9146V18.1949C-5.72205e-06 19.8754 0.000339508 21.23 0.143574 22.2954C0.29228 23.4015 0.6101 24.3331 1.34963 25.0728C2.08926 25.8124 3.02098 26.1311 4.12697 26.2798C5.19242 26.4231 6.54787 26.4224 8.22853 26.4224H10.8213C12.5018 26.4224 13.8565 26.423 14.9219 26.2798C16.0281 26.1311 16.9595 25.8125 17.6992 25.0728C18.427 24.3451 18.7467 23.4318 18.8985 22.3492C19.5785 21.8412 20.0335 21.1365 20.4033 20.2788C20.8259 19.2988 21.1836 18.0066 21.626 16.4077L22.958 11.5923C23.4004 9.99402 23.7582 8.70189 23.8985 7.64798C24.0445 6.55078 23.9765 5.57314 23.4395 4.67239C22.905 3.77611 22.0739 3.23739 21.0313 2.81595C20.0234 2.40857 18.693 2.06363 17.0381 1.63431L14.4922 0.973175C12.8369 0.543698 11.5065 0.199082 10.4238 0.0639948ZM9.52541 9.83157C10.1439 9.83171 10.6152 10.1297 10.9922 10.4683C11.3391 10.7798 12.2552 11.8737 12.669 12.3677C13.0677 12.8436 13.4199 13.264 13.6651 13.6431C13.931 14.0544 14.1338 14.5086 14.1338 15.0552C14.1337 15.6017 13.931 16.0561 13.6651 16.4673C13.4199 16.8464 13.0677 17.2669 12.669 17.7427C12.2552 18.2367 11.339 19.3296 10.9922 19.6411C10.6151 19.9798 10.144 20.2777 9.52541 20.2779C8.90658 20.2778 8.43477 19.9799 8.05764 19.6411C7.71087 19.3297 7.33936 18.8858 6.9258 18.3921C6.52702 17.9162 5.63019 16.8467 5.38478 16.4673C5.1189 16.0561 4.9161 15.6017 4.91603 15.0552C4.91604 14.5087 5.1189 14.0543 5.38478 13.6431C5.62998 13.2639 6.52695 12.1943 6.9258 11.7183C7.3395 11.2244 7.71078 10.7798 8.05764 10.4683C8.43474 10.1296 8.90668 9.83161 9.52541 9.83157ZM8.29885 2.10892C8.73172 1.86693 9.27135 1.77769 10.1963 1.8931C11.1457 2.0116 12.3593 2.32519 14.0928 2.77493L16.5108 3.40189C18.2449 3.8518 19.4579 4.16808 20.3408 4.52493C21.2015 4.87285 21.6134 5.20828 21.8565 5.61575C22.0969 6.01894 22.1889 6.5209 22.0713 7.40482C21.9499 8.31736 21.6283 9.4865 21.1631 11.1675L19.8672 15.8492C19.5482 17.0018 19.2947 17.9137 19.0488 18.647V11.9146C19.0489 10.234 19.0495 8.87939 18.9063 7.81399C18.7575 6.70782 18.439 5.77637 17.6992 5.03665C16.9595 4.29699 16.028 3.97834 14.9219 3.82962C13.8565 3.68641 12.5018 3.68702 10.8213 3.68704H8.22853C7.8445 3.68704 7.47746 3.68636 7.12697 3.68802C7.49712 2.79101 7.84468 2.36289 8.29885 2.10892Z" fill="white"/>
+                    </svg>
+                </a>
+            </nav>
+        </div>
+    </footer>
 
 
     <script src="js/jquery.js"></script>

@@ -553,6 +553,13 @@ $(document).ready(function() {
     }, 1000);
 
 
+    const $elements = $('.auxiliary-means, .bg-overlay, body');
+    $('.btn-tools, .cancellation, .bg-overlay').on('click', function() {
+        $elements.toggleClass('active');
+    });
+
+
+
 }); // END window.load
 
 
