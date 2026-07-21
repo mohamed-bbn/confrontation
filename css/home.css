@@ -1060,7 +1060,7 @@
 .item-winner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 20px;
   background: #4D2B81 url("../images/brother.png") no-repeat left bottom/cover; }
   @media (min-width: 1600px) {
@@ -1100,6 +1100,7 @@
         width: 100%; } }
     .item-winner .item .flex {
       display: grid;
+      align-items: flex-end;
       grid-template-columns: repeat(2, 1fr);
       gap: 38px; }
       @media (max-width: 999px) {
@@ -1112,7 +1113,7 @@
     .item-winner .item .subitem {
       min-width: 300px;
       max-width: 300px;
-      height: 254px;
+      min-height: 254px;
       border: 2px solid #000;
       box-shadow: 10px 4px 0px 0px #000;
       padding: 16px;
@@ -1178,6 +1179,12 @@
           .item-winner .item .subitem .number {
             font-size: 32px;
             margin-top: 8px; } }
+    .item-winner .item .iconcup {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .item-winner .item .iconcup img {
+        max-height: 114px; }
     .item-winner .item .text-center {
       margin-top: 24px; }
       @media (min-width: 1600px) {
@@ -3276,6 +3283,18 @@
   @media (max-width: 999px) {
     .item-pickgame {
       padding: 24px 0px; } }
+  .item-pickgame .minhead {
+    margin: 0px auto;
+    max-width: 1314px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px; }
+    .item-pickgame .minhead .title {
+      color: #000; }
+    .item-pickgame .minhead .bottom {
+      background: #F08320; }
   .item-pickgame .title.text-center {
     color: #000; }
   .item-pickgame p.text-center {
@@ -5258,5 +5277,176 @@ select.form-control {
 .slick-loaded {
   visibility: visible;
   transition: visibility 0s 0s, opacity 0.3s ease; }
+
+.custom-modal .modal-dialog {
+  max-width: 640px;
+  min-height: inherit; }
+  .custom-modal .modal-dialog .modal-content {
+    width: 100%;
+    box-shadow: 0px 12px 24px 0px #0000003D;
+    border-radius: 24px;
+    padding: 32px; }
+    @media (max-width: 999px) {
+      .custom-modal .modal-dialog .modal-content {
+        padding: 16px; } }
+.custom-modal .textitem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  max-width: 212px;
+  margin: auto;
+  background: #4D2B810A;
+  border-radius: 60px;
+  color: #4D2B81;
+  padding: 4px 12px; }
+.custom-modal .title {
+  color: #4D2B81;
+  margin-top: 12px;
+  font-size: 28px; }
+.custom-modal .text {
+  color: #63638F; }
+.custom-modal .device-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border: 1px solid #E6E6FA;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 16px; }
+  @media (max-width: 767px) {
+    .custom-modal .device-item {
+      padding: 8px; } }
+  .custom-modal .device-item.active {
+    border-color: #F08320;
+    background: #fffaf5; }
+    .custom-modal .device-item.active .flex .icon {
+      background: #F083201E; }
+      .custom-modal .device-item.active .flex .icon svg path {
+        stroke: #F08320; }
+    .custom-modal .device-item.active .flex .iconwifi svg path {
+      stroke: #F08320; }
+    .custom-modal .device-item.active .flex .bottom {
+      background: #02C680; }
+  .custom-modal .device-item .flex {
+    display: flex;
+    align-items: center;
+    gap: 12px; }
+    @media (max-width: 767px) {
+      .custom-modal .device-item .flex {
+        gap: 8px; } }
+    .custom-modal .device-item .flex .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      max-width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: #F5F5FF; }
+      @media (max-width: 767px) {
+        .custom-modal .device-item .flex .icon {
+          min-width: 38px;
+          max-width: 38px;
+          height: 38px; } }
+    .custom-modal .device-item .flex .title {
+      font-size: 18px;
+      margin: 0px !important;
+      color: #2A2A4D; }
+      @media (max-width: 767px) {
+        .custom-modal .device-item .flex .title {
+          font-size: 14px; } }
+    .custom-modal .device-item .flex .bottom {
+      max-width: 70px;
+      min-width: 70px;
+      height: 33px;
+      background: #F08320;
+      border-radius: 8px;
+      font-size: 14px;
+      box-shadow: none !important;
+      border: 0px !important;
+      transform: none !important; }
+      @media (max-width: 767px) {
+        .custom-modal .device-item .flex .bottom {
+          max-width: 60px;
+          min-width: 60px; } }
+.custom-modal .footeritem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px; }
+  .custom-modal .footeritem .text-update {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #E6E6FA;
+    background: #F5F5FF;
+    border-radius: 12px;
+    color: #2A2A4D;
+    padding: 4px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s; }
+    .custom-modal .footeritem .text-update:hover {
+      transform: translate(2px, -3px); }
+  .custom-modal .footeritem .text-cancel {
+    color: #FE0000;
+    cursor: pointer;
+    font-weight: bold; }
+.custom-modal .success-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 74px;
+  background: #02C680;
+  border-radius: 50%;
+  margin: 0px auto;
+  border: 10px solid #d8f5eb; }
+.custom-modal .badge-device {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px; }
+  .custom-modal .badge-device p {
+    background: #ffe8cc;
+    color: #F08320;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 20px; }
+.custom-modal .screen-share-box {
+  background: #F8F9FD;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 16px;
+  text-align: center; }
+  .custom-modal .screen-share-box .icon {
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4D2B81;
+    width: 72px;
+    height: 54px;
+    border-radius: 10px; }
+  .custom-modal .screen-share-box .text {
+    text-align: center;
+    margin-top: 16px;
+    font-weight: 600;
+    color: #4D2B81; }
+.custom-modal .s-m {
+  background: #F08320;
+  margin-top: 16px;
+  box-shadow: 0px 8px 16px 0px #F0832040; }
+.custom-modal .disconnect {
+  color: #FE0000;
+  cursor: pointer;
+  font-weight: bold; }
 
 /*# sourceMappingURL=home.css.map */

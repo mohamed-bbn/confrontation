@@ -125,8 +125,27 @@
 
     <section class="item-pickgame">
         <div class="container">
-            <h1 class="title text-center">اختر لعبتك</h1>
-            <p class="text-center">مجموعة متميزة من الالعاب التفاعلية </p>
+            <div class="minhead">
+                <div>
+                    <h1 class="title">اختر لعبتك</h1>
+                    <p class="">مجموعة متميزة من الالعاب التفاعلية </p>
+                </div>
+                <button class="bottom" data-bs-toggle="modal" data-bs-target="#devicesModal">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="30" height="30" rx="9" fill="white"/>
+                    <rect x="1" y="1" width="30" height="30" rx="9" stroke="black" stroke-width="2"/>
+                    <g clip-path="url(#clip0_2319_10082)">
+                    <path d="M8.5 12.9997V11.4999C8.5 11.1021 8.65805 10.7206 8.93937 10.4393C9.2207 10.158 9.60226 10 10.0001 10H22.0011C22.3989 10 22.7805 10.158 23.0618 10.4393C23.3432 10.7206 23.5012 11.1021 23.5012 11.4999V20.499C23.5012 20.8967 23.3432 21.2782 23.0618 21.5595C22.7805 21.8408 22.3989 21.9988 22.0011 21.9988H17.5007M8.5 15.9994C10.0357 16.1623 11.469 16.8468 12.561 17.9385C13.653 19.0303 14.3375 20.4634 14.5005 21.9988M8.5 18.9991C9.24455 19.1377 9.92967 19.4985 10.4652 20.034C11.0007 20.5694 11.3616 21.2544 11.5002 21.9988M8.5 21.9988H8.5075" stroke="#4D2B81" stroke-width="2.25" stroke-linecap="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_2319_10082">
+                    <rect width="18" height="18" fill="white" transform="translate(7 7)"/>
+                    </clipPath>
+                    </defs>
+                    </svg>  شارك الشاشة لاختيار اللعبة
+                </button>
+            </div>
+            <!-- End minhead -->
             <nav class="rowchoose">
                 <a href="pickgame-inner.html" class="item">
                     <div class="photo">
@@ -162,7 +181,190 @@
             <!-- End rowchoose -->
         </div>
     </section>
-    <!-- End item-forgot -->
+    <!-- End item-pickgam -->
+
+
+    <!-- البوب أب الأولى: قائمة الأجهزة  -->
+    <div class="modal fade custom-modal" id="devicesModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+
+                <span class="textitem">
+                        <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 3.6664V2.3332C1 1.97961 1.14049 1.64051 1.39056 1.39049C1.64062 1.14046 1.97979 1 2.33344 1H13.001C13.3546 1 13.6938 1.14046 13.9438 1.39049C14.1939 1.64051 14.3344 1.97961 14.3344 2.3332V10.3324C14.3344 10.686 14.1939 11.0251 13.9438 11.2751C13.6938 11.5251 13.3546 11.6656 13.001 11.6656H9.00064M1 6.3328C2.36503 6.47763 3.63912 7.08602 4.60976 8.05649C5.58041 9.02695 6.1889 10.3008 6.33376 11.6656M1 8.9992C1.66182 9.12244 2.27082 9.44313 2.74685 9.91907C3.22287 10.395 3.54362 11.0039 3.66688 11.6656M1 11.6656H1.00667" stroke="#4D2B81" stroke-width="2" stroke-linecap="round"/>
+                         </svg>
+                         جاري البحث عن الأجهزة...
+                </span>
+                <h5 class="title text-center">الأجهزة المتاحة</h5>
+                <p class="text text-center">اختر التلفزيون أو الشاشة لعرض اللعبة مباشرة على الشبكة</p>
+
+                <div class="device-item active">
+                    <div class="flex">
+                        <i class="icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0012 1L11.0008 6.0004L6.0004 1M3.00016 6.0004H19.0014C20.1061 6.0004 21.0016 6.8959 21.0016 8.00056V19.0014C21.0016 20.1061 20.1061 21.0016 19.0014 21.0016H3.00016C1.8955 21.0016 1 20.1061 1 19.0014V8.00056C1 6.8959 1.8955 6.0004 3.00016 6.0004Z" stroke="#4D2B81" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <div>
+                            <h6 class="title">تلفزيون غرفة المجلس</h6>
+                            <small class="">Samsung Smart TV</small>
+                        </div>
+                    </div>
+                    <!-- ENd flex -->
+                    <div class="flex">
+                        <i class="iconwifi">
+                            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5006 12.25H8.5081M1 3.86474C3.06275 2.01991 5.73313 1 8.5006 1C11.2681 1 13.9385 2.01991 16.0012 3.86474M3.25018 6.89393C4.65226 5.51973 6.5373 4.75 8.5006 4.75C10.4639 4.75 12.3489 5.51973 13.751 6.89393M5.87539 9.57197C6.57643 8.88486 7.51895 8.5 8.5006 8.5C9.48225 8.5 10.4248 8.88486 11.1258 9.57197" stroke="#63638F" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <button class="bottom">متصل</button>
+                    </div>
+                </div>
+                <!-- End device-item  -->
+
+                <div class="device-item">
+                    <div class="flex">
+                        <i class="icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0012 1L11.0008 6.0004L6.0004 1M3.00016 6.0004H19.0014C20.1061 6.0004 21.0016 6.8959 21.0016 8.00056V19.0014C21.0016 20.1061 20.1061 21.0016 19.0014 21.0016H3.00016C1.8955 21.0016 1 20.1061 1 19.0014V8.00056C1 6.8959 1.8955 6.0004 3.00016 6.0004Z" stroke="#4D2B81" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <div>
+                            <h6 class="title">تلفزيون الصالة الرئيسي</h6>
+                            <small class="">LG WebOS TV</small>
+                        </div>
+                    </div>
+                    <!-- ENd flex -->
+                    <div class="flex">
+                        <i class="iconwifi">
+                            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5006 12.25H8.5081M1 3.86474C3.06275 2.01991 5.73313 1 8.5006 1C11.2681 1 13.9385 2.01991 16.0012 3.86474M3.25018 6.89393C4.65226 5.51973 6.5373 4.75 8.5006 4.75C10.4639 4.75 12.3489 5.51973 13.751 6.89393M5.87539 9.57197C6.57643 8.88486 7.51895 8.5 8.5006 8.5C9.48225 8.5 10.4248 8.88486 11.1258 9.57197" stroke="#63638F" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <button class="bottom" data-bs-toggle="modal" data-bs-target="#successModal">اتصال</button>
+                    </div>
+                </div>
+                <!-- End device-item  -->
+
+                <div class="device-item">
+                    <div class="flex">
+                        <i class="icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0012 1L11.0008 6.0004L6.0004 1M3.00016 6.0004H19.0014C20.1061 6.0004 21.0016 6.8959 21.0016 8.00056V19.0014C21.0016 20.1061 20.1061 21.0016 19.0014 21.0016H3.00016C1.8955 21.0016 1 20.1061 1 19.0014V8.00056C1 6.8959 1.8955 6.0004 3.00016 6.0004Z" stroke="#4D2B81" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <div>
+                            <h6 class="title">شاشة غرفة الألعاب</h6>
+                            <small class="">Sony Bravia 4K</small>
+                        </div>
+                    </div>
+                    <!-- ENd flex -->
+                    <div class="flex">
+                        <i class="iconwifi">
+                            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5006 12.25H8.5081M1 3.86474C3.06275 2.01991 5.73313 1 8.5006 1C11.2681 1 13.9385 2.01991 16.0012 3.86474M3.25018 6.89393C4.65226 5.51973 6.5373 4.75 8.5006 4.75C10.4639 4.75 12.3489 5.51973 13.751 6.89393M5.87539 9.57197C6.57643 8.88486 7.51895 8.5 8.5006 8.5C9.48225 8.5 10.4248 8.88486 11.1258 9.57197" stroke="#63638F" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <button class="bottom" data-bs-toggle="modal" data-bs-target="#successModal">اتصال</button>
+                    </div>
+                </div>
+                <!-- End device-item  -->
+
+                <div class="device-item">
+                    <div class="flex">
+                        <i class="icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0012 1L11.0008 6.0004L6.0004 1M3.00016 6.0004H19.0014C20.1061 6.0004 21.0016 6.8959 21.0016 8.00056V19.0014C21.0016 20.1061 20.1061 21.0016 19.0014 21.0016H3.00016C1.8955 21.0016 1 20.1061 1 19.0014V8.00056C1 6.8959 1.8955 6.0004 3.00016 6.0004Z" stroke="#4D2B81" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <div>
+                            <h6 class="title">Samsung Living Room</h6>
+                            <small class="">Samsung Series 8</small>
+                        </div>
+                    </div>
+                    <!-- ENd flex -->
+                    <div class="flex">
+                        <i class="iconwifi">
+                            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5006 12.25H8.5081M1 3.86474C3.06275 2.01991 5.73313 1 8.5006 1C11.2681 1 13.9385 2.01991 16.0012 3.86474M3.25018 6.89393C4.65226 5.51973 6.5373 4.75 8.5006 4.75C10.4639 4.75 12.3489 5.51973 13.751 6.89393M5.87539 9.57197C6.57643 8.88486 7.51895 8.5 8.5006 8.5C9.48225 8.5 10.4248 8.88486 11.1258 9.57197" stroke="#63638F" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <button class="bottom" data-bs-toggle="modal" data-bs-target="#successModal">اتصال</button>
+                    </div>
+                </div>
+                <!-- End device-item  -->
+
+                <div class="device-item">
+                    <div class="flex">
+                        <i class="icon">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0012 1L11.0008 6.0004L6.0004 1M3.00016 6.0004H19.0014C20.1061 6.0004 21.0016 6.8959 21.0016 8.00056V19.0014C21.0016 20.1061 20.1061 21.0016 19.0014 21.0016H3.00016C1.8955 21.0016 1 20.1061 1 19.0014V8.00056C1 6.8959 1.8955 6.0004 3.00016 6.0004Z" stroke="#4D2B81" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <div>
+                            <h6 class="title">تلفزيون المطبخ</h6>
+                            <small class="">Apple TV 4K</small>
+                        </div>
+                    </div>
+                    <!-- ENd flex -->
+                    <div class="flex">
+                        <i class="iconwifi">
+                            <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.5006 12.25H8.5081M1 3.86474C3.06275 2.01991 5.73313 1 8.5006 1C11.2681 1 13.9385 2.01991 16.0012 3.86474M3.25018 6.89393C4.65226 5.51973 6.5373 4.75 8.5006 4.75C10.4639 4.75 12.3489 5.51973 13.751 6.89393M5.87539 9.57197C6.57643 8.88486 7.51895 8.5 8.5006 8.5C9.48225 8.5 10.4248 8.88486 11.1258 9.57197" stroke="#63638F" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </i>
+                        <button class="bottom" data-bs-toggle="modal" data-bs-target="#successModal">اتصال</button>
+                    </div>
+                </div>
+                <!-- End device-item  -->
+
+                <div class="footeritem">
+                    <a href="#" class="text-cancel" data-bs-dismiss="modal">إلغاء</a>
+                    <button class="text-update">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 7C1 5.4087 1.63214 3.88258 2.75736 2.75736C3.88258 1.63214 5.4087 1 7 1C8.67737 1.00631 10.2874 1.66082 11.4933 2.82667L13 4.33333M9.66667 4.33333H13V1M13 7C13 8.5913 12.3679 10.1174 11.2426 11.2426C10.1174 12.3679 8.5913 13 7 13C5.32263 12.9937 3.71265 12.3392 2.50667 11.1733L1 9.66667M1 13V9.66667H4.33333" stroke="#2A2A4D" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                           تحديث القائمة
+                   </button>
+                </div>
+                <!-- End footeritem -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- البوب أب الثانية: تم الاتصال بنجاح  -->
+    <div class="modal fade custom-modal" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="success-circle">
+                    <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.3312 1L7.666 15.6656L1 8.99942" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h4 class="title text-center">تم الاتصال بنجاح!</h4>
+                <div class="badge-device">
+                    <p>تلفزيون غرفة المجلس </p>
+                </div>
+                <p class="text text-center mt-3">Samsung Smart TV</p>
+
+                <div class="screen-share-box">
+                    <i class="icon">
+                        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 4.9996V2.9998C1 2.46942 1.21073 1.96076 1.58583 1.58573C1.96094 1.21069 2.46968 1 3.00016 1H19.0014C19.5319 1 20.0407 1.21069 20.4158 1.58573C20.7909 1.96076 21.0016 2.46942 21.0016 2.9998V14.9986C21.0016 15.529 20.7909 16.0376 20.4158 16.4127C20.0407 16.7877 19.5319 16.9984 19.0014 16.9984H13.001M1 8.9992C3.04754 9.21645 4.95869 10.129 6.41465 11.5847C7.87061 13.0404 8.78335 14.9512 9.00064 16.9984M1 12.9988C1.99273 13.1837 2.90623 13.6647 3.62027 14.3786C4.33431 15.0925 4.81543 16.0058 5.00032 16.9984M1 16.9984H1.01" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                   </i>
+                    <p class="text">شاشتك معروضة الآن على التلفزيون</p>
+                </div>
+
+                <button class="bottom s-m" data-bs-dismiss="modal">ابدأ اللعبة</button>
+                <div class="text-center mt-3">
+                    <a href="#" class="disconnect" data-bs-dismiss="modal">قطع الاتصال</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <footer class="footer">

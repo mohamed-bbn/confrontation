@@ -796,7 +796,7 @@
  .item-winner {
      position: relative;
      width: $fullwidth;
-     height: 100vh;
+     min-height: 100vh;
      padding-top: $com-spacing-5;
      background: $purple url('../images/brother.png') no-repeat left bottom/cover;
      @media (min-width: 1600px) {
@@ -860,6 +860,7 @@
          }
          .flex {
              display: grid;
+             align-items: flex-end;
              grid-template-columns: repeat(2, 1fr);
              gap: 38px;
              @media (max-width: 999px) {
@@ -873,7 +874,7 @@
          .subitem {
              min-width: 300px;
              max-width: 300px;
-             height: 254px;
+             min-height: 254px;
              border: 2px solid $blak;
              box-shadow: 10px 4px 0px 0px $blak;
              padding: $com-spacing-4;
@@ -942,6 +943,12 @@
                      font-size: 32px;
                      margin-top: $com-spacing-2;
                  }
+             }
+         }
+         .iconcup {
+             @include flex;
+             img {
+                 max-height: 114px;
              }
          }
          .text-center {

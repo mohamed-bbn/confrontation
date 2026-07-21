@@ -2350,7 +2350,21 @@
     @media (max-width: 999px) {
         padding: $com-spacing-6 $zero;
     }
-    .container {}
+    .minhead {
+        margin: $zero $auto;
+        max-width: 1314px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: $com-spacing-3;
+        .title {
+            color: $blak;
+        }
+        .bottom {
+            background: $orange;
+        }
+    }
     .title.text-center {
         color: $blak;
     }
