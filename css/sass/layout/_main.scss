@@ -1388,7 +1388,12 @@
             grid-template-columns: repeat(3, 1fr);
             gap: $com-spacing-3;
             margin-top: 9;
-            @media (max-width: 999px) {}
+            @media (max-width: 999px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media (max-width: 450px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
             .che-box {
                 @include flex;
                 height: 80px;

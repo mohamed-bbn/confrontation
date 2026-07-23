@@ -21,39 +21,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    @media (max-width: 999px) {
-      .header .container {
-        justify-content: end; } }
   .header .burger {
     position: absolute;
-    right: 12px;
+    left: 12px;
     display: none;
     cursor: pointer;
     user-select: none;
-    width: 24px;
-    height: 1rem;
-    background: transparent; }
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    border-radius: 50%; }
     @media (max-width: 999px) {
       .header .burger {
-        display: block; } }
-    .header .burger-line {
-      position: absolute;
-      display: block;
-      right: 0px;
-      width: 100%;
-      height: 2px;
-      opacity: 1;
-      border: none;
-      outline: none;
-      background: #fff; }
-      .header .burger-line:nth-child(1) {
-        top: 0px; }
-      .header .burger-line:nth-child(2) {
-        top: 0.5rem;
-        width: 80%; }
-      .header .burger-line:nth-child(3) {
-        top: 1rem;
-        width: 60%; }
+        display: flex;
+        align-items: center;
+        justify-content: center; } }
   .header .logo {
     margin-bottom: -58px; }
     @media (max-width: 999px) {
@@ -64,26 +46,10 @@
       @media (max-width: 999px) {
         .header .logo img {
           max-width: 110px; } }
-  .header .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 9;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.35s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.65); }
-    @media only screen and (max-width: 1100px) {
-      .header .overlay.active {
-        display: block;
-        opacity: 1;
-        visibility: visible; } }
   .header .menu-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
     -moz-transition: all 0.5s ease-in-out 0s;
     -o-transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
@@ -92,40 +58,102 @@
       .header .menu-actions {
         display: block;
         position: fixed;
-        top: 0;
-        right: -100%;
-        width: 290px;
-        height: 100%;
+        bottom: -100%;
+        left: 0px;
+        width: 100%;
+        height: calc(100% - 81.5px);
         z-index: 10;
         opacity: 0;
         overflow: hidden;
         overflow-y: auto;
         visibility: hidden;
-        padding: 20px;
-        background: #4D2B81; }
+        padding: 12px;
+        padding-top: 0px;
+        background: #fff; }
         .header .menu-actions.active {
-          right: 0rem;
+          bottom: 0px;
           opacity: 1;
           visibility: visible; } }
-    .header .menu-actions .logo,
-    .header .menu-actions .cancel {
-      display: none;
-      margin: 0px; }
-      @media (max-width: 999px) {
-        .header .menu-actions .logo,
-        .header .menu-actions .cancel {
-          display: block; } }
-    @media (max-width: 999px) {
-      .header .menu-actions .logo {
-        margin-bottom: 64px; } }
     .header .menu-actions .cancel {
       position: absolute;
       left: 20px;
-      top: 20px; }
+      top: 20px;
+      display: none;
+      margin: 0px; }
+      @media (max-width: 999px) {
+        .header .menu-actions .cancel {
+          display: block; } }
+    .header .menu-actions .login-res,
+    .header .menu-actions .user-res {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0px;
+      border-bottom: 1px solid #EBEBEF; }
+      .header .menu-actions .login-res .flex,
+      .header .menu-actions .user-res .flex {
+        display: flex;
+        align-items: center;
+        gap: 12px; }
+        .header .menu-actions .login-res .flex .icon,
+        .header .menu-actions .user-res .flex .icon {
+          min-width: 44px;
+          max-width: 44px;
+          height: 44px; }
+        .header .menu-actions .login-res .flex .photo,
+        .header .menu-actions .user-res .flex .photo {
+          position: relative;
+          min-width: 40px;
+          max-width: 40px;
+          height: 40px; }
+          .header .menu-actions .login-res .flex .photo img,
+          .header .menu-actions .user-res .flex .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%; }
+          .header .menu-actions .login-res .flex .photo .status,
+          .header .menu-actions .user-res .flex .photo .status {
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 10px;
+            height: 10px;
+            background: #2DCA72;
+            border-radius: 50%;
+            border: 2px solid #fff; }
+        .header .menu-actions .login-res .flex .title,
+        .header .menu-actions .user-res .flex .title {
+          color: #000;
+          font-size: 14px;
+          font-weight: 400; }
+        .header .menu-actions .login-res .flex p,
+        .header .menu-actions .user-res .flex p {
+          font-size: 12px; }
+      @media (max-width: 999px) {
+        .header .menu-actions .login-res,
+        .header .menu-actions .user-res {
+          display: flex; } }
+      .header .menu-actions .login-res .empirical,
+      .header .menu-actions .user-res .empirical {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FFF2EE;
+        border-radius: 60px;
+        color: #B82E00;
+        font-size: 12px;
+        padding: 0px 16px; }
     @media (max-width: 999px) {
       .header .menu-actions .bottom {
         min-width: 100%;
         margin-top: 16px; } }
+    .header .menu-actions .bottom.btn-hosting {
+      border-color: #fff;
+      background: #FFFFFF33; }
+      @media (max-width: 999px) {
+        .header .menu-actions .bottom.btn-hosting {
+          display: none; } }
     .header .menu-actions .play {
       display: inline-flex;
       align-items: center;
@@ -165,6 +193,9 @@
       @media (max-width: 999px) {
         .header .menu-actions .play {
           min-width: 100%; } }
+    @media (max-width: 999px) {
+      .header .menu-actions .hide-res {
+        display: none; } }
     .header .menu-actions .itemlink {
       color: #fff;
       font-size: 25px;
@@ -174,14 +205,28 @@
       -o-transition: all 0.5s ease-in-out 0s;
       -webkit-transition: all 0.5s ease-in-out 0s;
       transition: all 0.5s ease-in-out 0s; }
+      .header .menu-actions .itemlink svg {
+        display: none; }
+      .header .menu-actions .itemlink.hideitem {
+        display: none; }
       @media (max-width: 999px) {
         .header .menu-actions .itemlink {
-          display: block;
-          margin-bottom: 16px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-top: 20px;
           font-size: 20px;
-          font-weight: 500; } }
+          font-weight: 500;
+          color: #000; }
+          .header .menu-actions .itemlink svg {
+            display: block; }
+          .header .menu-actions .itemlink.hideitem {
+            display: flex; } }
       .header .menu-actions .itemlink:hover {
         color: #F08320; }
+    @media (max-width: 999px) {
+      .header .menu-actions .dropdown {
+        display: none; } }
     .header .menu-actions .dropdown .dropdown-toggle {
       display: flex;
       align-items: center;
@@ -253,6 +298,61 @@
           margin: 0px; }
         .header .menu-actions .dropdown .dropdown-menu .dropdown-item.active, .header .menu-actions .dropdown .dropdown-menu .dropdown-item:hover {
           color: #FE0000; }
+    .header .menu-actions .itemplan {
+      display: none;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 100%; }
+      @media (max-width: 999px) {
+        .header .menu-actions .itemplan {
+          display: block; } }
+      .header .menu-actions .itemplan .flexplan {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        border-top: 1px solid #EBEBEF; }
+        .header .menu-actions .itemplan .flexplan .title {
+          color: #121217;
+          font-size: 14px;
+          font-weight: 400; }
+        .header .menu-actions .itemplan .flexplan p {
+          color: #6C6C89;
+          font-size: 12px;
+          font-weight: 400; }
+        .header .menu-actions .itemplan .flexplan .promotion {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #F7F7F8;
+          border-radius: 12px;
+          color: #121217;
+          font-size: 14px;
+          font-weight: 500;
+          padding: 4px 12px; }
+      .header .menu-actions .itemplan .btns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px;
+        border-top: 1px solid #EBEBEF; }
+        .header .menu-actions .itemplan .btns a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          height: 36.38px;
+          border-radius: 10px;
+          font-size: 15px;
+          font-weight: 600;
+          color: #fff; }
+          .header .menu-actions .itemplan .btns a:nth-child(1) {
+            background: #F08320;
+            border: 1.53px solid #2D2D2D; }
+          .header .menu-actions .itemplan .btns a:nth-child(2) {
+            background: #4D2B81;
+            border: 1.53px solid #E0E0E0; }
 
 .header-competition {
   display: flex;
@@ -270,6 +370,9 @@
     max-width: 100%; }
   .header-competition .logo img {
     max-width: 111px; }
+    @media (max-width: 767px) {
+      .header-competition .logo img {
+        max-width: 82px; } }
   .header-competition .btn-actions {
     display: flex;
     align-items: center;
@@ -2441,6 +2544,12 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin-top: 9; }
+      @media (max-width: 999px) {
+        .multible-choice .contentinner .subradio {
+          grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 450px) {
+        .multible-choice .contentinner .subradio {
+          grid-template-columns: repeat(1, 1fr); } }
       .multible-choice .contentinner .subradio .che-box {
         display: flex;
         align-items: center;
@@ -4493,6 +4602,154 @@
           content: attr(data-label) " : ";
           margin-left: 8px;
           white-space: nowrap; } }
+  .profile-container .main-content .header-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .profile-container .main-content .header-item .title {
+      font-size: 34px;
+      color: #1a202c; }
+    .profile-container .main-content .header-item .subtitle {
+      font-size: 14px;
+      color: #72516A; }
+    .profile-container .main-content .header-item .icon-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #4D2B81;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px; }
+  .profile-container .main-content .custom-nav-tabs {
+    display: flex;
+    border: 1px solid #E5E7EB;
+    border-radius: 30px;
+    overflow: hidden;
+    background: #fff;
+    padding: 4px;
+    margin-top: 24px; }
+    .profile-container .main-content .custom-nav-tabs .nav-link {
+      flex: 1;
+      border: 0px;
+      padding: 8px 12px;
+      font-weight: 700;
+      border-radius: 30px;
+      text-align: center;
+      color: #4D2B81;
+      background: none;
+      transition: all 0.3s ease; }
+      .profile-container .main-content .custom-nav-tabs .nav-link.active {
+        background: #4D2B81;
+        color: #fff; }
+  .profile-container .main-content .challenge-wrapper {
+    border: 1px solid #E5E7EB;
+    padding: 20px;
+    margin-top: 16px;
+    border-radius: 18px; }
+    @media (max-width: 999px) {
+      .profile-container .main-content .challenge-wrapper {
+        padding: 12px; } }
+    .profile-container .main-content .challenge-wrapper .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px; }
+      .profile-container .main-content .challenge-wrapper .card-top .card-title-area {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 20px;
+        color: #141B34;
+        font-weight: 700; }
+        .profile-container .main-content .challenge-wrapper .card-top .card-title-area .question-circle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 36px;
+          max-width: 36px;
+          height: 36px;
+          background: #F3F4F6;
+          border-radius: 12px; }
+      .profile-container .main-content .challenge-wrapper .card-top .card-date {
+        font-size: 13px;
+        color: #72516A; }
+    .profile-container .main-content .challenge-wrapper .score-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 16px;
+      padding: 12px;
+      margin-bottom: 12px; }
+      .profile-container .main-content .challenge-wrapper .score-container.bg-score-purple {
+        background: #F3F4F6; }
+      .profile-container .main-content .challenge-wrapper .score-container.bg-score-orange {
+        background: #FFF3E0; }
+      .profile-container .main-content .challenge-wrapper .score-container.bg-score-red {
+        background: #FFE6E6; }
+      .profile-container .main-content .challenge-wrapper .score-container .team-block {
+        flex: 1;
+        text-align: center; }
+        .profile-container .main-content .challenge-wrapper .score-container .team-block .team-name {
+          font-size: 13px;
+          color: #72516A;
+          margin-bottom: 4px; }
+        .profile-container .main-content .challenge-wrapper .score-container .team-block .team-num {
+          font-size: 44px;
+          font-weight: 700;
+          color: #6B7280;
+          line-height: 1; }
+        .profile-container .main-content .challenge-wrapper .score-container .team-block .text-highlight-purple {
+          color: #4D2B81; }
+        .profile-container .main-content .challenge-wrapper .score-container .team-block .text-highlight-orange {
+          color: #F08320; }
+      .profile-container .main-content .challenge-wrapper .score-container .vs-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 50px; }
+        .profile-container .main-content .challenge-wrapper .score-container .vs-block .vs-text {
+          font-size: 14px;
+          font-weight: 700;
+          color: #141B34; }
+    .profile-container .main-content .challenge-wrapper .card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .profile-container .main-content .challenge-wrapper .card-bottom .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; }
+        .profile-container .main-content .challenge-wrapper .card-bottom .icon.state-success {
+          background: #E6FFF0; }
+        .profile-container .main-content .challenge-wrapper .card-bottom .icon.icon-state-pending {
+          background: #FFF3E0; }
+      .profile-container .main-content .challenge-wrapper .card-bottom .status-badge-win,
+      .profile-container .main-content .challenge-wrapper .card-bottom .btn-orange-action,
+      .profile-container .main-content .challenge-wrapper .card-bottom .status-badge-lose {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid #10B981;
+        color: #10B981;
+        background: #E6FFF0;
+        border-radius: 60px;
+        padding: 4px 12px;
+        font-size: 14px;
+        font-weight: 700; }
+      .profile-container .main-content .challenge-wrapper .card-bottom .btn-orange-action {
+        background: #F08320;
+        color: #fff;
+        border-color: #F08320;
+        box-shadow: 0px 10px 22px -10px #F0832033; }
+      .profile-container .main-content .challenge-wrapper .card-bottom .status-badge-lose {
+        background: #FFE6E6;
+        border-color: #FE0000;
+        color: #FE0000; }
 
 .scrollTopBtn {
   position: fixed;
@@ -4674,6 +4931,9 @@
     justify-content: center;
     gap: 16px;
     z-index: 1; }
+    @media (max-width: 999px) {
+      .footer-widget .footer-nav {
+        gap: 8px; } }
     .footer-widget .footer-nav a {
       display: flex;
       align-items: center;
@@ -4698,6 +4958,10 @@
         .footer-widget .footer-nav a {
           min-width: 162px;
           height: 48px; } }
+      @media (max-width: 999px) {
+        .footer-widget .footer-nav a {
+          min-width: 142px;
+          gap: 4px; } }
       .footer-widget .footer-nav a:hover {
         transform: translate(1px, -2px); }
       .footer-widget .footer-nav a.blue {

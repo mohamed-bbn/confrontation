@@ -597,5 +597,175 @@
                 }
             }
         }
+        .header-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .title {
+                font-size: 34px;
+                color: #1a202c;
+            }
+            .subtitle {
+                font-size: 14px;
+                color: #72516A;
+            }
+            .icon-badge {
+                @include flex;
+                background: $purple;
+                width: 44px;
+                height: 44px;
+                border-radius: 14px;
+            }
+        }
+        .custom-nav-tabs {
+            display: flex;
+            border: 1px solid #E5E7EB;
+            border-radius: 30px;
+            overflow: hidden;
+            background: $white;
+            padding: $com-spacing-1;
+            margin-top: $com-spacing-6;
+            .nav-link {
+                flex: 1;
+                border: $zero;
+                padding: $com-spacing-2 $com-spacing-3;
+                font-weight: 700;
+                border-radius: 30px;
+                text-align: center;
+                color: $purple;
+                background: none;
+                transition: all 0.3s ease;
+                &.active {
+                    background: $purple;
+                    color: $white;
+                }
+            }
+        }
+        .challenge-wrapper {
+            border: 1px solid #E5E7EB;
+            padding: $com-spacing-5;
+            margin-top: $com-spacing-4;
+            border-radius: 18px;
+            @media (max-width: 999px) {
+                padding: $com-spacing-3;
+            }
+            .card-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: $com-spacing-3;
+                .card-title-area {
+                    display: flex;
+                    align-items: center;
+                    gap: $com-spacing-2;
+                    font-size: 20px;
+                    color: #141B34;
+                    font-weight: 700;
+                    .question-circle {
+                        @include flex;
+                        min-width: 36px;
+                        max-width: 36px;
+                        height: 36px;
+                        background: #F3F4F6;
+                        border-radius: 12px;
+                    }
+                }
+                .card-date {
+                    font-size: 13px;
+                    color: #72516A;
+                }
+            }
+            .score-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 16px;
+                padding: $com-spacing-3;
+                margin-bottom: $com-spacing-3;
+                &.bg-score-purple {
+                    background: #F3F4F6;
+                }
+                &.bg-score-orange {
+                    background: #FFF3E0;
+                }
+                &.bg-score-red {
+                    background: #FFE6E6;
+                }
+                .team-block {
+                    flex: 1;
+                    text-align: center;
+                    .team-name {
+                        font-size: 13px;
+                        color: #72516A;
+                        margin-bottom: $com-spacing-1;
+                    }
+                    .team-num {
+                        font-size: 44px;
+                        font-weight: 700;
+                        color: #6B7280;
+                        line-height: 1;
+                    }
+                    .text-highlight-purple {
+                        color: $purple;
+                    }
+                    .text-highlight-orange {
+                        color: $orange;
+                    }
+                }
+                .vs-block {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 50px;
+                    .vs-text {
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: #141B34;
+                    }
+                }
+            }
+            .card-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .icon {
+                    @include flex;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    &.state-success {
+                        background: #E6FFF0;
+                    }
+                    &.icon-state-pending {
+                        background: #FFF3E0;
+                    }
+                }
+                .status-badge-win,
+                .btn-orange-action,
+                .status-badge-lose {
+                    @include flex;
+                    gap: $com-spacing-2;
+                    border: 1px solid #10B981;
+                    color: #10B981;
+                    background: #E6FFF0;
+                    border-radius: 60px;
+                    padding: $com-spacing-1 $com-spacing-3;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+                .btn-orange-action {
+                    background: $orange;
+                    color: $white;
+                    border-color: $orange;
+                    box-shadow: 0px 10px 22px -10px #F0832033;
+                }
+                .status-badge-lose {
+                    background: #FFE6E6;
+                    border-color: $red;
+                    color: $red;
+                }
+            }
+        }
     }
 }

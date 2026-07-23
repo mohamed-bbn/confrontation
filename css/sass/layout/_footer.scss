@@ -176,6 +176,9 @@
         @include flex;
         gap: $com-spacing-4;
         z-index: 1;
+        @media (max-width: 999px) {
+            gap: $com-spacing-2;
+        }
         a {
             @include flex;
             gap: 10px;
@@ -194,6 +197,10 @@
             @media (max-width: 1300px) {
                 min-width: 162px;
                 height: 48px;
+            }
+            @media (max-width: 999px) {
+                min-width: 142px;
+                gap: 4px;
             }
             &:hover {
                 transform: translate(1px, -2px);
