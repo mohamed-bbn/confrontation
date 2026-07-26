@@ -577,5 +577,36 @@ document.addEventListener('click', function(e) {
         if (card) {
             card.classList.remove('doneused');
         }
-    }
+    };
+
+
+
+    const $navLinks = $('.nav-scroll .nav-link');
+    const $sections = $('.accordion-custom .innertab');
+
+    // 1. عند الضغط على اللينك
+    $navLinks.on('click', function() {
+        $navLinks.removeClass('active');
+        $(this).addClass('active');
+    });
+
+    // 2. عند عمل سكرول في الصفحة (تغيير الـ active تلقائياً)
+    $(window).on('scroll', function() {
+        let scrollPos = $(document).scrollTop();
+
+        // أضفنا 150 بكسل كـ Offset عشان الـ active يتغير أول ما القسم يقرب من أعلى الشاشة
+        $sections.each(function() {
+            const currSection = $(this);
+            const sectionTop = currSection.offset().top - 150;
+            const sectionId = currSection.attr('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + currSection.outerHeight()) {
+                $navLinks.removeClass('active');
+                $navLinks.filter('[href="#' + sectionId + '"]').addClass('active');
+            }
+        });
+    });
+
+
+
 });

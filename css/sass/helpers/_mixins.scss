@@ -408,15 +408,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: $com-spacing-1;
-    margin-bottom: $com-spacing-3;
     li {
         display: $inline;
-        color: #838383;
+        color: $purple;
         @include transition(all 0.5s ease-in-out 0s);
         a {
-            color: $burgundy;
+            color: #727272;
             position: relative;
-            padding-inline-end: $com-spacing-4;
+            padding-inline-end: $com-spacing-3;
             @include transition(all 0.5s ease-in-out 0s);
             &:hover {
                 text-decoration: underline;
@@ -425,7 +424,7 @@
                 @include position(absolute, $top: -3px, $left: $zero);
                 content: "/";
                 display: $inline;
-                color: $burgundy;
+                color: #727272;
             }
         }
     }
