@@ -1824,6 +1824,7 @@
             }
         }
         .proverb {
+            position: relative;
             display: flex;
             align-items: center;
             gap: $com-spacing-2;
@@ -1843,6 +1844,22 @@
                     text-align: center;
                 }
             }
+            .line {
+                position: absolute;
+                bottom: $zero;
+                display: block;
+                height: 20px;
+                color: $blak;
+                font-size: 42px;
+                line-height: 16px;
+                overflow: hidden;
+                @media (min-width: 1600px) {
+                    font-size: 59px;
+                }
+                @media (max-width: 999px) {
+                    font-size: 28px;
+                }
+            }
             .form-control {
                 border-radius: $zero;
                 border: $zero !important;
@@ -1851,6 +1868,8 @@
                 font-weight: 600;
                 text-align: center;
                 color: #0BB458;
+                height: 64px;
+                // margin-top: 42px;
                 @media (min-width: 1600px) {
                     font-size: 59px;
                 }
@@ -2137,8 +2156,8 @@
                 }
                 @media (min-width: 1900px) {
                     margin: $zero $auto;
-                    width: 380px;
-                    height: 380px;
+                    width: 340px;
+                    height: 340px;
                     order: -1;
                 }
                 @media (max-width: 1300px) {

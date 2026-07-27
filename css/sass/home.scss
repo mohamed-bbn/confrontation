@@ -54,6 +54,13 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'graphik-arabic-bold';
+    src: url('../font/graphik-arabic-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // .wrapper {
 //     @media (min-width: 1366px) {
 //         zoom: 67.4%;
