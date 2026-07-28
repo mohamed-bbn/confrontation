@@ -255,27 +255,6 @@
             }
         }
     }
-    .experience {
-        margin-top: $com-spacing-9;
-        @media (max-width: 999px) {
-            margin-top: $com-spacing-7;
-        }
-        .title {
-            color: $blak;
-            font-size: 20px;
-        }
-        .bottoms {
-            margin-top: $com-spacing-6;
-            .bottom {
-                border-radius: 12px;
-                font-size: 16px;
-                height: 43px;
-                &:nth-child(2) {
-                    background: $orange;
-                }
-            }
-        }
-    }
     .packages {
         display: grid;
         grid-template-columns: repeat(4, 1fr);

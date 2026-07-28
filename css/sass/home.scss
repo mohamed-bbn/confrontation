@@ -216,6 +216,14 @@ select.form-control {
     @include social;
 }
 
+p {
+    @media (max-width: 999px) {
+        br {
+            display: none
+        }
+    }
+}
+
 .slider-loader {
     @include flex;
     position: absolute;
