@@ -330,6 +330,7 @@ $(document).ready(function() {
     updateTimerUI();
     startTimer();
 
+
     /*----------------------------------------
       GRID BOX HIDDEN TOGGLE
     ----------------------------------------*/
@@ -471,9 +472,8 @@ $(document).ready(function() {
 
 
     /*----------------------------------------
-       TEAM CARDS SELECTION & SLOTS
+       DROP MENU SELECT
      ----------------------------------------*/
-
     $('#menu-trigger').on('click', function(e) {
         e.stopPropagation();
         $('#main-dropdown').fadeToggle(150);
@@ -520,17 +520,18 @@ $(document).ready(function() {
 
         tag.remove();
     });
-    /*----------------------------------------
-       DROP MENU SELECT
-     ----------------------------------------*/
 
+
+    /*----------------------------------------
+       FILTER INPUT SEARCH
+     ----------------------------------------*/
     $('#searchInput').on('input search', function() {
         let filterText = $(this).val().trim().toLowerCase();
         if (filterText === "") {
             $('.card').show();
             $('.grid-container').show();
             $('#noResults').hide();
-            return; //
+            return;
         }
         $('.grid-container').show();
         $('.card').each(function() {
@@ -544,14 +545,14 @@ $(document).ready(function() {
             $('#noResults').hide();
         }
     });
-    /*----------------------------------------
-       FILTER INPUT SEARCH
-     ----------------------------------------*/
 
+
+    /*----------------------------------------
+       SPLASH & TOOLS OVERLAY
+     ----------------------------------------*/
     setTimeout(function() {
         $('#welcome-splash').fadeOut(1000);
     }, 1000);
-
 
     const $elements = $('.auxiliary-means, .bg-overlay, body');
     $('.btn-tools, .cancellation, .bg-overlay').on('click', function() {
@@ -559,30 +560,9 @@ $(document).ready(function() {
     });
 
 
-
-}); // END window.load
-
-
-/*----------------------------------------
-  ABOLITION GLOBAL CLICK EVENT (Vanilla JS)
-----------------------------------------*/
-document.addEventListener('click', function(e) {
-    var abolitionBtn = e.target.closest('.abolition');
-
-    if (abolitionBtn) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        var card = abolitionBtn.closest('.game-card');
-        if (card) {
-            card.classList.remove('doneused');
-        }
-    };
-
     /*----------------------------------------
-      ABOLITION GLOBAL CLICK EVENT (Vanilla JS)
+      NAV SCROLL & ACCORDION ACTIVE HANDLER
     ----------------------------------------*/
-
     const $navLinks = $('.nav-scroll .nav-link');
     const $sections = $('.accordion-custom .innertab');
 
@@ -591,7 +571,7 @@ document.addEventListener('click', function(e) {
         $(this).addClass('active');
     });
 
-    $(window).on('scroll', function() {
+    $window.on('scroll', function() {
         let scrollPos = $(document).scrollTop();
         $sections.each(function() {
             const currSection = $(this);
@@ -606,5 +586,58 @@ document.addEventListener('click', function(e) {
     });
 
 
+    /*----------------------------------------
+      COUNTDOWN TIMER (LAUNCH COUNTER)
+    ----------------------------------------*/
+    let duration = (47 * 86400) + (8 * 3600) + (32 * 60) + 15;
+    let countdownDate = Date.now() + (duration * 1000);
 
+    let timer = setInterval(() => {
+        let distance = countdownDate - Date.now();
+
+        if (distance < 0) {
+            clearInterval(timer);
+            return $(".countdown-container").html("<h2 style='color:var(--text-gold)'>تم الإطلاق الآن!</h2>");
+        }
+
+        let updateTime = (className, val) => $(className).text(String(val).padStart(2, '0'));
+
+        updateTime(".days", Math.floor(distance / 86400000));
+        updateTime(".hours", Math.floor((distance % 86400000) / 3600000));
+        updateTime(".minutes", Math.floor((distance % 3600000) / 60000));
+        updateTime(".seconds", Math.floor((distance % 60000) / 1000));
+    }, 1000);
+
+
+    /*----------------------------------------
+      NEWSLETTER SUBSCRIPTION MODAL TRIGGER
+    ----------------------------------------*/
+    $("#submitBtn").click(() => {
+        let email = $("#emailInput").val();
+        if (email && email.includes('@')) {
+            let myModal = new bootstrap.Modal(document.getElementById('successModal'));
+            myModal.show();
+            $("#emailInput").val("");
+        } else {
+            alert("يرجى إدخال بريد إلكتروني صحيح.");
+        }
+    });
+
+}); // END document.ready
+
+
+/*----------------------------------------
+  ABOLITION GLOBAL CLICK EVENT (Vanilla JS)
+----------------------------------------*/
+document.addEventListener('click', function(e) {
+    var abolitionBtn = e.target.closest('.abolition');
+    if (abolitionBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var card = abolitionBtn.closest('.game-card');
+        if (card) {
+            card.classList.remove('doneused');
+        }
+    }
 });
