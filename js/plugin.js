@@ -4,7 +4,7 @@ $(document).ready(function() {
       GLOBAL / REUSABLE SELECTION
     ----------------------------------------*/
     const $window = $(window);
-    const $header = $('.header');
+    const $header = $('.header,.site-header');
     const $scrollTopBtn = $('.scrollTopBtn');
 
     /*----------------------------------------
@@ -38,16 +38,16 @@ $(document).ready(function() {
     /*----------------------------------------
       NAVBAR TOGGLE (Burger Menu)
     ----------------------------------------*/
-    const navbarMenu = $(".menu-actions");
+    const navbarMenu = $(".menu-actions,.site-menu");
     const overlayMenu = $(".overlay");
 
-    $("#burger, .overlay").click(function() {
+    $("#burger, .overlay,.menu-toggle").click(function() {
         navbarMenu.toggleClass("active");
         overlayMenu.toggleClass("active");
     });
 
     $('.cancel').click(function() {
-        $('.menu-actions, .overlay').removeClass("active");
+        $('.menu-actions, .overlay,.site-menu').removeClass("active");
     });
 
 
@@ -622,6 +622,21 @@ $(document).ready(function() {
             alert("يرجى إدخال بريد إلكتروني صحيح.");
         }
     });
+
+    /*----------------------------------------
+      NEWSLETTER SUBSCRIPTION MODAL TRIGGER
+    ----------------------------------------*/
+
+    $('.tabs-btn').on('click', function() {
+        $('.tabs-btn').removeClass('active');
+        $(this).addClass('active');
+        const tabName = $(this).data('tab');
+        $('.tabs-content').removeClass('active-content').hide();
+        $('#content-' + tabName).fadeIn(300).addClass('active-content');
+        $('.image-wrapper').removeClass('active-image').hide();
+        $('#image-' + tabName).fadeIn(300).addClass('active-image');
+    });
+
 
 }); // END document.ready
 
