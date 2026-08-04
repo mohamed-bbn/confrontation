@@ -638,6 +638,55 @@ $(document).ready(function() {
     });
 
 
+    /*----------------------------------------
+      tabs-btn
+    ----------------------------------------*/
+
+
+
+    let videoStream = null;
+
+    async function startCamera() {
+        try {
+            videoStream = await navigator.mediaDevices.getUserMedia({
+                video: {
+                    facingMode: "environment"
+                },
+                audio: false
+            });
+
+            const videoElement = document.getElementById('webcamVideo');
+            videoElement.srcObject = videoStream;
+        } catch (err) {
+            console.error("عذراً، تعذر الوصول إلى الكاميرا:", err);
+            alert("تعذر فتح الكاميرا، يرجى التأكد من إعطاء الإذن للمتصفح.");
+        }
+    }
+
+    function stopCamera() {
+        if (videoStream) {
+            videoStream.getTracks().forEach(track => track.stop());
+            videoStream = null;
+        }
+    }
+
+    function openSheet() {
+        $('#bottomSheet').addClass('active');
+        $('#overlay').addClass('active');
+        startCamera(); // 
+    }
+
+    //  
+    function closeSheet() {
+        $('#bottomSheet').removeClass('active');
+        $('#overlay').removeClass('active');
+        stopCamera(); //  
+    }
+
+    $('.openSheet').on('click', openSheet);
+    $('#closeBtn, #backBtn, #overlay').on('click', closeSheet);
+
+
 }); // END document.ready
 
 

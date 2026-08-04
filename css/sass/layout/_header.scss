@@ -158,6 +158,7 @@
             &.btn-hosting {
                 border-color: $white;
                 background: #FFFFFF33;
+                min-width: inherit;
                 @media (max-width: 999px) {
                     display: none;
                 }

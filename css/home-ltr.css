@@ -154,7 +154,8 @@
         margin-top: 16px; } }
     .header .menu-actions .bottom.btn-hosting {
       border-color: #fff;
-      background: #FFFFFF33; }
+      background: #FFFFFF33;
+      min-width: inherit; }
       @media (max-width: 999px) {
         .header .menu-actions .bottom.btn-hosting {
           display: none; } }
