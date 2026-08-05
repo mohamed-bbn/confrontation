@@ -7142,10 +7142,16 @@
     color: #FA7106;
     font-size: 28px;
     margin-bottom: 20px; }
+    @media (max-width: 999px) {
+      .coming-soon .text {
+        font-size: 18px; } }
     .coming-soon .text strong {
       font-family: 'graphik-arabic-bold';
       color: #FA7106;
       font-size: 28px; }
+      @media (max-width: 999px) {
+        .coming-soon .text strong {
+          font-size: 18px; } }
   .coming-soon .slogin {
     display: block;
     color: #fff;
@@ -7225,7 +7231,8 @@
       .coming-soon .curve-container .item p {
         text-align: center;
         color: #fff;
-        font-size: 18px;
+        font-size: 20px;
+        line-height: 36px;
         margin-top: 20px; }
         @media (max-width: 767px) {
           .coming-soon .curve-container .item p {
@@ -7275,15 +7282,20 @@
     margin: 0px auto;
     max-width: 720px;
     background: #FFFFFF0A;
-    border: 1px solid #FFFFFF1F;
+    border: 1px solid #fff;
     border-radius: 24px;
-    padding: 48px;
+    overflow: hidden;
     z-index: 1; }
-    @media (max-width: 767px) {
-      .coming-soon .subscribe-card {
-        padding: 24px; } }
+    .coming-soon .subscribe-card .photo img {
+      width: 100%;
+      max-height: 442px; }
     .coming-soon .subscribe-card .title {
       font-size: 20px; }
+    .coming-soon .subscribe-card .input-subscribe {
+      padding: 48px; }
+      @media (max-width: 767px) {
+        .coming-soon .subscribe-card .input-subscribe {
+          padding: 24px; } }
     .coming-soon .subscribe-card .form-group {
       display: flex;
       align-items: center;
@@ -7346,7 +7358,7 @@
       font-size: 13px;
       font-weight: 500;
       color: #C3B9D0;
-      margin-top: 12px;
+      margin-top: 20px;
       text-align: center; }
   .coming-soon .line {
     display: block;

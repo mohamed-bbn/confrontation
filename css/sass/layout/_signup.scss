@@ -1054,10 +1054,16 @@
         color: #FA7106;
         font-size: 28px;
         margin-bottom: $com-spacing-5;
+        @media (max-width: 999px) {
+            font-size: 18px;
+        }
         strong {
             font-family: 'graphik-arabic-bold';
             color: #FA7106;
             font-size: 28px;
+            @media (max-width: 999px) {
+                font-size: 18px;
+            }
         }
     }
     .slogin {
@@ -1148,7 +1154,8 @@
             p {
                 text-align: center;
                 color: $white;
-                font-size: 18px;
+                font-size: 20px;
+                line-height: 36px;
                 margin-top: $com-spacing-5;
                 @media (max-width: 767px) {
                     font-size: 16px;
@@ -1210,15 +1217,28 @@
         margin: $zero $auto;
         max-width: 720px;
         background: #FFFFFF0A;
-        border: 1px solid #FFFFFF1F;
+        border: 1px solid $white;
         border-radius: 24px;
-        padding: $com-spacing-8;
+        overflow: hidden;
         z-index: 1;
-        @media (max-width: 767px) {
-            padding: $com-spacing-6;
+        .photo {
+            // width: $fullwidth;
+            // height: 442px;
+            // overflow: hidden;
+            img {
+                width: $fullwidth;
+                max-height: 442px;
+                // object-fit: cover;
+            }
         }
         .title {
             font-size: 20px;
+        }
+        .input-subscribe {
+            padding: $com-spacing-8;
+            @media (max-width: 767px) {
+                padding: $com-spacing-6;
+            }
         }
         .form-group {
             display: flex;
@@ -1291,7 +1311,7 @@
             font-size: 13px;
             font-weight: 500;
             color: #C3B9D0;
-            margin-top: $com-spacing-3;
+            margin-top: $com-spacing-5;
             text-align: center;
         }
     }
