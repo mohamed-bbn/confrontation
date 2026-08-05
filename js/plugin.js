@@ -111,6 +111,23 @@ $(document).ready(function() {
         ]
     });
 
+    initializeSlider(".slider-pattern", {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 450, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+        ]
+    });
+
+
+
+
 
     /*----------------------------------------
       SLIDER CARD HOME (Interactive Cards)
@@ -642,8 +659,6 @@ $(document).ready(function() {
       tabs-btn
     ----------------------------------------*/
 
-
-
     let videoStream = null;
 
     async function startCamera() {
@@ -685,6 +700,61 @@ $(document).ready(function() {
 
     $('.openSheet').on('click', openSheet);
     $('#closeBtn, #backBtn, #overlay').on('click', closeSheet);
+
+
+
+    /*----------------------------------------
+      Filter Home
+    ----------------------------------------*/
+
+
+    let currentFilter = 'all';
+
+    function filterCards() {
+        let searchText = $('#search-Input').val().toLowerCase().trim();
+        let visibleCount = 0;
+
+        $('.item-card').each(function() {
+            let cardCategory = $(this).data('category');
+            let cardTitle = $(this).find('.title').text().toLowerCase();
+
+            let matchesCategory = (currentFilter === 'all' || cardCategory === currentFilter);
+
+            let matchesSearch = (cardTitle.indexOf(searchText) !== -1);
+
+            if (matchesCategory && matchesSearch) {
+                $(this).fadeIn(200);
+                visibleCount++;
+            } else {
+                $(this).hide();
+            }
+        });
+
+        if (visibleCount === 0) {
+            $('#noResults').fadeIn(200);
+        } else {
+            $('#noResults').hide();
+        }
+    }
+
+    $('#search-Input').on('keyup input', function() {
+        filterCards();
+    });
+
+    $('.item-filter').on('click', function() {
+        $('.item-filter').removeClass('active');
+        $(this).addClass('active');
+
+        currentFilter = $(this).data('filter');
+
+        filterCards();
+    });
+
+
+    /*----------------------------------------
+      Filter Home
+    ----------------------------------------*/
+
 
 
 }); // END document.ready
