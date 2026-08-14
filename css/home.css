@@ -4098,6 +4098,14 @@
       .multible-choice .contentinner .timer-container .bg-red {
         background: #F60037;
         border: 3.42px solid #F395AA; }
+      .multible-choice .contentinner .timer-container .bg-yellow {
+        background: #F9AF19;
+        border: 3.63px solid #FFE2AF; }
+        .multible-choice .contentinner .timer-container .bg-yellow #timerText,
+        .multible-choice .contentinner .timer-container .bg-yellow #playIcon {
+          color: #000; }
+        .multible-choice .contentinner .timer-container .bg-yellow .icon svg path {
+          fill: #000; }
       .multible-choice .contentinner .timer-container .progress-wrapper {
         position: relative;
         display: flex;
@@ -4171,7 +4179,7 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      min-height: 100px;
+      min-height: 85px;
       border-radius: 16px;
       background: #fff;
       margin-top: 20px;
@@ -4658,6 +4666,192 @@
       .multible-choice .contentinner .trure-false .subradio input[type="radio"]:checked + .label-text .icon,
       .multible-choice .contentinner .trure-false .subradio input[type="checkbox"]:checked + .label-text .icon {
         opacity: 1; }
+    .multible-choice .contentinner .list-repeated {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+      margin: 24px auto 0px auto; }
+      @media (max-width: 999px) {
+        .multible-choice .contentinner .list-repeated {
+          grid-template-columns: repeat(6, 1fr); } }
+      @media (max-width: 676px) {
+        .multible-choice .contentinner .list-repeated {
+          grid-template-columns: repeat(4, 1fr); } }
+      @media (max-width: 500px) {
+        .multible-choice .contentinner .list-repeated {
+          grid-template-columns: repeat(3, 1fr); } }
+      .multible-choice .contentinner .list-repeated .che-box {
+        border: 2px solid #000;
+        border-radius: 4px;
+        height: 80px;
+        padding: 0px; }
+        @media (min-width: 1600px) {
+          .multible-choice .contentinner .list-repeated .che-box {
+            height: 128px; } }
+        @media (min-width: 1900px) {
+          .multible-choice .contentinner .list-repeated .che-box {
+            height: 178px; } }
+        .multible-choice .contentinner .list-repeated .che-box img {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          object-fit: scale-down;
+          z-index: 1; }
+        .multible-choice .contentinner .list-repeated .che-box .num {
+          position: absolute;
+          bottom: 8px;
+          right: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          width: 22px;
+          height: 22px;
+          background: #00000099;
+          border-radius: 50%;
+          font-size: 10px;
+          font-weight: 700;
+          font-style: normal;
+          z-index: 1; }
+        .multible-choice .contentinner .list-repeated .che-box .icon {
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+          opacity: 0;
+          z-index: 1; }
+          .multible-choice .contentinner .list-repeated .che-box .icon svg path {
+            fill: #33C766; }
+      .multible-choice .contentinner .list-repeated input[type="radio"]:checked + .labeltext .icon,
+      .multible-choice .contentinner .list-repeated input[type="checkbox"]:checked + .labeltext .icon {
+        opacity: 1; }
+    .multible-choice .contentinner .list-memory {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 24px auto 0px auto; }
+      @media (max-width: 500px) {
+        .multible-choice .contentinner .list-memory {
+          grid-template-columns: repeat(3, 1fr); } }
+      .multible-choice .contentinner .list-memory .che-box {
+        border: 2px solid #000;
+        border-radius: 4px;
+        height: 80px;
+        padding: 0px; }
+        @media (min-width: 1600px) {
+          .multible-choice .contentinner .list-memory .che-box {
+            height: 128px; } }
+        @media (min-width: 1900px) {
+          .multible-choice .contentinner .list-memory .che-box {
+            height: 178px; } }
+        .multible-choice .contentinner .list-memory .che-box img {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          object-fit: scale-down;
+          z-index: 1; }
+        .multible-choice .contentinner .list-memory .che-box .num {
+          position: absolute;
+          bottom: 8px;
+          right: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          width: 22px;
+          height: 22px;
+          background: #00000099;
+          border-radius: 50%;
+          font-size: 10px;
+          font-weight: 700;
+          font-style: normal;
+          z-index: 1; }
+        .multible-choice .contentinner .list-memory .che-box .icon {
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+          opacity: 0;
+          z-index: 1; }
+          .multible-choice .contentinner .list-memory .che-box .icon svg path {
+            fill: #33C766; }
+        .multible-choice .contentinner .list-memory .che-box.bg-white .labeltext, .multible-choice .contentinner .list-memory .che-box.bg-yellow .labeltext {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%; }
+        .multible-choice .contentinner .list-memory .che-box.bg-white .choosenumber, .multible-choice .contentinner .list-memory .che-box.bg-yellow .choosenumber {
+          text-align: center;
+          color: #000;
+          font-size: 14px;
+          font-weight: 500; }
+        .multible-choice .contentinner .list-memory .che-box.bg-white span, .multible-choice .contentinner .list-memory .che-box.bg-yellow span {
+          display: block;
+          font-size: 34px;
+          font-weight: 900;
+          line-height: 1; }
+        .multible-choice .contentinner .list-memory .che-box.bg-yellow {
+          background: #FFCB0C; }
+          .multible-choice .contentinner .list-memory .che-box.bg-yellow .icon svg path {
+            fill: #fff; }
+        .multible-choice .contentinner .list-memory .che-box.bg-green {
+          background: #0BB458; }
+          .multible-choice .contentinner .list-memory .che-box.bg-green .icon svg path {
+            fill: #fff; }
+      .multible-choice .contentinner .list-memory input[type="radio"]:checked + .labeltext .icon,
+      .multible-choice .contentinner .list-memory input[type="checkbox"]:checked + .labeltext .icon {
+        opacity: 1; }
+    .multible-choice .contentinner .list-word {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin: 24px auto 0px auto; }
+      @media (max-width: 999px) {
+        .multible-choice .contentinner .list-word {
+          grid-template-columns: repeat(5, 1fr); } }
+      @media (max-width: 767px) {
+        .multible-choice .contentinner .list-word {
+          grid-template-columns: repeat(4, 1fr); } }
+      @media (max-width: 500px) {
+        .multible-choice .contentinner .list-word {
+          grid-template-columns: repeat(3, 1fr); } }
+      @media (max-width: 400px) {
+        .multible-choice .contentinner .list-word {
+          grid-template-columns: repeat(2, 1fr); } }
+      .multible-choice .contentinner .list-word .che-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #FFCB0C;
+        border: 2px solid #000;
+        border-radius: 4px;
+        height: 80px;
+        padding: 0px; }
+        @media (min-width: 1600px) {
+          .multible-choice .contentinner .list-word .che-box {
+            height: 130px; } }
+        .multible-choice .contentinner .list-word .che-box .labeltext {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          padding: 8px; }
+        .multible-choice .contentinner .list-word .che-box p {
+          text-align: center;
+          font-weight: 500;
+          line-height: 24px;
+          color: #000; }
+          @media (min-width: 1900px) {
+            .multible-choice .contentinner .list-word .che-box p {
+              font-size: 20px; } }
+      .multible-choice .contentinner .list-word input[type="radio"]:checked + .labeltext,
+      .multible-choice .contentinner .list-word input[type="checkbox"]:checked + .labeltext {
+        background: #fff; }
+        .multible-choice .contentinner .list-word input[type="radio"]:checked + .labeltext p,
+        .multible-choice .contentinner .list-word input[type="checkbox"]:checked + .labeltext p {
+          color: #FF0000; }
   .multible-choice .container-fluid {
     display: flex;
     align-items: center;
@@ -8186,6 +8380,7 @@
   width: 100%;
   height: 88px;
   background: #4D2B81;
+  z-index: 600;
   overflow: hidden; }
   .footer-widget .container {
     display: flex;

@@ -1632,6 +1632,21 @@
                 background: #F60037;
                 border: 3.42px solid #F395AA;
             }
+            .bg-yellow {
+                background: #F9AF19;
+                border: 3.63px solid #FFE2AF;
+                #timerText,
+                #playIcon {
+                    color: $blak;
+                }
+                .icon {
+                    svg {
+                        path {
+                            fill: $blak;
+                        }
+                    }
+                }
+            }
             .progress-wrapper {
                 position: relative;
                 display: flex;
@@ -1710,7 +1725,7 @@
             position: relative;
             @include flex;
             width: $fullwidth;
-            min-height: 100px;
+            min-height: 85px;
             border-radius: 16px;
             background: $white;
             margin-top: $com-spacing-5;
@@ -2262,6 +2277,262 @@
                     .icon {
                         opacity: 1;
                     }
+                }
+            }
+        }
+        .list-repeated {
+            display: grid;
+            align-items: center;
+            // place-items: center;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
+            margin: $com-spacing-6 $auto $zero $auto;
+            @media (min-width: 1900px) {}
+            @media (max-width: 1300px) {}
+            @media (max-width: 999px) {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            @media (max-width:676px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            @media (max-width:500px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .che-box {
+                border: 2px solid $blak;
+                border-radius: 4px;
+                height: 80px;
+                padding: $zero;
+                @media (min-width: 1600px) {
+                    height: 128px;
+                }
+                @media (min-width: 1900px) {
+                    height: 178px;
+                }
+                img {
+                    position: relative;
+                    width: $fullwidth;
+                    height: $fullwidth;
+                    object-fit: scale-down;
+                    z-index: 1;
+                }
+                .labeltext {
+                    &:after {
+                        // background: $white;
+                    }
+                }
+                .num {
+                    position: absolute;
+                    bottom: $com-spacing-2;
+                    right: $com-spacing-2;
+                    @include flex;
+                    color: $white;
+                    width: 22px;
+                    height: 22px;
+                    background: #00000099;
+                    border-radius: 50%;
+                    font-size: 10px;
+                    font-weight: 700;
+                    font-style: normal;
+                    z-index: 1;
+                }
+                .icon {
+                    position: absolute;
+                    bottom: $com-spacing-2;
+                    left: $com-spacing-2;
+                    opacity: 0;
+                    z-index: 1;
+                    svg {
+                        path {
+                            fill: #33C766;
+                        }
+                    }
+                }
+            }
+            input[type="radio"]:checked+.labeltext,
+            input[type="checkbox"]:checked+.labeltext {
+                // &:after {
+                //     background: #0EB56F;
+                //     border-color: #0EB56F;
+                // }
+                .icon {
+                    opacity: 1;
+                }
+            }
+        }
+        .list-memory {
+            display: grid;
+            align-items: center;
+            // place-items: center;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: $com-spacing-6 $auto $zero $auto;
+            @media (min-width: 1900px) {}
+            @media (max-width: 1300px) {}
+            @media (max-width: 500px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .che-box {
+                border: 2px solid $blak;
+                border-radius: 4px;
+                height: 80px;
+                padding: $zero;
+                @media (min-width: 1600px) {
+                    height: 128px;
+                }
+                @media (min-width: 1900px) {
+                    height: 178px;
+                }
+                img {
+                    position: relative;
+                    width: $fullwidth;
+                    height: $fullwidth;
+                    object-fit: scale-down;
+                    z-index: 1;
+                }
+                .labeltext {
+                    &:after {
+                        // background: $white;
+                    }
+                }
+                .num {
+                    position: absolute;
+                    bottom: $com-spacing-2;
+                    right: $com-spacing-2;
+                    @include flex;
+                    color: $white;
+                    width: 22px;
+                    height: 22px;
+                    background: #00000099;
+                    border-radius: 50%;
+                    font-size: 10px;
+                    font-weight: 700;
+                    font-style: normal;
+                    z-index: 1;
+                }
+                .icon {
+                    position: absolute;
+                    bottom: $com-spacing-2;
+                    left: $com-spacing-2;
+                    opacity: 0;
+                    z-index: 1;
+                    svg {
+                        path {
+                            fill: #33C766;
+                        }
+                    }
+                }
+                &.bg-white,
+                &.bg-yellow {
+                    .labeltext {
+                        @include flex;
+                        height: $fullwidth;
+                    }
+                    .choosenumber {
+                        text-align: center;
+                        color: $blak;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                    span {
+                        display: block;
+                        font-size: 34px;
+                        font-weight: 900;
+                        line-height: 1;
+                    }
+                }
+                &.bg-yellow {
+                    background: #FFCB0C;
+                    .icon {
+                        svg {
+                            path {
+                                fill: $white;
+                            }
+                        }
+                    }
+                }
+                &.bg-green {
+                    background: #0BB458;
+                    .icon {
+                        svg {
+                            path {
+                                fill: $white;
+                            }
+                        }
+                    }
+                }
+            }
+            input[type="radio"]:checked+.labeltext,
+            input[type="checkbox"]:checked+.labeltext {
+                // &:after {
+                //     background: #0EB56F;
+                //     border-color: #0EB56F;
+                // }
+                .icon {
+                    opacity: 1;
+                }
+            }
+        }
+        .list-word {
+            display: grid;
+            align-items: center;
+            // place-items: center;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+            margin: $com-spacing-6 $auto $zero $auto;
+            @media (min-width: 1900px) {}
+            @media (max-width: 1300px) {}
+            @media (max-width: 999px) {
+                grid-template-columns: repeat(5, 1fr);
+            }
+            @media (max-width: 767px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            @media (max-width: 500px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media (max-width: 400px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .che-box {
+                @include flex;
+                background: #FFCB0C;
+                border: 2px solid $blak;
+                border-radius: 4px;
+                height: 80px;
+                padding: $zero;
+                @media (min-width: 1600px) {
+                    height: 130px;
+                }
+                @media (min-width: 1900px) {}
+                .labeltext {
+                    @include flex;
+                    width: $fullwidth;
+                    height: $fullwidth;
+                    padding: $com-spacing-2;
+                    &:after {
+                        // background: $white;
+                    }
+                }
+                p {
+                    text-align: center;
+                    font-weight: 500;
+                    line-height: 24px;
+                    color: $blak;
+                    @media (min-width: 1900px) {
+                        font-size: 20px;
+                    }
+                }
+            }
+            input[type="radio"]:checked+.labeltext,
+            input[type="checkbox"]:checked+.labeltext {
+                background: $white;
+                // &:after {
+                //     background: #0EB56F;
+                //     border-color: #0EB56F;
+                // }
+                p {
+                    color: #FF0000;
                 }
             }
         }

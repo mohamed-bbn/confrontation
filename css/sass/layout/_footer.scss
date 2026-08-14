@@ -122,6 +122,7 @@
     width: $fullwidth;
     height: 88px;
     background: $purple;
+    z-index: 600;
     overflow: hidden;
     .container {
         @include flex;
