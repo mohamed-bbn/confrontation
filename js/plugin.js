@@ -125,6 +125,21 @@ $(document).ready(function() {
         ]
     });
 
+    initializeSlider(".slider-special", {
+        dots: true,
+        infinite: true,
+        speed: 1000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        responsive: [
+            { breakpoint: 1199, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 999, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+            { breakpoint: 550, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+        ]
+    });
+
 
 
 
@@ -754,6 +769,47 @@ $(document).ready(function() {
     /*----------------------------------------
       Filter Home
     ----------------------------------------*/
+
+
+
+    $('.answer-option').on('click', function() {
+        $('.answer-option').removeClass('selected');
+        $(this).addClass('selected');
+    });
+
+    $('.submit-btn').on('click', function() {
+        var selectedAnswer = $('.answer-option.selected').text();
+        if (selectedAnswer) {
+            alert('تم اختيار: ' + selectedAnswer);
+        } else {
+            alert('يرجى اختيار إجابة أولاً!');
+        }
+    });
+
+
+    var totalSeconds = 28 * 60;
+    var timerIntervalbtn = null;
+
+    function updateTimer() {
+        var minutes = Math.floor(totalSeconds / 60);
+        var seconds = totalSeconds % 60;
+
+        var formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
+        var formattedSeconds = seconds < 10 ? '0' + seconds : seconds;
+
+        $('#time-display').text(formattedMinutes + ':' + formattedSeconds);
+
+        if (totalSeconds > 0) {
+            totalSeconds--;
+        } else {
+            clearInterval(timerIntervalbtn);
+            alert('انتهى الوقت!');
+        }
+    }
+
+    if (window.quizTimer) clearInterval(window.quizTimer);
+    timerIntervalbtn = setInterval(updateTimer, 1000);
+    window.quizTimer = timerIntervalbtn;
 
 
 
