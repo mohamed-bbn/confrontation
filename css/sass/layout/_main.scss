@@ -1386,8 +1386,8 @@
         .subradio {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: $com-spacing-3;
-            margin-top: 9;
+            gap: $com-spacing-4;
+            margin-top: $com-spacing-6;
             @media (max-width: 999px) {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1401,57 +1401,147 @@
                 @media (max-width: 999px) {
                     height: 62px;
                 }
-            }
-            .label-text {
-                @include flex;
-                gap: $com-spacing-3;
-                &::before {
-                    display: none;
-                }
-                &:after {
-                    @include overlay;
-                    background: $white;
-                    animation: effect 250ms ease-in;
-                    border-radius: 12px;
-                    border: 1px solid #E5E7EB;
-                }
-            }
-            .text-chek {
-                position: relative;
-                color: $purple;
-                font-size: 18px;
-                font-weight: 700;
-                z-index: 1;
-                @media (max-width: 999px) {}
-            }
-            .label-text::after {
-                border-radius: 12px;
-            }
-            .letters {
-                @include flex;
-                position: relative;
-                min-width: 40px;
-                max-width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                color: $white;
-                background: $purple;
-                font-style: normal;
-                font-size: 18px;
-                font-weight: 700;
-                z-index: 1;
-            }
-            input[type="radio"]:checked+.label-text,
-            input[type="checkbox"]:checked+.label-text {
-                &:after {
-                    background: $purple;
-                }
-                .letters {
-                    color: $purple;
-                    background: $white;
+                .label-text {
+                    @include flex;
+                    gap: $com-spacing-3;
+                    &::before {
+                        display: none;
+                    }
+                    &:after {
+                        @include overlay;
+                        background: $white;
+                        animation: effect 250ms ease-in;
+                        border-radius: 12px;
+                        border: 1px solid #E5E7EB;
+                    }
                 }
                 .text-chek {
+                    position: relative;
+                    color: $purple;
+                    font-size: 18px;
+                    font-weight: 700;
+                    z-index: 1;
+                    @media (max-width: 999px) {}
+                }
+                .label-text::after {
+                    border-radius: 12px;
+                }
+                .letters {
+                    @include flex;
+                    position: relative;
+                    min-width: 40px;
+                    max-width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
                     color: $white;
+                    background: $purple;
+                    font-style: normal;
+                    font-size: 18px;
+                    font-weight: 700;
+                    z-index: 1;
+                }
+                .icon {
+                    position: absolute;
+                    bottom: $com-spacing-2;
+                    left: $com-spacing-2;
+                    opacity: 0;
+                    z-index: 1;
+                    svg {
+                        path {
+                            fill: #33C766;
+                        }
+                    }
+                }
+                .num {
+                    display: none;
+                    position: absolute;
+                    top: -10px;
+                    left: -6px;
+                    background: #F9AF19;
+                    border: 2.46px solid $blak;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    font-style: normal;
+                    font-size: 20px;
+                    font-weight: 700;
+                    z-index: 1;
+                    &.red {
+                        background: #F60037;
+                        color: $white;
+                    }
+                }
+                input[type="radio"]:checked+.label-text,
+                input[type="checkbox"]:checked+.label-text {
+                    &:after {
+                        background: $purple;
+                    }
+                    .letters {
+                        color: $purple;
+                        background: $white;
+                    }
+                    .text-chek {
+                        color: $white;
+                    }
+                    .icon {
+                        opacity: 1;
+                    }
+                    .num {
+                        @include flex;
+                    }
+                }
+            }
+            .answer-card.confirmed {
+                input[type="radio"]:checked+.label-text,
+                input[type="checkbox"]:checked+.label-text {
+                    &:after {
+                        background: #2ecc71;
+                    }
+                    .letters {
+                        color: #33C766;
+                        background: $white;
+                    }
+                    .text-chek {
+                        color: $white;
+                    }
+                    .icon {
+                        opacity: 0;
+                    }
+                }
+            }
+            .answer-card.wrong {
+                input[type="radio"]:checked+.label-text,
+                input[type="checkbox"]:checked+.label-text {
+                    &:after {
+                        background: #F24236;
+                    }
+                    .letters {
+                        color: #F24236;
+                    }
+                    .icon {
+                        opacity: 0;
+                    }
+                }
+            }
+            .answer-card.disabled {
+                cursor: not-allowed;
+                pointer-events: none;
+                .label-text {
+                    .text-chek {
+                        color: #999;
+                    }
+                    &:after {
+                        background: #e0e0e0;
+                    }
+                    .letters {
+                        background: #999999;
+                    }
+                    .num {
+                        @include flex;
+                    }
+                    .icon {
+                        opacity: 0;
+                    }
                 }
             }
         }
@@ -1838,6 +1928,106 @@
                 transform: scale(1);
             }
         }
+        #sortable {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: $com-spacing-3;
+            width: $fullwidth;
+            margin-top: $com-spacing-3;
+            touch-action: none;
+            @media (min-width: 1600px) {
+                grid-template-columns: 1fr;
+            }
+            @media (max-width: 999px) {
+                grid-template-columns: 1fr;
+            }
+            .sortable-item {
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: $com-spacing-4;
+                background: $white;
+                border-radius: 12px;
+                padding: $com-spacing-3;
+                cursor: pointer;
+                height: 48px;
+                border: 1px solid #E5E7EB;
+                transition: transform 0.1s ease, background-color 0.2s ease;
+                // -webkit-user-select: none;
+                // user-select: none;
+                // touch-action: none;
+                @media (min-width: 1600px) {
+                    height: 68px;
+                }
+                @media (min-width: 1900px) {
+                    height: 78px;
+                }
+                @media (max-width: 999px) {
+                    height: auto;
+                    gap: $com-spacing-2;
+                }
+                &:active {
+                    cursor: grabbing;
+                }
+                &.correct-style {
+                    background: #33C766;
+                    border-color: #33C766;
+                    .item-content {
+                        .item-text {
+                            color: $white;
+                        }
+                    }
+                    .final-badge,
+                    .index-badge {
+                        background: $white;
+                        color: #33C766;
+                    }
+                }
+                .item-content {
+                    display: flex;
+                    align-items: center;
+                    gap: $com-spacing-2;
+                    .item-text {
+                        color: $purple;
+                        font-size: 18px;
+                        font-weight: 700;
+                        flex-grow: 1;
+                        line-height: 1;
+                    }
+                }
+                .index-badge {
+                    @include flex;
+                    position: absolute;
+                    left: $com-spacing-2;
+                    background: #33C766;
+                    color: $white;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    font-weight: 700;
+                    @media (min-width: 1600px) {
+                        width: 40px;
+                        height: 40px;
+                        left: $com-spacing-4;
+                    }
+                }
+                .final-badge {
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    background: $purple;
+                    color: $white;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    font-weight: 700;
+                    @media (min-width: 1600px) {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
         .proverb {
             position: relative;
             display: flex;
@@ -1933,16 +2123,21 @@
                 }
             }
         }
+        .centerbox {
+            margin: $zero $auto;
+            max-width: 806px;
+        }
         .listknow {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: $com-spacing-2;
-            margin-top: $com-spacing-2;
-            height: 128px;
-            overflow: hidden;
-            overflow-y: scroll;
+            gap: $com-spacing-3;
+            margin-top: $com-spacing-3;
+            // height: 128px;
+            // overflow: hidden;
+            // overflow-y: scroll;
             padding-inline-end: $com-spacing-2;
             @media (min-width: 1600px) {
+                grid-template-columns: repeat(2, 1fr);
                 height: auto;
                 padding: $zero;
                 overflow-y: inherit;
@@ -1957,7 +2152,7 @@
                 // grid-template-columns: 1fr;
                 // gap: $com-spacing-3;
             }
-            li {
+            .cardidentify {
                 @include flex;
                 position: relative;
                 background: $white;
@@ -1970,32 +2165,89 @@
                 color: $purple;
                 gap: $com-spacing-6;
                 cursor: pointer;
-                span {
+                @include transition(all 0.5s ease-in-out 0s);
+                @media (min-width: 1600px) {
+                    min-height: 130px;
+                }
+                @media (min-width: 1900px) {
+                    min-height: 160px;
+                }
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 10px rgba(123, 44, 191, 0.15);
+                }
+                &.answered {
+                    cursor: default;
+                    border-color: #ffb703;
+                    .answered-view {
+                        display: flex;
+                    }
+                }
+                &.cardidentify.answered .default-view {
+                    display: none;
+                }
+                .number {
                     display: block;
                     font-size: 34px;
                     font-weight: 900;
                     line-height: 1;
                 }
-                p {
+                .label {
                     text-align: center;
                     color: $purple;
                     font-size: 10px;
                     font-weight: 500;
                 }
-                .photo {
-                    width: 70px;
-                    height: 70px;
-                    background: $white;
-                    border-radius: 3.16px;
-                    overflow: hidden;
-                    @media (min-width: 1900px) {
-                        width: 118px;
-                        height: 118px;
+                .answered-view {
+                    display: none;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: $fullwidth;
+                    height: $fullwidth;
+                    .photo {
+                        width: 70px;
+                        height: 70px;
+                        background: $white;
+                        border-radius: 3.16px;
+                        overflow: hidden;
+                        @media (min-width: 1900px) {
+                            width: 118px;
+                            height: 118px;
+                        }
+                        img {
+                            width: $fullwidth;
+                            height: $fullwidth;
+                            object-fit: cover;
+                        }
                     }
-                    img {
-                        width: $fullwidth;
-                        height: $fullwidth;
-                        object-fit: cover;
+                    .card-answered-title {
+                        text-align: center;
+                        color: $purple;
+                        font-size: 10px;
+                        font-weight: 500;
+                    }
+                    .status-badge {
+                        @include flex;
+                        position: absolute;
+                        top: -10px;
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        color: $white;
+                        font-size: 12px;
+                        font-weight: 700;
+                        border: 2.46px solid $blak;
+                        &.badge-x {
+                            left: 10px;
+                            background: #F60037;
+                            color: $white;
+                        }
+                        &.badge-check {
+                            right: 10px;
+                            background-color: #ffb703;
+                            color: $blak;
+                        }
                     }
                 }
             }
@@ -3363,5 +3615,63 @@
             margin: $zero $auto $com-spacing-1 $auto;
             display: block;
         }
+    }
+}
+
+.question-view {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: $com-spacing-6;
+    border: 2px solid #0000001F;
+    border-radius: 15px;
+    padding: $com-spacing-3;
+    &.wrong-answer {
+        border-color: #ff0040;
+    }
+    .flag-card-box {
+        text-align: center
+    }
+    .q-number-badge {
+        @include flex;
+        position: absolute;
+        top: -10px;
+        left: $com-spacing-3;
+        background-color: #ffb703;
+        border: 2px solid #000;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-weight: 700;
+    }
+    .flag-img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+        @media (min-width: 1600px) {
+            width: 300px;
+            height: 300px;
+        }
+        @media (min-width: 1900px) {
+            width: 342px;
+            height: 342px;
+        }
+    }
+    .flag-hint {
+        margin-top: $com-spacing-3;
+        color: $blak;
+        text-align: center;
+        &.wrong-text {
+            color: #ff0040;
+        }
+    }
+    .country-title {
+        color: #F08320;
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: $com-spacing-1;
+        text-align: center;
     }
 }

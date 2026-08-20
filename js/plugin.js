@@ -812,9 +812,226 @@ $(document).ready(function() {
     window.quizTimer = timerIntervalbtn;
 
 
+    /*----------------------------------------
+      Filter Home
+    ----------------------------------------*/
+
+    var wrongAttempts = 0;
+    var popupTimer1, popupTimer2;
+
+    function showWrongPopup() {
+        clearTimeout(popupTimer1);
+        clearTimeout(popupTimer2);
+
+        $('#popup-single-img').show();
+        $('#popup-text-box').hide();
+
+        $('#wrong-popup').css('display', 'flex').hide().fadeIn(200);
+
+        popupTimer1 = setTimeout(function() {
+
+            $('#popup-single-img').fadeOut(200, function() {
+                $('#popup-text-box').fadeIn(200);
+            });
+
+            popupTimer2 = setTimeout(function() {
+                $('#wrong-popup').fadeOut(200);
+            }, 2200);
+
+        }, 2000);
+    }
+
+    $('input[name="answer"]').change(function() {
+        var $parentCard = $(this).closest('.answer-card');
+
+        if ($parentCard.hasClass('disabled') || $parentCard.hasClass('wrong')) return;
+
+        $('.answer-card').not('.disabled, .wrong').removeClass('selected confirmed');
+        $parentCard.addClass('selected');
+
+        $('#initial-text, #btn-next, #btn-retry, #btn-reveal').hide();
+        $('#btn-submit').fadeIn();
+    });
+
+    $('#btn-submit').click(function() {
+        var $selected = $('.answer-card.selected');
+        var isCorrect = $selected.data('correct');
+
+        $(this).hide();
+
+        if (isCorrect === true) {
+            $selected.removeClass('selected').addClass('confirmed');
+            $('#btn-next').css('display', 'inline-block').fadeIn();
+        } else {
+            wrongAttempts++;
+            $selected.removeClass('selected').addClass('wrong');
+
+            showWrongPopup();
+
+            if (wrongAttempts < 2) {
+                $('#btn-retry').fadeIn();
+            } else {
+                $('#btn-reveal').fadeIn();
+            }
+        }
+    });
+
+    $('#btn-retry').click(function() {
+        var $wrongCard = $('.answer-card.wrong');
+
+        $wrongCard.addClass('disabled')
+            .find('input[type="radio"]').prop('disabled', true).prop('checked', false);
+
+        $(this).hide();
+        $('#initial-text').fadeIn();
+    });
+
+    $('#btn-reveal').click(function() {
+        $('.answer-card.wrong').addClass('disabled')
+            .find('input[type="radio"]').prop('disabled', true).prop('checked', false);
+
+        var $correctCard = $('.answer-card[data-correct="true"]');
+        $correctCard.addClass('confirmed')
+            .find('input[type="radio"]').prop('checked', true);
+
+        $(this).hide();
+        $('#btn-next').css('display', 'inline-block').fadeIn();
+    });
+
+
+
+    /*----------------------------------------
+      Filter Home
+    ----------------------------------------*/
+    let isSorted = false;
+
+    function updateNumbers() {
+        $("#sortable .sortable-item").each(function(index) {
+            $(this).find(".index-badge").text(index + 1);
+            $(this).find(".final-badge").text(index + 1);
+        });
+    }
+
+    const el = document.getElementById('sortable');
+    const sortableInstance = Sortable.create(el, {
+        animation: 150,
+        onEnd: function() {
+            updateNumbers();
+
+            if (!isSorted) {
+                isSorted = true;
+                $("#footer-text").hide();
+                $("#btn-submit").css("display", "inline-block");
+                $(".final-badge").css("display", "flex");
+            }
+        }
+    });
+
+    $("#btn-submit").click(function() {
+        let isCorrect = true;
+        let previousOrder = 0;
+
+        $("#sortable .sortable-item").each(function() {
+            let currentOrder = parseInt($(this).attr("data-order"));
+            if (currentOrder < previousOrder) {
+                isCorrect = false;
+            }
+            previousOrder = currentOrder;
+        });
+
+        if (isCorrect) {
+            $(".sortable-item").addClass("correct-style");
+            sortableInstance.option("disabled", true);
+            $("#btn-submit").hide();
+            $("#btn-next").css("display", "inline-block");
+        } else {
+            $("#error-modal").fadeIn(200).delay(1000).fadeOut(200);
+            $("#btn-submit").hide();
+            $("#btn-retrys").css("display", "inline-block");
+        }
+    });
+
+    $("#btn-retrys").click(function() {
+        $(this).hide();
+        $("#btn-submit").css("display", "inline-block");
+    });
+
+    /*----------------------------------------
+      Filter Home
+    ----------------------------------------*/
+
 
 }); // END document.ready
 
+if (typeof window.Sortable === 'undefined') {
+    window.Sortable = function() {
+        return { destroy: function() {}, option: function() {} };
+    };
+    window.Sortable.create = function() { return new window.Sortable(); };
+}
+
+$(document).ready(function() {
+
+    let selectedBox = null;
+    let isCorrectst = false;
+
+    function hideAllButtons() {
+        $('#btn-submit, #btn-retrd, #btn-next').hide();
+    }
+
+    hideAllButtons();
+
+    $('.cardidentify').on('click', function() {
+        if ($(this).hasClass('answered')) return;
+
+        selectedBox = $(this);
+        let cardId = selectedBox.data('id');
+
+        let rawCorrect = selectedBox.data('correct');
+        isCorrectst = (rawCorrect === true || rawCorrect === "true");
+
+        $('#q-number').text(cardId);
+        $('#main-grid').hide();
+        $('#question-view').css('display', 'flex');
+        $('#banner-title').text('اعرف شعار كل منتخب');
+        $('#footer-text').hide();
+
+        hideAllButtons();
+        $('#btn-submit').show();
+
+        $('#question-view').removeClass('wrong-answer');
+        $('#flag-hint').removeClass('wrong-text');
+    });
+
+    $('#btn-submit').on('click', function() {
+
+        hideAllButtons();
+
+        if (isCorrectst) {
+            $('#question-view').hide();
+            $('#main-grid').show();
+            $('#banner-title').text('تعرف على أعلام الدول');
+
+            selectedBox.addClass('answered');
+
+            $('#btn-next').show();
+
+        } else {
+            $('#question-view').addClass('wrong-answer');
+            $('#flag-hint').addClass('wrong-text');
+            $('#btn-retrd').show();
+        }
+    });
+
+    $('#btn-retrd').on('click', function() {
+        hideAllButtons();
+        $('#question-view').hide();
+        $('#main-grid').show();
+        $('#banner-title').text('تعرف على أعلام الدول');
+        $('#footer-text').show();
+    });
+
+});
 
 /*----------------------------------------
   ABOLITION GLOBAL CLICK EVENT (Vanilla JS)
