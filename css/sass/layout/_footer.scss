@@ -286,6 +286,41 @@
             }
         }
     }
+    #answerButtons {
+        @include flex;
+        gap: $com-spacing-3;
+    }
+    .btn-action {
+        @include flex;
+        position: relative;
+        z-index: 1;
+        background: #21A654;
+        color: $white;
+        border: 2.78px solid #33C766;
+        padding: 15px 47px;
+        border-radius: 16px;
+        font-weight: 700;
+        gap: $com-spacing-2;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.2s;
+        @media (max-width: 999px) {
+            padding: $com-spacing-2 $com-spacing-4;
+        }
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+    .btn-wrong {
+        background: #F60037;
+        border: 2.11px solid #FF7E9B;
+        &:hover {
+            background: #df0231;
+        }
+    }
+    .hidden {
+        display: none !important;
+    }
     .text {
         position: relative;
         z-index: 1;
@@ -301,6 +336,27 @@
         }
         .red {
             color: #F60037;
+        }
+    }
+    .btn-next {
+        @include flex;
+        position: relative;
+        z-index: 1;
+        background: #314AF7;
+        color: $white;
+        border: 2.78px solid #99A6FF;
+        padding: 15px 47px;
+        border-radius: 16px;
+        font-weight: 700;
+        gap: $com-spacing-4;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.2s;
+        @media (max-width: 999px) {
+            padding: $com-spacing-2 $com-spacing-4;
+        }
+        &:hover {
+            background: #2563eb;
         }
     }
 }

@@ -3874,7 +3874,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 12px; }
+    padding: 12px;
+    /* Teams Sidebar */ }
     @media (max-width: 1300px) {
       .multible-choice .contentinner {
         display: block; } }
@@ -5012,57 +5013,119 @@
       .multible-choice .contentinner .list-memory input[type="radio"]:checked + .labeltext .icon,
       .multible-choice .contentinner .list-memory input[type="checkbox"]:checked + .labeltext .icon {
         opacity: 1; }
-    .multible-choice .contentinner .list-word {
+    .multible-choice .contentinner .cards-grid {
       display: grid;
       align-items: center;
       grid-template-columns: repeat(6, 1fr);
       gap: 10px;
-      margin: 24px auto 0px auto; }
+      margin: 12px auto 0px auto; }
       @media (max-width: 999px) {
-        .multible-choice .contentinner .list-word {
+        .multible-choice .contentinner .cards-grid {
           grid-template-columns: repeat(5, 1fr); } }
       @media (max-width: 767px) {
-        .multible-choice .contentinner .list-word {
+        .multible-choice .contentinner .cards-grid {
           grid-template-columns: repeat(4, 1fr); } }
       @media (max-width: 500px) {
-        .multible-choice .contentinner .list-word {
+        .multible-choice .contentinner .cards-grid {
           grid-template-columns: repeat(3, 1fr); } }
       @media (max-width: 400px) {
-        .multible-choice .contentinner .list-word {
+        .multible-choice .contentinner .cards-grid {
           grid-template-columns: repeat(2, 1fr); } }
-      .multible-choice .contentinner .list-word .che-box {
+      .multible-choice .contentinner .cards-grid .card-box {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #FFCB0C;
-        border: 2px solid #000;
-        border-radius: 4px;
-        height: 80px;
-        padding: 0px; }
+        background: #F0F0F0;
+        border: 2px solid #ACACAC;
+        border-radius: 5px;
+        height: 60px;
+        padding: 0px;
+        cursor: pointer; }
+        @media (max-width: 999px) {
+          .multible-choice .contentinner .cards-grid .card-box {
+            height: 100px; } }
         @media (min-width: 1600px) {
-          .multible-choice .contentinner .list-word .che-box {
+          .multible-choice .contentinner .cards-grid .card-box {
+            height: 100px; } }
+        @media (min-width: 1900px) {
+          .multible-choice .contentinner .cards-grid .card-box {
             height: 130px; } }
-        .multible-choice .contentinner .list-word .che-box .labeltext {
+        .multible-choice .contentinner .cards-grid .card-box.selected-yellow {
+          background: #F9AF19; }
+          .multible-choice .contentinner .cards-grid .card-box.selected-yellow .text-sub {
+            display: none; }
+        .multible-choice .contentinner .cards-grid .card-box.correct-single {
+          background-color: #2EB852;
+          border-color: #2EB852; }
+          .multible-choice .contentinner .cards-grid .card-box.correct-single .text-sub {
+            display: none; }
+        .multible-choice .contentinner .cards-grid .card-box.disabled-wrong {
+          background: #D9D9D9;
+          border-color: #B3B3B3;
+          cursor: not-allowed;
+          pointer-events: none; }
+          .multible-choice .contentinner .cards-grid .card-box.disabled-wrong .text-main {
+            color: #999; }
+          .multible-choice .contentinner .cards-grid .card-box.disabled-wrong .text-sub {
+            display: none; }
+          .multible-choice .contentinner .cards-grid .card-box.disabled-wrong .badge-num {
+            background: #333333D9; }
+          .multible-choice .contentinner .cards-grid .card-box.disabled-wrong::before, .multible-choice .contentinner .cards-grid .card-box.disabled-wrong::after {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content: 'X';
+            position: absolute;
+            top: -10px;
+            right: 6px;
+            background: #F9AF19;
+            border: 2.46px solid #000;
+            color: #000;
+            font-size: 10px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-weight: bold; }
+            @media (min-width: 1900px) {
+              .multible-choice .contentinner .cards-grid .card-box.disabled-wrong::before, .multible-choice .contentinner .cards-grid .card-box.disabled-wrong::after {
+                width: 30px;
+                height: 30px; } }
+          .multible-choice .contentinner .cards-grid .card-box.disabled-wrong::after {
+            right: auto;
+            left: 4px;
+            background: #F60037;
+            color: #fff; }
+        .multible-choice .contentinner .cards-grid .card-box .badge-num {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 100%;
-          height: 100%;
-          padding: 8px; }
-        .multible-choice .contentinner .list-word .che-box p {
-          text-align: center;
-          font-weight: 500;
-          line-height: 24px;
-          color: #000; }
+          position: absolute;
+          bottom: 4px;
+          right: 4px;
+          background: #333;
+          color: #fff;
+          border-radius: 50%;
+          width: 22px;
+          height: 22px;
+          font-size: 12px;
+          font-weight: 700; }
           @media (min-width: 1900px) {
-            .multible-choice .contentinner .list-word .che-box p {
-              font-size: 20px; } }
-      .multible-choice .contentinner .list-word input[type="radio"]:checked + .labeltext,
-      .multible-choice .contentinner .list-word input[type="checkbox"]:checked + .labeltext {
-        background: #fff; }
-        .multible-choice .contentinner .list-word input[type="radio"]:checked + .labeltext p,
-        .multible-choice .contentinner .list-word input[type="checkbox"]:checked + .labeltext p {
-          color: #FF0000; }
+            .multible-choice .contentinner .cards-grid .card-box .badge-num {
+              width: 26px;
+              height: 26px; } }
+        .multible-choice .contentinner .cards-grid .card-box .text-main,
+        .multible-choice .contentinner .cards-grid .card-box .text-sub {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+          color: #000;
+          text-align: center; }
+          @media (min-width: 1900px) {
+            .multible-choice .contentinner .cards-grid .card-box .text-main,
+            .multible-choice .contentinner .cards-grid .card-box .text-sub {
+              font-size: 20px;
+              line-height: 28px; } }
   .multible-choice .container-fluid {
     display: flex;
     align-items: center;
@@ -9413,6 +9476,39 @@
       border: 2.11px solid #FF7E9B; }
       .footer-widget .btn-footer.red:hover {
         background: #df0231; }
+  .footer-widget #answerButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; }
+  .footer-widget .btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    background: #21A654;
+    color: #fff;
+    border: 2.78px solid #33C766;
+    padding: 15px 47px;
+    border-radius: 16px;
+    font-weight: 700;
+    gap: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s; }
+    @media (max-width: 999px) {
+      .footer-widget .btn-action {
+        padding: 8px 16px; } }
+    .footer-widget .btn-action:active {
+      transform: scale(0.98); }
+  .footer-widget .btn-wrong {
+    background: #F60037;
+    border: 2.11px solid #FF7E9B; }
+    .footer-widget .btn-wrong:hover {
+      background: #df0231; }
+  .footer-widget .hidden {
+    display: none !important; }
   .footer-widget .text {
     position: relative;
     z-index: 1;
@@ -9427,6 +9523,27 @@
       color: #F9AF19; }
     .footer-widget .text .red {
       color: #F60037; }
+  .footer-widget .btn-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    background: #314AF7;
+    color: #fff;
+    border: 2.78px solid #99A6FF;
+    padding: 15px 47px;
+    border-radius: 16px;
+    font-weight: 700;
+    gap: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s; }
+    @media (max-width: 999px) {
+      .footer-widget .btn-next {
+        padding: 8px 16px; } }
+    .footer-widget .btn-next:hover {
+      background: #2563eb; }
 
 html,
 body,

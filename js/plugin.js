@@ -861,7 +861,7 @@ $(document).ready(function() {
 
         if (isCorrect === true) {
             $selected.removeClass('selected').addClass('confirmed');
-            $('#btn-next').css('display', 'inline-block').fadeIn();
+            $('#btnnext').css('display', 'inline-block').fadeIn();
         } else {
             wrongAttempts++;
             $selected.removeClass('selected').addClass('wrong');
@@ -895,7 +895,7 @@ $(document).ready(function() {
             .find('input[type="radio"]').prop('checked', true);
 
         $(this).hide();
-        $('#btn-next').css('display', 'inline-block').fadeIn();
+        $('#btnnext').css('display', 'inline-block').fadeIn();
     });
 
 
@@ -943,7 +943,7 @@ $(document).ready(function() {
             $(".sortable-item").addClass("correct-style");
             sortableInstance.option("disabled", true);
             $("#btn-submit").hide();
-            $("#btn-next").css("display", "inline-block");
+            $("#btn-nexts").css("display", "inline-block");
         } else {
             $("#error-modal").fadeIn(200).delay(1000).fadeOut(200);
             $("#btn-submit").hide();
@@ -959,6 +959,42 @@ $(document).ready(function() {
     /*----------------------------------------
       Filter Home
     ----------------------------------------*/
+
+
+
+    let activeCard = null;
+
+    $('.card-box').click(function() {
+        if ($(this).hasClass('disabled-wrong') || $(this).hasClass('correct-single')) return;
+
+        $('.card-box').removeClass('selected-yellow');
+        $(this).addClass('selected-yellow');
+        activeCard = $(this);
+
+        $('#defaultFooterText').addClass('hidden');
+        $('#answerButtons').removeClass('hidden');
+    });
+
+    $('#btnWrong').click(function() {
+        if (activeCard) {
+            activeCard.removeClass('selected-yellow').addClass('disabled-wrong');
+            $('#answerButtons').addClass('hidden');
+            $('#defaultFooterText').removeClass('hidden');
+            activeCard = null;
+        }
+    });
+
+    $('#btnCorrect').click(function() {
+        if (activeCard) {
+            activeCard.removeClass('selected-yellow').addClass('correct-single');
+            activeCard.find('.text-main').text('أمواج');
+
+            $('#score1').text('100');
+
+            $('#answerButtons').addClass('hidden');
+            $('#btnNext').removeClass('hidden');
+        }
+    });
 
 
 }); // END document.ready
