@@ -3953,6 +3953,8 @@
           z-index: 1; }
           .multible-choice .contentinner .subradio .che-box .icon svg path {
             fill: #33C766; }
+          .multible-choice .contentinner .subradio .che-box .icon.showicon {
+            opacity: 1; }
         .multible-choice .contentinner .subradio .che-box .num {
           display: none;
           position: absolute;
@@ -9471,6 +9473,14 @@
         padding: 8px 16px; } }
     .footer-widget .btn-footer:hover {
       background: #2563eb; }
+    .footer-widget .btn-footer.yellow {
+      background: #F9AF19;
+      border: 2.78px solid #FFDC94;
+      color: #000; }
+      .footer-widget .btn-footer.yellow svg path {
+        fill: #000; }
+      .footer-widget .btn-footer.yellow:hover {
+        background: #e09e18; }
     .footer-widget .btn-footer.red {
       background: #F60037;
       border: 2.11px solid #FF7E9B; }

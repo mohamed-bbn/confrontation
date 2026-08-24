@@ -278,6 +278,19 @@
         &:hover {
             background: #2563eb;
         }
+        &.yellow {
+            background: #F9AF19;
+            border: 2.78px solid #FFDC94;
+            color: $blak;
+            svg {
+                path {
+                    fill: $blak;
+                }
+            }
+            &:hover {
+                background: #e09e18;
+            }
+        }
         &.red {
             background: #F60037;
             border: 2.11px solid #FF7E9B;

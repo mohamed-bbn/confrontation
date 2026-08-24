@@ -1451,6 +1451,9 @@
                             fill: #33C766;
                         }
                     }
+                    &.showicon {
+                        opacity: 1;
+                    }
                 }
                 .num {
                     display: none;

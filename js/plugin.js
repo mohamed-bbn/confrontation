@@ -287,7 +287,7 @@ $(document).ready(function() {
       COUNTDOWN TIMER & PROGRESS BAR
     ----------------------------------------*/
     let timerInterval;
-    let totalTime = 15;
+    let totalTime = 30;
     let timeLeft = totalTime * 1000;
     let isRunning = false;
     const step = 100;
@@ -816,29 +816,17 @@ $(document).ready(function() {
       Filter Home
     ----------------------------------------*/
 
+
     var wrongAttempts = 0;
-    var popupTimer1, popupTimer2;
 
     function showWrongPopup() {
-        clearTimeout(popupTimer1);
-        clearTimeout(popupTimer2);
-
-        $('#popup-single-img').show();
         $('#popup-text-box').hide();
-
-        $('#wrong-popup').css('display', 'flex').hide().fadeIn(200);
-
-        popupTimer1 = setTimeout(function() {
-
-            $('#popup-single-img').fadeOut(200, function() {
-                $('#popup-text-box').fadeIn(200);
-            });
-
-            popupTimer2 = setTimeout(function() {
+        $('#popup-single-img').show();
+        $('#wrong-popup').css('display', 'flex').hide().fadeIn(200, function() {
+            setTimeout(function() {
                 $('#wrong-popup').fadeOut(200);
-            }, 2200);
-
-        }, 2000);
+            }, 2000);
+        });
     }
 
     $('input[name="answer"]').change(function() {
@@ -896,6 +884,34 @@ $(document).ready(function() {
 
         $(this).hide();
         $('#btnnext').css('display', 'inline-block').fadeIn();
+    });
+
+
+
+    $(".btnchange").click(function() {
+        $('#timeBadge, #progressBar')
+            .removeClass('bg-yellow')
+            .addClass('bg-red');
+
+        $(".btnchange").hide();
+        $("#initial-text").show();
+
+        $('#initial-text .yellow')
+            .text('الفريق الثاني')
+            .removeClass('yellow')
+            .addClass('red');
+
+        $('.subradio .che-box .num')
+            .addClass('red');
+        $('#btn-retry')
+            .removeClass('yellow')
+            .addClass('red')
+            .contents()
+            .filter(function() {
+                return this.nodeType === 3;
+            })
+            .first()
+            .replaceWith('فرصة للفريق الثاني ');
     });
 
 
