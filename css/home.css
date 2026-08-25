@@ -4578,8 +4578,10 @@
           transform: translateY(-2px);
           box-shadow: 0 4px 10px rgba(123, 44, 191, 0.15); }
         .multible-choice .contentinner .listknow .cardidentify.answered {
-          cursor: default;
-          border-color: #ffb703; }
+          cursor: default; }
+          .multible-choice .contentinner .listknow .cardidentify.answered:hover {
+            transform: none;
+            box-shadow: none; }
           .multible-choice .contentinner .listknow .cardidentify.answered .answered-view {
             display: flex; }
         .multible-choice .contentinner .listknow .cardidentify.cardidentify.answered .default-view {
@@ -4638,7 +4640,7 @@
               background: #F60037;
               color: #fff; }
             .multible-choice .contentinner .listknow .cardidentify .answered-view .status-badge.badge-check {
-              right: 10px;
+              left: 10px;
               background-color: #ffb703;
               color: #000; }
     .multible-choice .contentinner .subpicture {
@@ -5869,14 +5871,18 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -10px;
+    top: -17px;
     left: 12px;
-    background-color: #ffb703;
     border: 2px solid #000;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     font-weight: 700; }
+    .question-view .q-number-badge.yellow {
+      background-color: #ffb703; }
+    .question-view .q-number-badge.red {
+      background: #F60037;
+      color: #fff; }
   .question-view .flag-img {
     width: 160px;
     height: 160px;

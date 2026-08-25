@@ -2183,7 +2183,11 @@
                 }
                 &.answered {
                     cursor: default;
-                    border-color: #ffb703;
+                    // border-color: #ffb703;
+                    &:hover {
+                        transform: none;
+                        box-shadow: none;
+                    }
                     .answered-view {
                         display: flex;
                     }
@@ -2249,7 +2253,7 @@
                             color: $white;
                         }
                         &.badge-check {
-                            right: 10px;
+                            left: 10px;
                             background-color: #ffb703;
                             color: $blak;
                         }
@@ -3702,14 +3706,20 @@
     .q-number-badge {
         @include flex;
         position: absolute;
-        top: -10px;
+        top: -17px;
         left: $com-spacing-3;
-        background-color: #ffb703;
         border: 2px solid #000;
         width: 30px;
         height: 30px;
         border-radius: 50%;
         font-weight: 700;
+        &.yellow {
+            background-color: #ffb703;
+        }
+        &.red {
+            background: #F60037;
+            color: $white;
+        }
     }
     .flag-img {
         width: 160px;

@@ -1057,28 +1057,29 @@ $(document).ready(function() {
     let selectedBox = null;
     let isCorrectst = false;
 
-    function hideAllButtons() {
-        $('#btn-submit, #btn-retrd, #btn-next').hide();
+    function hideAllFooterElements() {
+        $('#btn-submit, #btnretrdt, #btn-next, #footer-text').hide();
     }
 
-    hideAllButtons();
+    hideAllFooterElements();
+    $('#footer-text').show();
 
     $('.cardidentify').on('click', function() {
         if ($(this).hasClass('answered')) return;
 
+        $('.cardidentify').removeClass('selected');
         selectedBox = $(this);
-        let cardId = selectedBox.data('id');
+        selectedBox.addClass('selected');
 
+        let cardId = selectedBox.data('id');
         let rawCorrect = selectedBox.data('correct');
         isCorrectst = (rawCorrect === true || rawCorrect === "true");
 
         $('#q-number').text(cardId);
         $('#main-grid').hide();
         $('#question-view').css('display', 'flex');
-        $('#banner-title').text('اعرف شعار كل منتخب');
-        $('#footer-text').hide();
 
-        hideAllButtons();
+        hideAllFooterElements();
         $('#btn-submit').show();
 
         $('#question-view').removeClass('wrong-answer');
@@ -1086,31 +1087,36 @@ $(document).ready(function() {
     });
 
     $('#btn-submit').on('click', function() {
+        if (!selectedBox) return;
 
-        hideAllButtons();
+        hideAllFooterElements();
 
         if (isCorrectst) {
             $('#question-view').hide();
             $('#main-grid').show();
-            $('#banner-title').text('تعرف على أعلام الدول');
 
-            selectedBox.addClass('answered');
+            selectedBox.addClass('answered').removeClass('selected');
 
             $('#btn-next').show();
 
         } else {
-            $('#question-view').addClass('wrong-answer');
-            $('#flag-hint').addClass('wrong-text');
-            $('#btn-retrd').show();
+            $('#question-view').hide();
+            $('#main-grid').show();
+
+            $('#btnretrdt').show();
         }
     });
 
-    $('#btn-retrd').on('click', function() {
-        hideAllButtons();
+    $('#btnretrdt').on('click', function() {
+        hideAllFooterElements();
         $('#question-view').hide();
         $('#main-grid').show();
-        $('#banner-title').text('تعرف على أعلام الدول');
+
         $('#footer-text').show();
+        if (selectedBox) {
+            selectedBox.removeClass('selected');
+            selectedBox = null;
+        }
     });
 
 });

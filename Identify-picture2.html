@@ -448,23 +448,29 @@
                     <!-- End question -->
 
                     <div class="listknow" id="main-grid">
-                        <div class="cardidentify" data-id="1" data-correct="true">
+                        <div class="cardidentify answered" data-id="1" data-correct="true">
                             <div class="default-view">
                                 <span class="number">1</span>
                                 <span class="label">اختر الرقم</span>
                             </div>
 
                             <div class="answered-view">
-                                <div class="status-badge badge-x">✕</div>
+                                <!-- <div class="status-badge badge-x">✕</div> -->
                                 <div class="status-badge badge-check">✕</div>
                                 <div class="photo card-img-preview"><img loading="lazy" src="images/qatar.jpg" alt="المواجهة"></div>
                                 <p class="card-answered-title">دولة قطر</p>
                             </div>
                         </div>
 
-                        <div class="cardidentify" data-id="2" data-correct="false">
+                        <div class="cardidentify" data-id="2" data-correct="true">
                             <div class="default-view"><span class="number">2</span>
                                 <span class="label">اختر الرقم</span></div>
+                            <div class="answered-view">
+                                <div class="status-badge badge-x">✕</div>
+                                <!-- <div class="status-badge badge-check">✕</div> -->
+                                <div class="photo card-img-preview"><img loading="lazy" src="images/qatar.jpg" alt="المواجهة"></div>
+                                <p class="card-answered-title">دولة قطر</p>
+                            </div>
                         </div>
                         <div class="cardidentify" data-id="3" data-correct="false">
                             <div class="default-view"><span class="number">3</span>
@@ -485,10 +491,10 @@
                     </div>
                     <!-- End listknow -->
                     <div class="question-view" id="question-view">
-                        <div class="q-number-badge" id="q-number">1</div>
+                        <div class="q-number-badge red" id="q-number">2</div>
                         <div class="flag-card-box" id="flag-box">
                             <img loading="lazy" src="images/qatar.jpg" alt="المواجهة" class="flag-img">
-                            <div class="flag-hint" id="flag-hint">الإجابة الصحيحة (مزايين لتتحكم غلط)</div>
+                            <div class="flag-hint" id="flag-hint">الإجابة الصحيحة (مرئية للحكم فقط)</div>
                             <div class="country-title">علم دولة قطر</div>
                         </div>
                     </div>
@@ -544,7 +550,7 @@
                 </svg>
             </button>
 
-            <button class="btn-footer red hidden" id="btn-retrd">
+            <button class="btn-footer red" id="btnretrdt">
                 فرصة للفريق الثانى 
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.5166 1.06641C3.9051 1.06641 4.21973 1.38104 4.21973 1.76953V4.2207C4.21963 4.60912 3.90504 4.92383 3.5166 4.92383C3.12822 4.92376 2.81357 4.60908 2.81348 4.2207V3.31152C1.93737 4.30398 1.40627 5.60732 1.40625 7.03418C1.40625 10.1421 3.92622 12.6621 7.03418 12.6621C7.46487 12.6621 7.88351 12.6136 8.28516 12.5225C8.66401 12.4365 9.04099 12.6739 9.12695 13.0527C9.2128 13.4315 8.97537 13.8085 8.59668 13.8945C8.09358 14.0087 7.57034 14.0683 7.03418 14.0684C3.14923 14.0684 0 10.9191 0 7.03418C1.85193e-05 5.29345 0.632037 3.70038 1.67871 2.47266H1.05469C0.666228 2.47265 0.351605 2.15798 0.351562 1.76953C0.351562 1.38104 0.666201 1.06642 1.05469 1.06641H3.5166ZM7.03418 0C10.9191 0 14.0683 3.14929 14.0684 7.03418C14.0684 8.78012 13.4322 10.3772 12.3799 11.6064H13.0137C13.402 11.6065 13.7165 11.9213 13.7168 12.3096C13.7168 12.6981 13.4022 13.0137 13.0137 13.0137H10.5352C10.1467 13.0136 9.83203 12.698 9.83203 12.3096V9.84766C9.83224 9.45936 10.1468 9.14457 10.5352 9.14453C10.9235 9.14453 11.2381 9.45934 11.2383 9.84766V10.7754C12.1242 9.78063 12.6621 8.46994 12.6621 7.03418C12.662 3.92628 10.1421 1.40723 7.03418 1.40723C6.60349 1.40725 6.18484 1.45476 5.7832 1.5459C5.40434 1.63187 5.02738 1.39449 4.94141 1.01562C4.85568 0.636933 5.09302 0.259833 5.47168 0.173828C5.97478 0.0596684 6.49802 2.14401e-05 7.03418 0Z" fill="white"/>
