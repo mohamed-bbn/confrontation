@@ -1460,7 +1460,6 @@
                     position: absolute;
                     top: -10px;
                     left: -6px;
-                    background: #F9AF19;
                     border: 2.46px solid $blak;
                     width: 30px;
                     height: 30px;
@@ -1469,6 +1468,9 @@
                     font-size: 20px;
                     font-weight: 700;
                     z-index: 1;
+                    &.yellow {
+                        background: #F9AF19;
+                    }
                     &.red {
                         background: #F60037;
                         color: $white;

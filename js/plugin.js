@@ -888,32 +888,62 @@ $(document).ready(function() {
 
 
 
-    $(".btnchange").click(function() {
-        $('#timeBadge, #progressBar')
-            .removeClass('bg-yellow')
-            .addClass('bg-red');
+    // $(".btnchange").click(function() {
+    //     $('#timeBadge, #progressBar')
+    //         .removeClass('bg-yellow')
+    //         .addClass('bg-red');
 
-        $(".btnchange").hide();
-        $("#initial-text").show();
+    //     $(".btnchange").hide();
+    //     $("#initial-text").show();
 
-        $('#initial-text .yellow')
-            .text('الفريق الثاني')
-            .removeClass('yellow')
-            .addClass('red');
+    //     $('#initial-text .yellow')
+    //         .text('الفريق الثاني')
+    //         .removeClass('yellow')
+    //         .addClass('red');
 
-        $('.subradio .che-box .num')
-            .addClass('red');
-        $('#btn-retry')
-            .removeClass('yellow')
-            .addClass('red')
-            .contents()
-            .filter(function() {
-                return this.nodeType === 3;
-            })
-            .first()
-            .replaceWith('فرصة للفريق الثاني ');
+    //     $('.subradio .che-box .num')
+    //         .addClass('red');
+    //     $('#btn-retry')
+    //         .removeClass('yellow')
+    //         .addClass('red')
+    //         .contents()
+    //         .filter(function() {
+    //             return this.nodeType === 3;
+    //         })
+    //         .first()
+    //         .replaceWith('فرصة للفريق الثاني ');
+    // });
+
+
+
+    // $('#deleteBtn').click(function() {
+    //     $(this).addClass("doneused");
+    //     $('#modalOverlay').fadeIn(200);
+
+    //     $('#targetItem').fadeOut(300, function() {
+    //         $(this).remove();
+    //     });
+
+    //     setTimeout(function() {
+    //         $('#modalOverlay').fadeOut(200);
+    //     }, 2000);
+    // });
+
+
+    $('.deleteBtn').click(function() {
+        if ($(this).hasClass("doneused")) {
+            return;
+        }
+        $(this).addClass("doneused");
+        $(this).prop('disabled', true);
+        $('#modalOverlay').fadeIn(200);
+        $('#targetItem').fadeOut(300, function() {
+            $(this).remove();
+        });
+        setTimeout(function() {
+            $('#modalOverlay').fadeOut(200);
+        }, 2000);
     });
-
 
 
     /*----------------------------------------

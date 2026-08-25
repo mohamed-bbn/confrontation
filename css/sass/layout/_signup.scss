@@ -1681,21 +1681,31 @@
         }
     }
     #popup-text-box {
+        margin: $zero $auto;
+        max-width: 356px;
         position: relative;
         background: $white;
         border-radius: 3.44px;
         border: 1.72px solid #F9AF19;
         // overflow: hidden;
+        @media (max-width: 1199px) {
+            max-width: 294px;
+        }
+        @media (min-width: 1600px) {
+            max-width: 456px;
+        }
         .photo {
             @include flex;
             padding: 10px;
-            width: 456px;
-            height: 400px;
+            width: $fullwidth;
+            height: 300px;
             background: #F60037;
             overflow: hidden;
             @media (max-width: 1199px) {
-                width: 294px;
                 height: 190px;
+            }
+            @media (min-width: 1600px) {
+                height: 400px;
             }
             img {
                 max-width: $fullwidth;
@@ -1752,5 +1762,12 @@
                 }
             }
         }
+    }
+}
+
+#modalOverlay {
+    .popup-card {
+        @include flex;
+        height: $fullwidth;
     }
 }

@@ -3960,7 +3960,6 @@
           position: absolute;
           top: -10px;
           left: -6px;
-          background: #F9AF19;
           border: 2.46px solid #000;
           width: 30px;
           height: 30px;
@@ -3969,6 +3968,8 @@
           font-size: 20px;
           font-weight: 700;
           z-index: 1; }
+          .multible-choice .contentinner .subradio .che-box .num.yellow {
+            background: #F9AF19; }
           .multible-choice .contentinner .subradio .che-box .num.red {
             background: #F60037;
             color: #fff; }
@@ -9122,23 +9123,33 @@
     transform: scale(1);
     opacity: 1; } }
   .popup-overlay #popup-text-box {
+    margin: 0px auto;
+    max-width: 356px;
     position: relative;
     background: #fff;
     border-radius: 3.44px;
     border: 1.72px solid #F9AF19; }
+    @media (max-width: 1199px) {
+      .popup-overlay #popup-text-box {
+        max-width: 294px; } }
+    @media (min-width: 1600px) {
+      .popup-overlay #popup-text-box {
+        max-width: 456px; } }
     .popup-overlay #popup-text-box .photo {
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 10px;
-      width: 456px;
-      height: 400px;
+      width: 100%;
+      height: 300px;
       background: #F60037;
       overflow: hidden; }
       @media (max-width: 1199px) {
         .popup-overlay #popup-text-box .photo {
-          width: 294px;
           height: 190px; } }
+      @media (min-width: 1600px) {
+        .popup-overlay #popup-text-box .photo {
+          height: 400px; } }
       .popup-overlay #popup-text-box .photo img {
         max-width: 100%;
         max-height: 100%; }
@@ -9190,6 +9201,12 @@
   100% {
     transform: scale(1);
     opacity: 1; } }
+#modalOverlay .popup-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; }
+
 .scrollTopBtn {
   position: fixed;
   right: -100px;
