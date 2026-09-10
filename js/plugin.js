@@ -1119,6 +1119,125 @@ $(document).ready(function() {
         }
     });
 
+
+    /*----------------------------------------
+  Select Account
+----------------------------------------*/
+
+    let currentEditCard = null;
+    let cardToDelete = null;
+    let tempImageSrc = '';
+    var universalModal = new bootstrap.Modal(document.getElementById('universalModal'));
+
+    $('#addPlayerBtn').on('click', function() {
+        currentEditCard = null;
+        tempImageSrc = '';
+
+        $('#uniModalTitle').text('إضافة لاعب جديد');
+        $('#saveProfileBtn').text('إضافة'); // 
+
+
+        $('#uniModalBody').html($('#profileFormTemplate').html());
+        $('#saveProfileBtn').text('إضافة');
+
+        universalModal.show();
+    });
+
+
+    $(document).on('click', '.edit-profile-btn', function(e) {
+        e.stopPropagation();
+        currentEditCard = $(this).closest('.profile-card');
+        let currentName = currentEditCard.attr('data-name');
+        let currentImg = currentEditCard.find('.avatar-container img').attr('src');
+        tempImageSrc = currentImg || '';
+
+        $('#uniModalTitle').text('تعديل برفايل');
+
+
+        $('#uniModalBody').html($('#profileFormTemplate').html());
+        $('#saveProfileBtn').text('حفظ');
+
+
+        $('#playerNameInput').val(currentName);
+        if (currentImg) {
+            $('#popupAvatarImg').attr('src', currentImg).show();
+            $('#popupAvatarIcon').hide();
+        }
+
+        universalModal.show();
+    });
+
+
+    $(document).on('click', '.delete-profile-btn', function(e) {
+        e.stopPropagation();
+        cardToDelete = $(this).closest('.profile-card');
+
+        $('#uniModalTitle').text('حذف الحساب');
+
+
+        $('#uniModalBody').html($('#deleteConfirmTemplate').html());
+
+        universalModal.show();
+    });
+
+
+    $(document).on('click', '#confirmDeleteBtn', function() {
+        if (cardToDelete) {
+            cardToDelete.fadeOut(300, function() {
+                $(this).remove();
+            });
+        }
+        universalModal.hide();
+    });
+
+
+    $(document).on('change', '#imageUploadInput', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                tempImageSrc = e.target.result;
+                $('#popupAvatarImg').attr('src', tempImageSrc).show();
+                $('#popupAvatarIcon').hide();
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    $(document).on('click', '#saveProfileBtn', function() {
+        let name = $('#playerNameInput').val().trim();
+
+        if (name === '') {
+            alert('من فضلك ادخل اسم اللاعب أولاً!');
+            return;
+        }
+
+        if (currentEditCard) {
+            currentEditCard.attr('data-name', name);
+            currentEditCard.find('.profile-name').text(name);
+            if (tempImageSrc) {
+                currentEditCard.find('.avatar-container').html(`<img src="${tempImageSrc}" alt="${name}">`);
+            }
+        } else {
+            let newCard = $('#cardTemplate').html();
+            let $card = $(newCard);
+
+            $card.attr('data-name', name);
+            $card.find('.profile-name').text(name);
+            if (tempImageSrc) {
+                $card.find('.avatar-container').html(`<img src="${tempImageSrc}" alt="${name}">`);
+            }
+
+
+            $card.hide();
+            $('#addPlayerBtn').before($card); // 
+            $card.fadeIn(300);
+
+        }
+
+        universalModal.hide();
+    });
+
 });
 
 /*----------------------------------------

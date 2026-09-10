@@ -9,6 +9,10 @@
     @media (max-width: 999px) {
         padding: $com-spacing-3 $zero;
     }
+    &.un-apslo {
+        position: relative;
+        background: #410179;
+    }
     &.sticky {
         position: fixed;
         padding: $com-spacing-3 $zero;
@@ -1630,6 +1634,668 @@
         .quiz-footer {
             flex-direction: column;
             gap: 20px;
+        }
+    }
+}
+
+.site-account {
+    .title {
+        color: $purple;
+        text-align: center;
+        font-size: 48px;
+        @media (max-width: 999px) {
+            font-size: 38px;
+        }
+    }
+    p.text {
+        font-size: 24px;
+        margin-top: $com-spacing-2;
+        text-align: center;
+        @media (max-width: 999px) {
+            font-size: 20px;
+        }
+    }
+    .profiles-grid {
+        display: flex;
+        justify-content: center;
+        gap: $com-spacing-6;
+        flex-wrap: wrap;
+        margin-top: $com-spacing-7;
+        @media (max-width: 999px) {
+            gap: $com-spacing-3;
+            margin-top: $com-spacing-6;
+        }
+        .profile-card {
+            border: 2px solid #E8E8EB;
+            background: #FEFEFD;
+            border-radius: 16px;
+            min-width: 220px;
+            padding: $com-spacing-6;
+            text-align: center;
+            position: relative;
+            transition: all 0.2s ease;
+            @media (max-width: 550px) {
+                min-width: 130px;
+                padding: $com-spacing-5;
+            }
+            &.existing {
+                border: 1px solid #e0e0e0;
+                border-style: solid;
+            }
+            &:hover {
+                border-color: #4a154b;
+                transform: translateY(-3px);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            }
+        }
+        .avatar-container {
+            @include flex;
+            width: 120px;
+            height: 120px;
+            background: #E8E8E8;
+            border-radius: 50%;
+            margin: $zero auto $com-spacing-5;
+            overflow: hidden;
+            @media (max-width: 550px) {
+                width: 100px;
+                height: 100px;
+            }
+            img {
+                width: $fullwidth;
+                height: $fullwidth;
+                object-fit: cover;
+            }
+            svg {
+                max-width: $fullwidth;
+                max-height: $fullwidth;
+            }
+        }
+        .addplayer {
+            @include flex;
+            background: #FBFBFC;
+            border-style: dashed;
+            .avatar-container {
+                width: 80px;
+                height: 80px;
+            }
+            .profile-name {
+                color: #410179;
+            }
+        }
+    }
+    .profile-name {
+        font-weight: 700;
+        color: #2d1547;
+        margin-bottom: $com-spacing-5;
+        font-size: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @media (max-width: 550px) {
+            font-size: 20px;
+            margin-bottom: $com-spacing-3;
+        }
+    }
+    .play-btn {
+        @include flex;
+        background: #410179;
+        color: $white;
+        border: none;
+        border-radius: 20px;
+        padding: $com-spacing-2 $com-spacing-1;
+        width: $fullwidth;
+        font-size: 18px;
+        font-weight: 700;
+        transition: background 0.2s;
+        &:hover {
+            // background-color: #350f36;
+        }
+    }
+    .card-actions {
+        display: flex;
+        position: absolute;
+        top: $com-spacing-3;
+        left: $com-spacing-3;
+        gap: $com-spacing-1;
+        .action-badge {
+            @include flex;
+            background: $white;
+            border: 1px solid #E8E8EB;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            transition: all 0.2s;
+            cursor: pointer;
+            &.edit-profile-btn:hover {
+                background: #f8f9fa;
+                color: #4a154b;
+            }
+            &.delete-profile-btn:hover {
+                background: #fff5f5;
+                color: #e63946;
+                border-color: #f5c2c7;
+            }
+            svg,
+            img {
+                max-width: 15px;
+                max-height: 25px;
+            }
+        }
+    }
+    .manage-link {
+        @include flex;
+        margin: $com-spacing-7 $auto $zero $auto;
+        max-width: 233px;
+        height: 45px;
+        color: #475569;
+        font-size: 18px;
+        font-weight: 600;
+        border: 1.5px solid #E2E8F0;
+        border-radius: 24px;
+        padding-bottom: 2px;
+        @media (max-width: 550px) {
+            margin-top: $com-spacing-3;
+        }
+         :hover {
+            color: #2d1547;
+        }
+    }
+    .modal-dialog {
+        max-width: 480px;
+        .modal-content {
+            border-radius: 16px;
+            border: none;
+            padding: $com-spacing-7;
+            border-radius: 16px;
+            @media (max-width: 999px) {
+                padding: $com-spacing-5;
+            }
+            .modal-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid #E8E7E5;
+                padding: $zero;
+                padding-bottom: $com-spacing-6;
+                @media (max-width: 999px) {
+                    padding-bottom: $com-spacing-5;
+                }
+                .title {
+                    color: #1A1917;
+                    font-size: 20px;
+                }
+                .bt-close {
+                    @include flex;
+                    min-width: 32px;
+                    max-width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background: #F8F8F7;
+                    border: $zero;
+                    opacity: 1;
+                }
+            }
+            .modal-body {
+                padding: $zero;
+            }
+            .popup-avatar {
+                position: relative;
+                margin: $com-spacing-6 auto;
+                max-width: 86px;
+                .imageuser {
+                    @include flex;
+                    width: 72px;
+                    height: 72px;
+                    margin: $zero $auto;
+                    background: #3D6AFF;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    font-size: 30px;
+                    color: $white;
+                    overflow: hidden;
+                    img {
+                        width: $fullwidth;
+                        height: $fullwidth;
+                        object-fit: cover;
+                    }
+                    svg {
+                        max-width: 34px;
+                        max-height: 34px;
+                    }
+                }
+                .text {
+                    color: #3D6AFF;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                input[type="file"] {
+                    position: absolute;
+                    top: $zero;
+                    left: $zero;
+                    width: $fullwidth;
+                    height: $fullwidth;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+            }
+            .text-field {
+                margin-top: $com-spacing-6;
+                text-align: start;
+                label {
+                    color: $blak;
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: $com-spacing-2;
+                }
+                .form-control {
+                    border: 1px solid #E8E7E5;
+                    background: #F8F8F7;
+                    border-radius: 10px;
+                }
+            }
+            .bottoms {
+                @include flex;
+                gap: $com-spacing-3;
+                margin-top: $com-spacing-6;
+                button {
+                    @include flex;
+                    flex: 1;
+                    height: 45px;
+                    color: $white;
+                    padding: $com-spacing-3 $com-spacing-6;
+                    background: #3D6AFF;
+                    border: 1px solid #3D6AFF;
+                    font-size: 14px;
+                    font-weight: 700;
+                    border-radius: 10px;
+                    transition: all 0.5s ease;
+                    &:hover {
+                        transform: translateY(-3px);
+                    }
+                    &.cancellation {
+                        border-color: #E8E7E5;
+                        color: #A09E9B;
+                        background: $white;
+                        // &:hover {
+                        //     background: #d3d4d5;
+                        // }
+                    }
+                    &.red {
+                        background: $red;
+                        border-color: $red;
+                    }
+                }
+            }
+            .icon {
+                margin: $com-spacing-6 $auto;
+                max-width: 130px;
+                svg {
+                    max-width: $fullwidth;
+                }
+            }
+        }
+    }
+    .site-dashboard {
+        display: grid;
+        grid-template-columns: 320px 820px;
+        gap: $com-spacing-9;
+        min-height: 1000px;
+        .navbarbox {
+            position: relative;
+            background: $white;
+            border-inline-end: 1px solid #E8E8EB;
+            padding: $com-spacing-7 $com-spacing-6;
+            .username {
+                display: flex;
+                align-items: center;
+                gap: $com-spacing-2;
+                .photo {
+                    @include flex;
+                    min-width: 48px;
+                    max-width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background: #F5F0FC;
+                    img {
+                        width: $fullwidth;
+                        height: $fullwidth;
+                        object-fit: cover;
+                    }
+                    svg {
+                        max-width: 24px;
+                    }
+                }
+                .message {
+                    color: #626266;
+                    font-size: 13px;
+                    line-height: 1;
+                    margin-top: 2px;
+                }
+                .name {
+                    color: $blak;
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+            }
+            .listlink {
+                width: $fullwidth;
+                margin-top: $com-spacing-6;
+                position: sticky;
+                top: 115px;
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: $com-spacing-3;
+                    padding: $com-spacing-3;
+                    border-radius: 12px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    margin-top: $com-spacing-2;
+                    @include transition(all 0.5s ease-in-out 0s);
+                    svg {
+                        path {
+                            @include transition(all 0.5s ease-in-out 0s);
+                        }
+                    }
+                    &:hover,
+                    &.active {
+                        background: #F5F0FC;
+                        color: #410179;
+                        svg {
+                            path {
+                                fill: #410179;
+                            }
+                        }
+                    }
+                    &.logout {
+                        border: 1px solid #E8E8EB;
+                        background: $white;
+                        color: #626266;
+                        margin-top: $com-spacing-8;
+                        &:hover {
+                            background: #F5F0FC;
+                            color: #410179;
+                            border-color: #F5F0FC;
+                            svg {
+                                path {
+                                    fill: none;
+                                    stroke: #410179;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .content {
+            padding: $com-spacing-7 $zero;
+            .title {
+                font-size: 22px;
+                color: $blak;
+                text-align: start;
+            }
+            .text {
+                font-size: 13px;
+                color: #A09E9B;
+                text-align: start;
+            }
+            .profiles-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: $com-spacing-5;
+                .profile-card {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background: #F8F8F7;
+                    padding: 18px;
+                }
+                .subitem {
+                    display: flex;
+                    align-items: center;
+                    gap: $com-spacing-4;
+                }
+                .profile-name {
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin: $zero;
+                    line-height: 1;
+                }
+                .profile-mission {
+                    text-align: start;
+                    font-size: 12px;
+                    cursor: #A09E9B;
+                }
+                .avatar-container {
+                    margin: $zero;
+                    min-width: 44px;
+                    max-width: 44px;
+                    height: 44px;
+                    background: #3D6AFF;
+                    font-size: 20px;
+                    color: $white;
+                    svg {
+                        max-width: 20px;
+                        max-height: 20px;
+                    }
+                }
+                .card-actions {
+                    display: block;
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    .action-badge {
+                        border-radius: 6px;
+                        border: $zero !important;
+                        min-width: 50px;
+                        width: auto;
+                        height: 23px;
+                        font-size: 13px;
+                        transition: all 0.5s ease;
+                        &:hover {
+                            transform: translateY(-3px);
+                        }
+                        &.edit-profile-btn {
+                            color: #3D6AFF;
+                            background: #EEF1FF;
+                        }
+                        &.delete-profile-btn {
+                            background: #FFF0F0;
+                            color: #EF4444;
+                            margin-top: $com-spacing-2;
+                        }
+                    }
+                }
+                .addplayer {
+                    background: $white;
+                    cursor: pointer;
+                    .w-100 {
+                        display: flex;
+                        align-items: center;
+                        gap: $com-spacing-3;
+                    }
+                    .avatar-container {
+                        background: $none;
+                        border: 1px dashed #A09E9B;
+                    }
+                    .profile-name {
+                        text-align: start;
+                        color: #A09E9B;
+                        font-weight: 700;
+                    }
+                }
+            }
+            .main-content {
+                margin-top: $com-spacing-7;
+                @media (max-width: 999px) {
+                    margin-top: $com-spacing-6;
+                }
+                .itemstep {
+                    margin-top: $com-spacing-7;
+                    @media (max-width: 999px) {
+                        margin-top: $com-spacing-6;
+                    }
+                    .title {
+                        font-size: 16px;
+                        color: #A09E9B;
+                    }
+                    .inner {
+                        border: 1px solid #E8E7E5;
+                        background: #F8F8F7;
+                        margin-top: $com-spacing-2;
+                        border-radius: 12px;
+                    }
+                }
+                .form-group {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    position: relative;
+                    padding: $com-spacing-5;
+                    border-bottom: 1px solid #E8E7E5;
+                    &:last-child {
+                        border: $zero;
+                    }
+                    .icon-pass {
+                        position: relative;
+                        left: auto;
+                        top: auto;
+                    }
+                    .form-switch {
+                        width: 40px;
+                        height: 22px;
+                        padding: $zero;
+                        .form-check-input {
+                            width: $fullwidth;
+                            height: $fullwidth;
+                            margin: $zero;
+                            box-shadow: none !important;
+                            border: $zero;
+                            background-color: #E8E7E5;
+                            cursor: pointer;
+                            &:checked {
+                                background-color: #3D6AFF;
+                            }
+                        }
+                    }
+                    .logout {
+                        @include flex;
+                        border: 1px solid #FECACA;
+                        color: #EF4444;
+                        border-radius: 8px;
+                        padding: $com-spacing-1 $com-spacing-3;
+                        font-size: 13px;
+                        font-weight: 500;
+                        @include transition(all 0.5s ease-in-out 0s);
+                        &:hover {
+                            background: #FECACA;
+                        }
+                    }
+                    .input-row {
+                        display: flex;
+                        gap: $com-spacing-3;
+                        align-items: center;
+                        @media (max-width: 500px) {
+                            display: block;
+                        }
+                    }
+                    .input-wrapper {
+                        position: relative;
+                        flex-grow: 1;
+                    }
+                    .form-control {
+                        border-radius: 10px;
+                        height: auto;
+                        border: $zero;
+                        background: $none;
+                        text-align: end;
+                        &:hover {
+                            border-color: #E8E8E8;
+                        }
+                    }
+                    input[type="tel"] {
+                        direction: ltr;
+                        text-align: start;
+                    }
+                    .btn-edit {
+                        border-radius: 6px;
+                        border: $zero !important;
+                        min-width: 50px;
+                        width: auto;
+                        height: 27px;
+                        font-size: 13px;
+                        color: #3D6AFF;
+                        background: #EEF1FF;
+                        transition: all 0.5s ease;
+                        &:hover {
+                            transform: translateY(-3px);
+                        }
+                    }
+                    .action-buttons {
+                        display: none;
+                        gap: 10px;
+                        @media (max-width: 500px) {
+                            margin-top: $com-spacing-3;
+                        }
+                        .btn-save,
+                        .btn-cancel {
+                            border-radius: 6px;
+                            border: $zero !important;
+                            min-width: 50px;
+                            width: auto;
+                            height: 27px;
+                            font-size: 13px;
+                            color: #1da90c;
+                            background: #67efa463;
+                            transition: all 0.5s ease;
+                            &:hover {
+                                transform: translateY(-3px);
+                            }
+                        }
+                        .btn-cancel {
+                            background: #e4e6ef;
+                            color: #7e8299;
+                        }
+                    }
+                }
+                label {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $blak;
+                    small {
+                        font-size: 12px;
+                        color: #A09E9B;
+                    }
+                }
+                .danger-zone {
+                    .title {
+                        font-size: 16px;
+                        font-weight: 700;
+                        color: #ED2527;
+                    }
+                    .inner {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: $com-spacing-5;
+                        padding: $com-spacing-5;
+                        background: #FEF2F2;
+                        border: 1px solid #FFC9C9;
+                    }
+                    .de-account {
+                        @include flex;
+                        padding: $com-spacing-1 $com-spacing-3;
+                        background: #ED2527;
+                        color: $white;
+                        border-radius: 7px;
+                        @include transition(all 0.5s ease-in-out 0s);
+                        &:hover {
+                            background: #bf2022;
+                        }
+                    }
+                }
+            }
         }
     }
 }

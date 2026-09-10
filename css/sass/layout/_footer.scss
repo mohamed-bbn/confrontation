@@ -43,6 +43,16 @@
     @media (max-width: 999px) {
         margin-top: $com-spacing-8;
     }
+    &.un-border {
+        border: $zero;
+        box-shadow: none;
+        border-radius: $zero;
+        background: #410179;
+        margin-top: $zero;
+        .title {
+            color: #F7C20A;
+        }
+    }
     .rowbox {
         display: grid;
         grid-template-columns: 550px 1fr 1fr 1fr;
