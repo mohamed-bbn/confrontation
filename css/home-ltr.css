@@ -491,6 +491,26 @@
     .header-competition .actions .exit {
       background: #EF4444; }
 
+.itemtoggle {
+  display: flex;
+  align-items: center;
+  gap: 12px; }
+  .itemtoggle .user-toggle {
+    display: none;
+    min-width: 46px;
+    max-width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer; }
+    @media (max-width: 950px) {
+      .itemtoggle .user-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center; } }
+    .itemtoggle .user-toggle svg {
+      max-width: 16px; }
+
 .item-slider {
   background: #4D2B81;
   margin-top: -20px;

@@ -38,16 +38,48 @@ $(document).ready(function() {
     /*----------------------------------------
       NAVBAR TOGGLE (Burger Menu)
     ----------------------------------------*/
-    const navbarMenu = $(".menu-actions,.site-menu");
+    // const navbarMenu = $(".menu-actions,.site-menu");
+    // const overlayMenu = $(".overlay");
+
+    // $("#burger, .overlay,.menu-toggle").click(function() {
+    //     navbarMenu.toggleClass("active");
+    //     overlayMenu.toggleClass("active");
+    // });
+
+    // $('.cancel').click(function() {
+    //     $('.menu-actions, .overlay,.site-menu').removeClass("active");
+    // });
+
+
+    const navbarMenu = $(".menu-actions, .site-menu");
+    const navbarBox = $(".navbarbox");
     const overlayMenu = $(".overlay");
 
-    $("#burger, .overlay,.menu-toggle").click(function() {
+    $("#burger, .menu-toggle").click(function(e) {
+        e.stopPropagation();
+        navbarBox.removeClass("active");
         navbarMenu.toggleClass("active");
         overlayMenu.toggleClass("active");
     });
 
+    $(".user-toggle").click(function(e) {
+        e.stopPropagation();
+        navbarMenu.removeClass("active");
+        navbarBox.toggleClass("active");
+        overlayMenu.toggleClass("active");
+    });
+
+    overlayMenu.click(function() {
+        navbarMenu.removeClass("active");
+        navbarBox.removeClass("active");
+        overlayMenu.removeClass("active");
+    });
+
+
     $('.cancel').click(function() {
-        $('.menu-actions, .overlay,.site-menu').removeClass("active");
+        navbarMenu.removeClass("active");
+        navbarBox.removeClass("active");
+        overlayMenu.removeClass("active");
     });
 
 
@@ -1129,34 +1161,28 @@ $(document).ready(function() {
     let tempImageSrc = '';
     var universalModal = new bootstrap.Modal(document.getElementById('universalModal'));
 
+
     $('#addPlayerBtn').on('click', function() {
         currentEditCard = null;
         tempImageSrc = '';
 
         $('#uniModalTitle').text('إضافة لاعب جديد');
-        $('#saveProfileBtn').text('إضافة'); // 
-
-
         $('#uniModalBody').html($('#profileFormTemplate').html());
         $('#saveProfileBtn').text('إضافة');
 
         universalModal.show();
     });
 
-
     $(document).on('click', '.edit-profile-btn', function(e) {
         e.stopPropagation();
         currentEditCard = $(this).closest('.profile-card');
         let currentName = currentEditCard.attr('data-name');
-        let currentImg = currentEditCard.find('.avatar-container img').attr('src');
+        let currentImg = currentEditCard.find('.avatar img').attr('src');
         tempImageSrc = currentImg || '';
 
         $('#uniModalTitle').text('تعديل برفايل');
-
-
         $('#uniModalBody').html($('#profileFormTemplate').html());
         $('#saveProfileBtn').text('حفظ');
-
 
         $('#playerNameInput').val(currentName);
         if (currentImg) {
@@ -1167,21 +1193,24 @@ $(document).ready(function() {
         universalModal.show();
     });
 
-
     $(document).on('click', '.delete-profile-btn', function(e) {
         e.stopPropagation();
         cardToDelete = $(this).closest('.profile-card');
-
         $('#uniModalTitle').text('حذف الحساب');
-
-
         $('#uniModalBody').html($('#deleteConfirmTemplate').html());
-
+        $('#universalModal .modal-header').hide();
         universalModal.show();
     });
 
-
     $(document).on('click', '#confirmDeleteBtn', function() {
+        let typedText = $('#confirmDeleteInput').val() ? $('#confirmDeleteInput').val().trim() : '';
+
+        if (typedText !== 'حذف') {
+            $('#deleteErrorMsg').show();
+            $('#confirmDeleteInput').css('border-color', '#dc3545');
+            return;
+        }
+
         if (cardToDelete) {
             cardToDelete.fadeOut(300, function() {
                 $(this).remove();
@@ -1216,7 +1245,7 @@ $(document).ready(function() {
             currentEditCard.attr('data-name', name);
             currentEditCard.find('.profile-name').text(name);
             if (tempImageSrc) {
-                currentEditCard.find('.avatar-container').html(`<img src="${tempImageSrc}" alt="${name}">`);
+                currentEditCard.find('.avatar').html(`<img src="${tempImageSrc}" alt="${name}">`);
             }
         } else {
             let newCard = $('#cardTemplate').html();
@@ -1225,19 +1254,16 @@ $(document).ready(function() {
             $card.attr('data-name', name);
             $card.find('.profile-name').text(name);
             if (tempImageSrc) {
-                $card.find('.avatar-container').html(`<img src="${tempImageSrc}" alt="${name}">`);
+                $card.find('.avatar').html(`<img src="${tempImageSrc}" alt="${name}">`);
             }
 
-
             $card.hide();
-            $('#addPlayerBtn').before($card); // 
+            $('#addPlayerBtn').before($card); //
             $card.fadeIn(300);
-
         }
 
         universalModal.hide();
     });
-
 });
 
 /*----------------------------------------

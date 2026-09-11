@@ -491,6 +491,26 @@
     .header-competition .actions .exit {
       background: #EF4444; }
 
+.itemtoggle {
+  display: flex;
+  align-items: center;
+  gap: 12px; }
+  .itemtoggle .user-toggle {
+    display: none;
+    min-width: 46px;
+    max-width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    cursor: pointer; }
+    @media (max-width: 950px) {
+      .itemtoggle .user-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center; } }
+    .itemtoggle .user-toggle svg {
+      max-width: 16px; }
+
 .item-slider {
   background: #4D2B81;
   margin-top: -20px;
@@ -7549,7 +7569,7 @@
       border-color: #4a154b;
       transform: translateY(-3px);
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05); }
-  .site-account .profiles-grid .avatar-container {
+  .site-account .profiles-grid .avatar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7557,17 +7577,19 @@
     height: 120px;
     background: #E8E8E8;
     border-radius: 50%;
+    font-size: 34px;
     margin: 0px auto 20px;
     overflow: hidden; }
     @media (max-width: 550px) {
-      .site-account .profiles-grid .avatar-container {
+      .site-account .profiles-grid .avatar {
         width: 100px;
-        height: 100px; } }
-    .site-account .profiles-grid .avatar-container img {
+        height: 100px;
+        font-size: 26px; } }
+    .site-account .profiles-grid .avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover; }
-    .site-account .profiles-grid .avatar-container svg {
+    .site-account .profiles-grid .avatar svg {
       max-width: 100%;
       max-height: 100%; }
   .site-account .profiles-grid .addplayer {
@@ -7575,8 +7597,9 @@
     align-items: center;
     justify-content: center;
     background: #FBFBFC;
-    border-style: dashed; }
-    .site-account .profiles-grid .addplayer .avatar-container {
+    border-style: dashed;
+    cursor: pointer; }
+    .site-account .profiles-grid .addplayer .avatar {
       width: 80px;
       height: 80px; }
     .site-account .profiles-grid .addplayer .profile-name {
@@ -7765,21 +7788,94 @@
         .site-account .modal-dialog .modal-content .bottoms button.red {
           background: #FE0000;
           border-color: #FE0000; }
-    .site-account .modal-dialog .modal-content .icon {
-      margin: 24px auto;
-      max-width: 130px; }
-      .site-account .modal-dialog .modal-content .icon svg {
-        max-width: 100%; }
+  .site-account .modal-dialog .itemalert .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px auto;
+    width: 56px;
+    height: 56px;
+    border: 1px solid #FFC9C9;
+    background: #FEF2F2;
+    border-radius: 50%; }
+    .site-account .modal-dialog .itemalert .icon svg {
+      max-width: 100%; }
+  .site-account .modal-dialog .itemalert .title {
+    color: #000;
+    font-size: 22px; }
+  .site-account .modal-dialog .itemalert .warning {
+    padding: 16px;
+    background: #FEF2F2;
+    border: 1px solid #FFC9C9;
+    border-radius: 12px;
+    margin-top: 24px; }
+    .site-account .modal-dialog .itemalert .warning .title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ED2527;
+      margin: 0px;
+      text-align: start; }
+    .site-account .modal-dialog .itemalert .warning p {
+      font-size: 13px;
+      color: #7F1D1D;
+      line-height: 20px;
+      margin-top: 4px; }
+  .site-account .modal-dialog .itemalert .text-field label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #4B5563; }
+  .site-account .modal-dialog .itemalert .text-field .form-control {
+    color: #000;
+    font-weight: 600; }
+  .site-account .modal-dialog .itemalert .bottoms {
+    flex-direction: column; }
+    .site-account .modal-dialog .itemalert .bottoms button {
+      width: 100%;
+      flex: auto; }
 .site-account .site-dashboard {
   display: grid;
   grid-template-columns: 320px 820px;
   gap: 64px;
   min-height: 1000px; }
+  @media (max-width: 1250px) {
+    .site-account .site-dashboard {
+      grid-template-columns: 280px 620px;
+      gap: 24px; } }
+  @media (max-width: 950px) {
+    .site-account .site-dashboard {
+      grid-template-columns: 1fr;
+      gap: 0px;
+      min-height: inherit; } }
   .site-account .site-dashboard .navbarbox {
     position: relative;
     background: #fff;
     border-inline-end: 1px solid #E8E8EB;
-    padding: 32px 24px; }
+    padding: 32px 24px;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s; }
+    .site-account .site-dashboard .navbarbox .cancel {
+      display: none;
+      position: absolute;
+      left: 24px;
+      top: 32px;
+      cursor: pointer; }
+      .site-account .site-dashboard .navbarbox .cancel svg {
+        width: 26px;
+        height: 26px; }
+    @media (max-width: 950px) {
+      .site-account .site-dashboard .navbarbox {
+        position: fixed;
+        top: 0px;
+        right: -100%;
+        width: 310px;
+        height: 100%;
+        z-index: 1000; }
+        .site-account .site-dashboard .navbarbox.active {
+          right: 0px; }
+        .site-account .site-dashboard .navbarbox .cancel {
+          display: block; } }
     .site-account .site-dashboard .navbarbox .username {
       display: flex;
       align-items: center;
@@ -7792,7 +7888,9 @@
         max-width: 48px;
         height: 48px;
         border-radius: 50%;
-        background: #F5F0FC; }
+        background: #F5F0FC;
+        font-size: 20px;
+        color: #410179; }
         .site-account .site-dashboard .navbarbox .username .photo img {
           width: 100%;
           height: 100%;
@@ -7850,6 +7948,17 @@
               stroke: #410179; }
   .site-account .site-dashboard .content {
     padding: 32px 0px; }
+    @media (max-width: 950px) {
+      .site-account .site-dashboard .content {
+        margin: 0px auto;
+        width: 720px;
+        padding: 24px 12px; } }
+    @media (max-width: 767px) {
+      .site-account .site-dashboard .content {
+        width: 540px; } }
+    @media (max-width: 575px) {
+      .site-account .site-dashboard .content {
+        width: 100%; } }
     .site-account .site-dashboard .content .title {
       font-size: 22px;
       color: #000;
@@ -7862,6 +7971,9 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px; }
+      @media (max-width: 767px) {
+        .site-account .site-dashboard .content .profiles-grid {
+          grid-template-columns: 1fr; } }
       .site-account .site-dashboard .content .profiles-grid .profile-card {
         display: flex;
         align-items: center;
@@ -7881,7 +7993,7 @@
         text-align: start;
         font-size: 12px;
         cursor: #A09E9B; }
-      .site-account .site-dashboard .content .profiles-grid .avatar-container {
+      .site-account .site-dashboard .content .profiles-grid .avatar {
         margin: 0px;
         min-width: 44px;
         max-width: 44px;
@@ -7889,7 +8001,7 @@
         background: #3D6AFF;
         font-size: 20px;
         color: #fff; }
-        .site-account .site-dashboard .content .profiles-grid .avatar-container svg {
+        .site-account .site-dashboard .content .profiles-grid .avatar svg {
           max-width: 20px;
           max-height: 20px; }
       .site-account .site-dashboard .content .profiles-grid .card-actions {
@@ -7921,7 +8033,7 @@
           display: flex;
           align-items: center;
           gap: 12px; }
-        .site-account .site-dashboard .content .profiles-grid .addplayer .avatar-container {
+        .site-account .site-dashboard .content .profiles-grid .addplayer .avatar {
           background: none;
           border: 1px dashed #A09E9B; }
         .site-account .site-dashboard .content .profiles-grid .addplayer .profile-name {
@@ -7953,6 +8065,9 @@
         position: relative;
         padding: 20px;
         border-bottom: 1px solid #E8E7E5; }
+        @media (max-width: 500px) {
+          .site-account .site-dashboard .content .main-content .form-group {
+            display: block; } }
         .site-account .site-dashboard .content .main-content .form-group:last-child {
           border: 0px; }
         .site-account .site-dashboard .content .main-content .form-group .icon-pass {
@@ -8005,11 +8120,18 @@
           border: 0px;
           background: none;
           text-align: end; }
+          @media (max-width: 500px) {
+            .site-account .site-dashboard .content .main-content .form-group .form-control {
+              text-align: start;
+              padding: 4px 0px; } }
           .site-account .site-dashboard .content .main-content .form-group .form-control:hover {
             border-color: #E8E8E8; }
         .site-account .site-dashboard .content .main-content .form-group input[type="tel"] {
           direction: ltr;
           text-align: start; }
+          @media (max-width: 500px) {
+            .site-account .site-dashboard .content .main-content .form-group input[type="tel"] {
+              text-align: end; } }
         .site-account .site-dashboard .content .main-content .form-group .btn-edit {
           border-radius: 6px;
           border: 0px !important;
@@ -8061,6 +8183,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
         gap: 20px;
         padding: 20px;
         background: #FEF2F2;
@@ -8080,7 +8203,6 @@
         .site-account .site-dashboard .content .main-content .danger-zone .de-account:hover {
           background: #bf2022; }
 
-/* Header Section */
 .error404 {
   position: relative;
   width: 100%;

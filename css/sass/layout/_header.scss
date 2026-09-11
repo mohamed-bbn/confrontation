@@ -504,4 +504,25 @@
     }
 }
 
+.itemtoggle {
+    display: flex;
+    align-items: center;
+    gap: $com-spacing-3;
+    .user-toggle {
+        display: none;
+        min-width: 46px;
+        max-width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid $white;
+        cursor: pointer;
+        @media (max-width: 950px) {
+            @include flex;
+        }
+        svg {
+            max-width: 16px;
+        }
+    }
+}
+
 //////////////////////// End header
