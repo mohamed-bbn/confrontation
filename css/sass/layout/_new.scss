@@ -1725,6 +1725,37 @@
                 color: #410179;
             }
         }
+        .card-actions {
+            display: flex;
+            position: absolute;
+            top: $com-spacing-3;
+            left: $com-spacing-3;
+            gap: $com-spacing-1;
+            .action-badge {
+                @include flex;
+                background: $white;
+                border: 1px solid #E8E8EB;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                transition: all 0.2s;
+                cursor: pointer;
+                &.edit-profile-btn:hover {
+                    background: #f8f9fa;
+                    color: #4a154b;
+                }
+                &.delete-profile-btn:hover {
+                    background: #fff5f5;
+                    color: #e63946;
+                    border-color: #f5c2c7;
+                }
+                svg,
+                img {
+                    max-width: 15px;
+                    max-height: 25px;
+                }
+            }
+        }
     }
     .profile-name {
         font-weight: 700;
@@ -1752,37 +1783,6 @@
         transition: background 0.2s;
         &:hover {
             // background-color: #350f36;
-        }
-    }
-    .card-actions {
-        display: flex;
-        position: absolute;
-        top: $com-spacing-3;
-        left: $com-spacing-3;
-        gap: $com-spacing-1;
-        .action-badge {
-            @include flex;
-            background: $white;
-            border: 1px solid #E8E8EB;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            transition: all 0.2s;
-            cursor: pointer;
-            &.edit-profile-btn:hover {
-                background: #f8f9fa;
-                color: #4a154b;
-            }
-            &.delete-profile-btn:hover {
-                background: #fff5f5;
-                color: #e63946;
-                border-color: #f5c2c7;
-            }
-            svg,
-            img {
-                max-width: 15px;
-                max-height: 25px;
-            }
         }
     }
     .manage-link {
@@ -1946,6 +1946,7 @@
             .title {
                 color: $blak;
                 font-size: 22px;
+                margin-top: $com-spacing-2;
             }
             .warning {
                 padding: $com-spacing-4;
@@ -1977,6 +1978,11 @@
                     color: $blak;
                     font-weight: 600;
                 }
+            }
+            .text-danger {
+                font-size: 0.75rem;
+                display: none;
+                margin-top: 4px;
             }
             .bottoms {
                 flex-direction: column;
@@ -2406,6 +2412,661 @@
                         @include transition(all 0.5s ease-in-out 0s);
                         &:hover {
                             background: #bf2022;
+                        }
+                    }
+                }
+            }
+            .nav-tabs {
+                display: flex;
+                gap: $com-spacing-3;
+                border: $zero;
+                margin-top: $com-spacing-7;
+                @media (max-width: 999px) {
+                    margin-top: $com-spacing-6;
+                }
+                .nav-link {
+                    @include flex;
+                    border: $zero;
+                    padding: $com-spacing-2 $com-spacing-3;
+                    font-weight: 600;
+                    border-radius: 30px;
+                    text-align: center;
+                    color: $purple;
+                    background: $white;
+                    gap: $com-spacing-3;
+                    border: 2px solid $purple;
+                    min-width: 347px;
+                    transition: all 0.3s ease;
+                    box-shadow: 0px 2px 8px 0px #4D2B811A;
+                    @media (max-width: 999px) {
+                        min-width: 140px;
+                    }
+                    svg {
+                        display: none;
+                    }
+                    &.active {
+                        background: $purple;
+                        color: $white;
+                        svg {
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .nav-pills {
+                border-bottom: 2px solid #E8E7E5;
+                gap: $com-spacing-6;
+                margin: $com-spacing-6 $zero;
+                @media (max-width: 999px) {}
+                .nav-link {
+                    @include flex;
+                    border: $zero;
+                    padding: $zero;
+                    font-size: 14px;
+                    font-weight: 600;
+                    border-radius: $zero;
+                    text-align: center;
+                    color: #666665;
+                    background: $white;
+                    gap: $com-spacing-3;
+                    border-bottom: 3px solid transparent;
+                    transition: all 0.3s ease;
+                    @media (max-width: 999px) {}
+                    &.active {
+                        color: #3D6AFF;
+                        border-color: #3D6AFF;
+                    }
+                }
+            }
+            .challenge-card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: $com-spacing-4;
+                background: $white;
+                border: 1px solid #E8E7E5;
+                border-radius: 12px;
+                padding: $com-spacing-4;
+                margin-bottom: $com-spacing-4;
+                @media (max-width: 767px) {
+                    display: block;
+                }
+                &:last-child {
+                    margin: $zero;
+                }
+                .flex {
+                    display: flex;
+                    align-items: center;
+                    gap: $com-spacing-4;
+                    .photo {
+                        @include flex;
+                        width: 56px;
+                        height: 56px;
+                        background: #F6F6F6;
+                        border-radius: 10px;
+                        img {
+                            max-width: $fullwidth;
+                            max-height: $fullwidth;
+                        }
+                    }
+                    .title-text {
+                        font-size: 15px;
+                        font-weight: 600;
+                        color: $blak;
+                        white-space: nowrap;
+                    }
+                }
+                .progress-area {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    .progress-container {
+                        width: $fullwidth;
+                        height: 8px;
+                        background: #F8F8F7;
+                        border-radius: 3px;
+                        overflow: hidden;
+                    }
+                    .progress-bar-custom {
+                        height: $fullwidth;
+                        background: #3D6AFF;
+                    }
+                    .status-text {
+                        color: $blak;
+                        font-size: 12px;
+                        font-weight: 600;
+                    }
+                }
+                .bottom {
+                    min-width: 90px;
+                    max-width: 90px;
+                    height: 32px;
+                    border: $zero;
+                    font-size: 13px;
+                    font-weight: 600;
+                    border-radius: 6px;
+                    box-shadow: none !important;
+                    background: #3D6AFF;
+                    @media (max-width: 767px) {
+                        min-width: $fullwidth;
+                        max-width: $fullwidth;
+                        margin-top: $com-spacing-4;
+                    }
+                }
+                .winners {
+                    @include flex;
+                    font-size: 11px;
+                    font-weight: 600;
+                    background: #10B98114;
+                    border-radius: 4px;
+                    color: #10B981;
+                    padding: $zero $com-spacing-3;
+                    @media (max-width: 767px) {
+                        margin-top: $com-spacing-4;
+                    }
+                }
+            }
+            .main-container {
+                .title {
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+                .cards-list {
+                    .card-item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        background: #F8F8F7;
+                        border: 1px solid #E8E7E5;
+                        border-radius: 8px;
+                        padding: $com-spacing-4;
+                        margin-top: $com-spacing-4;
+                        .card-info {
+                            display: flex;
+                            align-items: center;
+                            gap: $com-spacing-4;
+                            .card-logo {
+                                @include flex;
+                                min-width: 40px;
+                                max-width: 40px;
+                                height: 30px;
+                                border: 1px solid #E8E7E5;
+                                border-radius: 4px;
+                                background: $white;
+                                font-size: 11px;
+                                font-weight: 700;
+                            }
+                            .card-details {
+                                .payment-type {
+                                    .card-type-label,
+                                    .card-num-text {
+                                        font-size: 15px;
+                                        font-weight: 600;
+                                        color: $blak;
+                                    }
+                                }
+                                .validity {
+                                    display: block;
+                                    font-size: 12px;
+                                    line-height: 1;
+                                    margin-top: 2px;
+                                    color: #999998;
+                                }
+                            }
+                        }
+                        .card-actions {
+                            display: flex;
+                            align-items: center;
+                            gap: $com-spacing-3;
+                            .badge-primary-custom {
+                                @include flex;
+                                background: #3D6AFF12;
+                                color: #3D6AFF;
+                                font-size: 11px;
+                                font-weight: 600;
+                                padding: $zero 9px;
+                                border-radius: 4px;
+                                height: 19px;
+                            }
+                            .action-link {
+                                font-size: 13px;
+                                font-weight: 500;
+                                cursor: pointer;
+                                &.delete {
+                                    color: #EF4444;
+                                }
+                                &.edit {
+                                    color: #666665;
+                                }
+                            }
+                        }
+                    }
+                }
+                .add-method-box {
+                    @include flex;
+                    border: 1px dashed #ced4da;
+                    border-radius: 10px;
+                    padding: $com-spacing-2 $com-spacing-4;
+                    color: $blak;
+                    font-weight: 600;
+                    font-size: 14px;
+                    cursor: pointer;
+                    background: $white;
+                    margin-top: $com-spacing-4;
+                    @include transition(all 0.5s ease-in-out 0s);
+                    &:hover {
+                        background: #f8f9fa;
+                    }
+                }
+                .add-form-card {
+                    display: none;
+                    background: $white;
+                    border: 1.5px solid #3D6AFF;
+                    border-radius: 12px;
+                    padding: $com-spacing-7;
+                    margin-top: $com-spacing-4;
+                    @media (max-width: 999px) {
+                        padding: $com-spacing-6;
+                        .row {
+                            display: block;
+                        }
+                    }
+                    .form-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-start;
+                        border-bottom: 1px solid #E8E7E5;
+                        padding-bottom: $com-spacing-6;
+                        margin-bottom: $com-spacing-6;
+                        .title {
+                            font-size: 18px;
+                        }
+                        p {
+                            font-size: 13px;
+                            color: #666665;
+                            margin-top: $com-spacing-1;
+                        }
+                        .close-form {
+                            color: #adb5bd;
+                            cursor: pointer;
+                            font-size: 30px;
+                        }
+                    }
+                    #payment-form {
+                        .title {
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                    }
+                    .field {
+                        margin-top: $com-spacing-5;
+                        &.cusinput {
+                            flex: 1;
+                        }
+                        .text-danger {
+                            font-size: 0.75rem;
+                            display: none;
+                            margin-top: 4px;
+                        }
+                        label {
+                            color: $blak;
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-bottom: $com-spacing-2;
+                        }
+                        .icon {
+                            position: absolute;
+                            left: 10px;
+                            top: 14px;
+                            z-index: 5;
+                        }
+                        .form-control {
+                            height: 42px;
+                            border-radius: 0.375rem !important;
+                            font-size: 14px;
+                            &.is-invalid-custom {
+                                border-color: $red !important;
+                            }
+                        }
+                        select.form-control {
+                            background: $white url(../images/arrow.svg) left 12px center no-repeat !important;
+                        }
+                        .che-box {
+                            display: flex;
+                            align-items: center;
+                            gap: $com-spacing-1;
+                            label {
+                                margin: $zero;
+                            }
+                            .label-text {
+                                color: #666665;
+                                font-size: 13px;
+                                font-weight: 400;
+                            }
+                            input[type="checkbox"]:checked+.label-text:before {
+                                background: #3D6AFF url(../images/tick.svg) no-repeat center center;
+                                border: 1px solid #3D6AFF;
+                            }
+                        }
+                        &.bottoms {
+                            justify-content: flex-start;
+                            border-top: 1px solid #E8E7E5;
+                            padding-top: $com-spacing-6;
+                            .bottom {
+                                height: 41px;
+                                box-shadow: none !important;
+                                font-size: 14px;
+                                font-weight: 600;
+                                background: #3D6AFF;
+                                border: 1px solid #3D6AFF;
+                                min-width: inherit;
+                                border-radius: 8px;
+                                &.btn-light {
+                                    background: $white;
+                                    border-color: #E8E7E5;
+                                    color: #666665;
+                                }
+                            }
+                        }
+                    }
+                }
+                .invoice-card {
+                    background: $white;
+                    margin-top: $com-spacing-7;
+                    border: 1px solid #E8E7E5;
+                    border-radius: 12px;
+                    padding: $com-spacing-4;
+                    .invoice-row {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1px solid #E8E7E5;
+                        margin-top: $com-spacing-5;
+                        padding-bottom: $com-spacing-3;
+                        &:last-child {
+                            padding: $zero;
+                            border: $zero;
+                        }
+                        .text {
+                            color: #666665;
+                            font-size: 14px;
+                        }
+                        .date,
+                        .number {
+                            color: $blak;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                        .changing {
+                            font-size: 13px;
+                            font-weight: 500;
+                            color: #3D6AFF;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            .toast-container {
+                display: block;
+                position: relative;
+                width: $fullwidth;
+                margin-bottom: $com-spacing-4;
+                z-index: 1;
+                .toast {
+                    width: $fullwidth;
+                    background: #2b8a3e;
+                    text-align: center;
+                    box-shadow: none;
+                    text-align: center;
+                    padding: $com-spacing-3 $com-spacing-4;
+                    color: $white;
+                }
+            }
+            .allcard {
+                margin-bottom: $com-spacing-6;
+                &:last-child {
+                    margin: $zero;
+                }
+                .subscription-card {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: $com-spacing-3;
+                    flex-wrap: wrap;
+                    background: #F9AF19 url(../images/subscription.png) no-repeat left bottom;
+                    border: 2px solid $blak;
+                    border-radius: 20px;
+                    padding: 35px 60px;
+                    position: relative;
+                    overflow: hidden;
+                    @media (max-width: 999px) {
+                        padding: $com-spacing-6;
+                    }
+                    .sub-right {
+                        display: flex;
+                        flex-direction: column;
+                        .title {
+                            color: #1F2937;
+                            font-size: 20px;
+                            font-weight: 900;
+                            .price {
+                                font-size: 28px;
+                                font-weight: 900;
+                                color: #4D2D7A;
+                            }
+                            .duration {
+                                color: $white;
+                                font-size: 14px;
+                                font-weight: 400;
+                            }
+                        }
+                        .sub-date {
+                            color: $white;
+                            font-size: 13px;
+                            font-weight: 400;
+                        }
+                    }
+                    .cancel-btn {
+                        background: #410179;
+                        border: 1px solid #E8E7E5;
+                        color: $white;
+                        border: none;
+                        padding: 2px $com-spacing-4;
+                        border-radius: 6px;
+                        font-size: 13px;
+                        font-weight: 500;
+                        cursor: pointer;
+                        @include transition(all 0.1s ease-in-out 0s);
+                        &:hover {
+                            transform: translate(2px, -3px);
+                        }
+                    }
+                }
+                .invoices-section {
+                    background: $white;
+                    border: 1px solid #E8E7E5;
+                    border-radius: 12px;
+                    padding: $com-spacing-4;
+                    margin-top: $com-spacing-6;
+                    .title {
+                        font-size: 16px;
+                    }
+                    .invoice-item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1px solid #E8E7E5;
+                        margin-top: $com-spacing-5;
+                        padding-bottom: $com-spacing-3;
+                        &:last-child {
+                            padding: $zero;
+                            border: $zero;
+                        }
+                        .invoice-right {
+                            display: flex;
+                            align-items: center;
+                            gap: $com-spacing-6;
+                            .date {
+                                color: #666665;
+                                font-size: 14px;
+                            }
+                            .amount {
+                                font-weight: 600;
+                                color: $blak;
+                                font-size: 14px;
+                            }
+                            .status-badge {
+                                @include flex;
+                                background: #10B9811A;
+                                color: #10B981;
+                                padding: $zero 9px;
+                                border-radius: 4px;
+                                font-size: 11px;
+                                font-weight: 600;
+                                height: 19px;
+                            }
+                        }
+                        .pdf-link {
+                            color: #3D6AFF;
+                            font-weight: 500;
+                            font-size: 13px;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+                &.bg-red {
+                    .subscription-card {
+                        background: #314AF7 url(../images/subscription.png) no-repeat left bottom;
+                        .title {
+                            color: $white;
+                        }
+                        .cancel-btn {
+                            background: #F60037;
+                        }
+                    }
+                }
+                .packages {
+                    border-top: 1px solid #E8E7E5;
+                    margin-top: $com-spacing-6;
+                    padding-top: $com-spacing-6;
+                    .title {
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+                    .rowbox {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: $com-spacing-5;
+                        margin-top: $com-spacing-6;
+                        @media (max-width: 999px) {
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: $com-spacing-4;
+                            margin-top: $com-spacing-6;
+                        }
+                        @media (max-width:550px) {
+                            grid-template-columns: repeat(1, 1fr);
+                        }
+                    }
+                    .item {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        border: 2px solid $blak;
+                        border-radius: 20px;
+                        overflow: hidden;
+                        .title {
+                            font-size: 22px;
+                            font-weight: 400;
+                            color: $white;
+                            padding: $com-spacing-3 $com-spacing-5;
+                            // font-family: 'graphicschool-regular';
+                            span {
+                                font-size: 16px;
+                            }
+                        }
+                        .list {
+                            position: relative;
+                            padding: $zero $com-spacing-5;
+                            li {
+                                color: $white;
+                                font-size: 14px;
+                                font-weight: 700;
+                                list-style: inside;
+                            }
+                        }
+                        .subflex {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            background: $white;
+                            padding: $com-spacing-3 $com-spacing-5;
+                            margin-top: $com-spacing-5;
+                            gap: $com-spacing-2;
+                            .title {
+                                padding: $zero;
+                            }
+                            a {
+                                @include flex;
+                                min-width: 105px;
+                                height: 36px;
+                                border-radius: 60px;
+                                font-size: 13px;
+                                font-weight: 700;
+                                color: $white;
+                                transition: all 0.35s ease-in-out;
+                            }
+                        }
+                        &:nth-child(1) {
+                            background: #F9AF19 url(../images/list2.png) no-repeat left top;
+                            .title,
+                            .list li,
+                            .title span {
+                                color: $blak;
+                            }
+                            .title {
+                                span {}
+                            }
+                            .subflex {
+                                a {
+                                    background: #F9AF19;
+                                    color: $blak;
+                                    &:hover {
+                                        background: #db9a16;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            background: #F60037 url(../images/list2.png) no-repeat left top;
+                            .subflex {
+                                .title,
+                                .title span {
+                                    color: #F60037;
+                                }
+                                a {
+                                    background: #F60037;
+                                    &:hover {
+                                        background: #d70332;
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(3) {
+                            background: #212121 url(../images/list2.png) no-repeat left top;
+                            .subflex {
+                                .title,
+                                .title span {
+                                    color: #212121;
+                                }
+                                a {
+                                    background: #212121;
+                                    &:hover {
+                                        background: $blak;
+                                    }
+                                }
+                            }
                         }
                     }
                 }

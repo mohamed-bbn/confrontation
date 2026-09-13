@@ -1159,8 +1159,9 @@ $(document).ready(function() {
     let currentEditCard = null;
     let cardToDelete = null;
     let tempImageSrc = '';
-    var universalModal = new bootstrap.Modal(document.getElementById('universalModal'));
-
+    // var universalModal = new bootstrap.Modal(document.getElementById('universalModal'));
+    var modalElement = document.getElementById('universalModal');
+    var universalModal = modalElement ? new bootstrap.Modal(modalElement) : null;
 
     $('#addPlayerBtn').on('click', function() {
         currentEditCard = null;
@@ -1264,6 +1265,270 @@ $(document).ready(function() {
 
         universalModal.hide();
     });
+
+
+    /*----------------------------------------
+  Select Account
+----------------------------------------*/
+    let deleteTargetSelector = null;
+    const deleteModalEl = document.getElementById('deleteConfirmModal');
+    const deleteModal = new bootstrap.Modal(deleteModalEl);
+
+    function showToast(message, isSuccess = true) {
+        const $toast = $('#liveToast');
+        $toast.css('background', isSuccess ? '#2b8a3e' : '#1c7ed6');
+        $('#toast-message').text(message);
+        $toast.fadeIn(300).delay(2500).fadeOut(300);
+    }
+
+    function applyLogoToCard($cardEl, brand) {
+        const $logo = $cardEl.find('.card-logo');
+        if (brand === 'visa') {
+            $logo.css({ color: '#000' });
+            $logo.text('visa');
+        } else {
+            $logo.css({ color: '#3D6AFF' });
+            $logo.text('Mada');
+        }
+    }
+
+    $('.card-item').each(function() {
+        applyLogoToCard($(this), $(this).attr('data-brand') || 'mada');
+    });
+
+    function syncMainCardState($targetMainCard = null) {
+        const $allCards = $('.card-item');
+        if ($allCards.length === 0) return;
+
+        let $mainCard = $targetMainCard;
+
+        if (!$mainCard) {
+            $mainCard = $allCards.filter('.is-main').first();
+        }
+
+        if ($mainCard.length === 0) {
+            $mainCard = $allCards.first();
+            $mainCard.addClass('is-main');
+        }
+
+        $allCards.removeClass('is-main');
+        $mainCard.addClass('is-main');
+
+        $allCards.find('.main-badge').hide();
+        $mainCard.find('.main-badge').show();
+
+        const typeText = $mainCard.find('.card-type-label').text().trim();
+        const numText = $mainCard.find('.card-num-text').text().trim();
+        $('#invoice-card-name').html(`${typeText} .... ${numText}`);
+    }
+
+    syncMainCardState();
+
+    function bindCardEvents() {
+        $('.action-link.delete').off('click').on('click', function() {
+            deleteTargetSelector = $(this).data('target');
+            $('#delete-confirm-input').val('').removeClass('is-invalid-custom');
+            $('#delete-err-msg').hide();
+            deleteModal.show();
+        });
+
+        $('.action-link.edit').off('click').on('click', function() {
+            const target = $(this).data('target');
+            const $card = $(target);
+            const num = $card.data('number') || $card.find('.card-num-text').text();
+            const expiry = $card.data('expiry') || '';
+            const name = $card.data('name') || '';
+            const brand = $card.data('brand') || 'mada';
+            const isMainCard = $card.hasClass('is-main');
+
+            $('#editing-card-id').val(target);
+            $('#form-title-text').text('تعديل بطاقة الدفع');
+            $('#form-desc-text').text('قم بتعديل بيانات البطاقة الحالية');
+            $('#form-submit-btn').text('حفظ التعديلات');
+
+            $('#input-card-number').val(num);
+            $('#input-card-name').val(name);
+            $('#input-card-expiry').val(expiry);
+            $('#input-card-cvv').val('123');
+            $('#input-card-type').val(brand);
+            $('#defaultCardCheck').prop('checked', isMainCard);
+
+            $('#add-form-card').slideDown(300);
+            $('#show-add-form').hide();
+        });
+    }
+    bindCardEvents();
+
+    $('#show-add-form').on('click', function() {
+        $('#editing-card-id').val('');
+        $('#form-title-text').text('إضافة بطاقة دفع جديدة');
+        $('#form-desc-text').text('أدخل تفاصيل بطاقتك لتأمين التجديد التلقائي بأمان');
+        $('#form-submit-btn').text('إضافة البطاقة');
+        $('#input-card-number, #input-card-name, #input-card-expiry, #input-card-cvv').val('');
+        $('#input-card-type').val('mada');
+        $('#defaultCardCheck').prop('checked', false);
+        $('.form-control-custom').removeClass('is-invalid-custom');
+        $('.invalid-feedback').hide();
+
+        $('#add-form-card').slideDown(300);
+        $('#show-add-form').hide();
+    });
+
+    $('#hide-add-form, #cancel-form-btn').on('click', function() {
+        $('#add-form-card').slideUp(300);
+        $('#show-add-form').show();
+    });
+
+    $('#delete-confirm-input').on('keyup', function() {
+        if ($(this).val().trim() === 'حذف') {
+            $(this).removeClass('is-invalid-custom');
+            $('#delete-err-msg').hide();
+        }
+    });
+
+    $('#confirm-delete-btn').on('click', function() {
+        const val = $('#delete-confirm-input').val().trim();
+        if (val !== 'حذف') {
+            $('#delete-confirm-input').addClass('is-invalid-custom');
+            $('#delete-err-msg').show();
+            return;
+        }
+
+        $('#delete-err-msg').hide();
+        $('#delete-confirm-input').removeClass('is-invalid-custom');
+
+        if (deleteTargetSelector) {
+            const $toDelete = $(deleteTargetSelector);
+            const wasMain = $toDelete.hasClass('is-main');
+            $toDelete.fadeOut(300, function() {
+                $(this).remove();
+                if (wasMain) {
+                    syncMainCardState();
+                }
+            });
+            deleteModal.hide();
+            showToast('تم حذف بطاقة الدفع بنجاح', true);
+        }
+    });
+
+    $('#payment-form').on('submit', function(e) {
+        e.preventDefault();
+
+        const rawNum = $('#input-card-number').val().trim();
+        const rawName = $('#input-card-name').val().trim();
+        const rawExpiry = $('#input-card-expiry').val().trim();
+        const rawCvv = $('#input-card-cvv').val().trim();
+        const isChecked = $('#defaultCardCheck').is(':checked');
+
+        let isValid = true;
+
+        if (!rawNum) {
+            $('#input-card-number').addClass('is-invalid-custom');
+            $('#err-number').show();
+            isValid = false;
+        } else {
+            $('#input-card-number').removeClass('is-invalid-custom');
+            $('#err-number').hide();
+        }
+
+        if (!rawName) {
+            $('#input-card-name').addClass('is-invalid-custom');
+            $('#err-name').show();
+            isValid = false;
+        } else {
+            $('#input-card-name').removeClass('is-invalid-custom');
+            $('#err-name').hide();
+        }
+
+        if (!rawExpiry) {
+            $('#input-card-expiry').addClass('is-invalid-custom');
+            $('#err-expiry').show();
+            isValid = false;
+        } else {
+            $('#input-card-expiry').removeClass('is-invalid-custom');
+            $('#err-expiry').hide();
+        }
+
+        if (!rawCvv) {
+            $('#input-card-cvv').addClass('is-invalid-custom');
+            $('#err-cvv').show();
+            isValid = false;
+        } else {
+            $('#input-card-cvv').removeClass('is-invalid-custom');
+            $('#err-cvv').hide();
+        }
+
+        if (!isValid) {
+            showToast('يرجى استيفاء جميع الحقول المطلوبة', false);
+            return;
+        }
+
+        const editingId = $('#editing-card-id').val();
+        const cardType = $('#input-card-type').val();
+        const typeLabel = cardType === 'visa' ? 'فيزا' : 'مدى';
+        const last4 = rawNum.length > 4 ? rawNum.slice(-4) : rawNum;
+
+        let $affectedCard;
+
+        if (editingId) {
+            $affectedCard = $(editingId);
+            applyLogoToCard($affectedCard, cardType);
+            $affectedCard.attr('data-brand', cardType);
+            $affectedCard.find('.card-type-label').text(typeLabel);
+            $affectedCard.find('.card-num-text').text(last4);
+            $affectedCard.find('.card-expiry-text').text(rawExpiry);
+            $affectedCard.data('number', last4);
+            $affectedCard.data('expiry', rawExpiry);
+            $affectedCard.data('name', rawName);
+            $affectedCard.data('brand', cardType);
+
+            if (isChecked) {
+                $affectedCard.addClass('is-main');
+            } else {
+                $affectedCard.removeClass('is-main');
+            }
+
+            showToast('تم التعديل بنجاح', false);
+        } else {
+            const uniqueId = 'card-' + Date.now();
+            const template = document.getElementById('card-template').content.cloneNode(true);
+            const cardEl = template.querySelector('.card-item');
+            const $cardEl = $(cardEl);
+
+            cardEl.id = uniqueId;
+            cardEl.dataset.number = last4;
+            cardEl.dataset.expiry = rawExpiry;
+            cardEl.dataset.name = rawName;
+            cardEl.dataset.brand = cardType;
+
+            applyLogoToCard($cardEl, cardType);
+
+            cardEl.querySelector('.card-type-label').textContent = typeLabel;
+            cardEl.querySelector('.card-num-text').textContent = last4;
+            cardEl.querySelector('.card-expiry-text').textContent = rawExpiry;
+            cardEl.querySelector('.delete').setAttribute('data-target', '#' + uniqueId);
+            cardEl.querySelector('.edit').setAttribute('data-target', '#' + uniqueId);
+
+            if (isChecked) {
+                $cardEl.addClass('is-main');
+            }
+
+            document.getElementById('cards-container').appendChild(cardEl);
+            bindCardEvents();
+            $affectedCard = $cardEl;
+            showToast('تم الإضافة بنجاح', true);
+        }
+
+        if (isChecked) {
+            syncMainCardState($affectedCard);
+        } else {
+            syncMainCardState();
+        }
+
+        $('#add-form-card').slideUp(300);
+        $('#show-add-form').show();
+    });
+
 });
 
 /*----------------------------------------

@@ -7604,6 +7604,34 @@
       height: 80px; }
     .site-account .profiles-grid .addplayer .profile-name {
       color: #410179; }
+  .site-account .profiles-grid .card-actions {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    gap: 4px; }
+    .site-account .profiles-grid .card-actions .action-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 1px solid #E8E8EB;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      transition: all 0.2s;
+      cursor: pointer; }
+      .site-account .profiles-grid .card-actions .action-badge.edit-profile-btn:hover {
+        background: #f8f9fa;
+        color: #4a154b; }
+      .site-account .profiles-grid .card-actions .action-badge.delete-profile-btn:hover {
+        background: #fff5f5;
+        color: #e63946;
+        border-color: #f5c2c7; }
+      .site-account .profiles-grid .card-actions .action-badge svg,
+      .site-account .profiles-grid .card-actions .action-badge img {
+        max-width: 15px;
+        max-height: 25px; }
 .site-account .profile-name {
   font-weight: 700;
   color: #2d1547;
@@ -7629,34 +7657,6 @@
   font-size: 18px;
   font-weight: 700;
   transition: background 0.2s; }
-.site-account .card-actions {
-  display: flex;
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  gap: 4px; }
-  .site-account .card-actions .action-badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border: 1px solid #E8E8EB;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    transition: all 0.2s;
-    cursor: pointer; }
-    .site-account .card-actions .action-badge.edit-profile-btn:hover {
-      background: #f8f9fa;
-      color: #4a154b; }
-    .site-account .card-actions .action-badge.delete-profile-btn:hover {
-      background: #fff5f5;
-      color: #e63946;
-      border-color: #f5c2c7; }
-    .site-account .card-actions .action-badge svg,
-    .site-account .card-actions .action-badge img {
-      max-width: 15px;
-      max-height: 25px; }
 .site-account .manage-link {
   display: flex;
   align-items: center;
@@ -7802,7 +7802,8 @@
       max-width: 100%; }
   .site-account .modal-dialog .itemalert .title {
     color: #000;
-    font-size: 22px; }
+    font-size: 22px;
+    margin-top: 8px; }
   .site-account .modal-dialog .itemalert .warning {
     padding: 16px;
     background: #FEF2F2;
@@ -7827,6 +7828,10 @@
   .site-account .modal-dialog .itemalert .text-field .form-control {
     color: #000;
     font-weight: 600; }
+  .site-account .modal-dialog .itemalert .text-danger {
+    font-size: 0.75rem;
+    display: none;
+    margin-top: 4px; }
   .site-account .modal-dialog .itemalert .bottoms {
     flex-direction: column; }
     .site-account .modal-dialog .itemalert .bottoms button {
@@ -8202,6 +8207,552 @@
         transition: all 0.5s ease-in-out 0s; }
         .site-account .site-dashboard .content .main-content .danger-zone .de-account:hover {
           background: #bf2022; }
+    .site-account .site-dashboard .content .nav-tabs {
+      display: flex;
+      gap: 12px;
+      border: 0px;
+      margin-top: 32px; }
+      @media (max-width: 999px) {
+        .site-account .site-dashboard .content .nav-tabs {
+          margin-top: 24px; } }
+      .site-account .site-dashboard .content .nav-tabs .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0px;
+        padding: 8px 12px;
+        font-weight: 600;
+        border-radius: 30px;
+        text-align: center;
+        color: #4D2B81;
+        background: #fff;
+        gap: 12px;
+        border: 2px solid #4D2B81;
+        min-width: 347px;
+        transition: all 0.3s ease;
+        box-shadow: 0px 2px 8px 0px #4D2B811A; }
+        @media (max-width: 999px) {
+          .site-account .site-dashboard .content .nav-tabs .nav-link {
+            min-width: 140px; } }
+        .site-account .site-dashboard .content .nav-tabs .nav-link svg {
+          display: none; }
+        .site-account .site-dashboard .content .nav-tabs .nav-link.active {
+          background: #4D2B81;
+          color: #fff; }
+          .site-account .site-dashboard .content .nav-tabs .nav-link.active svg {
+            display: block; }
+    .site-account .site-dashboard .content .nav-pills {
+      border-bottom: 2px solid #E8E7E5;
+      gap: 24px;
+      margin: 24px 0px; }
+      .site-account .site-dashboard .content .nav-pills .nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0px;
+        padding: 0px;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 0px;
+        text-align: center;
+        color: #666665;
+        background: #fff;
+        gap: 12px;
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s ease; }
+        .site-account .site-dashboard .content .nav-pills .nav-link.active {
+          color: #3D6AFF;
+          border-color: #3D6AFF; }
+    .site-account .site-dashboard .content .challenge-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: #fff;
+      border: 1px solid #E8E7E5;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px; }
+      @media (max-width: 767px) {
+        .site-account .site-dashboard .content .challenge-card {
+          display: block; } }
+      .site-account .site-dashboard .content .challenge-card:last-child {
+        margin: 0px; }
+      .site-account .site-dashboard .content .challenge-card .flex {
+        display: flex;
+        align-items: center;
+        gap: 16px; }
+        .site-account .site-dashboard .content .challenge-card .flex .photo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 56px;
+          height: 56px;
+          background: #F6F6F6;
+          border-radius: 10px; }
+          .site-account .site-dashboard .content .challenge-card .flex .photo img {
+            max-width: 100%;
+            max-height: 100%; }
+        .site-account .site-dashboard .content .challenge-card .flex .title-text {
+          font-size: 15px;
+          font-weight: 600;
+          color: #000;
+          white-space: nowrap; }
+      .site-account .site-dashboard .content .challenge-card .progress-area {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; }
+        .site-account .site-dashboard .content .challenge-card .progress-area .progress-container {
+          width: 100%;
+          height: 8px;
+          background: #F8F8F7;
+          border-radius: 3px;
+          overflow: hidden; }
+        .site-account .site-dashboard .content .challenge-card .progress-area .progress-bar-custom {
+          height: 100%;
+          background: #3D6AFF; }
+        .site-account .site-dashboard .content .challenge-card .progress-area .status-text {
+          color: #000;
+          font-size: 12px;
+          font-weight: 600; }
+      .site-account .site-dashboard .content .challenge-card .bottom {
+        min-width: 90px;
+        max-width: 90px;
+        height: 32px;
+        border: 0px;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 6px;
+        box-shadow: none !important;
+        background: #3D6AFF; }
+        @media (max-width: 767px) {
+          .site-account .site-dashboard .content .challenge-card .bottom {
+            min-width: 100%;
+            max-width: 100%;
+            margin-top: 16px; } }
+      .site-account .site-dashboard .content .challenge-card .winners {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 600;
+        background: #10B98114;
+        border-radius: 4px;
+        color: #10B981;
+        padding: 0px 12px; }
+        @media (max-width: 767px) {
+          .site-account .site-dashboard .content .challenge-card .winners {
+            margin-top: 16px; } }
+    .site-account .site-dashboard .content .main-container .title {
+      font-size: 16px;
+      font-weight: 600; }
+    .site-account .site-dashboard .content .main-container .cards-list .card-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #F8F8F7;
+      border: 1px solid #E8E7E5;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px; }
+      .site-account .site-dashboard .content .main-container .cards-list .card-item .card-info {
+        display: flex;
+        align-items: center;
+        gap: 16px; }
+        .site-account .site-dashboard .content .main-container .cards-list .card-item .card-info .card-logo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 40px;
+          max-width: 40px;
+          height: 30px;
+          border: 1px solid #E8E7E5;
+          border-radius: 4px;
+          background: #fff;
+          font-size: 11px;
+          font-weight: 700; }
+        .site-account .site-dashboard .content .main-container .cards-list .card-item .card-info .card-details .payment-type .card-type-label,
+        .site-account .site-dashboard .content .main-container .cards-list .card-item .card-info .card-details .payment-type .card-num-text {
+          font-size: 15px;
+          font-weight: 600;
+          color: #000; }
+        .site-account .site-dashboard .content .main-container .cards-list .card-item .card-info .card-details .validity {
+          display: block;
+          font-size: 12px;
+          line-height: 1;
+          margin-top: 2px;
+          color: #999998; }
+      .site-account .site-dashboard .content .main-container .cards-list .card-item .card-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px; }
+        .site-account .site-dashboard .content .main-container .cards-list .card-item .card-actions .badge-primary-custom {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #3D6AFF12;
+          color: #3D6AFF;
+          font-size: 11px;
+          font-weight: 600;
+          padding: 0px 9px;
+          border-radius: 4px;
+          height: 19px; }
+        .site-account .site-dashboard .content .main-container .cards-list .card-item .card-actions .action-link {
+          font-size: 13px;
+          font-weight: 500;
+          cursor: pointer; }
+          .site-account .site-dashboard .content .main-container .cards-list .card-item .card-actions .action-link.delete {
+            color: #EF4444; }
+          .site-account .site-dashboard .content .main-container .cards-list .card-item .card-actions .action-link.edit {
+            color: #666665; }
+    .site-account .site-dashboard .content .main-container .add-method-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed #ced4da;
+      border-radius: 10px;
+      padding: 8px 16px;
+      color: #000;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      background: #fff;
+      margin-top: 16px;
+      -moz-transition: all 0.5s ease-in-out 0s;
+      -o-transition: all 0.5s ease-in-out 0s;
+      -webkit-transition: all 0.5s ease-in-out 0s;
+      transition: all 0.5s ease-in-out 0s; }
+      .site-account .site-dashboard .content .main-container .add-method-box:hover {
+        background: #f8f9fa; }
+    .site-account .site-dashboard .content .main-container .add-form-card {
+      display: none;
+      background: #fff;
+      border: 1.5px solid #3D6AFF;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 16px; }
+      @media (max-width: 999px) {
+        .site-account .site-dashboard .content .main-container .add-form-card {
+          padding: 24px; }
+          .site-account .site-dashboard .content .main-container .add-form-card .row {
+            display: block; } }
+      .site-account .site-dashboard .content .main-container .add-form-card .form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid #E8E7E5;
+        padding-bottom: 24px;
+        margin-bottom: 24px; }
+        .site-account .site-dashboard .content .main-container .add-form-card .form-header .title {
+          font-size: 18px; }
+        .site-account .site-dashboard .content .main-container .add-form-card .form-header p {
+          font-size: 13px;
+          color: #666665;
+          margin-top: 4px; }
+        .site-account .site-dashboard .content .main-container .add-form-card .form-header .close-form {
+          color: #adb5bd;
+          cursor: pointer;
+          font-size: 30px; }
+      .site-account .site-dashboard .content .main-container .add-form-card #payment-form .title {
+        font-size: 16px;
+        font-weight: 600; }
+      .site-account .site-dashboard .content .main-container .add-form-card .field {
+        margin-top: 20px; }
+        .site-account .site-dashboard .content .main-container .add-form-card .field.cusinput {
+          flex: 1; }
+        .site-account .site-dashboard .content .main-container .add-form-card .field .text-danger {
+          font-size: 0.75rem;
+          display: none;
+          margin-top: 4px; }
+        .site-account .site-dashboard .content .main-container .add-form-card .field label {
+          color: #000;
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 8px; }
+        .site-account .site-dashboard .content .main-container .add-form-card .field .icon {
+          position: absolute;
+          left: 10px;
+          top: 14px;
+          z-index: 5; }
+        .site-account .site-dashboard .content .main-container .add-form-card .field .form-control {
+          height: 42px;
+          border-radius: 0.375rem !important;
+          font-size: 14px; }
+          .site-account .site-dashboard .content .main-container .add-form-card .field .form-control.is-invalid-custom {
+            border-color: #FE0000 !important; }
+        .site-account .site-dashboard .content .main-container .add-form-card .field select.form-control {
+          background: #fff url(../images/arrow.svg) left 12px center no-repeat !important; }
+        .site-account .site-dashboard .content .main-container .add-form-card .field .che-box {
+          display: flex;
+          align-items: center;
+          gap: 4px; }
+          .site-account .site-dashboard .content .main-container .add-form-card .field .che-box label {
+            margin: 0px; }
+          .site-account .site-dashboard .content .main-container .add-form-card .field .che-box .label-text {
+            color: #666665;
+            font-size: 13px;
+            font-weight: 400; }
+          .site-account .site-dashboard .content .main-container .add-form-card .field .che-box input[type="checkbox"]:checked + .label-text:before {
+            background: #3D6AFF url(../images/tick.svg) no-repeat center center;
+            border: 1px solid #3D6AFF; }
+        .site-account .site-dashboard .content .main-container .add-form-card .field.bottoms {
+          justify-content: flex-start;
+          border-top: 1px solid #E8E7E5;
+          padding-top: 24px; }
+          .site-account .site-dashboard .content .main-container .add-form-card .field.bottoms .bottom {
+            height: 41px;
+            box-shadow: none !important;
+            font-size: 14px;
+            font-weight: 600;
+            background: #3D6AFF;
+            border: 1px solid #3D6AFF;
+            min-width: inherit;
+            border-radius: 8px; }
+            .site-account .site-dashboard .content .main-container .add-form-card .field.bottoms .bottom.btn-light {
+              background: #fff;
+              border-color: #E8E7E5;
+              color: #666665; }
+    .site-account .site-dashboard .content .main-container .invoice-card {
+      background: #fff;
+      margin-top: 32px;
+      border: 1px solid #E8E7E5;
+      border-radius: 12px;
+      padding: 16px; }
+      .site-account .site-dashboard .content .main-container .invoice-card .invoice-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #E8E7E5;
+        margin-top: 20px;
+        padding-bottom: 12px; }
+        .site-account .site-dashboard .content .main-container .invoice-card .invoice-row:last-child {
+          padding: 0px;
+          border: 0px; }
+        .site-account .site-dashboard .content .main-container .invoice-card .invoice-row .text {
+          color: #666665;
+          font-size: 14px; }
+        .site-account .site-dashboard .content .main-container .invoice-card .invoice-row .date,
+        .site-account .site-dashboard .content .main-container .invoice-card .invoice-row .number {
+          color: #000;
+          font-size: 14px;
+          font-weight: 500; }
+        .site-account .site-dashboard .content .main-container .invoice-card .invoice-row .changing {
+          font-size: 13px;
+          font-weight: 500;
+          color: #3D6AFF;
+          cursor: pointer; }
+    .site-account .site-dashboard .content .toast-container {
+      display: block;
+      position: relative;
+      width: 100%;
+      margin-bottom: 16px;
+      z-index: 1; }
+      .site-account .site-dashboard .content .toast-container .toast {
+        width: 100%;
+        background: #2b8a3e;
+        text-align: center;
+        box-shadow: none;
+        text-align: center;
+        padding: 12px 16px;
+        color: #fff; }
+    .site-account .site-dashboard .content .allcard {
+      margin-bottom: 24px; }
+      .site-account .site-dashboard .content .allcard:last-child {
+        margin: 0px; }
+      .site-account .site-dashboard .content .allcard .subscription-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        background: #F9AF19 url(../images/subscription.png) no-repeat left bottom;
+        border: 2px solid #000;
+        border-radius: 20px;
+        padding: 35px 60px;
+        position: relative;
+        overflow: hidden; }
+        @media (max-width: 999px) {
+          .site-account .site-dashboard .content .allcard .subscription-card {
+            padding: 24px; } }
+        .site-account .site-dashboard .content .allcard .subscription-card .sub-right {
+          display: flex;
+          flex-direction: column; }
+          .site-account .site-dashboard .content .allcard .subscription-card .sub-right .title {
+            color: #1F2937;
+            font-size: 20px;
+            font-weight: 900; }
+            .site-account .site-dashboard .content .allcard .subscription-card .sub-right .title .price {
+              font-size: 28px;
+              font-weight: 900;
+              color: #4D2D7A; }
+            .site-account .site-dashboard .content .allcard .subscription-card .sub-right .title .duration {
+              color: #fff;
+              font-size: 14px;
+              font-weight: 400; }
+          .site-account .site-dashboard .content .allcard .subscription-card .sub-right .sub-date {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 400; }
+        .site-account .site-dashboard .content .allcard .subscription-card .cancel-btn {
+          background: #410179;
+          border: 1px solid #E8E7E5;
+          color: #fff;
+          border: none;
+          padding: 2px 16px;
+          border-radius: 6px;
+          font-size: 13px;
+          font-weight: 500;
+          cursor: pointer;
+          -moz-transition: all 0.1s ease-in-out 0s;
+          -o-transition: all 0.1s ease-in-out 0s;
+          -webkit-transition: all 0.1s ease-in-out 0s;
+          transition: all 0.1s ease-in-out 0s; }
+          .site-account .site-dashboard .content .allcard .subscription-card .cancel-btn:hover {
+            transform: translate(2px, -3px); }
+      .site-account .site-dashboard .content .allcard .invoices-section {
+        background: #fff;
+        border: 1px solid #E8E7E5;
+        border-radius: 12px;
+        padding: 16px;
+        margin-top: 24px; }
+        .site-account .site-dashboard .content .allcard .invoices-section .title {
+          font-size: 16px; }
+        .site-account .site-dashboard .content .allcard .invoices-section .invoice-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid #E8E7E5;
+          margin-top: 20px;
+          padding-bottom: 12px; }
+          .site-account .site-dashboard .content .allcard .invoices-section .invoice-item:last-child {
+            padding: 0px;
+            border: 0px; }
+          .site-account .site-dashboard .content .allcard .invoices-section .invoice-item .invoice-right {
+            display: flex;
+            align-items: center;
+            gap: 24px; }
+            .site-account .site-dashboard .content .allcard .invoices-section .invoice-item .invoice-right .date {
+              color: #666665;
+              font-size: 14px; }
+            .site-account .site-dashboard .content .allcard .invoices-section .invoice-item .invoice-right .amount {
+              font-weight: 600;
+              color: #000;
+              font-size: 14px; }
+            .site-account .site-dashboard .content .allcard .invoices-section .invoice-item .invoice-right .status-badge {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: #10B9811A;
+              color: #10B981;
+              padding: 0px 9px;
+              border-radius: 4px;
+              font-size: 11px;
+              font-weight: 600;
+              height: 19px; }
+          .site-account .site-dashboard .content .allcard .invoices-section .invoice-item .pdf-link {
+            color: #3D6AFF;
+            font-weight: 500;
+            font-size: 13px; }
+            .site-account .site-dashboard .content .allcard .invoices-section .invoice-item .pdf-link:hover {
+              text-decoration: underline; }
+      .site-account .site-dashboard .content .allcard.bg-red .subscription-card {
+        background: #314AF7 url(../images/subscription.png) no-repeat left bottom; }
+        .site-account .site-dashboard .content .allcard.bg-red .subscription-card .title {
+          color: #fff; }
+        .site-account .site-dashboard .content .allcard.bg-red .subscription-card .cancel-btn {
+          background: #F60037; }
+      .site-account .site-dashboard .content .allcard .packages {
+        border-top: 1px solid #E8E7E5;
+        margin-top: 24px;
+        padding-top: 24px; }
+        .site-account .site-dashboard .content .allcard .packages .title {
+          font-size: 16px;
+          font-weight: 600; }
+        .site-account .site-dashboard .content .allcard .packages .rowbox {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          margin-top: 24px; }
+          @media (max-width: 999px) {
+            .site-account .site-dashboard .content .allcard .packages .rowbox {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 16px;
+              margin-top: 24px; } }
+          @media (max-width: 550px) {
+            .site-account .site-dashboard .content .allcard .packages .rowbox {
+              grid-template-columns: repeat(1, 1fr); } }
+        .site-account .site-dashboard .content .allcard .packages .item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border: 2px solid #000;
+          border-radius: 20px;
+          overflow: hidden; }
+          .site-account .site-dashboard .content .allcard .packages .item .title {
+            font-size: 22px;
+            font-weight: 400;
+            color: #fff;
+            padding: 12px 20px; }
+            .site-account .site-dashboard .content .allcard .packages .item .title span {
+              font-size: 16px; }
+          .site-account .site-dashboard .content .allcard .packages .item .list {
+            position: relative;
+            padding: 0px 20px; }
+            .site-account .site-dashboard .content .allcard .packages .item .list li {
+              color: #fff;
+              font-size: 14px;
+              font-weight: 700;
+              list-style: inside; }
+          .site-account .site-dashboard .content .allcard .packages .item .subflex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            padding: 12px 20px;
+            margin-top: 20px;
+            gap: 8px; }
+            .site-account .site-dashboard .content .allcard .packages .item .subflex .title {
+              padding: 0px; }
+            .site-account .site-dashboard .content .allcard .packages .item .subflex a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 105px;
+              height: 36px;
+              border-radius: 60px;
+              font-size: 13px;
+              font-weight: 700;
+              color: #fff;
+              transition: all 0.35s ease-in-out; }
+          .site-account .site-dashboard .content .allcard .packages .item:nth-child(1) {
+            background: #F9AF19 url(../images/list2.png) no-repeat left top; }
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(1) .title,
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(1) .list li,
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(1) .title span {
+              color: #000; }
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(1) .subflex a {
+              background: #F9AF19;
+              color: #000; }
+              .site-account .site-dashboard .content .allcard .packages .item:nth-child(1) .subflex a:hover {
+                background: #db9a16; }
+          .site-account .site-dashboard .content .allcard .packages .item:nth-child(2) {
+            background: #F60037 url(../images/list2.png) no-repeat left top; }
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(2) .subflex .title,
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(2) .subflex .title span {
+              color: #F60037; }
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(2) .subflex a {
+              background: #F60037; }
+              .site-account .site-dashboard .content .allcard .packages .item:nth-child(2) .subflex a:hover {
+                background: #d70332; }
+          .site-account .site-dashboard .content .allcard .packages .item:nth-child(3) {
+            background: #212121 url(../images/list2.png) no-repeat left top; }
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(3) .subflex .title,
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(3) .subflex .title span {
+              color: #212121; }
+            .site-account .site-dashboard .content .allcard .packages .item:nth-child(3) .subflex a {
+              background: #212121; }
+              .site-account .site-dashboard .content .allcard .packages .item:nth-child(3) .subflex a:hover {
+                background: #000; }
 
 .error404 {
   position: relative;
