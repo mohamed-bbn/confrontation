@@ -3071,6 +3071,116 @@
                     }
                 }
             }
+            .minhead {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @media (max-width: 370px) {
+                    display: block;
+                }
+                .bottom {
+                    background: $purple;
+                    width: 174px;
+                    height: 37px;
+                    border: $zero;
+                    box-shadow: none;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    @media (max-width: 370px) {
+                        width: $fullwidth;
+                        margin-top: $com-spacing-2;
+                    }
+                }
+            }
+            .main-screen {
+                margin-top: $com-spacing-7;
+                @media (max-width: 999px) {
+                    margin-top: $com-spacing-6;
+                }
+                .title {
+                    font-size: 18px;
+                    font-weight: 900;
+                }
+                .screen-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    background: $white;
+                    border: 1px solid #E5E7EB;
+                    border-radius: 12px;
+                    padding: $com-spacing-5;
+                    margin-top: $com-spacing-3;
+                    .screen-info {
+                        display: flex;
+                        align-items: center;
+                        gap: $com-spacing-4;
+                        .icon {
+                            @include flex;
+                            min-width: 48px;
+                            max-width: 48px;
+                            height: 48px;
+                            border-radius: 12px;
+                            background: #F3F4F6;
+                        }
+                        .screen-details {
+                            .title {
+                                font-size: 15px;
+                            }
+                            .text {
+                                color: #6B7280;
+                                font-size: 13px;
+                                margin: $zero;
+                            }
+                            .status {
+                                display: flex;
+                                align-items: center;
+                                gap: $com-spacing-1;
+                                line-height: 1;
+                                .connected,
+                                .unconnected {
+                                    color: #10B981;
+                                    font-size: 12px;
+                                }
+                                .unconnected {
+                                    color: #9CA3AF;
+                                }
+                                .online,
+                                .offline {
+                                    min-width: 8px;
+                                    max-width: 8px;
+                                    height: 8px;
+                                    background: #10B981;
+                                    border-radius: 50%;
+                                }
+                                .offline {
+                                    background: #9CA3AF;
+                                }
+                            }
+                        }
+                    }
+                    .disconnect,
+                    .communication {
+                        @include flex;
+                        min-width: 99px;
+                        height: 32px;
+                        font-size: 13px;
+                        font-weight: 700;
+                        color: #B91C1C;
+                        border: 1px solid #B91C1C;
+                        border-radius: 8px;
+                        transition: all 0.1s ease-in-out 0s;
+                        &:hover {
+                            transform: translate(2px, -3px);
+                        }
+                    }
+                    .communication {
+                        border: $zero;
+                        background: #4D2D7A;
+                        color: $white;
+                        min-width: 64px;
+                    }
+                }
+            }
         }
     }
 }

@@ -4896,6 +4896,8 @@
         bottom: 8px;
         opacity: 0;
         z-index: 1; }
+        .multible-choice .contentinner .trure-false .subradio .icon svg path {
+          fill: #fff; }
       .multible-choice .contentinner .trure-false .subradio input[type="radio"]:checked + .label-text:after,
       .multible-choice .contentinner .trure-false .subradio input[type="checkbox"]:checked + .label-text:after {
         background: #0EB56F;
@@ -8753,6 +8755,102 @@
               background: #212121; }
               .site-account .site-dashboard .content .allcard .packages .item:nth-child(3) .subflex a:hover {
                 background: #000; }
+    .site-account .site-dashboard .content .minhead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      @media (max-width: 370px) {
+        .site-account .site-dashboard .content .minhead {
+          display: block; } }
+      .site-account .site-dashboard .content .minhead .bottom {
+        background: #4D2B81;
+        width: 174px;
+        height: 37px;
+        border: 0px;
+        box-shadow: none;
+        border-radius: 8px;
+        font-size: 14px; }
+        @media (max-width: 370px) {
+          .site-account .site-dashboard .content .minhead .bottom {
+            width: 100%;
+            margin-top: 8px; } }
+    .site-account .site-dashboard .content .main-screen {
+      margin-top: 32px; }
+      @media (max-width: 999px) {
+        .site-account .site-dashboard .content .main-screen {
+          margin-top: 24px; } }
+      .site-account .site-dashboard .content .main-screen .title {
+        font-size: 18px;
+        font-weight: 900; }
+      .site-account .site-dashboard .content .main-screen .screen-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+        border: 1px solid #E5E7EB;
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 12px; }
+        .site-account .site-dashboard .content .main-screen .screen-item .screen-info {
+          display: flex;
+          align-items: center;
+          gap: 16px; }
+          .site-account .site-dashboard .content .main-screen .screen-item .screen-info .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 48px;
+            max-width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #F3F4F6; }
+          .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .title {
+            font-size: 15px; }
+          .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .text {
+            color: #6B7280;
+            font-size: 13px;
+            margin: 0px; }
+          .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .status {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            line-height: 1; }
+            .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .status .connected,
+            .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .status .unconnected {
+              color: #10B981;
+              font-size: 12px; }
+            .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .status .unconnected {
+              color: #9CA3AF; }
+            .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .status .online,
+            .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .status .offline {
+              min-width: 8px;
+              max-width: 8px;
+              height: 8px;
+              background: #10B981;
+              border-radius: 50%; }
+            .site-account .site-dashboard .content .main-screen .screen-item .screen-info .screen-details .status .offline {
+              background: #9CA3AF; }
+        .site-account .site-dashboard .content .main-screen .screen-item .disconnect,
+        .site-account .site-dashboard .content .main-screen .screen-item .communication {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 99px;
+          height: 32px;
+          font-size: 13px;
+          font-weight: 700;
+          color: #B91C1C;
+          border: 1px solid #B91C1C;
+          border-radius: 8px;
+          transition: all 0.1s ease-in-out 0s; }
+          .site-account .site-dashboard .content .main-screen .screen-item .disconnect:hover,
+          .site-account .site-dashboard .content .main-screen .screen-item .communication:hover {
+            transform: translate(2px, -3px); }
+        .site-account .site-dashboard .content .main-screen .screen-item .communication {
+          border: 0px;
+          background: #4D2D7A;
+          color: #fff;
+          min-width: 64px; }
 
 .error404 {
   position: relative;

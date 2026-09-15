@@ -2528,6 +2528,11 @@
                     bottom: $com-spacing-2;
                     opacity: 0;
                     z-index: 1;
+                    svg {
+                        path {
+                            fill: $white;
+                        }
+                    }
                 }
                 input[type="radio"]:checked+.label-text,
                 input[type="checkbox"]:checked+.label-text {
