@@ -62,6 +62,27 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'roobert-arabic-trial-regular';
+    src: url('../font/roobert-arabic-trial-regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roobert-arabic-trial-bold';
+    src: url('../font/roobert-arabic-trial-bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roobert-arabic-trial-semibold';
+    src: url('../font/roobert-arabic-trial-semibold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // .wrapper {
 //     @media (min-width: 1366px) {
 //         zoom: 67.4%;
