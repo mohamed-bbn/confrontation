@@ -3200,28 +3200,6 @@
     align-items: center;
     padding: $com-spacing-6 $zero;
     min-height: calc(100vh - 92px);
-    .result-message {
-        position: absolute;
-        right: $com-spacing-6;
-        top: $com-spacing-6;
-        padding: $com-spacing-3;
-        border-radius: 12px;
-        text-align: center;
-        font-weight: 500;
-        font-family: "roobert-arabic-trial-regular";
-        z-index: 20;
-        display: none;
-        &.success {
-            background-color: #b5fbe4;
-            color: #10b981;
-            border: 1px solid #10b981;
-        }
-        &.error {
-            background-color: #ffe5e5;
-            color: #ef4444;
-            border: 1px solid #ef4444;
-        }
-    }
     .container {
         display: grid;
         align-items: center;
@@ -3326,10 +3304,19 @@
                 min-width: 160px;
                 height: 46px;
                 color: $blak;
+                transition: all 0.5s ease-in-out 0s;
                 font-family: "roobert-arabic-trial-bold";
+                &:hover {
+                    background: #ffd43d;
+                    transform: none;
+                    min-width: 140px;
+                }
                 @media (min-width: 1600px) {
                     min-width: 190px;
                     height: 56px;
+                    &:hover {
+                        min-width: 166px;
+                    }
                 }
                 @media (max-width: 999px) {
                     min-width: 140px;
@@ -3420,17 +3407,20 @@
         .timer-container {
             @include flex;
             position: relative;
-            width: 140px;
-            height: 140px;
+            width: 158px;
+            max-height: 238px;
             margin: 0 auto 35px auto;
-            border-radius: 50%;
+            // border-radius: 50%;
             z-index: 1;
             @media (min-width: 1600px) {
-                width: 260px;
-                height: 260px;
+                width: 239px;
+                // height: 260px;
             }
             @media (max-width: 999px) {
                 margin-bottom: $com-spacing-3;
+            }
+            img {
+                max-width: $fullwidth;
             }
             .timer-svg {
                 width: $fullwidth;
@@ -3514,7 +3504,7 @@
                 color: $white;
                 padding: $com-spacing-3;
                 font-weight: 700;
-                cursor: pointer;
+                // cursor: pointer;
                 transition: all 0.3s ease;
                 gap: $com-spacing-2;
                 min-height: 56px;
@@ -3546,20 +3536,26 @@
                 }
             }
         }
-        .option-btn:hover:not(:disabled):not(.disabled-option) {
-            background: rgba(255, 255, 255, 0.22);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
-        }
+        // .option-btn:hover:not(:disabled):not(.disabled-option) {
+        //     background: rgba(255, 255, 255, 0.22);
+        //     border-color: rgba(255, 255, 255, 0.4);
+        //     transform: translateY(-2px);
+        // }
     }
 }
 
 .popuprace {
+    padding: $com-spacing-3;
     .modal-dialog {
+        margin: $zero $auto;
         max-width: 1152px;
         .modal-content {
             padding: 56px;
             border-radius: 36px;
+            box-shadow: 0px 30px 80px 0px #0000004D;
+            @media (max-width: 999px) {
+                padding: $com-spacing-6;
+            }
         }
         .btn-close {
             @include flex;
@@ -3606,5 +3602,425 @@
             font-family: "roobert-arabic-trial-regular";
             text-align: center;
         }
+        .grid-container {
+            display: grid;
+            // align-items: center;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 36px;
+            @media (max-width: 999px) {
+                gap: $com-spacing-3;
+                margin-top: $com-spacing-6;
+            }
+            @media (max-width: 767px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .gridcard {
+                background-color: #F8F6FC;
+                border-radius: 24px;
+                padding: $com-spacing-6;
+                border: $zero;
+                transition: transform 0.3s ease;
+                @media (max-width: 767px) {
+                    padding: $com-spacing-4;
+                }
+                &:hover {
+                    transform: translateY(-5px);
+                }
+                .photo-container {
+                    width: 150px;
+                    max-height: 150px;
+                    margin: $zero $auto $com-spacing-4 $auto;
+                    img {
+                        max-width: $fullwidth;
+                        max-height: $fullwidth;
+                    }
+                }
+                .badge {
+                    @include flex;
+                    background: #410179;
+                    color: $white;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    font-family: "roobert-arabic-trial-bold";
+                    font-size: 15px;
+                    margin: $zero $auto $com-spacing-4 $auto;
+                }
+                .title {
+                    font-size: 22px;
+                }
+                .card-desc {
+                    font-size: 15px;
+                    color: $colortext2;
+                    text-align: center;
+                    font-family: "roobert-arabic-trial-regular";
+                }
+            }
+        }
+        .btns {
+            @include flex;
+            gap: 28px;
+            margin-top: 36px;
+            @media (max-width: 999px) {
+                gap: $com-spacing-3;
+                margin-top: $com-spacing-6;
+            }
+            .bottom {
+                border: $zero;
+                box-shadow: none !important;
+                background: $yellow2;
+                min-width: 160px;
+                height: 46px;
+                color: $blak;
+                transition: all 0.5s ease-in-out 0s;
+                font-family: "roobert-arabic-trial-bold";
+                &:hover {
+                    background: #ffd43d;
+                    transform: none;
+                    min-width: 140px;
+                }
+                @media (min-width: 1600px) {
+                    min-width: 190px;
+                    height: 56px;
+                    &:hover {
+                        min-width: 166px;
+                    }
+                }
+                @media (max-width: 999px) {
+                    min-width: 140px;
+                    height: 44px;
+                }
+            }
+            .howplay {
+                display: flex;
+                align-items: center;
+                gap: $com-spacing-2;
+                color: #6A54B9;
+                cursor: pointer;
+                font-family: "roobert-arabic-trial-bold";
+                @media (min-width: 1600px) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+.how-play {
+    @include flex;
+    background: #F8F6FC;
+    min-height: calc(100vh - 204px);
+    padding: $com-spacing-6 $zero;
+    @media (min-width: 1600px) {
+        padding: $com-spacing-8 $zero;
+    }
+    .container {
+        @media (min-width: 1600px) {
+            max-width: 1560px;
+        }
+    }
+    .header-top {
+        display: flex;
+        align-items: center;
+        gap: $com-spacing-3;
+        width: $fullwidth;
+        .pattern {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 122px;
+            height: 34px;
+            border-radius: 60px;
+            gap: $com-spacing-2;
+            background: #FFF1DA;
+            font-size: 15px;
+            font-weight: 700;
+            color: #C77A00;
+            font-family: "roobert-arabic-trial-regular";
+        }
+        .progressbar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            li {
+                min-width: 56px;
+                height: 6px;
+                background: #ECE8F2;
+                border-radius: 3px;
+                &.active {
+                    background: #410179;
+                }
+            }
+        }
+        .text {
+            color: $colortext2;
+            font-family: "roobert-arabic-trial-bold";
+        }
+    }
+    .main-title {
+        .title {
+            text-align: center;
+            font-size: 36px;
+            font-family: "roobert-arabic-trial-bold";
+            color: $blak;
+            margin-top: $com-spacing-4;
+            @media (min-width: 1600px) {
+                margin-top: $com-spacing-7;
+                font-size: 56px;
+            }
+        }
+        .text {
+            text-align: center;
+            font-family: "roobert-arabic-trial-regular";
+            margin-top: $com-spacing-1;
+            @media (min-width: 1600px) {
+                font-size: 20px;
+            }
+        }
+    }
+    .items-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $com-spacing-5;
+        margin-top: $com-spacing-6;
+        @media (min-width: 1600px) {
+            gap: $com-spacing-7;
+        }
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: $com-spacing-3;
+        }
+        .game-card {
+            position: relative;
+            background: $white;
+            border-radius: 28px;
+            border: 1.5px solid #ECE8F2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+            overflow: hidden;
+            @media (max-width: 999px) {
+                display: flex;
+                padding: $com-spacing-4;
+                gap: $com-spacing-3;
+            }
+            &.active {
+                border: 3px solid #410179;
+                background: #F4EEFB;
+                .check-mark {
+                    opacity: 1;
+                    transform: scale(1);
+                    @media (max-width: 999px) {
+                        background: #410179;
+                        border-color: #410179;
+                        svg {
+                            opacity: 1;
+                        }
+                    }
+                }
+                .bg-icon {
+                    .icon-circle {
+                        @media (max-width: 999px) {
+                            background: $yellow2;
+                        }
+                    }
+                }
+                .content {
+                    .card-badges {
+                        .mini-badge {
+                            background: $white;
+                            color: #410179;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                transform: translateY(-4px);
+            }
+            .check-mark {
+                @include flex;
+                position: absolute;
+                top: $com-spacing-4;
+                left: $com-spacing-4;
+                width: 40px;
+                height: 40px;
+                background: #410179;
+                border-radius: 50%;
+                opacity: 0;
+                transform: scale(0.5);
+                transition: all 0.2s ease;
+                @media (max-width: 999px) {
+                    opacity: 1;
+                    width: auto;
+                    height: auto;
+                    min-width: 22px;
+                    min-height: 22px;
+                    background: $white;
+                    border: 2px solid #D9D3E3;
+                    svg {
+                        opacity: 0;
+                        width: 10px;
+                    }
+                }
+            }
+            .bg-icon {
+                @include flex;
+                background: #E7DCF7;
+                height: 210px;
+                @media (max-width: 999px) {
+                    background: $none;
+                    height: 52px;
+                }
+                .icon-circle {
+                    position: relative;
+                    @include flex;
+                    width: 150px;
+                    height: 150px;
+                    background: $yellow2;
+                    border-radius: 50%;
+                    position: relative;
+                    transition: background-color 0.3s ease;
+                    @media (max-width: 999px) {
+                        width: auto;
+                        min-width: 52px;
+                        max-width: 52px;
+                        height: 52px;
+                        background: #F4EEFB;
+                    }
+                    svg {
+                        max-width: 84px;
+                        @media (max-width: 999px) {
+                            max-width: 26px;
+                            max-height: 26px;
+                        }
+                    }
+                    .icon {
+                        @include flex;
+                        position: absolute;
+                        right: -6px;
+                        top: 5px;
+                        background: $white;
+                        width: 44px;
+                        height: 44px;
+                        border-radius: 50%;
+                        @media (max-width: 999px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .content {
+                padding: $com-spacing-4;
+                @media (min-width: 1600px) {
+                    padding: 28px;
+                }
+                @media (max-width: 999px) {
+                    padding: $zero;
+                }
+                .title {
+                    font-size: 28px;
+                    font-weight: 800;
+                    color: $blak;
+                    margin-bottom: $com-spacing-2;
+                    font-family: "roobert-arabic-trial-bold";
+                    @media (max-width: 999px) {
+                        font-size: 16px;
+                        margin: $zero;
+                    }
+                }
+                .text {
+                    color: $colortext2;
+                    margin-bottom: $com-spacing-2;
+                    height: 56px;
+                    font-family: "roobert-arabic-trial-regular";
+                    @media (max-width: 999px) {
+                        height: auto;
+                        font-size: 12px;
+                    }
+                }
+                .card-badges {
+                    display: flex;
+                    gap: $com-spacing-2;
+                    .mini-badge {
+                        @include flex;
+                        gap: $com-spacing-2;
+                        background: #F8F6FC;
+                        color: $colortext2;
+                        padding: $com-spacing-1 $com-spacing-2;
+                        border-radius: 60px;
+                        gap: $com-spacing-1;
+                        font-family: "roobert-arabic-trial-bold";
+                        font-size: 13px;
+                        height: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    // position: fixed;
+    // bottom: $zero;
+    // left: $zero;
+    width: $fullwidth;
+    background: $white;
+    border-top: 1.5px solid #ECE8F2;
+    padding: 22px $zero;
+    @media (min-width: 1900px) {}
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (min-width: 1600px) {
+            max-width: 1560px;
+        }
+    }
+    .btns {
+        display: flex;
+        justify-content: flex-end;
+        min-width: 140px;
+    }
+    .bottom {
+        border: $zero;
+        box-shadow: none !important;
+        background: $yellow2;
+        min-width: 118px;
+        height: 46px;
+        color: $blak;
+        transition: all 0.5s ease-in-out 0s;
+        font-family: "roobert-arabic-trial-bold";
+        &:hover {
+            background: #ffd43d;
+            transform: none;
+            min-width: 90px;
+        }
+        @media (min-width: 1600px) {
+            min-width: 190px;
+            height: 67px;
+            &:hover {
+                min-width: 166px;
+            }
+        }
+        @media (max-width: 999px) {
+            min-width: 140px;
+            height: 44px;
+        }
+    }
+    .text {
+        font-size: 13px;
+        color: $colortext2;
+        font-family: "roobert-arabic-trial-bold";
+    }
+    .btn-back {
+        display: flex;
+        align-items: center;
+        gap: $com-spacing-1;
+        color: #410179;
+        font-family: "roobert-arabic-trial-bold";
+        font-size: 20px;
     }
 }

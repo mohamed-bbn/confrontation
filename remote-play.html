@@ -252,8 +252,6 @@
 
 
     <section class="remote-play">
-        <div class="result-message" id="result-msg"></div>
-        <!-- End result-message -->
         <div class="container">
             <div class="item">
                 <span class="pattern">
@@ -315,7 +313,7 @@
                 <p class="text siz">1–8 لاعبين · فردي أو فرق · 10–15 دقيقة</p>
             </div>
             <!-- End item -->
-            <div class="itemvisual">
+            <div class="itemvisual" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <span class="faster">⚡ أسرع لاعب · 4.2ث</span>
                 <span class="badge-score">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -325,32 +323,33 @@
                 </span>
                 <!-- End badge-score -->
                 <div class="timer-container">
-                    <svg class="timer-svg" viewBox="0 0 160 160">
+                    <!-- <svg class="timer-svg" viewBox="0 0 160 160">
                         <circle class="timer-bg" cx="80" cy="80" r="70"></circle>
                         <circle class="timer-progress" id="timer-ring" cx="80" cy="80" r="70"></circle>
                     </svg>
                     <div class="timer-text">
                         <span class="timer-number" id="timer-num">18</span>
                         <span class="timer-label">ثانية</span>
-                    </div>
+                    </div> -->
+                    <img loading="lazy" src="images/timer-ring.webp" alt="المواجهة">
                 </div>
                 <!-- End timer-container -->
                 <div class="question-box"> ما هي عاصمة أستراليا؟ </div>
                 <!-- End question-box -->
 
                 <div class="options-grid">
-                    <button class="option-btn" data-correct="false">  سيدني </button>
-                    <button class="option-btn" data-correct="true">  كانبرا </button>
-                    <button class="option-btn disabled-option" data-correct="false">
+                    <li class="option-btn"> سيدني </li>
+                    <li class="option-btn"> كانبرا </li>
+                    <li class="option-btn disabled-option">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g opacity="0.5">
                         <path d="M2.5 2.5L17.5 17.5" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M8.83333 5.08333C9.21979 5.02826 9.60964 5.00042 10 5C14.1667 5 17.5 10 17.5 10C16.771 11.1804 15.8725 12.2474 14.8333 13.1667M5.16667 6.33333C4.0867 7.40447 3.18628 8.64254 2.5 10C2.5 10 5.83333 15 10 15C11.1259 14.9971 12.2367 14.7408 13.25 14.25" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M8.25 8.25C7.88893 8.73143 7.71363 9.32695 7.75629 9.92722C7.79895 10.5275 8.05671 11.0922 8.48224 11.5178C8.90776 11.9433 9.47251 12.2011 10.0728 12.2437C10.6731 12.2864 11.2686 12.1111 11.75 11.75" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                         </g>
-                        </svg>  ملبورن
-                    </button>
-                    <button class="option-btn" data-correct="false">   بيرث  </button>
+                        </svg> ملبورن
+                    </li>
+                    <li class="option-btn"> بيرث </li>
                 </div>
                 <!-- End options-grid -->
             </div>
@@ -381,6 +380,48 @@
                     </span>
                     <h2 class="title">كيف تلعب؟ 3 قواعد فقط</h2>
                     <p class="text">تظهر قبل كل سباق — ومن يعرفها يتخطّاها بضغطة</p>
+                    <div class="grid-container">
+                        <div class="gridcard">
+                            <div class="photo-container">
+                                <img loading="lazy" src="images/t-1.png" alt="المواجهة">
+                            </div>
+                            <div class="badge">1</div>
+                            <div>
+                                <h3 class="title">30 ثانية لكل سؤال</h3>
+                                <p class="card-desc">يرى جميع اللاعبين السؤال نفسه في اللحظة نفسها، والعداد واحد للجميع.</p>
+                            </div>
+                        </div>
+                        <!-- ENd card -->
+
+                        <div class="gridcard">
+                            <div class="photo-container">
+                                <img loading="lazy" src="images/t-2.png" alt="المواجهة">
+                            </div>
+                            <div class="badge">2</div>
+                            <div>
+                                <h3 class="title">الخيارات تختفي</h3>
+                                <p class="card-desc">كل 7 ثوانٍ، يختفي خيار خاطئ. أجب مبكراً لنقاط أعلى، أو انتظر حتى يسهل السؤال.</p>
+                            </div>
+                        </div>
+                        <!-- ENd card -->
+                        <div class="gridcard">
+                            <div class="photo-container">
+                                <img loading="lazy" src="images/t-3.png" alt="المواجهة">
+                            </div>
+                            <div class="badge">3</div>
+                            <div>
+                                <h3 class="title">الإجابات مخفية حتى النهاية</h3>
+                                <p class="card-desc">لا أحد يعرف من أجاب حتى الكشف الإجابة الصحيحة تمنحك نقاطاً حسب سرعَتِك، والخاطئة تخصم منك.</p>
+                            </div>
+                        </div>
+                        <!-- ENd card -->
+                    </div>
+                    <!-- End cards-container -->
+                    <nav class="btns">
+                        <a href="how-play.html" class="howplay">تخطي الشرح </a>
+                        <a href="how-play.html" class="bottom">  فهمت، لنبدأ</a>
+                    </nav>
+                    <!-- End btns -->
                 </div>
             </div>
         </div>
@@ -394,100 +435,6 @@
     <script src="js/plugin.js"></script>
 
 
-    <script>
-        $(document).ready(function() {
-            var totalTime = 18;
-            var timeLeft = totalTime;
-            var timerInterval = null;
-            var circleRadius = 70;
-            var circumference = 2 * Math.PI * circleRadius;
-            var timeIsUp = false;
-
-            $('#timer-ring').css({
-                'stroke-dasharray': circumference,
-                'stroke-dashoffset': 0
-            });
-
-            function startTimer() {
-                clearInterval(timerInterval);
-                timeLeft = totalTime;
-                timeIsUp = false;
-                updateTimerDisplay();
-
-                timerInterval = setInterval(function() {
-                    timeLeft--;
-                    updateTimerDisplay();
-
-                    if (timeLeft <= 0) {
-                        clearInterval(timerInterval);
-                        onTimeOut();
-                    }
-                }, 1000);
-            }
-
-            function updateTimerDisplay() {
-                $('#timer-num').text(timeLeft);
-
-                var strokeOffset = circumference - (timeLeft / totalTime) * circumference;
-                $('#timer-ring').css('stroke-dashoffset', strokeOffset);
-
-                if (timeLeft <= 5) {
-                    $('#timer-ring').css('stroke', '#ef4444');
-                } else {
-                    $('#timer-ring').css('stroke', '#fbbf24');
-                }
-            }
-
-            $('.option-btn').on('click', function() {
-                if (timeIsUp || $(this).hasClass('disabled-option')) return;
-
-                $('.option-btn').removeClass('selected');
-                $(this).addClass('selected');
-            });
-
-            function onTimeOut() {
-                timeIsUp = true;
-                $('#timer-num').text('0');
-
-                $('.option-btn').css('pointer-events', 'none');
-
-                var $selectedOption = $('.option-btn.selected');
-                var $correctOption = $('[data-correct="true"]');
-
-                $correctOption.addClass('correct-ans');
-
-                if ($selectedOption.length > 0) {
-                    var isCorrect = $selectedOption.attr('data-correct') === 'true';
-
-                    if (isCorrect) {
-                        showResult('إجابة صحيحة! أحسنت 🎉', 'success');
-                    } else {
-                        $selectedOption.addClass('wrong-ans');
-                        showResult('إجابة خاطئة! ❌', 'error');
-                    }
-                } else {
-                    showResult('انتهى الوقت! لم تقم بإختيار إجابة ⏰', 'error');
-                }
-            }
-
-            function showResult(text, type) {
-                var $msgBox = $('#result-msg');
-
-                $msgBox
-                    .removeClass('success error')
-                    .addClass(type)
-                    .text(text)
-                    .stop(true, true)
-                    .fadeIn();
-
-                setTimeout(function() {
-                    $msgBox.fadeOut();
-                }, 5000);
-            }
-
-            startTimer();
-        });
-    </script>
 
 </body>
 
