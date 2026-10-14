@@ -1075,6 +1075,10 @@ $(document).ready(function() {
     });
 
 
+    $('.gamecard').on('click', function() {
+        $(this).toggleClass('active');
+    });
+
 }); // END document.ready
 
 if (typeof window.Sortable === 'undefined') {

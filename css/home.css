@@ -9325,7 +9325,7 @@
   align-items: center;
   justify-content: center;
   background: #F8F6FC;
-  min-height: calc(100vh - 204px);
+  min-height: calc(100vh - 184px);
   padding: 24px 0px; }
   @media (min-width: 1600px) {
     .how-play {
@@ -9338,6 +9338,24 @@
     align-items: center;
     gap: 12px;
     width: 100%; }
+    @media (max-width: 999px) {
+      .how-play .header-top {
+        justify-content: space-between; } }
+    .how-play .header-top .btn-back {
+      display: none;
+      min-width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #ECE8F2; }
+      @media (max-width: 999px) {
+        .how-play .header-top .btn-back {
+          display: flex;
+          align-items: center;
+          justify-content: center; } }
+    .how-play .header-top .d-flex {
+      align-items: center;
+      gap: 12px; }
     .how-play .header-top .pattern {
       display: inline-flex;
       align-items: center;
@@ -9351,6 +9369,9 @@
       font-weight: 700;
       color: #C77A00;
       font-family: "roobert-arabic-trial-regular"; }
+      @media (max-width: 999px) {
+        .how-play .header-top .pattern {
+          display: none; } }
     .how-play .header-top .progressbar {
       display: flex;
       align-items: center;
@@ -9360,11 +9381,19 @@
         height: 6px;
         background: #ECE8F2;
         border-radius: 3px; }
+        @media (max-width: 999px) {
+          .how-play .header-top .progressbar li {
+            min-width: 36px;
+            height: 5px; } }
         .how-play .header-top .progressbar li.active {
           background: #410179; }
     .how-play .header-top .text {
       color: #6B6B6B;
-      font-family: "roobert-arabic-trial-bold"; }
+      font-family: "roobert-arabic-trial-bold";
+      font-size: 11px; }
+      @media (max-width: 999px) {
+        .how-play .header-top .text span {
+          display: none; } }
   .how-play .main-title .title {
     text-align: center;
     font-size: 36px;
@@ -9375,13 +9404,22 @@
       .how-play .main-title .title {
         margin-top: 32px;
         font-size: 56px; } }
+    @media (max-width: 999px) {
+      .how-play .main-title .title {
+        text-align: start;
+        font-size: 28px; } }
   .how-play .main-title .text {
     text-align: center;
     font-family: "roobert-arabic-trial-regular";
-    margin-top: 4px; }
+    margin-top: 4px;
+    line-height: 20px; }
     @media (min-width: 1600px) {
       .how-play .main-title .text {
         font-size: 20px; } }
+    @media (max-width: 999px) {
+      .how-play .main-title .text {
+        text-align: start;
+        font-size: 14px; } }
   .how-play .items-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -9392,9 +9430,12 @@
         gap: 32px; } }
     @media (max-width: 999px) {
       .how-play .items-container {
+        margin-top: 18px; } }
+    @media (max-width: 999px) {
+      .how-play .items-container {
         grid-template-columns: repeat(1, 1fr);
         gap: 12px; } }
-    .how-play .items-container .game-card {
+    .how-play .items-container .gamecard {
       position: relative;
       background: #fff;
       border-radius: 28px;
@@ -9404,31 +9445,30 @@
       user-select: none;
       overflow: hidden; }
       @media (max-width: 999px) {
-        .how-play .items-container .game-card {
+        .how-play .items-container .gamecard {
           display: flex;
           padding: 16px;
           gap: 12px; } }
-      .how-play .items-container .game-card.active {
+      .how-play .items-container .gamecard.active {
         border: 3px solid #410179;
         background: #F4EEFB; }
-        .how-play .items-container .game-card.active .check-mark {
-          opacity: 1;
-          transform: scale(1); }
+        .how-play .items-container .gamecard.active .check-mark {
+          opacity: 1; }
           @media (max-width: 999px) {
-            .how-play .items-container .game-card.active .check-mark {
+            .how-play .items-container .gamecard.active .check-mark {
               background: #410179;
               border-color: #410179; }
-              .how-play .items-container .game-card.active .check-mark svg {
+              .how-play .items-container .gamecard.active .check-mark svg {
                 opacity: 1; } }
         @media (max-width: 999px) {
-          .how-play .items-container .game-card.active .bg-icon .icon-circle {
+          .how-play .items-container .gamecard.active .bg-icon .icon-circle {
             background: #FFDE65; } }
-        .how-play .items-container .game-card.active .content .card-badges .mini-badge {
+        .how-play .items-container .gamecard.active .content .card-badges .mini-badge {
           background: #fff;
           color: #410179; }
-      .how-play .items-container .game-card:hover {
+      .how-play .items-container .gamecard:hover {
         transform: translateY(-4px); }
-      .how-play .items-container .game-card .check-mark {
+      .how-play .items-container .gamecard .check-mark {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -9440,31 +9480,28 @@
         background: #410179;
         border-radius: 50%;
         opacity: 0;
-        transform: scale(0.5);
         transition: all 0.2s ease; }
         @media (max-width: 999px) {
-          .how-play .items-container .game-card .check-mark {
+          .how-play .items-container .gamecard .check-mark {
             opacity: 1;
-            width: auto;
-            height: auto;
-            min-width: 22px;
-            min-height: 22px;
+            width: 22px;
+            height: 22px;
             background: #fff;
             border: 2px solid #D9D3E3; }
-            .how-play .items-container .game-card .check-mark svg {
+            .how-play .items-container .gamecard .check-mark svg {
               opacity: 0;
               width: 10px; } }
-      .how-play .items-container .game-card .bg-icon {
+      .how-play .items-container .gamecard .bg-icon {
         display: flex;
         align-items: center;
         justify-content: center;
         background: #E7DCF7;
         height: 210px; }
         @media (max-width: 999px) {
-          .how-play .items-container .game-card .bg-icon {
+          .how-play .items-container .gamecard .bg-icon {
             background: none;
             height: 52px; } }
-        .how-play .items-container .game-card .bg-icon .icon-circle {
+        .how-play .items-container .gamecard .bg-icon .icon-circle {
           position: relative;
           display: flex;
           align-items: center;
@@ -9476,19 +9513,19 @@
           position: relative;
           transition: background-color 0.3s ease; }
           @media (max-width: 999px) {
-            .how-play .items-container .game-card .bg-icon .icon-circle {
+            .how-play .items-container .gamecard .bg-icon .icon-circle {
               width: auto;
               min-width: 52px;
               max-width: 52px;
               height: 52px;
               background: #F4EEFB; } }
-          .how-play .items-container .game-card .bg-icon .icon-circle svg {
+          .how-play .items-container .gamecard .bg-icon .icon-circle svg {
             max-width: 84px; }
             @media (max-width: 999px) {
-              .how-play .items-container .game-card .bg-icon .icon-circle svg {
+              .how-play .items-container .gamecard .bg-icon .icon-circle svg {
                 max-width: 26px;
                 max-height: 26px; } }
-          .how-play .items-container .game-card .bg-icon .icon-circle .icon {
+          .how-play .items-container .gamecard .bg-icon .icon-circle .icon {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -9500,39 +9537,38 @@
             height: 44px;
             border-radius: 50%; }
             @media (max-width: 999px) {
-              .how-play .items-container .game-card .bg-icon .icon-circle .icon {
+              .how-play .items-container .gamecard .bg-icon .icon-circle .icon {
                 display: none; } }
-      .how-play .items-container .game-card .content {
+      .how-play .items-container .gamecard .content {
         padding: 16px; }
         @media (min-width: 1600px) {
-          .how-play .items-container .game-card .content {
+          .how-play .items-container .gamecard .content {
             padding: 28px; } }
         @media (max-width: 999px) {
-          .how-play .items-container .game-card .content {
+          .how-play .items-container .gamecard .content {
             padding: 0px; } }
-        .how-play .items-container .game-card .content .title {
+        .how-play .items-container .gamecard .content .title {
           font-size: 28px;
-          font-weight: 800;
           color: #000;
           margin-bottom: 8px;
           font-family: "roobert-arabic-trial-bold"; }
           @media (max-width: 999px) {
-            .how-play .items-container .game-card .content .title {
+            .how-play .items-container .gamecard .content .title {
               font-size: 16px;
               margin: 0px; } }
-        .how-play .items-container .game-card .content .text {
+        .how-play .items-container .gamecard .content .text {
           color: #6B6B6B;
           margin-bottom: 8px;
           height: 56px;
           font-family: "roobert-arabic-trial-regular"; }
           @media (max-width: 999px) {
-            .how-play .items-container .game-card .content .text {
+            .how-play .items-container .gamecard .content .text {
               height: auto;
               font-size: 12px; } }
-        .how-play .items-container .game-card .content .card-badges {
+        .how-play .items-container .gamecard .content .card-badges {
           display: flex;
           gap: 8px; }
-          .how-play .items-container .game-card .content .card-badges .mini-badge {
+          .how-play .items-container .gamecard .content .card-badges .mini-badge {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -9545,14 +9581,283 @@
             font-family: "roobert-arabic-trial-bold";
             font-size: 13px;
             height: 28px; }
+            @media (max-width: 999px) {
+              .how-play .items-container .gamecard .content .card-badges .mini-badge:first-child {
+                display: none; } }
+
+.where-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F8F6FC;
+  min-height: calc(100vh - 184px);
+  padding: 24px 0px; }
+  @media (min-width: 1600px) {
+    .where-play {
+      padding: 48px 0px; } }
+  @media (min-width: 1600px) {
+    .where-play .container {
+      max-width: 1560px; } }
+  .where-play .header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%; }
+    @media (max-width: 999px) {
+      .where-play .header-top {
+        justify-content: space-between; } }
+    .where-play .header-top .btn-back {
+      display: none;
+      min-width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #ECE8F2; }
+      @media (max-width: 999px) {
+        .where-play .header-top .btn-back {
+          display: flex;
+          align-items: center;
+          justify-content: center; } }
+    .where-play .header-top .d-flex {
+      align-items: center;
+      gap: 12px; }
+    .where-play .header-top .pattern {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 122px;
+      height: 34px;
+      border-radius: 60px;
+      gap: 8px;
+      background: #FFF1DA;
+      font-size: 15px;
+      font-weight: 700;
+      color: #C77A00;
+      font-family: "roobert-arabic-trial-regular"; }
+      @media (max-width: 999px) {
+        .where-play .header-top .pattern {
+          display: none; } }
+    .where-play .header-top .progressbar {
+      display: flex;
+      align-items: center;
+      gap: 6px; }
+      .where-play .header-top .progressbar li {
+        min-width: 56px;
+        height: 6px;
+        background: #ECE8F2;
+        border-radius: 3px; }
+        @media (max-width: 999px) {
+          .where-play .header-top .progressbar li {
+            min-width: 36px;
+            height: 5px; } }
+        .where-play .header-top .progressbar li.active {
+          background: #410179; }
+    .where-play .header-top .text {
+      color: #6B6B6B;
+      font-family: "roobert-arabic-trial-bold";
+      font-size: 11px; }
+      @media (max-width: 999px) {
+        .where-play .header-top .text span {
+          display: none; } }
+  .where-play .main-title .title {
+    text-align: center;
+    font-size: 36px;
+    font-family: "roobert-arabic-trial-bold";
+    color: #000;
+    margin-top: 16px; }
+    @media (min-width: 1600px) {
+      .where-play .main-title .title {
+        margin-top: 32px;
+        font-size: 56px; } }
+    @media (max-width: 999px) {
+      .where-play .main-title .title {
+        text-align: start;
+        font-size: 28px; } }
+  .where-play .main-title .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "roobert-arabic-trial-regular";
+    margin-top: 4px;
+    gap: 4px;
+    font-size: 11px;
+    color: #410179; }
+    @media (max-width: 999px) {
+      .where-play .main-title .text {
+        display: inline-block;
+        background: #F4EEFB;
+        border-radius: 60px;
+        padding: 0px 12px; } }
+  .where-play .items-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 24px auto 0px auto;
+    max-width: 820px; }
+    @media (max-width: 999px) {
+      .where-play .items-container {
+        margin-top: 18px; } }
+    @media (max-width: 999px) {
+      .where-play .items-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 12px; } }
+    .where-play .items-container .gamecard {
+      position: relative;
+      background: #fff;
+      border-radius: 28px;
+      border: 1.5px solid #ECE8F2;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      user-select: none;
+      overflow: hidden; }
+      @media (max-width: 999px) {
+        .where-play .items-container .gamecard {
+          display: flex;
+          padding: 16px;
+          gap: 12px; } }
+      .where-play .items-container .gamecard.active {
+        border: 3px solid #410179;
+        background: #F4EEFB; }
+        .where-play .items-container .gamecard.active .check-mark {
+          opacity: 1; }
+          @media (max-width: 999px) {
+            .where-play .items-container .gamecard.active .check-mark {
+              background: #410179;
+              border-color: #410179; }
+              .where-play .items-container .gamecard.active .check-mark svg {
+                opacity: 1; } }
+        @media (max-width: 999px) {
+          .where-play .items-container .gamecard.active .bg-icon .icon-circle {
+            background: #FFDE65; } }
+        .where-play .items-container .gamecard.active .content .d-flex .icon-circle {
+          background: #FFDE65; }
+        .where-play .items-container .gamecard.active .content .card-badges .mini-badge {
+          background: #fff;
+          color: #410179; }
+      .where-play .items-container .gamecard:hover {
+        transform: translateY(-4px); }
+      .where-play .items-container .gamecard .check-mark {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        width: 40px;
+        height: 40px;
+        background: #410179;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.2s ease; }
+        @media (max-width: 999px) {
+          .where-play .items-container .gamecard .check-mark {
+            opacity: 1;
+            width: 22px;
+            height: 22px;
+            background: #fff;
+            border: 2px solid #D9D3E3; }
+            .where-play .items-container .gamecard .check-mark svg {
+              opacity: 0;
+              width: 10px; } }
+      .where-play .items-container .gamecard .photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #E7DCF7;
+        height: 162px; }
+        @media (max-width: 999px) {
+          .where-play .items-container .gamecard .photo {
+            display: none; } }
+        .where-play .items-container .gamecard .photo img {
+          max-width: 100%;
+          max-height: 100%; }
+      .where-play .items-container .gamecard .content {
+        padding: 16px; }
+        @media (min-width: 1600px) {
+          .where-play .items-container .gamecard .content {
+            padding: 28px; } }
+        @media (max-width: 999px) {
+          .where-play .items-container .gamecard .content {
+            padding: 0px; } }
+        .where-play .items-container .gamecard .content .d-flex {
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 8px; }
+          .where-play .items-container .gamecard .content .d-flex .icon-circle {
+            position: relative;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 30px;
+            height: 30px;
+            background: #F4EEFB;
+            border-radius: 50%; }
+            @media (max-width: 999px) {
+              .where-play .items-container .gamecard .content .d-flex .icon-circle {
+                min-width: 56px;
+                height: 56px; } }
+            .where-play .items-container .gamecard .content .d-flex .icon-circle svg {
+              max-width: 15px;
+              max-height: 15px; }
+              @media (max-width: 999px) {
+                .where-play .items-container .gamecard .content .d-flex .icon-circle svg {
+                  max-width: 28px;
+                  max-height: 28px;
+                  min-width: 28px;
+                  min-height: 28px; } }
+          .where-play .items-container .gamecard .content .d-flex .title {
+            font-size: 20px;
+            color: #000;
+            font-family: "roobert-arabic-trial-bold"; }
+            @media (max-width: 999px) {
+              .where-play .items-container .gamecard .content .d-flex .title {
+                font-size: 18px; } }
+        .where-play .items-container .gamecard .content .text {
+          color: #6B6B6B;
+          margin-bottom: 8px;
+          font-size: 12px;
+          line-height: 20px;
+          font-family: "roobert-arabic-trial-regular"; }
+        .where-play .items-container .gamecard .content .card-badges {
+          display: flex;
+          gap: 8px; }
+          .where-play .items-container .gamecard .content .card-badges .need {
+            font-family: "roobert-arabic-trial-bold";
+            font-size: 10px;
+            color: #000; }
+            @media (max-width: 999px) {
+              .where-play .items-container .gamecard .content .card-badges .need {
+                display: none; } }
+          .where-play .items-container .gamecard .content .card-badges .mini-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #F8F6FC;
+            color: #6B6B6B;
+            padding: 4px 8px;
+            border-radius: 60px;
+            gap: 4px;
+            font-family: "roobert-arabic-trial-bold";
+            font-size: 13px;
+            height: 28px; }
+            @media (max-width: 999px) {
+              .where-play .items-container .gamecard .content .card-badges .mini-badge:last-child {
+                display: none; } }
 
 .footer-container {
   display: flex;
   align-items: center;
   width: 100%;
+  max-height: 91px;
   background: #fff;
   border-top: 1.5px solid #ECE8F2;
   padding: 22px 0px; }
+  @media (max-width: 999px) {
+    .footer-container {
+      max-height: inherit; } }
   .footer-container .container {
     display: flex;
     align-items: center;
@@ -9560,10 +9865,18 @@
     @media (min-width: 1600px) {
       .footer-container .container {
         max-width: 1560px; } }
+    @media (max-width: 999px) {
+      .footer-container .container {
+        display: block; } }
   .footer-container .btns {
     display: flex;
     justify-content: flex-end;
-    min-width: 140px; }
+    min-width: 140px;
+    order: 2; }
+    @media (max-width: 999px) {
+      .footer-container .btns {
+        min-width: 100%;
+        order: 0; } }
   .footer-container .bottom {
     border: 0px;
     box-shadow: none !important;
@@ -9585,12 +9898,17 @@
           min-width: 166px; } }
     @media (max-width: 999px) {
       .footer-container .bottom {
-        min-width: 140px;
-        height: 44px; } }
+        min-width: 100%;
+        height: 56px; } }
   .footer-container .text {
     font-size: 13px;
     color: #6B6B6B;
     font-family: "roobert-arabic-trial-bold"; }
+    @media (max-width: 999px) {
+      .footer-container .text {
+        text-align: center;
+        margin-top: 12px;
+        font-size: 12px; } }
   .footer-container .btn-back {
     display: flex;
     align-items: center;
@@ -9598,6 +9916,9 @@
     color: #410179;
     font-family: "roobert-arabic-trial-bold";
     font-size: 20px; }
+    @media (max-width: 999px) {
+      .footer-container .btn-back {
+        display: none; } }
 
 .error404 {
   position: relative;

@@ -3710,7 +3710,7 @@
 .how-play {
     @include flex;
     background: #F8F6FC;
-    min-height: calc(100vh - 204px);
+    min-height: calc(100vh - 184px);
     padding: $com-spacing-6 $zero;
     @media (min-width: 1600px) {
         padding: $com-spacing-8 $zero;
@@ -3725,6 +3725,24 @@
         align-items: center;
         gap: $com-spacing-3;
         width: $fullwidth;
+        @media (max-width: 999px) {
+            justify-content: space-between;
+        }
+        .btn-back {
+            display: none;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: $white;
+            border: 1px solid #ECE8F2;
+            @media (max-width: 999px) {
+                @include flex;
+            }
+        }
+        .d-flex {
+            align-items: center;
+            gap: $com-spacing-3;
+        }
         .pattern {
             display: inline-flex;
             align-items: center;
@@ -3738,6 +3756,9 @@
             font-weight: 700;
             color: #C77A00;
             font-family: "roobert-arabic-trial-regular";
+            @media (max-width: 999px) {
+                display: none;
+            }
         }
         .progressbar {
             display: flex;
@@ -3748,6 +3769,10 @@
                 height: 6px;
                 background: #ECE8F2;
                 border-radius: 3px;
+                @media (max-width: 999px) {
+                    min-width: 36px;
+                    height: 5px;
+                }
                 &.active {
                     background: #410179;
                 }
@@ -3756,6 +3781,12 @@
         .text {
             color: $colortext2;
             font-family: "roobert-arabic-trial-bold";
+            font-size: 11px;
+            @media (max-width: 999px) {
+                span {
+                    display: none;
+                }
+            }
         }
     }
     .main-title {
@@ -3769,13 +3800,22 @@
                 margin-top: $com-spacing-7;
                 font-size: 56px;
             }
+            @media (max-width: 999px) {
+                text-align: start;
+                font-size: 28px;
+            }
         }
         .text {
             text-align: center;
             font-family: "roobert-arabic-trial-regular";
             margin-top: $com-spacing-1;
+            line-height: 20px;
             @media (min-width: 1600px) {
                 font-size: 20px;
+            }
+            @media (max-width: 999px) {
+                text-align: start;
+                font-size: 14px;
             }
         }
     }
@@ -3788,10 +3828,13 @@
             gap: $com-spacing-7;
         }
         @media (max-width: 999px) {
+            margin-top: 18px;
+        }
+        @media (max-width: 999px) {
             grid-template-columns: repeat(1, 1fr);
             gap: $com-spacing-3;
         }
-        .game-card {
+        .gamecard {
             position: relative;
             background: $white;
             border-radius: 28px;
@@ -3810,7 +3853,6 @@
                 background: #F4EEFB;
                 .check-mark {
                     opacity: 1;
-                    transform: scale(1);
                     @media (max-width: 999px) {
                         background: #410179;
                         border-color: #410179;
@@ -3848,14 +3890,11 @@
                 background: #410179;
                 border-radius: 50%;
                 opacity: 0;
-                transform: scale(0.5);
                 transition: all 0.2s ease;
                 @media (max-width: 999px) {
                     opacity: 1;
-                    width: auto;
-                    height: auto;
-                    min-width: 22px;
-                    min-height: 22px;
+                    width: 22px;
+                    height: 22px;
                     background: $white;
                     border: 2px solid #D9D3E3;
                     svg {
@@ -3920,7 +3959,6 @@
                 }
                 .title {
                     font-size: 28px;
-                    font-weight: 800;
                     color: $blak;
                     margin-bottom: $com-spacing-2;
                     font-family: "roobert-arabic-trial-bold";
@@ -3953,6 +3991,311 @@
                         font-family: "roobert-arabic-trial-bold";
                         font-size: 13px;
                         height: 28px;
+                        @media (max-width: 999px) {
+                            &:first-child {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.where-play {
+    @include flex;
+    background: #F8F6FC;
+    min-height: calc(100vh - 184px);
+    padding: $com-spacing-6 $zero;
+    @media (min-width: 1600px) {
+        padding: $com-spacing-8 $zero;
+    }
+    .container {
+        @media (min-width: 1600px) {
+            max-width: 1560px;
+        }
+    }
+    .header-top {
+        display: flex;
+        align-items: center;
+        gap: $com-spacing-3;
+        width: $fullwidth;
+        @media (max-width: 999px) {
+            justify-content: space-between;
+        }
+        .btn-back {
+            display: none;
+            min-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: $white;
+            border: 1px solid #ECE8F2;
+            @media (max-width: 999px) {
+                @include flex;
+            }
+        }
+        .d-flex {
+            align-items: center;
+            gap: $com-spacing-3;
+        }
+        .pattern {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 122px;
+            height: 34px;
+            border-radius: 60px;
+            gap: $com-spacing-2;
+            background: #FFF1DA;
+            font-size: 15px;
+            font-weight: 700;
+            color: #C77A00;
+            font-family: "roobert-arabic-trial-regular";
+            @media (max-width: 999px) {
+                display: none;
+            }
+        }
+        .progressbar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            li {
+                min-width: 56px;
+                height: 6px;
+                background: #ECE8F2;
+                border-radius: 3px;
+                @media (max-width: 999px) {
+                    min-width: 36px;
+                    height: 5px;
+                }
+                &.active {
+                    background: #410179;
+                }
+            }
+        }
+        .text {
+            color: $colortext2;
+            font-family: "roobert-arabic-trial-bold";
+            font-size: 11px;
+            @media (max-width: 999px) {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+    .main-title {
+        .title {
+            text-align: center;
+            font-size: 36px;
+            font-family: "roobert-arabic-trial-bold";
+            color: $blak;
+            margin-top: $com-spacing-4;
+            @media (min-width: 1600px) {
+                margin-top: $com-spacing-7;
+                font-size: 56px;
+            }
+            @media (max-width: 999px) {
+                text-align: start;
+                font-size: 28px;
+            }
+        }
+        .text {
+            @include flex;
+            text-align: center;
+            font-family: "roobert-arabic-trial-regular";
+            margin-top: $com-spacing-1;
+            gap: $com-spacing-1;
+            font-size: 11px;
+            color: #410179;
+            @media (max-width: 999px) {
+                display: inline-block;
+                background: #F4EEFB;
+                border-radius: 60px;
+                padding: $zero $com-spacing-3;
+            }
+        }
+    }
+    .items-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $com-spacing-6;
+        margin: $com-spacing-6 $auto $zero $auto;
+        max-width: 820px;
+        @media (min-width: 1600px) {}
+        @media (max-width: 999px) {
+            margin-top: 18px;
+        }
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: $com-spacing-3;
+        }
+        .gamecard {
+            position: relative;
+            background: $white;
+            border-radius: 28px;
+            border: 1.5px solid #ECE8F2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+            overflow: hidden;
+            @media (max-width: 999px) {
+                display: flex;
+                padding: $com-spacing-4;
+                gap: $com-spacing-3;
+            }
+            &.active {
+                border: 3px solid #410179;
+                background: #F4EEFB;
+                .check-mark {
+                    opacity: 1;
+                    @media (max-width: 999px) {
+                        background: #410179;
+                        border-color: #410179;
+                        svg {
+                            opacity: 1;
+                        }
+                    }
+                }
+                .bg-icon {
+                    .icon-circle {
+                        @media (max-width: 999px) {
+                            background: $yellow2;
+                        }
+                    }
+                }
+                .content {
+                    .d-flex {
+                        .icon-circle {
+                            background: $yellow2;
+                        }
+                    }
+                    .card-badges {
+                        .mini-badge {
+                            background: $white;
+                            color: #410179;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                transform: translateY(-4px);
+            }
+            .check-mark {
+                @include flex;
+                position: absolute;
+                top: $com-spacing-4;
+                left: $com-spacing-4;
+                width: 40px;
+                height: 40px;
+                background: #410179;
+                border-radius: 50%;
+                opacity: 0;
+                transition: all 0.2s ease;
+                @media (max-width: 999px) {
+                    opacity: 1;
+                    width: 22px;
+                    height: 22px;
+                    background: $white;
+                    border: 2px solid #D9D3E3;
+                    svg {
+                        opacity: 0;
+                        width: 10px;
+                    }
+                }
+            }
+            .photo {
+                @include flex;
+                background: #E7DCF7;
+                height: 162px;
+                @media (max-width: 999px) {
+                    display: none;
+                }
+                img {
+                    max-width: $fullwidth;
+                    max-height: $fullwidth;
+                }
+            }
+            .content {
+                padding: $com-spacing-4;
+                @media (min-width: 1600px) {
+                    padding: 28px;
+                }
+                @media (max-width: 999px) {
+                    padding: $zero;
+                }
+                .d-flex {
+                    align-items: center;
+                    gap: $com-spacing-2;
+                    margin-bottom: $com-spacing-2;
+                    .icon-circle {
+                        position: relative;
+                        position: relative;
+                        @include flex;
+                        min-width: 30px;
+                        height: 30px;
+                        background: #F4EEFB;
+                        border-radius: 50%;
+                        @media (max-width: 999px) {
+                            min-width: 56px;
+                            height: 56px;
+                        }
+                        svg {
+                            max-width: 15px;
+                            max-height: 15px;
+                            @media (max-width: 999px) {
+                                max-width: 28px;
+                                max-height: 28px;
+                                min-width: 28px;
+                                min-height: 28px;
+                            }
+                        }
+                    }
+                    .title {
+                        font-size: 20px;
+                        color: $blak;
+                        font-family: "roobert-arabic-trial-bold";
+                        @media (max-width: 999px) {
+                            font-size: 18px;
+                        }
+                    }
+                }
+                .text {
+                    color: $colortext2;
+                    margin-bottom: $com-spacing-2;
+                    font-size: 12px;
+                    line-height: 20px;
+                    font-family: "roobert-arabic-trial-regular";
+                    @media (max-width: 999px) {}
+                }
+                .card-badges {
+                    display: flex;
+                    gap: $com-spacing-2;
+                    .need {
+                        font-family: "roobert-arabic-trial-bold";
+                        font-size: 10px;
+                        color: $blak;
+                        @media (max-width: 999px) {
+                            display: none;
+                        }
+                    }
+                    .mini-badge {
+                        @include flex;
+                        gap: $com-spacing-2;
+                        background: #F8F6FC;
+                        color: $colortext2;
+                        padding: $com-spacing-1 $com-spacing-2;
+                        border-radius: 60px;
+                        gap: $com-spacing-1;
+                        font-family: "roobert-arabic-trial-bold";
+                        font-size: 13px;
+                        height: 28px;
+                        @media (max-width: 999px) {
+                            &:last-child {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
@@ -3967,10 +4310,14 @@
     // bottom: $zero;
     // left: $zero;
     width: $fullwidth;
+    max-height: 91px;
     background: $white;
     border-top: 1.5px solid #ECE8F2;
     padding: 22px $zero;
     @media (min-width: 1900px) {}
+    @media (max-width: 999px) {
+        max-height: inherit;
+    }
     .container {
         display: flex;
         align-items: center;
@@ -3978,11 +4325,19 @@
         @media (min-width: 1600px) {
             max-width: 1560px;
         }
+        @media (max-width: 999px) {
+            display: block;
+        }
     }
     .btns {
         display: flex;
         justify-content: flex-end;
         min-width: 140px;
+        order: 2;
+        @media (max-width: 999px) {
+            min-width: $fullwidth;
+            order: 0;
+        }
     }
     .bottom {
         border: $zero;
@@ -4006,14 +4361,19 @@
             }
         }
         @media (max-width: 999px) {
-            min-width: 140px;
-            height: 44px;
+            min-width: $fullwidth;
+            height: 56px;
         }
     }
     .text {
         font-size: 13px;
         color: $colortext2;
         font-family: "roobert-arabic-trial-bold";
+        @media (max-width: 999px) {
+            text-align: center;
+            margin-top: $com-spacing-3;
+            font-size: 12px;
+        }
     }
     .btn-back {
         display: flex;
@@ -4022,5 +4382,8 @@
         color: #410179;
         font-family: "roobert-arabic-trial-bold";
         font-size: 20px;
+        @media (max-width: 999px) {
+            display: none;
+        }
     }
 }
