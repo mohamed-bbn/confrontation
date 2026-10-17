@@ -1076,8 +1076,17 @@ $(document).ready(function() {
 
 
     $('.gamecard').on('click', function() {
-        $(this).toggleClass('active');
+        $(this).addClass('active').siblings('.gamecard').removeClass('active');
     });
+
+
+    $('.option-btn').on('click', function() {
+        $('.option-btn').removeClass('active');
+        $(this).addClass('active');
+        var selectedQuestions = $(this).attr('data-value');
+        $('#summary-questions').text(selectedQuestions);
+    });
+
 
 }); // END document.ready
 
@@ -1533,6 +1542,32 @@ $(document).ready(function() {
         $('#show-add-form').show();
     });
 
+});
+
+
+document.addEventListener('click', function(event) {
+    var btn = event.target.closest('.copyBtn');
+    if (!btn) return;
+
+    var targetSelector = btn.getAttribute('data-target');
+    var targetElement = document.querySelector(targetSelector);
+
+    if (!targetElement) return;
+
+    var urlText = targetElement.innerText || targetElement.textContent;
+    var originalContent = btn.innerHTML;
+
+    navigator.clipboard.writeText(urlText).then(function() {
+        btn.innerHTML = '✓ تم النسخ';
+        btn.style.backgroundColor = '#22c55e';
+
+        setTimeout(function() {
+            btn.innerHTML = originalContent;
+            btn.style.backgroundColor = '#410179';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('فشل النسخ:', err);
+    });
 });
 
 /*----------------------------------------

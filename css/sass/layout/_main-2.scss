@@ -1,0 +1,450 @@
+.site-wrap {
+    @media (max-width: 999px) {
+        .site-header, .footer-container {
+            display: none
+        }
+    }
+}
+
+.host-connection {
+    @include flex;
+    background: #F8F6FC;
+    min-height: calc(100vh - 184px);
+    @media (max-width: 999px) {
+        min-height: 100vh;
+        padding: $zero;
+        background: #1B0A2E;
+    }
+    .container {
+        @media (min-width: 1600px) {
+            max-width: 1560px;
+        }
+        @media (max-width: 999px) {
+            padding: $zero;
+            height: 100vh;
+        }
+    }
+    .web-body {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        align-items: center;
+        gap: $com-spacing-6;
+        @media (min-width: 1600px) {
+            grid-template-columns: 1fr 620px;
+            gap: 180px;
+        }
+        @media (max-width: 999px) {
+            display: none;
+        }
+        .qr-card-container {
+            background: $white;
+            box-shadow: 0px 16px 40px 0px #40007812;
+            border-radius: 32px;
+            padding: $com-spacing-6;
+            text-align: center;
+            @media (min-width: 1600px) {
+                padding: 40px;
+            }
+            .title {
+                font-size: 22px;
+                color: $blak;
+                margin-bottom: $com-spacing-5;
+                text-align: center;
+                font-family: "roobert-arabic-trial-bold";
+                @media (min-width: 1600px) {
+                    font-size: 28px;
+                }
+            }
+            .big-qr {
+                @include flex;
+                width: 200px;
+                height: 200px;
+                margin: $zero $auto;
+                background: $white;
+                padding: $com-spacing-3;
+                border-radius: 28px;
+                border: 2px solid #ECE8F2;
+                position: relative;
+                @media (min-width: 1600px) {
+                    width: 360px;
+                    height: 360px;
+                    padding: 30px;
+                }
+                .qr-center-red {
+                    position: absolute;
+                    width: 30px;
+                    height: 16px;
+                    background: $red;
+                    border-radius: 4px;
+                    z-index: 2;
+                }
+                img {
+                    width: $fullwidth;
+                    height: $fullwidth;
+                    object-fit: contain;
+                }
+            }
+            .or-text {
+                @include flex;
+                width: 200px;
+                height: 1px;
+                background: #ECE8F2;
+                margin: 40px auto $zero auto;
+                @media (min-width: 1600px) {
+                    width: 360px;
+                }
+                p {
+                    color: $colortext2;
+                    font-family: "roobert-arabic-trial-regular";
+                    background: $white;
+                    padding: $zero $com-spacing-3;
+                }
+            }
+            .link-text {
+                display: block;
+                color: #410179;
+                font-size: 24px;
+                margin-top: $com-spacing-7;
+                direction: ltr;
+                text-align: center;
+                font-family: "roobert-arabic-trial-bold";
+                @include transition(all 0.5s ease-in-out 0s);
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+            .code-boxes-large {
+                display: flex;
+                justify-content: center;
+                gap: $com-spacing-3;
+                margin-bottom: 10px;
+                direction: ltr;
+                margin-top: $com-spacing-5;
+                .code-box-lg {
+                    width: 56px;
+                    height: 78px;
+                    background: #F4EEFB;
+                    color: #410179;
+                    border: 1px solid transparent;
+                    font-family: "roobert-arabic-trial-bold";
+                    font-size: 38px;
+                    border-radius: 18px;
+                    text-align: center;
+                    outline: none;
+                    @include transition(all 0.5s ease-in-out 0s);
+                    @media (min-width: 1600px) {
+                        width: 66px;
+                        height: 88px;
+                        font-size: 48px;
+                    }
+                    &:focus {
+                        border-color: #6b21a8;
+                        background: $white;
+                    }
+                }
+            }
+            .text {
+                text-align: center;
+                color: $colortext2;
+                font-size: 15px;
+                font-family: "roobert-arabic-trial-regular";
+                margin-top: $com-spacing-5;
+            }
+        }
+    }
+    .instructions-container {
+        .title {
+            color: $blak;
+            font-size: 60px;
+            font-family: "roobert-arabic-trial-bold";
+            @media (min-width: 1600px) {
+                font-size: 72px;
+            }
+            @media (max-width: 999px) {
+                font-size: 46px;
+            }
+        }
+        .text {
+            color: $colortext2;
+            line-height: 160%;
+            margin-top: $com-spacing-4;
+            @media (min-width: 1600px) {
+                font-size: 24px;
+                margin-top: 28px;
+            }
+            &.siz {
+                font-size: 16px;
+            }
+        }
+        .steps-list {
+            counter-reset: step-counter;
+            margin: $zero;
+            padding: $zero;
+            margin-top: $com-spacing-6;
+            li {
+                display: flex;
+                align-items: center;
+                gap: $com-spacing-2;
+                counter-increment: step-counter;
+                margin-bottom: $com-spacing-3;
+                font-size: 20px;
+                color: $blak;
+                font-family: "roobert-arabic-trial-bold";
+                @media (min-width: 1600px) {
+                    font-size: 28px;
+                }
+                &:last-child {
+                    margin: $zero;
+                }
+                &::before {
+                    @include flex;
+                    content: counter(step-counter);
+                    background: #F4EEFB;
+                    color: #410179;
+                    font-family: "roobert-arabic-trial-bold";
+                    font-size: 24px;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+    .mobile-section {
+        position: relative;
+        display: none;
+        width: $fullwidth;
+        padding-top: 60px;
+        @media (max-width: 999px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: $fullwidth;
+        }
+        .header-top {
+            position: absolute;
+            left: $zero;
+            top: $zero;
+            padding: $com-spacing-3;
+            .btn-back,
+            .btn-hlight {
+                background: #FFFFFF26;
+                border: $zero;
+            }
+        }
+        .qr-scan-wrapper {
+            @include flex;
+            position: relative;
+            width: 194px;
+            height: 194px;
+            margin: $zero auto;
+            .scan-line-horizontal {
+                position: absolute;
+                left: -20px;
+                width: 170px;
+                height: 3px;
+                background: $yellow2;
+                box-shadow: 0 0 8px $yellow2;
+                z-index: 3;
+                animation: scanUpDown 2.2s infinite ease-in-out;
+                @keyframes scanUpDown {
+                    0% {
+                        top: 5px;
+                    }
+                    50% {
+                        top: 120px;
+                    }
+                    100% {
+                        top: 5px;
+                    }
+                }
+            }
+            .corner {
+                position: absolute;
+                width: 45px;
+                height: 45px;
+                border-color: $yellow2;
+                border-style: solid;
+                pointer-events: none;
+                &.top-right {
+                    top: 0;
+                    right: 0;
+                    border-width: 4px 4px 0 0;
+                    border-top-right-radius: 20px;
+                }
+                &.top-left {
+                    top: 0;
+                    left: 0;
+                    border-width: 4px 0 0 4px;
+                    border-top-left-radius: 20px;
+                }
+                &.bottom-right {
+                    bottom: 0;
+                    right: 0;
+                    border-width: 0 4px 4px 0;
+                    border-bottom-right-radius: 20px;
+                }
+                &.bottom-left {
+                    bottom: 0;
+                    left: 0;
+                    border-width: 0 0 4px 4px;
+                    border-bottom-left-radius: 20px;
+                }
+            }
+            .qr-box-inner {
+                @include flex;
+                position: relative;
+                width: 130px;
+                height: 130px;
+                background: $white;
+                border-radius: 12px;
+                padding: $com-spacing-2;
+                overflow: hidden;
+                .qr-center-badge {
+                    position: absolute;
+                    width: 26px;
+                    height: 14px;
+                    background: $red;
+                    border-radius: 3px;
+                    z-index: 2;
+                }
+                img {
+                    width: $fullwidth;
+                    height: $fullwidth;
+                    object-fit: contain;
+                }
+            }
+        }
+        .text {
+            color: $white;
+            font-size: 13px;
+            text-align: center;
+            margin-top: $com-spacing-4;
+        }
+        .phone-card {
+            background: $white;
+            border-radius: 20px;
+            padding: $com-spacing-4;
+            text-align: center;
+            @media (max-width: 999px) {
+                border-bottom-right-radius: $zero;
+                border-bottom-left-radius: $zero;
+            }
+            .title {
+                color: $blak;
+                font-size: 20px;
+                text-align: center;
+                font-family: "roobert-arabic-trial-bold";
+            }
+            .code-boxes {
+                display: flex;
+                justify-content: center;
+                gap: $com-spacing-2;
+                margin: 10px 0;
+                direction: ltr;
+                .code-box {
+                    width: 44px;
+                    height: 44px;
+                    background: #F4EEFB;
+                    color: #410179;
+                    border: 1px solid transparent;
+                    font-family: "roobert-arabic-trial-bold";
+                    font-size: 24px;
+                    border-radius: 14px;
+                    text-align: center;
+                    outline: none;
+                    @include transition(all 0.5s ease-in-out 0s);
+                    &:focus {
+                        border-color: #6b21a8;
+                        background: $white;
+                    }
+                }
+            }
+            .input-group {
+                position: relative;
+                margin-bottom: $com-spacing-3;
+                input {
+                    width: $fullwidth;
+                    padding: $com-spacing-2 50px $com-spacing-2 $com-spacing-3;
+                    border: 1.5px solid #ECE8F2;
+                    border-radius: 16px !important;
+                    font-size: 12px;
+                    outline: none;
+                }
+                .photo {
+                    position: absolute;
+                    right: $com-spacing-2;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 32px;
+                    height: 32px;
+                    .user-avatar {
+                        @include flex;
+                        width: 32px;
+                        height: 32px;
+                        background: #F60037;
+                        color: $white;
+                        border-radius: 50% !important;
+                        font-size: 13px;
+                        font-family: "roobert-arabic-trial-bold";
+                    }
+                    .online {
+                        position: absolute;
+                        left: $zero;
+                        bottom: 2px;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        border: 2px solid $white;
+                        background: #1FA463;
+                    }
+                }
+                .edit-icon-btn {
+                    @include flex;
+                    position: absolute;
+                    left: $com-spacing-2;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    padding: 4px;
+                    outline: none;
+                    &:hover {
+                        svg {
+                            fill: $red;
+                        }
+                    }
+                    svg {
+                        width: 14px;
+                        height: 14px;
+                        fill: #6b7280;
+                        transition: fill 0.2s, transform 0.2s;
+                    }
+                }
+            }
+            .bottom {
+                border: $zero;
+                box-shadow: none !important;
+                background: #fcd34d;
+                min-width: $fullwidth;
+                height: 56px;
+                color: $blak;
+                font-size: 18px;
+                cursor: not-allowed;
+                opacity: 0.4;
+                pointer-events: none;
+                transition: all 0.5s ease-in-out 0s;
+                font-family: "roobert-arabic-trial-bold";
+                &:hover,
+                &.active {
+                    background: $yellow2;
+                    transform: none;
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+        }
+    }
+}
