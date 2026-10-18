@@ -299,6 +299,17 @@
                             <input type="text" class="code-box-lg" maxlength="1" value="2">
                         </div>
                         <p class="text">رمز الشاشة</p>
+
+                        <!-- <div class="user-online">
+                            <div class="w-100">
+                                <i class="icon">✓</i>
+                                <h3 class="title">سارة متصلة</h3>
+                                <p class="text">أنتِ المضيفة — تابعي من جوالك</p>
+                            </div>
+                        </div> -->
+                        <!-- Message after registration -->
+                        <!-- ENd user-online -->
+
                     </div>
                     <!-- ENd qr-card-container -->
 
@@ -366,14 +377,14 @@
 
         <div class="footer-container">
             <div class="container">
-                <!-- <a href="how-play.html" class="btn-back">
-                <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a href="remote-play.html" class="btn-back">
+                    <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.916992 6.41663H13.7503M8.25033 11.9166L13.7503 6.41663L8.25033 0.916626" stroke="#410179" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg> رجوع
-            </a>
-            <nav class="btns">
-                <a href="onboarding-room.html" class="bottom">التالي</a>
-            </nav> -->
+                </a>
+                <nav class="btns">
+                    <a href="host-about.html" class="bottom ghost">محاكاة: مسح من جوال المضيف</a>
+                </nav>
                 <p class="text text-center w-100">بانتظار المضيف...</p>
             </div>
         </div>
@@ -440,13 +451,21 @@
                 }
             });
 
+            // $('#phoneConnectBtn').click(function() {
+            //     var name = $('#playerName').val();
+            //     var fullCode = "";
+            //     $('.mobile-section .code-box').each(function() {
+            //         fullCode += $(this).val();
+            //     });
+            //     alert('تم الربط بنجاح!\nالاسم: ' + name + '\nرمز الشاشة المدخل: ' + fullCode);
+            // });
+
             $('#phoneConnectBtn').click(function() {
-                var name = $('#playerName').val();
-                var fullCode = "";
-                $('.mobile-section .code-box').each(function() {
-                    fullCode += $(this).val();
-                });
-                alert('تم الربط بنجاح!\nالاسم: ' + name + '\nرمز الشاشة المدخل: ' + fullCode);
+                var name = $('#playerName').val().trim();
+
+                if (name.length > 0) {
+                    window.location.href = "host-about.html";
+                }
             });
         });
     </script>
