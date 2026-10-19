@@ -3200,6 +3200,9 @@
     align-items: center;
     padding: $com-spacing-6 $zero;
     min-height: calc(100vh - 92px);
+    @media (max-width: 999px) {
+        display: block;
+    }
     .container {
         display: grid;
         align-items: center;
@@ -3252,6 +3255,9 @@
             &.siz {
                 font-size: 16px;
             }
+            @media (max-width: 767px) {
+                text-align: center;
+            }
         }
         .list {
             li {
@@ -3297,6 +3303,9 @@
             @media (max-width: 999px) {
                 margin-top: $com-spacing-3;
             }
+            @media (max-width:767px) {
+                display: block;
+            }
             .bottom {
                 border: $zero;
                 box-shadow: none !important;
@@ -3318,9 +3327,8 @@
                         min-width: 166px;
                     }
                 }
-                @media (max-width: 999px) {
-                    min-width: 140px;
-                    height: 44px;
+                @media (max-width: 767px) {
+                    min-width: $fullwidth;
                 }
             }
             .howplay {
@@ -3332,6 +3340,10 @@
                 font-family: "roobert-arabic-trial-bold";
                 @media (min-width: 1600px) {
                     font-size: 20px;
+                }
+                @media (max-width: 767px) {
+                    justify-content: center;
+                    margin-top: $com-spacing-4;
                 }
             }
         }
@@ -3550,18 +3562,29 @@
 
 .popuprace {
     padding: $com-spacing-3;
+    @media (max-width: 999px) {
+        padding: $zero;
+    }
     .modal-dialog {
         margin: $zero $auto;
         max-width: 1152px;
         @media (max-width: 999px) {
-            max-width: 500px;
+            max-width: $fullwidth;
         }
         .modal-content {
             padding: 56px;
             border-radius: 36px;
             box-shadow: 0px 30px 80px 0px #0000004D;
             @media (max-width: 999px) {
+                @include flex;
+                height: 100vh;
                 padding: $com-spacing-4;
+                border-radius: $zero;
+            }
+        }
+        .modal-body {
+            @media (max-width: 999px) {
+                flex-direction: inherit;
             }
         }
         .btn-close {
@@ -3605,21 +3628,25 @@
             margin-bottom: 10px;
             font-family: "roobert-arabic-trial-regular";
         }
+        .icon {
+            font-size: 80px;
+        }
         .title {
             color: $blak;
             font-size: 40px;
             font-family: "roobert-arabic-trial-bold";
-            margin-bottom: 10px;
+            margin-top: 40px;
             text-align: center;
             @media (min-width: 1600px) {}
             @media (max-width: 999px) {
-                font-size: 24px;
+                font-size: 28px;
             }
         }
         .text {
             color: $colortext2;
             font-family: "roobert-arabic-trial-regular";
             text-align: center;
+            margin-top: $com-spacing-4;
         }
         .grid-container {
             display: grid;
@@ -3699,6 +3726,7 @@
                 @media (max-width: 999px) {
                     width: $fullwidth;
                     order: -1;
+                    height: 56px;
                 }
                 &:hover {
                     background: #ffd43d;
@@ -3707,14 +3735,13 @@
                 }
                 @media (min-width: 1600px) {
                     min-width: 190px;
-                    height: 56px;
                     &:hover {
                         min-width: 166px;
                     }
                 }
                 @media (max-width: 999px) {
                     min-width: 140px;
-                    height: 44px;
+                    height: 56px;
                 }
             }
             .howplay {
@@ -3743,10 +3770,13 @@
 .how-play {
     @include flex;
     background: #F8F6FC;
-    min-height: calc(100vh - 184px);
+    min-height: calc(100vh - 203px);
     padding: $com-spacing-6 $zero;
     @media (min-width: 1600px) {
         padding: $com-spacing-8 $zero;
+    }
+    @media (max-width: 999px) {
+        display: block;
     }
     .container {
         @media (min-width: 1600px) {
@@ -3772,7 +3802,7 @@
         .text {
             text-align: center;
             font-family: "roobert-arabic-trial-regular";
-            margin-top: $com-spacing-1;
+            margin-top: $com-spacing-2;
             line-height: 20px;
             @media (min-width: 1600px) {
                 font-size: 20px;
@@ -3787,16 +3817,17 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: $com-spacing-5;
-        margin-top: $com-spacing-6;
+        margin-top: $com-spacing-8;
         @media (min-width: 1600px) {
             gap: $com-spacing-7;
         }
-        @media (max-width: 999px) {
-            margin-top: 18px;
+        @media (max-width: 1199px) {
+            grid-template-columns: repeat(2, 1fr);
         }
         @media (max-width: 999px) {
             grid-template-columns: repeat(1, 1fr);
             gap: $com-spacing-3;
+            margin-top: 18px;
         }
         .gamecard {
             position: relative;
@@ -3971,10 +4002,13 @@
 .where-play {
     @include flex;
     background: #F8F6FC;
-    min-height: calc(100vh - 184px);
-    padding: $com-spacing-6 $zero;
+    min-height: calc(100vh - 203px);
+    // padding: $com-spacing-6 $zero;
     @media (min-width: 1600px) {
-        padding: $com-spacing-8 $zero;
+        min-height: calc(100vh - 203px);
+    }
+    @media (max-width: 999px) {
+        display: block;
     }
     .container {
         @media (min-width: 1600px) {
@@ -4105,7 +4139,10 @@
             .photo {
                 @include flex;
                 background: #E7DCF7;
-                height: 162px;
+                height: 200px;
+                @media (min-width: 1600px) {
+                    height: 162px;
+                }
                 @media (max-width: 999px) {
                     display: none;
                 }
@@ -4278,7 +4315,7 @@
     // bottom: $zero;
     // left: $zero;
     width: $fullwidth;
-    max-height: 91px;
+    max-height: 112px;
     background: $white;
     border-top: 1.5px solid #ECE8F2;
     padding: 22px $zero;
@@ -4717,10 +4754,9 @@
     @include flex;
     background: #F8F6FC;
     min-height: calc(100vh - 184px);
-    padding: $com-spacing-6 $zero;
     overflow: hidden;
     @media (min-width: 1600px) {
-        padding: $com-spacing-8 $zero;
+        min-height: calc(100vh - 203px);
     }
     .container {
         @media (min-width: 1600px) {
@@ -4825,6 +4861,9 @@
             }
         }
     }
+    .team-list {
+        min-height: 62px;
+    }
     #team-1-box {
         border: 2px solid #F9AF19;
         .team-header {
@@ -4847,7 +4886,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 9px $com-spacing-4;
+        padding: $com-spacing-2 $com-spacing-4;
         border-radius: 16px;
         cursor: pointer;
         margin-top: 10px;
