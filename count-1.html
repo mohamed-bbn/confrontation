@@ -1,0 +1,557 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المواجهة</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/home.css">
+    <!-- <link rel="stylesheet" href="css/home-ltr.css"> -->
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+
+<body>
+
+
+    <main class="site-questions">
+        <header class="q-header">
+            <div class="container">
+                <div class="d-item mo-hide">
+                    <div class="logo">
+                        <img loading="lazy" src="images/sublogo.png" alt="المواجهة">
+                    </div>
+                    <!-- End logo -->
+                    <span class="pattern">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.75 1.5L3 10.5H8.25L7.5 16.5L14.25 7.5H9L9.75 1.5Z" stroke="#C77A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    سباق الثواني
+                    </span>
+                </div>
+                <!-- ENd d-flex -->
+                <div class="d-item">
+                    <p class="text">سؤال <span> 1 </span> من <span>10</span></p>
+                    <ul class="list-line mo-hide">
+                        <li class="active"></li>
+                        <li class="ready"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- ENd d-flex -->
+                <div class="d-item mo-hide">
+                    <span class="room-code-tag">رمز الغرفة  K7Q2 </span>
+                    <button id="toggleTimerBtn" class="toggle-btn">
+                         <svg id="btnIcon" width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1V15M7 1V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#000"/>
+                        </svg>
+                   </button>
+                </div>
+                <!-- ENd d-flex -->
+            </div>
+        </header>
+        <!-- End q-header -->
+
+        <div class="main-container">
+            <div class="container st-cont">
+                <div class="team-score firstteam">
+                    <div class="d-flex">
+                        <span class="text"> الفريق الأول</span>
+                        <span class="score-box">0</span>
+                    </div>
+                    <div class="acion">
+                        <p class="num">أجاب<span> 2</span> من 4</p>
+                        <p class="ready">
+                            <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0423 0.708313L4.25065 8.49998L0.708984 4.95831" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" stroke="#1FA463"/>
+                            </svg> جاهزون <span>4/4</span>
+                        </p>
+                        <!-- <i class="icon">👑</i> -->
+                    </div>
+                    <div class="all-players">
+                        <div class="player-avatar">
+                            س
+                            <span class="online"></span>
+                        </div>
+
+                        <div class="player-avatar">
+                            ح
+                            <span class="online"></span>
+                        </div>
+
+                        <div class="player-avatar">
+                            ي
+                            <span class="online"></span>
+                        </div>
+
+                        <div class="player-avatar">
+                            ه
+                            <span class="online"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End team-score -->
+
+                <div id="readyScreen">
+                    <span class="textchoose">اختيار من متعدد</span>
+                    <div class="ready-timer-container">
+                        <svg class="timer-svg" viewBox="0 0 130 130">
+                            <circle class="timer-circle-bg" cx="65" cy="65" r="58"></circle>
+                            <circle id="readyProgress" class="ready-circle" cx="65" cy="65" r="58"></circle>
+                        </svg>
+                        <div id="readyCount" class="ready-number">1</div>
+                    </div>
+                    <h1 class="title">استعدوا!</h1>
+                    <h2 class="title mo-name">استعدي يا سارة!</h2>
+                    <span class="mo-first">
+                        الفريق الأول
+                    </span>
+                    <div class="ready-boxes-container">
+                        <div class="ready-box active" data-box="1">1</div>
+                        <div class="ready-box" data-box="2">2</div>
+                        <div class="ready-box" data-box="3">3</div>
+                    </div>
+                    <!-- End ready-boxes-container -->
+                    <ul class="list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.75 1.5L3 10.5H8.25L7.5 16.5L14.25 7.5H9L9.75 1.5Z" stroke="#C77A00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg> كلما أجبت أبكر: x3
+                        </li>
+                        <li>
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.75 2.75L6.05 6.05M6.05 6.05L9.075 9.075M6.05 6.05C3.85 7.425 2.75 11 2.75 11C2.75 11 6.41667 16.5 11 16.5C12.4189 16.503 13.8124 16.123 15.0333 15.4M9.075 9.075L12.925 12.925M9.075 9.075C8.67782 9.60457 8.48499 10.2596 8.53192 10.9199C8.57885 11.5802 8.86238 12.2015 9.33046 12.6695C9.79854 13.1376 10.4198 13.4212 11.0801 13.4681C11.7404 13.515 12.3954 13.3222 12.925 12.925M12.925 12.925L19.25 19.25M9.71667 5.59167C10.1417 5.53016 10.5706 5.49953 11 5.5C15.5833 5.5 19.25 11 19.25 11C18.6229 11.9969 17.8849 12.9194 17.05 13.75" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round" stroke="#410179"/>
+                            </svg> يختفي خيار خاطئ كل 7 ثوانٍ
+                        </li>
+                        <li>
+                            <svg width="15" height="2" viewBox="0 0 15 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.916016 0.916626H13.7493" stroke-width="1.83333" stroke-linecap="round" stroke-linejoin="round" stroke="#F60037"/>
+                            </svg> الخطأ يُنقص النقاط
+                        </li>
+                    </ul>
+                    <div class="mobile-section">
+                        <div class="inner">
+                            <h3 class="title">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.0001 9.75V3.75C6.0001 3.35218 6.15814 2.97064 6.43944 2.68934C6.72075 2.40804 7.10228 2.25 7.5001 2.25C7.89793 2.25 8.27946 2.40804 8.56076 2.68934C8.84207 2.97064 9.0001 3.35218 9.0001 3.75M9.0001 3.75V8.25M9.0001 3.75V3C9.0001 2.60218 9.15814 2.22064 9.43944 1.93934C9.72075 1.65804 10.1023 1.5 10.5001 1.5C10.8979 1.5 11.2795 1.65804 11.5608 1.93934C11.8421 2.22064 12.0001 2.60218 12.0001 3V6.75M12.0001 6.75V9M12.0001 6.75C12.0001 6.35218 12.1581 5.97064 12.4394 5.68934C12.7207 5.40804 13.1023 5.25 13.5001 5.25C13.8979 5.25 14.2795 5.40804 14.5608 5.68934C14.8421 5.97064 15.0001 6.35218 15.0001 6.75V10.5C15.0001 12.0913 14.368 13.6174 13.2427 14.7426C12.1175 15.8679 10.5914 16.5 9.0001 16.5H8.2501C7.43507 16.5 6.63122 16.3102 5.90223 15.9457C5.17324 15.5812 4.53913 15.052 4.0501 14.4L2.2501 12C2.09351 11.6966 2.04509 11.3489 2.11284 11.0143C2.18059 10.6797 2.36046 10.3782 2.62273 10.1597C2.885 9.9411 3.21398 9.81854 3.55533 9.81224C3.89667 9.80594 4.22995 9.91627 4.5001 10.125L6.0001 11.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#FFDE65"/>
+                            </svg> ستظهر الخيارات هنا في الأسفل
+                            </h3>
+                            <p class="text">أبقِ إبهامك جاهزًا — نقاط أول 6 ثوانٍ x3، والإجابة الخاطئة تُنقص النقاط.</p>
+
+                        </div>
+                        <div class="answer-area">
+                            <p>منطقة الإجابة</p>
+                        </div>
+                    </div>
+                    <!-- End mobile-section -->
+                </div>
+                <!-- End readyScreen -->
+                <div id="questionScreen">
+                    <div class="question-card">
+
+                        <div class="d-flex">
+                            <div class="timer-container">
+                                <svg class="timer-svg" viewBox="0 0 100 100">
+                                    <circle class="timer-circle-bg" cx="50" cy="50" r="42"></circle>
+                                    <circle id="timerProgress" class="question-circle" cx="50" cy="50" r="42"></circle>
+                                </svg>
+                                <div id="timerTextContainer" class="timer-text-container">
+                                    <div id="timerText2" class="timer-number">30</div>
+                                    <div class="timer-label">ثانية</div>
+                                </div>
+                            </div>
+                            <!-- ENd timer-container -->
+                            <ul class="list">
+                                <li>
+                                    <span>x3</span> 30–24 ث
+                                </li>
+                                <li class="active">
+                                    <span>x2</span> 23–17 ث
+                                </li>
+                                <li>
+                                    <span>x1</span> 16–0 ث
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End d-flex -->
+
+                        <div id="timerSubtextContainer" class="timer-subtext-container">
+                            يختفي خيار خاطئ بعد
+                            <div id="subtextNumber" class="subtext-number">30</div>
+                            <div class="subtext-label">ثانية</div>
+                        </div>
+                        <!-- End timer-subtext-container -->
+
+                        <div class="timer-bar-wrapper">
+                            <div class="timer-bar-header">
+                                <span>المتبقي</span>
+                                <div>
+                                    <span id="barTimerText">30</span> <span>ثانية</span>
+                                </div>
+                            </div>
+                            <div class="timer-bar-container">
+                                <div id="timerBarFill" class="timer-bar-fill"></div>
+                            </div>
+                        </div>
+                        <!-- ENd timer-bar-wrapper -->
+                        <div class="item-question">
+                            <span class="textchoose">اختيار من متعدد</span>
+                            <h2 class="title">ما هي عاصمة أستراليا؟</h2>
+                        </div>
+
+                        <div id="resultBox" class="result-box success">
+                            ✓ الإجابة الصحيحة: كانبرا
+                        </div>
+
+                        <div class="options-grid">
+                            <button class="option-btn" data-answer="wrong">
+                                <span class="option-letter">أ</span>
+                                <span>سيدني</span>
+                            </button>
+                            <button class="option-btn" data-answer="correct">
+                              <span class="option-letter">ب</span>
+                                <span>كانبرا</span>
+                            </button>
+                            <button class="option-btn" data-answer="wrong">
+                                <span class="option-letter">ج</span>
+                                <span>ملبورن</span>
+                            </button>
+                            <button class="option-btn" data-answer="wrong">
+                               <span class="option-letter">د</span>
+                                <span>بيرث</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="team-score secondteam">
+                    <div class="d-flex">
+                        <span class="text"> الفريق الثانى</span>
+                        <span class="score-box">0</span>
+                    </div>
+
+                    <div class="acion">
+                        <p class="num">أجاب<span> 2</span> من 4</p>
+                        <!-- <p class="ready">
+                            <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0423 0.708313L4.25065 8.49998L0.708984 4.95831" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" stroke="#1FA463"/>
+                            </svg> جاهزون <span>4/4</span>
+                        </p> -->
+                        <i class="icon">👑</i>
+                    </div>
+
+                    <div class="all-players">
+                        <div class="player-avatar">
+                            س
+                            <span class="online"></span>
+                        </div>
+
+                        <div class="player-avatar">
+                            ح
+                            <span class="online yellow"></span>
+                        </div>
+
+                        <div class="player-avatar">
+                            ي
+                            <span class="online"></span>
+                        </div>
+
+                        <div class="player-avatar">
+                            ه
+                            <span class="online"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- End team-score -->
+
+
+
+            </div>
+            <!-- End container -->
+        </div>
+        <!-- ENd main-container -->
+
+
+
+
+        <div id="pauseModal" class="modal-overlay">
+            <div class="modal-box">
+                <div class="modal-icon">
+                    <svg width="48" height="48" style="color:#410179" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M9 6v12M15 6v12"></path></svg>
+                </div>
+                <h3 class="title">متوقف مؤقتًا</h3>
+                <p>أوقف المضيف السباق — الوقت متوقف والإجابات المثبّتة محفوظة.</p>
+                <div class="modal-buttons">
+                    <button id="resumeBtn" class="modal-btn btn-resume">استئناف الوقت</button>
+                    <a href="end.html" class="modal-btn btn-end">إنهاء السباق</a>
+                </div>
+            </div>
+        </div>
+        <!-- End modal-overlay -->
+
+
+
+        <footer class="footer-widget">
+            <div class="container">
+                <ul class="listplayers yellow">
+                    <li>
+                        <div class="player-avatar">
+                            س
+                            <span class="online"></span>
+                        </div>
+                        <div>
+                            <p class="player-name">سارة</p>
+                            <span class="player-task">جاهز</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-avatar">
+                            خ
+                            <span class="online"></span>
+                        </div>
+                        <div>
+                            <p class="player-name">خالد</p>
+                            <span class="player-task">جاهز</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-avatar">
+                            ع
+                            <span class="online"></span>
+                        </div>
+                        <div>
+                            <p class="player-name">عمر</p>
+                            <span class="player-task">جاهز</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-avatar">
+                            ل
+                            <span class="online"></span>
+                        </div>
+                        <div>
+                            <p class="player-name">ليلى</p>
+                            <span class="player-task">جاهز</span>
+                        </div>
+                    </li>
+                </ul>
+                <!-- End listplayers -->
+                <p>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.5 2H14.5C15.8807 2 17 3.11929 17 4.5V19.5C17 20.8807 15.8807 22 14.5 22H9.5C8.11929 22 7 20.8807 7 19.5V4.5C7 3.11929 8.11929 2 9.5 2Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+                    <path d="M11 18H13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+                    </svg> أجب من جوالك
+                </p>
+                <ul class="listplayers red">
+                    <li>
+                        <div class="player-avatar">
+                            س
+                            <span class="online"></span>
+                        </div>
+                        <div>
+                            <p class="player-name">سارة</p>
+                            <span class="player-task">جاهز</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-avatar">
+                            خ
+                            <span class="online"></span>
+                        </div>
+                        <div>
+                            <p class="player-name">خالد</p>
+                            <span class="player-task">جاهز</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-avatar">
+                            ع
+                            <span class="online"></span>
+                        </div>
+                        <div>
+                            <p class="player-name">عمر</p>
+                            <span class="player-task">جاهز</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="player-avatar">
+                            ل
+                            <span class="online"></span>
+                        </div>
+                        <div>
+                            <p class="player-name">ليلى</p>
+                            <span class="player-task">جاهز</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+
+
+
+    </main>
+    <!-- ENd site-questions -->
+
+
+
+
+
+
+
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/plugin.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            const pauseSvgHtml = '<svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1V15M7 1V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#000"/></svg>';
+            const playSvgHtml = '<svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L11 8L1 15V1Z" fill="#000" stroke="#000" stroke-width="2" stroke-linejoin="round"/></svg>';
+
+            let inQuestionPhase = false;
+
+            let readyTime = 1;
+            const readyMax = 3;
+            const readyDashArray = 364;
+
+            let initialReadyOffset = readyDashArray - (1 / readyMax) * readyDashArray;
+            $('#readyProgress').css('stroke-dashoffset', initialReadyOffset);
+
+            let readyIsPaused = false;
+
+            let readyInterval = setInterval(function() {
+                if (!readyIsPaused) {
+                    readyTime++;
+                    if (readyTime <= readyMax) {
+                        $('#readyCount').text(readyTime);
+                        let offset = readyDashArray - (readyTime / readyMax) * readyDashArray;
+                        $('#readyProgress').css('stroke-dashoffset', offset);
+
+                        $('.ready-box').each(function() {
+                            if (parseInt($(this).attr('data-box')) <= readyTime) {
+                                $(this).addClass('active');
+                            }
+                        });
+                    } else {
+                        clearInterval(readyInterval);
+                        $('#readyScreen').fadeOut(300, function() {
+                            $('#questionScreen,.acion .num').fadeIn(300);
+                            $('.site-questions').addClass("itemstart");
+                            $('.all-players,.acion .ready').fadeOut(300);
+                            $('.listplayers').css({
+                                "display": "flex"
+                            });
+                            inQuestionPhase = true;
+
+                            // $('#btnText').text('إيقاف مؤقت');
+                            $('#toggleTimerBtn svg').replaceWith(pauseSvgHtml);
+                            // $('#toggleTimerBtn').css('background-color', '#ff5722');
+
+                            startQuestionTimer();
+                        });
+                    }
+                }
+            }, 1000);
+
+            let totalTime = 30;
+            let currentTime = totalTime;
+            let timerInterval = null;
+            let questionIsPaused = false;
+            const fullDashArray = 264;
+
+            function startQuestionTimer() {
+                timerInterval = setInterval(function() {
+                    if (!questionIsPaused) {
+                        currentTime--;
+
+                        $('#timerText2').text(currentTime);
+                        $('#subtextNumber').text(currentTime);
+                        $('#barTimerText').text(currentTime);
+
+                        let offset = fullDashArray - (currentTime / totalTime) * fullDashArray;
+                        $('#timerProgress').css('stroke-dashoffset', offset);
+
+                        let barPercentage = (currentTime / totalTime) * 100;
+                        $('#timerBarFill').css('width', barPercentage + '%');
+
+                        if (currentTime <= 5) {
+                            $('#timerProgress').addClass('timer-danger');
+                            $('#timerBarFill').addClass('bar-danger');
+                            $('#timerTextContainer, #timerSubtextContainer, .timer-bar-header').addClass('text-danger');
+                        }
+
+                        if (currentTime <= 0) {
+                            clearInterval(timerInterval);
+                            showCorrectAnswer();
+                        }
+                    }
+                }, 1000);
+            }
+
+            $('#toggleTimerBtn').on('click', function() {
+                if (!inQuestionPhase) {
+                    readyIsPaused = !readyIsPaused;
+                    if (readyIsPaused) {
+                        // $(this).css('background-color', '#4caf50');
+                        // $('#btnText').text('تشغيل المؤقت');
+                        $('#toggleTimerBtn svg').replaceWith(playSvgHtml);
+                    } else {
+                        // $(this).css('background-color', '#ff5722');
+                        // $('#btnText').text('إيقاف المؤقت');
+                        $('#toggleTimerBtn svg').replaceWith(pauseSvgHtml);
+                    }
+                } else {
+                    questionIsPaused = true;
+                    $('#pauseModal').css('display', 'flex');
+                }
+            });
+
+            $('#resumeBtn').on('click', function() {
+                $('#pauseModal').hide();
+                questionIsPaused = false;
+            });
+
+            $('.option-btn').on('click', function() {
+                if ($(this).hasClass('correct') || $(this).hasClass('wrong')) return;
+
+                $('.option-btn').removeClass('selected');
+                $(this).addClass('selected');
+
+                let type = $(this).attr('data-answer');
+                if (type === 'correct') {
+                    $(this).addClass('correct');
+                } else {
+                    $(this).addClass('wrong');
+                }
+
+                showCorrectAnswer();
+            });
+
+            function showCorrectAnswer() {
+                questionIsPaused = true;
+                $('#resultBox').fadeIn();
+                $('.option-btn').each(function() {
+                    if ($(this).attr('data-answer') === 'correct') {
+                        $(this).addClass('correct');
+                    }
+                });
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

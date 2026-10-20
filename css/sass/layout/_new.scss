@@ -3226,7 +3226,7 @@
             min-width: 122px;
             height: 34px;
             border-radius: 60px;
-            gap: $com-spacing-2;
+            gap: $com-spacing-1;
             background: #FFF1DA;
             font-size: 15px;
             font-weight: 700;
@@ -3620,7 +3620,7 @@
             min-width: 122px;
             height: 34px;
             border-radius: 60px;
-            gap: $com-spacing-2;
+            gap: $com-spacing-1;
             background: #FFF1DA;
             font-size: 15px;
             font-weight: 700;
@@ -4003,9 +4003,9 @@
     @include flex;
     background: #F8F6FC;
     min-height: calc(100vh - 203px);
-    // padding: $com-spacing-6 $zero;
+    padding: $com-spacing-6 $zero;
     @media (min-width: 1600px) {
-        min-height: calc(100vh - 203px);
+        // min-height: calc(100vh - 203px);
     }
     @media (max-width: 999px) {
         display: block;
@@ -4139,7 +4139,7 @@
             .photo {
                 @include flex;
                 background: #E7DCF7;
-                height: 200px;
+                height: 123px;
                 @media (min-width: 1600px) {
                     height: 162px;
                 }
@@ -4147,8 +4147,12 @@
                     display: none;
                 }
                 img {
-                    max-width: $fullwidth;
-                    max-height: $fullwidth;
+                    max-width: 80%;
+                    max-height: 80%;
+                    @media (min-width: 1600px) {
+                        max-width: $fullwidth;
+                        max-height: $fullwidth;
+                    }
                 }
             }
             .content {
@@ -4268,7 +4272,7 @@
         min-width: 122px;
         height: 34px;
         border-radius: 60px;
-        gap: $com-spacing-2;
+        gap: $com-spacing-1;
         background: #FFF1DA;
         font-size: 15px;
         font-weight: 700;
@@ -4825,7 +4829,7 @@
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: $com-spacing-7;
         max-width: 1152px;
-        margin: 60px $auto $zero $auto;
+        margin: $com-spacing-8 $auto $zero $auto;
         @media (max-width: 999px) {
             gap: $com-spacing-3;
             margin-top: $com-spacing-6;
