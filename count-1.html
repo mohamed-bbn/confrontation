@@ -156,7 +156,12 @@
                 <div id="questionScreen">
                     <div class="question-card">
 
-                        <div class="d-flex">
+                        <div id="resultBox" class="result-box success">
+                            ✓ الإجابة الصحيحة: كانبرا
+                        </div>
+
+
+                        <div class="d-question" id="">
                             <div class="timer-container">
                                 <svg class="timer-svg" viewBox="0 0 100 100">
                                     <circle class="timer-circle-bg" cx="50" cy="50" r="42"></circle>
@@ -206,9 +211,6 @@
                             <h2 class="title">ما هي عاصمة أستراليا؟</h2>
                         </div>
 
-                        <div id="resultBox" class="result-box success">
-                            ✓ الإجابة الصحيحة: كانبرا
-                        </div>
 
                         <div class="options-grid">
                             <button class="option-btn" data-answer="wrong">
@@ -292,7 +294,7 @@
                 <p>أوقف المضيف السباق — الوقت متوقف والإجابات المثبّتة محفوظة.</p>
                 <div class="modal-buttons">
                     <button id="resumeBtn" class="modal-btn btn-resume">استئناف الوقت</button>
-                    <a href="end.html" class="modal-btn btn-end">إنهاء السباق</a>
+                    <a href="final-result.html" class="modal-btn btn-end">إنهاء السباق</a>
                 </div>
             </div>
         </div>
@@ -449,7 +451,9 @@
                         $('#readyScreen').fadeOut(300, function() {
                             $('#questionScreen,.acion .num').fadeIn(300);
                             $('.site-questions').addClass("itemstart");
-                            $('.all-players,.acion .ready').fadeOut(300);
+                            $('.all-players,.acion .ready').css({
+                                "display": "none"
+                            });
                             $('.listplayers').css({
                                 "display": "flex"
                             });
@@ -542,6 +546,7 @@
             function showCorrectAnswer() {
                 questionIsPaused = true;
                 $('#resultBox').fadeIn();
+                $('.d-question').css('display', 'none');
                 $('.option-btn').each(function() {
                     if ($(this).attr('data-answer') === 'correct') {
                         $(this).addClass('correct');
