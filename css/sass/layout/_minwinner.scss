@@ -22,6 +22,10 @@
              .q-header {
                  display: none;
              }
+             .btn-control {
+                 @include flex;
+                 gap: $com-spacing-1;
+             }
          }
          .player-information {
              align-items: start !important;
@@ -1060,7 +1064,8 @@
                  }
              }
              .textcorrect,
-             .mistake {
+             .mistake,
+             .retreat {
                  display: none;
                  height: 25px;
                  padding: $zero $com-spacing-2;
@@ -1078,11 +1083,20 @@
                  color: $white;
              }
              &.selected {
-                 box-shadow: inset 0 0 0 3px #f1a918;
-                 background: #f9af192e;
+                 box-shadow: inset 0 0 0 3px #410179;
+                 background: #F4EEFB;
                  .option-letter {
-                     background: #f1a918;
+                     background: #410179;
                      color: $white;
+                 }
+                 .text {
+                     color: #410179;
+                 }
+                 .retreat {
+                     @include flex;
+                     gap: $com-spacing-1;
+                     color: $white;
+                     background: #410179;
                  }
              }
              &.correct {
@@ -1127,6 +1141,9 @@
                  }
                  .option-letter {
                      background: #ECE8F2;
+                 }
+                 .retreat {
+                     display: none
                  }
                  .disappear {
                      @include flex;
@@ -1827,5 +1844,171 @@
      .textres {
          display: none;
          @media (max-width: 999px) {}
+     }
+     .btn-control {
+         display: none;
+         position: absolute;
+         left: $com-spacing-3;
+         bottom: $com-spacing-3;
+         border: 3px solid #FFDE65;
+         background: #1B0A2E;
+         color: $white;
+         border-radius: 60px;
+         padding: $zero $com-spacing-3;
+         height: 37px;
+         font-size: 13px;
+         //  box-shadow: 0 6px 18px rgba(20, 0, 50, .35), 0 0 0 3px #ffde65;
+         .dot {
+             display: inline-block;
+             width: 8px;
+             height: 8px;
+             border-radius: 50%;
+             background: #f60037;
+         }
+     }
+ }
+ 
+ .control-screen {
+     display: none;
+     position: fixed;
+     left: $zero;
+     top: $zero;
+     width: $fullwidth;
+     height: $fullwidth;
+     background: #F8F6FC;
+     padding: $com-spacing-3;
+     z-index: 1005;
+     display: none;
+     @media (max-width: 999px) {
+         &.active {
+             display: block;
+         }
+     }
+     .title,
+     p,
+     span,
+     a {
+         font-family: 'roobert-arabic-trial-bold';
+     }
+     .inner {
+         max-width: 450px;
+         margin: $zero $auto;
+         .minhead {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             .title {
+                 color: $blak;
+                 font-size: 22px;
+             }
+             p {
+                 font-size: 12px;
+                 font-family: 'roobert-arabic-trial-regular';
+             }
+             .btnclose {
+                 @include flex;
+                 color: $white;
+                 background: #FFDE65;
+                 border-radius: 60px;
+                 font-size: 14px;
+                 color: #410179;
+                 min-width: 112px;
+                 height: 37px;
+                 padding: $zero $com-spacing-2;
+                 @media (max-width: 999px) {}
+             }
+         }
+         .item {
+             border-radius: 22px;
+             padding: $com-spacing-4 18px;
+             background: #410179;
+             margin-top: $com-spacing-6;
+             .d-flex {
+                 align-items: center;
+                 justify-content: space-between;
+                 .num {
+                     color: $white;
+                     font-size: 12px;
+                 }
+                 .title {
+                     color: $white;
+                     font-size: 16px;
+                 }
+                 .bottom {
+                     @include flex;
+                     height: 23px;
+                     border-radius: 60px;
+                     padding: 5px 9px;
+                     font-size: 11px;
+                     color: #410179;
+                     background: #FFDE65;
+                     border: $zero;
+                     box-shadow: none;
+                     min-width: inherit;
+                     margin-top: $com-spacing-2;
+                 }
+                 .point {
+                     text-align: center;
+                     display: block;
+                     color: #FFDE65;
+                     font-size: 32px;
+                 }
+                 .second {
+                     text-align: center;
+                     display: block;
+                     color: #FFFFFFB2;
+                     font-size: 11px;
+                 }
+             }
+             .textanswer {
+                 display: flex;
+                 align-items: center;
+                 gap: $com-spacing-2;
+                 margin-top: $com-spacing-3;
+                 p {
+                     font-size: 12px;
+                     color: $white;
+                     white-space: nowrap;
+                 }
+                 .progress {
+                     width: $fullwidth;
+                     background: #FFFFFF26;
+                     border-radius: 60px;
+                     height: 8px;
+                     .progress-bar {
+                         background: #FFDE65;
+                         border-radius: 60px;
+                     }
+                 }
+             }
+         }
+         .itemaction {
+             display: grid;
+             grid-template-columns: repeat(2, 1fr);
+             gap: 10px;
+             margin-top: $com-spacing-3;
+             button {
+                 border-radius: 20px;
+                 padding: 14px;
+                 border: 1.5px solid #ECE8F2;
+                 background: $white;
+                 .icon {
+                     @include flex;
+                     width: 40px;
+                     height: 40px;
+                     border-radius: 50%;
+                     background: #F4EEFB;
+                 }
+                 .title {
+                     color: $blak;
+                     font-size: 15px;
+                     margin-top: 6px;
+                 }
+                 p {
+                     font-size: 11px;
+                     font-family: 'roobert-arabic-trial-regular';
+                 }
+             }
+         }
      }
  }

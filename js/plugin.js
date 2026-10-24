@@ -1088,6 +1088,12 @@ $(document).ready(function() {
     });
 
 
+    $('.btn-control').on('click', function() {
+        $('.control-screen').addClass('active');
+    });
+
+
+
 }); // END document.ready
 
 if (typeof window.Sortable === 'undefined') {
