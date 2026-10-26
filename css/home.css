@@ -8592,20 +8592,20 @@
           display: flex;
           align-items: center;
           justify-content: center; }
-  .site-questions .options-grid.hidden-option {
+  .site-questions .options-grid .option-btn.hidden-option {
     opacity: 0.6;
     pointer-events: none;
     background: none;
     box-shadow: none;
     border: 2px dashed #CFC4DF; }
-    .site-questions .options-grid.hidden-option .text {
+    .site-questions .options-grid .option-btn.hidden-option .text {
       color: #9A9A9A;
       text-decoration: underline; }
-    .site-questions .options-grid.hidden-option .option-letter {
+    .site-questions .options-grid .option-btn.hidden-option .option-letter {
       background: #ECE8F2; }
-    .site-questions .options-grid.hidden-option .retreat {
+    .site-questions .options-grid .option-btn.hidden-option .retreat {
       display: none; }
-    .site-questions .options-grid.hidden-option .disappear {
+    .site-questions .options-grid .option-btn.hidden-option .disappear {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -8618,7 +8618,7 @@
       font-size: 13px;
       line-height: 1; }
       @media (min-width: 1900px) {
-        .site-questions .options-grid.hidden-option .disappear {
+        .site-questions .options-grid .option-btn.hidden-option .disappear {
           font-size: 16px; } }
   @media (max-width: 767px) {
     .site-questions .true-false-grid {

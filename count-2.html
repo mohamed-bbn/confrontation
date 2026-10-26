@@ -791,11 +791,12 @@
                     </li>
                 </ul>
                 <!-- End listplayers -->
-                <p id="change-text">
+                <p>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.5 2H14.5C15.8807 2 17 3.11929 17 4.5V19.5C17 20.8807 15.8807 22 14.5 22H9.5C8.11929 22 7 20.8807 7 19.5V4.5C7 3.11929 8.11929 2 9.5 2Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
                     <path d="M11 18H13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
-                    </svg> المكافآت بعد 7 ثوانٍ
+                    </svg>
+                    <span id="change-text">     المكافآت بعد 7 ثوانٍ</span>
                 </p>
                 <ul class="listplayers red">
                     <li>
@@ -975,7 +976,8 @@
                 });
 
                 setTimeout(function() {
-                    $('#change-text').text('التناغم = +100 عندما يُصيب الفريق كله · الأسرع = +50').css('min-width', '100%');
+                    $('#change-text').text('التناغم = +100 عندما يُصيب الفريق كله · الأسرع = +50');
+                    $('.footer-widget p').css('width', '100%');
                     $('#questionScreen, .player-information,.listplayers').css('display', 'none');
                     $('#nextPhaseScreen').css('display', 'block');
                     $('.textres').css('display', 'none');
