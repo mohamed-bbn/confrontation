@@ -6439,7 +6439,7 @@
       .host-about .caplayerrd-information .avatar .online {
         position: absolute;
         left: 0px;
-        bottom: 8px;
+        bottom: 12px;
         width: 23px;
         height: 23px;
         border-radius: 50%;
@@ -8394,16 +8394,19 @@
     font-weight: bold;
     margin-bottom: 25px;
     color: #111; }
-  .site-questions .options-grid {
+  .site-questions .options-grid,
+  .site-questions .true-false-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 16px; }
     @media (max-width: 767px) {
-      .site-questions .options-grid {
+      .site-questions .options-grid,
+      .site-questions .true-false-grid {
         grid-template-columns: 1fr;
         gap: 14px; } }
-    .site-questions .options-grid .option-btn {
+    .site-questions .options-grid .option-btn,
+    .site-questions .true-false-grid .option-btn {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -8416,16 +8419,20 @@
       position: relative;
       border: 0px; }
       @media (min-width: 1900px) {
-        .site-questions .options-grid .option-btn {
+        .site-questions .options-grid .option-btn,
+        .site-questions .true-false-grid .option-btn {
           padding: 18px; } }
       @media (max-width: 767px) {
-        .site-questions .options-grid .option-btn {
+        .site-questions .options-grid .option-btn,
+        .site-questions .true-false-grid .option-btn {
           gap: 0px; } }
-      .site-questions .options-grid .option-btn .d-flex {
+      .site-questions .options-grid .option-btn .d-flex,
+      .site-questions .true-false-grid .option-btn .d-flex {
         display: flex;
         align-items: center;
         gap: 16px; }
-      .site-questions .options-grid .option-btn .option-letter {
+      .site-questions .options-grid .option-btn .option-letter,
+      .site-questions .true-false-grid .option-btn .option-letter {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -8437,29 +8444,36 @@
         font-size: 20px;
         color: #410179; }
         @media (min-width: 1900px) {
-          .site-questions .options-grid .option-btn .option-letter {
+          .site-questions .options-grid .option-btn .option-letter,
+          .site-questions .true-false-grid .option-btn .option-letter {
             min-width: 56px;
             max-width: 56px;
             height: 56px;
             font-size: 24px; } }
-      .site-questions .options-grid .option-btn .text {
+      .site-questions .options-grid .option-btn .text,
+      .site-questions .true-false-grid .option-btn .text {
         color: #000;
         font-size: 20px;
         font-family: "roobert-arabic-trial-bold"; }
         @media (min-width: 1900px) {
-          .site-questions .options-grid .option-btn .text {
+          .site-questions .options-grid .option-btn .text,
+          .site-questions .true-false-grid .option-btn .text {
             font-size: 32px; } }
-      .site-questions .options-grid .option-btn .disappear {
+      .site-questions .options-grid .option-btn .disappear,
+      .site-questions .true-false-grid .option-btn .disappear {
         display: none;
         font-size: 14px;
         padding: 0px 8px;
         font-family: "roobert-arabic-trial-bold"; }
         @media (min-width: 1900px) {
-          .site-questions .options-grid .option-btn .disappear {
+          .site-questions .options-grid .option-btn .disappear,
+          .site-questions .true-false-grid .option-btn .disappear {
             font-size: 16px; } }
-      .site-questions .options-grid .option-btn .list-player {
+      .site-questions .options-grid .option-btn .list-player,
+      .site-questions .true-false-grid .option-btn .list-player {
         display: none; }
-        .site-questions .options-grid .option-btn .list-player .player-avatar {
+        .site-questions .options-grid .option-btn .list-player .player-avatar,
+        .site-questions .true-false-grid .option-btn .list-player .player-avatar {
           position: relative;
           display: flex;
           align-items: center;
@@ -8474,13 +8488,17 @@
           border: 3px solid #fff;
           margin-inline-start: -8px;
           font-family: "roobert-arabic-trial-bold"; }
-          .site-questions .options-grid .option-btn .list-player .player-avatar.yellow {
+          .site-questions .options-grid .option-btn .list-player .player-avatar.yellow,
+          .site-questions .true-false-grid .option-btn .list-player .player-avatar.yellow {
             background: #F9AF19; }
-          .site-questions .options-grid .option-btn .list-player .player-avatar.red {
+          .site-questions .options-grid .option-btn .list-player .player-avatar.red,
+          .site-questions .true-false-grid .option-btn .list-player .player-avatar.red {
             background: #F60037; }
-            .site-questions .options-grid .option-btn .list-player .player-avatar.red .online {
+            .site-questions .options-grid .option-btn .list-player .player-avatar.red .online,
+            .site-questions .true-false-grid .option-btn .list-player .player-avatar.red .online {
               background: #F9AF19; }
-          .site-questions .options-grid .option-btn .list-player .player-avatar .online {
+          .site-questions .options-grid .option-btn .list-player .player-avatar .online,
+          .site-questions .true-false-grid .option-btn .list-player .player-avatar .online {
             position: absolute;
             left: 0px;
             bottom: 0px;
@@ -8491,7 +8509,10 @@
             background: #1FA463; }
       .site-questions .options-grid .option-btn .textcorrect,
       .site-questions .options-grid .option-btn .mistake,
-      .site-questions .options-grid .option-btn .retreat {
+      .site-questions .options-grid .option-btn .retreat,
+      .site-questions .true-false-grid .option-btn .textcorrect,
+      .site-questions .true-false-grid .option-btn .mistake,
+      .site-questions .true-false-grid .option-btn .retreat {
         display: none;
         height: 25px;
         padding: 0px 8px;
@@ -8503,80 +8524,142 @@
         @media (min-width: 1900px) {
           .site-questions .options-grid .option-btn .textcorrect,
           .site-questions .options-grid .option-btn .mistake,
-          .site-questions .options-grid .option-btn .retreat {
+          .site-questions .options-grid .option-btn .retreat,
+          .site-questions .true-false-grid .option-btn .textcorrect,
+          .site-questions .true-false-grid .option-btn .mistake,
+          .site-questions .true-false-grid .option-btn .retreat {
             font-size: 16px; } }
-      .site-questions .options-grid .option-btn .mistake {
+      .site-questions .options-grid .option-btn .mistake,
+      .site-questions .true-false-grid .option-btn .mistake {
         background: #F60037;
         color: #fff; }
-      .site-questions .options-grid .option-btn.selected {
+      .site-questions .options-grid .option-btn.selected,
+      .site-questions .true-false-grid .option-btn.selected {
         box-shadow: inset 0 0 0 3px #410179;
         background: #F4EEFB; }
-        .site-questions .options-grid .option-btn.selected .option-letter {
+        .site-questions .options-grid .option-btn.selected .option-letter,
+        .site-questions .true-false-grid .option-btn.selected .option-letter {
           background: #410179;
           color: #fff; }
-        .site-questions .options-grid .option-btn.selected .text {
+        .site-questions .options-grid .option-btn.selected .text,
+        .site-questions .true-false-grid .option-btn.selected .text {
           color: #410179; }
-        .site-questions .options-grid .option-btn.selected .retreat {
+        .site-questions .options-grid .option-btn.selected .retreat,
+        .site-questions .true-false-grid .option-btn.selected .retreat {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 4px;
           color: #fff;
           background: #410179; }
-      .site-questions .options-grid .option-btn.correct {
+      .site-questions .options-grid .option-btn.correct,
+      .site-questions .true-false-grid .option-btn.correct {
         box-shadow: inset 0 0 0 3px #1FA463;
         background: #E3F6EC; }
-        .site-questions .options-grid .option-btn.correct .option-letter {
+        .site-questions .options-grid .option-btn.correct .retreat,
+        .site-questions .true-false-grid .option-btn.correct .retreat {
+          display: none; }
+        .site-questions .options-grid .option-btn.correct .option-letter,
+        .site-questions .true-false-grid .option-btn.correct .option-letter {
           background: #1FA463;
           color: #fff; }
-        .site-questions .options-grid .option-btn.correct .list-player {
+        .site-questions .options-grid .option-btn.correct .list-player,
+        .site-questions .true-false-grid .option-btn.correct .list-player {
           display: flex;
           align-items: center; }
-        .site-questions .options-grid .option-btn.correct .textcorrect {
+        .site-questions .options-grid .option-btn.correct .textcorrect,
+        .site-questions .true-false-grid .option-btn.correct .textcorrect {
           display: flex;
           align-items: center;
           justify-content: center; }
-      .site-questions .options-grid .option-btn.wrong {
+      .site-questions .options-grid .option-btn.wrong,
+      .site-questions .true-false-grid .option-btn.wrong {
         box-shadow: inset 0 0 0 3px #F60037;
         background: #FFE5EB; }
-        .site-questions .options-grid .option-btn.wrong .list-player {
+        .site-questions .options-grid .option-btn.wrong .retreat,
+        .site-questions .true-false-grid .option-btn.wrong .retreat {
+          display: none; }
+        .site-questions .options-grid .option-btn.wrong .list-player,
+        .site-questions .true-false-grid .option-btn.wrong .list-player {
           display: flex;
           align-items: center; }
-        .site-questions .options-grid .option-btn.wrong .option-letter {
+        .site-questions .options-grid .option-btn.wrong .option-letter,
+        .site-questions .true-false-grid .option-btn.wrong .option-letter {
           background: #F60037;
           color: #fff; }
-        .site-questions .options-grid .option-btn.wrong .mistake {
+        .site-questions .options-grid .option-btn.wrong .mistake,
+        .site-questions .true-false-grid .option-btn.wrong .mistake {
           display: flex;
           align-items: center;
           justify-content: center; }
-      .site-questions .options-grid .option-btn.hidden-option {
-        opacity: 0.6;
-        pointer-events: none;
-        background: none;
-        box-shadow: none;
-        border: 2px dashed #CFC4DF; }
-        .site-questions .options-grid .option-btn.hidden-option .text {
-          color: #9A9A9A;
-          text-decoration: underline; }
-        .site-questions .options-grid .option-btn.hidden-option .option-letter {
-          background: #ECE8F2; }
-        .site-questions .options-grid .option-btn.hidden-option .retreat {
-          display: none; }
-        .site-questions .options-grid .option-btn.hidden-option .disappear {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 4px;
-          background: #ECE8F2;
-          height: 25px;
-          padding: 0px 8px;
-          color: #6B6B6B;
-          border-radius: 60px;
-          font-size: 13px;
-          line-height: 1; }
-          @media (min-width: 1900px) {
-            .site-questions .options-grid .option-btn.hidden-option .disappear {
-              font-size: 16px; } }
+  .site-questions .options-grid.hidden-option {
+    opacity: 0.6;
+    pointer-events: none;
+    background: none;
+    box-shadow: none;
+    border: 2px dashed #CFC4DF; }
+    .site-questions .options-grid.hidden-option .text {
+      color: #9A9A9A;
+      text-decoration: underline; }
+    .site-questions .options-grid.hidden-option .option-letter {
+      background: #ECE8F2; }
+    .site-questions .options-grid.hidden-option .retreat {
+      display: none; }
+    .site-questions .options-grid.hidden-option .disappear {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: #ECE8F2;
+      height: 25px;
+      padding: 0px 8px;
+      color: #6B6B6B;
+      border-radius: 60px;
+      font-size: 13px;
+      line-height: 1; }
+      @media (min-width: 1900px) {
+        .site-questions .options-grid.hidden-option .disappear {
+          font-size: 16px; } }
+  @media (max-width: 767px) {
+    .site-questions .true-false-grid {
+      grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 340px) {
+    .site-questions .true-false-grid {
+      grid-template-columns: 1fr; } }
+  .site-questions .true-false-grid .option-btn {
+    padding: 16px;
+    justify-content: center; }
+@media (max-width: 767px) and (max-width: 340px) {
+  .site-questions .true-false-grid .option-btn {
+    justify-content: space-between; } }
+    @media (max-width: 767px) {
+      .site-questions .true-false-grid .option-btn .d-flex {
+        display: block !important; } }
+  @media (max-width: 767px) and (max-width: 340px) {
+    .site-questions .true-false-grid .option-btn .d-flex {
+      display: flex !important; } }
+    @media (max-width: 767px) {
+        .site-questions .true-false-grid .option-btn .d-flex .list-player {
+          margin-bottom: 12px; } }
+    @media (max-width: 767px) and (max-width: 340px) {
+      .site-questions .true-false-grid .option-btn .d-flex .list-player {
+        margin: 0px; } }
+    @media (max-width: 767px) {
+        .site-questions .true-false-grid .option-btn .d-flex .option-letter {
+          margin-bottom: 8px; } }
+    @media (max-width: 767px) and (max-width: 340px) {
+      .site-questions .true-false-grid .option-btn .d-flex .option-letter {
+        margin: 0px; } }
+
+    @media (min-width: 1900px) {
+      .site-questions .true-false-grid .option-btn .text {
+        font-size: 42px; } }
+    .site-questions .true-false-grid .option-btn.green .option-letter {
+      background: #e3f6ec;
+      color: #1fa463; }
+    .site-questions .true-false-grid .option-btn.red .option-letter {
+      background: #ffe5eb;
+      color: #f60037; }
   .site-questions .result-box {
     display: none;
     width: 100%;
@@ -9159,7 +9242,7 @@
     display: none;
     position: absolute;
     left: 12px;
-    bottom: 12px;
+    bottom: 4px;
     border: 3px solid #FFDE65;
     background: #1B0A2E;
     color: #fff;
@@ -9184,6 +9267,7 @@
   background: #F8F6FC;
   padding: 12px;
   z-index: 1005;
+  overflow-y: scroll;
   display: none; }
   @media (max-width: 999px) {
     .control-screen.active {
@@ -9298,6 +9382,208 @@
         .control-screen .inner .itemaction button p {
           font-size: 11px;
           font-family: 'roobert-arabic-trial-regular'; }
+    .control-screen .inner .widget-container {
+      width: 100%;
+      margin-top: 12px; }
+      .control-screen .inner .widget-container .players-card {
+        border-radius: 20px;
+        padding: 14px;
+        border: 1.5px solid #ECE8F2;
+        background: #fff; }
+        .control-screen .inner .widget-container .players-card .players-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px; }
+          .control-screen .inner .widget-container .players-card .players-header .title {
+            font-size: 15px;
+            color: #000; }
+          .control-screen .inner .widget-container .players-card .players-header .disconnected {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: #FFE5EB;
+            border-radius: 60px;
+            font-size: 11px;
+            color: #F60037;
+            min-width: 75px;
+            height: 23px;
+            padding: 0px 8px; }
+      .control-screen .inner .widget-container .players-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px; }
+        .control-screen .inner .widget-container .players-list .player-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          .control-screen .inner .widget-container .players-list .player-item .player-info {
+            display: flex;
+            align-items: center;
+            gap: 12px; }
+            .control-screen .inner .widget-container .players-list .player-item .player-info .player-avatar {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-width: 30px;
+              max-width: 30px;
+              height: 30px;
+              color: #fff;
+              font-size: 12px;
+              border-radius: 50%; }
+              .control-screen .inner .widget-container .players-list .player-item .player-info .player-avatar.potter {
+                background: #8E5B3A; }
+              .control-screen .inner .widget-container .players-list .player-item .player-info .player-avatar.yellow {
+                background: #F9AF19; }
+              .control-screen .inner .widget-container .players-list .player-item .player-info .player-avatar.red {
+                background: #F60037; }
+              .control-screen .inner .widget-container .players-list .player-item .player-info .player-avatar.blue {
+                background: #2D9CDB; }
+              .control-screen .inner .widget-container .players-list .player-item .player-info .player-avatar.green {
+                background: #1FA463; }
+              .control-screen .inner .widget-container .players-list .player-item .player-info .player-avatar.heavenly {
+                background: #2E86DE; }
+              .control-screen .inner .widget-container .players-list .player-item .player-info .player-avatar .online {
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                border: 2px solid #fff;
+                background: #1FA463; }
+          .control-screen .inner .widget-container .players-list .player-item .status-tag {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            border-radius: 60px;
+            font-size: 11px;
+            min-width: 75px;
+            height: 23px;
+            padding: 0px 8px; }
+            .control-screen .inner .widget-container .players-list .player-item .status-tag.red {
+              background: #FFE5EB;
+              color: #F60037; }
+            .control-screen .inner .widget-container .players-list .player-item .status-tag.green {
+              color: #1FA463;
+              background: #E3F6EC; }
+          .control-screen .inner .widget-container .players-list .player-item .status {
+            font-size: 11px;
+            color: #9A9A9A; }
+        .control-screen .inner .widget-container .players-list .toggle-more-btn {
+          display: block;
+          color: #6A54B9;
+          font-size: 12px;
+          cursor: pointer; }
+        .control-screen .inner .widget-container .players-list .more-players {
+          display: none;
+          flex-direction: column;
+          gap: 12px; }
+          .control-screen .inner .widget-container .players-list .more-players .player-item {
+            margin-bottom: 12px; }
+            .control-screen .inner .widget-container .players-list .more-players .player-item:last-child {
+              margin: 0px; }
+      .control-screen .inner .widget-container .btn-end-race {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 0px 12px;
+        border: 2px solid #F60037;
+        border-radius: 60px;
+        background: transparent;
+        color: #F60037;
+        font-size: 15px;
+        height: 45px;
+        cursor: pointer;
+        margin-top: 50px;
+        transition: all 0.2s ease; }
+        .control-screen .inner .widget-container .btn-end-race:hover {
+          background: #ffe6e9; }
+    .control-screen .inner .modal-overlay {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      display: none;
+      background-color: rgba(30, 25, 45, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      justify-content: center;
+      align-items: flex-end; }
+      .control-screen .inner .modal-overlay .modal-card {
+        background: #fff;
+        width: 100%;
+        max-width: 474px;
+        border-top-left-radius: 32px;
+        border-top-right-radius: 32px;
+        padding: 20px;
+        text-align: center;
+        animation: slideUp 0.3s ease-out forwards; }
+@keyframes slideUp {
+  from {
+    transform: translateY(100%); }
+  to {
+    transform: translateY(0); } }
+        .control-screen .inner .modal-overlay .modal-card .modal-handle {
+          width: 44px;
+          height: 5px;
+          background-color: #ECE8F2;
+          border-radius: 3px;
+          margin: 0px auto 20px auto; }
+        .control-screen .inner .modal-overlay .modal-card .icon-circle-red {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 64px;
+          height: 64px;
+          background: #FFE5EB;
+          border-radius: 50%;
+          margin: 0px auto 20px auto; }
+        .control-screen .inner .modal-overlay .modal-card .title {
+          font-size: 24px;
+          color: #000;
+          margin-bottom: 12px;
+          text-align: center; }
+        .control-screen .inner .modal-overlay .modal-card .text {
+          font-size: 14px;
+          color: #6B6B6B;
+          line-height: 1.6;
+          margin-bottom: 20px;
+          white-space: normal;
+          text-align: center; }
+        .control-screen .inner .modal-overlay .modal-card .modal-actions {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 12px; }
+          .control-screen .inner .modal-overlay .modal-card .modal-actions .btn-confirm-end,
+          .control-screen .inner .modal-overlay .modal-card .modal-actions .btn-continue-race {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 204px;
+            max-width: 204px;
+            margin: 0px auto;
+            height: 56px;
+            padding: 0px 12px;
+            background: #ff003b;
+            color: #fff;
+            border-radius: 60px;
+            font-size: 18px;
+            cursor: pointer; }
+          .control-screen .inner .modal-overlay .modal-card .modal-actions .btn-continue-race {
+            min-width: 164px;
+            max-width: 164px;
+            color: #410179;
+            border: 2px solid #410179;
+            background: none; }
 
 .site-header {
   position: absolute;

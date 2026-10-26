@@ -953,7 +953,8 @@
          margin-bottom: 25px;
          color: #111;
      }
-     .options-grid {
+     .options-grid,
+     .true-false-grid {
          display: grid;
          grid-template-columns: 1fr 1fr;
          gap: $com-spacing-4;
@@ -1102,6 +1103,9 @@
              &.correct {
                  box-shadow: inset 0 0 0 3px #1FA463;
                  background: #E3F6EC;
+                 .retreat {
+                     display: none;
+                 }
                  .option-letter {
                      background: #1FA463;
                      color: $white;
@@ -1117,6 +1121,9 @@
              &.wrong {
                  box-shadow: inset 0 0 0 3px #F60037;
                  background: #FFE5EB;
+                 .retreat {
+                     display: none;
+                 }
                  .list-player {
                      display: flex;
                      align-items: center;
@@ -1129,35 +1136,89 @@
                      @include flex;
                  }
              }
-             &.hidden-option {
-                 opacity: 0.6;
-                 pointer-events: none;
-                 background: $none;
-                 box-shadow: none;
-                 border: 2px dashed #CFC4DF;
-                 .text {
-                     color: #9A9A9A;
-                     text-decoration: underline
+         }
+     }
+     .options-grid {
+         &.hidden-option {
+             opacity: 0.6;
+             pointer-events: none;
+             background: $none;
+             box-shadow: none;
+             border: 2px dashed #CFC4DF;
+             .text {
+                 color: #9A9A9A;
+                 text-decoration: underline
+             }
+             .option-letter {
+                 background: #ECE8F2;
+             }
+             .retreat {
+                 display: none
+             }
+             .disappear {
+                 @include flex;
+                 gap: $com-spacing-1;
+                 background: #ECE8F2;
+                 height: 25px;
+                 padding: $zero $com-spacing-2;
+                 color: $colortext2;
+                 border-radius: 60px;
+                 font-size: 13px;
+                 line-height: 1;
+                 @media (min-width: 1900px) {
+                     font-size: 16px;
                  }
-                 .option-letter {
-                     background: #ECE8F2;
+             }
+         }
+     }
+     .true-false-grid {
+         @media (max-width: 767px) {
+             grid-template-columns: 1fr 1fr;
+         }
+         @media (max-width: 340px) {
+             grid-template-columns: 1fr;
+         }
+         .option-btn {
+             padding: $com-spacing-4;
+             justify-content: center;
+             @media (max-width: 767px) {
+                 @media (max-width: 340px) {
+                     justify-content: space-between;
                  }
-                 .retreat {
-                     display: none
-                 }
-                 .disappear {
-                     @include flex;
-                     gap: $com-spacing-1;
-                     background: #ECE8F2;
-                     height: 25px;
-                     padding: $zero $com-spacing-2;
-                     color: $colortext2;
-                     border-radius: 60px;
-                     font-size: 13px;
-                     line-height: 1;
-                     @media (min-width: 1900px) {
-                         font-size: 16px;
+                 .d-flex {
+                     display: block !important;
+                     @media (max-width: 340px) {
+                         display: flex !important;
                      }
+                     .list-player {
+                         margin-bottom: $com-spacing-3;
+                         @media (max-width: 340px) {
+                             margin: $zero;
+                         }
+                     }
+                     .option-letter {
+                         margin-bottom: $com-spacing-2;
+                         @media (max-width: 340px) {
+                             margin: $zero;
+                         }
+                     }
+                 }
+             }
+             .text {
+                 @media (min-width: 1900px) {
+                     font-size: 42px;
+                 }
+             }
+             &.green {
+                 .option-letter {
+                     background: #e3f6ec;
+                     color: #1fa463;
+                 }
+             }
+             &.red {
+                 .option-letter {
+                     background: #ffe5eb;
+                     color: #f60037;
                  }
              }
          }
@@ -1849,7 +1910,7 @@
          display: none;
          position: absolute;
          left: $com-spacing-3;
-         bottom: $com-spacing-3;
+         bottom: $com-spacing-1;
          border: 3px solid #FFDE65;
          background: #1B0A2E;
          color: $white;
@@ -1878,6 +1939,7 @@
      background: #F8F6FC;
      padding: $com-spacing-3;
      z-index: 1005;
+     overflow-y: scroll;
      display: none;
      @media (max-width: 999px) {
          &.active {
@@ -2007,6 +2069,237 @@
                  p {
                      font-size: 11px;
                      font-family: 'roobert-arabic-trial-regular';
+                 }
+             }
+         }
+         .widget-container {
+             width: $fullwidth;
+             margin-top: $com-spacing-3;
+             .players-card {
+                 border-radius: 20px;
+                 padding: 14px;
+                 border: 1.5px solid #ECE8F2;
+                 background: $white;
+                 .players-header {
+                     display: flex;
+                     justify-content: space-between;
+                     align-items: center;
+                     margin-bottom: $com-spacing-3;
+                     .title {
+                         font-size: 15px;
+                         color: $blak;
+                     }
+                     .disconnected {
+                         @include flex;
+                         gap: $com-spacing-1;
+                         background: #FFE5EB;
+                         border-radius: 60px;
+                         font-size: 11px;
+                         color: #F60037;
+                         min-width: 75px;
+                         height: 23px;
+                         padding: $zero $com-spacing-2;
+                         @media (max-width: 999px) {}
+                     }
+                 }
+             }
+             .players-list {
+                 display: flex;
+                 flex-direction: column;
+                 gap: $com-spacing-3;
+                 .player-item {
+                     display: flex;
+                     align-items: center;
+                     justify-content: space-between;
+                     .player-info {
+                         display: flex;
+                         align-items: center;
+                         gap: $com-spacing-3;
+                         .player-avatar {
+                             position: relative;
+                             @include flex;
+                             min-width: 30px;
+                             max-width: 30px;
+                             height: 30px;
+                             color: $white;
+                             font-size: 12px;
+                             border-radius: 50%;
+                             &.potter {
+                                 background: #8E5B3A;
+                             }
+                             &.yellow {
+                                 background: #F9AF19;
+                             }
+                             &.red {
+                                 background: #F60037;
+                             }
+                             &.blue {
+                                 background: #2D9CDB;
+                             }
+                             &.green {
+                                 background: #1FA463;
+                             }
+                             &.heavenly {
+                                 background: #2E86DE;
+                             }
+                             .online {
+                                 position: absolute;
+                                 left: $zero;
+                                 bottom: $zero;
+                                 width: 8px;
+                                 height: 8px;
+                                 border-radius: 50%;
+                                 border: 2px solid $white;
+                                 background: #1FA463;
+                             }
+                         }
+                     }
+                     .status-tag {
+                         @include flex;
+                         gap: $com-spacing-1;
+                         border-radius: 60px;
+                         font-size: 11px;
+                         min-width: 75px;
+                         height: 23px;
+                         padding: $zero $com-spacing-2;
+                         @media (max-width: 999px) {}
+                         &.red {
+                             background: #FFE5EB;
+                             color: #F60037;
+                         }
+                         &.green {
+                             color: #1FA463;
+                             background: #E3F6EC;
+                         }
+                     }
+                     .status {
+                         font-size: 11px;
+                         color: #9A9A9A;
+                     }
+                 }
+                 .toggle-more-btn {
+                     display: block;
+                     color: #6A54B9;
+                     font-size: 12px;
+                     cursor: pointer;
+                     //  margin-top: $com-spacing-3;
+                 }
+                 .more-players {
+                     display: none;
+                     flex-direction: column;
+                     gap: $com-spacing-3;
+                     .player-item {
+                         margin-bottom: $com-spacing-3;
+                         &:last-child {
+                             margin: $zero;
+                         }
+                     }
+                 }
+             }
+             .btn-end-race {
+                 @include flex;
+                 gap: $com-spacing-3;
+                 width: $fullwidth;
+                 padding: $zero $com-spacing-3;
+                 border: 2px solid #F60037;
+                 border-radius: 60px;
+                 background: transparent;
+                 color: #F60037;
+                 font-size: 15px;
+                 height: 45px;
+                 cursor: pointer;
+                 margin-top: 50px;
+                 transition: all 0.2s ease;
+                 &:hover {
+                     background: #ffe6e9;
+                 }
+             }
+         }
+         .modal-overlay {
+             position: fixed;
+             left: $zero;
+             top: $zero;
+             width: $fullwidth;
+             height: $fullwidth;
+             display: none;
+             background-color: rgba(30, 25, 45, 0.6);
+             backdrop-filter: blur(4px);
+             z-index: 999;
+             justify-content: center;
+             align-items: flex-end;
+             .modal-card {
+                 background: $white;
+                 width: $fullwidth;
+                 max-width: 474px;
+                 border-top-left-radius: 32px;
+                 border-top-right-radius: 32px;
+                 padding: $com-spacing-5;
+                 text-align: center;
+                 animation: slideUp 0.3s ease-out forwards;
+                 @keyframes slideUp {
+                     from {
+                         transform: translateY(100%);
+                     }
+                     to {
+                         transform: translateY(0);
+                     }
+                 }
+                 .modal-handle {
+                     width: 44px;
+                     height: 5px;
+                     background-color: #ECE8F2;
+                     border-radius: 3px;
+                     margin: $zero auto $com-spacing-5 auto;
+                 }
+                 .icon-circle-red {
+                     @include flex;
+                     width: 64px;
+                     height: 64px;
+                     background: #FFE5EB;
+                     border-radius: 50%;
+                     margin: $zero auto $com-spacing-5 auto;
+                 }
+                 .title {
+                     font-size: 24px;
+                     color: $blak;
+                     margin-bottom: $com-spacing-3;
+                     text-align: center;
+                 }
+                 .text {
+                     font-size: 14px;
+                     color: $colortext2;
+                     line-height: 1.6;
+                     margin-bottom: $com-spacing-5;
+                     white-space: normal;
+                     text-align: center;
+                 }
+                 .modal-actions {
+                     width: $fullwidth;
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: center;
+                     gap: $com-spacing-3;
+                     .btn-confirm-end,
+                     .btn-continue-race {
+                         @include flex;
+                         min-width: 204px;
+                         max-width: 204px;
+                         margin: $zero $auto;
+                         height: 56px;
+                         padding: $zero $com-spacing-3;
+                         background: #ff003b;
+                         color: $white;
+                         border-radius: 60px;
+                         font-size: 18px;
+                         cursor: pointer;
+                     }
+                     .btn-continue-race {
+                         min-width: 164px;
+                         max-width: 164px;
+                         color: #410179;
+                         border: 2px solid #410179;
+                         background: none;
+                     }
                  }
              }
          }

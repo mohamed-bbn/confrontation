@@ -1087,9 +1087,41 @@ $(document).ready(function() {
         $('#summary-questions').text(selectedQuestions);
     });
 
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    // New/////////////////////////////////////////////////////////////////////////////////
+
 
     $('.btn-control').on('click', function() {
         $('.control-screen').addClass('active');
+    });
+    $('.btnclose').on('click', function() {
+        $('.control-screen').removeClass('active');
+    });
+
+
+    $('#togglePlayersBtn').on('click', function() {
+        $('#morePlayersList').slideToggle(200, function() {
+            if ($(this).is(':visible')) {
+                $('#togglePlayersBtn').text('- إخفاء اللاعبين');
+            } else {
+                $('#togglePlayersBtn').text('+ 5 لاعبين');
+            }
+        });
+    });
+
+    $('#openModalBtn').on('click', function() {
+        $('#endRaceModal').css('display', 'flex');
+    });
+
+    $('#closeModalBtn').on('click', function() {
+        $('#endRaceModal').css('display', 'none');
+        // $(".control-screen").removeClass("active")
+    });
+
+    $('#endRaceModal').on('click', function(e) {
+        if ($(e.target).is('#endRaceModal')) {
+            $(this).css('display', 'none');
+        }
     });
 
 
