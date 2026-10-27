@@ -178,8 +178,13 @@
          background: url(../images/ye.png) no-repeat center top;
          background-size: 50% 100%;
          min-height: 75vh;
+         //  @media (min-width: 1600px) {
+         //      display: flex;
+         //      align-items: center;
+         //  }
          @media (max-width: 999px) {
-             padding: $com-spacing-3 $zero;
+             padding: $zero;
+             padding-bottom: $com-spacing-7;
              background-size: 150% 100%;
              min-height: inherit;
          }
@@ -673,7 +678,10 @@
                  position: relative;
                  width: auto;
                  height: auto;
-                 margin-top: 34px;
+                 margin-top: 14px;
+             }
+             @media (min-width: 1900px) {
+                 margin-top: $com-spacing-4;
              }
              &::before {
                  content: "";
@@ -836,7 +844,7 @@
              stroke: #ff9800;
              stroke-width: 6;
              stroke-dasharray: 264;
-             stroke-dashoffset: 0;
+             //  stroke-dashoffset: 0;
              transition: stroke-dashoffset 1s linear, stroke 0.3s ease;
          }
          .timer-number {
@@ -954,7 +962,8 @@
          color: #111;
      }
      .options-grid,
-     .true-false-grid {
+     .true-false-grid,
+     .question-images {
          display: grid;
          grid-template-columns: 1fr 1fr;
          gap: $com-spacing-4;
@@ -998,6 +1007,7 @@
                  border-radius: 16px;
                  font-size: 20px;
                  color: #410179;
+                 font-family: 'graphik-arabic-bold';
                  @media (min-width: 1900px) {
                      min-width: 56px;
                      max-width: 56px;
@@ -1138,7 +1148,8 @@
              }
          }
      }
-     .options-grid {
+     .options-grid,
+     .question-images {
          .option-btn {
              &.hidden-option {
                  opacity: 0.6;
@@ -1148,7 +1159,7 @@
                  border: 2px dashed #CFC4DF;
                  .text {
                      color: #9A9A9A;
-                     text-decoration: underline
+                     text-decoration: line-through
                  }
                  .option-letter {
                      background: #ECE8F2;
@@ -1175,7 +1186,7 @@
      }
      .true-false-grid {
          @media (max-width: 767px) {
-             grid-template-columns: 1fr 1fr;
+             grid-template-columns: repeat(2, 1fr);
          }
          @media (max-width: 340px) {
              grid-template-columns: 1fr;
@@ -1221,6 +1232,81 @@
                  .option-letter {
                      background: #ffe5eb;
                      color: #f60037;
+                 }
+             }
+         }
+     }
+     .question-images {
+         grid-template-columns: repeat(4, 1fr);
+         @media (max-width: 767px) {
+             grid-template-columns: repeat(2, 1fr);
+         }
+         .option-btn {
+             display: block;
+             //  max-width: 170px;
+             //   @media (min-width: 1900px) {}
+             &.hidden-option {
+                 .d-flex {
+                     .player-name {
+                         text-decoration: line-through;
+                         color: #898989;
+                     }
+                 }
+             }
+             .d-flex {
+                 display: block !important;
+                 .list-player {
+                     justify-content: flex-end;
+                     margin-top: -5px;
+                     @media (min-width: 1600px) {
+                         margin: $zero;
+                     }
+                 }
+                 .option-letter {
+                     position: absolute;
+                     top: 14px;
+                     inset-inline-start: 14px;
+                     min-width: 44px;
+                     max-width: 44px;
+                     height: 44px;
+                 }
+                 .mistake,
+                 .retreat,
+                 .textcorrect,
+                 .disappear {
+                     position: absolute;
+                     top: 14px;
+                     inset-inline-end: 14px;
+                 }
+                 .photo {
+                     @include flex;
+                     width: $fullwidth;
+                     height: 40px;
+                     font-size: 48px;
+                     margin-top: 30px;
+                     @media (min-width: 1600px) {
+                         height: 78px;
+                         font-size: 60px;
+                         margin-top: $com-spacing-5;
+                     }
+                     @media (min-width: 1900px) {
+                         font-size: 74px;
+                     }
+                     img {
+                         max-width: $fullwidth;
+                         max-height: $fullwidth;
+                     }
+                 }
+                 .player-name {
+                     display: block;
+                     color: $blak;
+                     font-size: 18px;
+                     font-family: 'graphik-arabic-bold';
+                     margin-top: $com-spacing-1;
+                     @media (min-width: 1900px) {
+                         font-size: 28px;
+                         margin-top: $com-spacing-2;
+                     }
                  }
              }
          }
@@ -1429,6 +1515,7 @@
          }
          .itemreward {
              display: flex;
+             align-items: center;
              gap: $com-spacing-3;
              margin: $zero $auto;
              max-width: 380px;
@@ -1466,14 +1553,15 @@
                  }
                  .circle {
                      position: absolute;
-                     left: 20px;
+                     left: $zero;
+                     right: $zero;
                      top: -12px;
+                     margin: $zero $auto;
                      width: 30px;
                      height: 30px;
                      background: #FFDE65;
                      border-radius: 50%;
                      @media (min-width: 1900px) {
-                         left: 40px;
                          top: -22px;
                          width: 50px;
                          height: 50px;
@@ -1494,8 +1582,10 @@
                  }
              }
              .player-name {
+                 display: block;
                  color: $white;
                  font-size: 30px;
+                 margin: $com-spacing-1 $zero;
                  @media (min-width: 1900px) {
                      font-size: 40px;
                  }
@@ -2218,15 +2308,8 @@
              }
          }
          .modal-overlay {
-             position: fixed;
-             left: $zero;
-             top: $zero;
-             width: $fullwidth;
-             height: $fullwidth;
-             display: none;
-             background-color: rgba(30, 25, 45, 0.6);
+             padding: $zero;
              backdrop-filter: blur(4px);
-             z-index: 999;
              justify-content: center;
              align-items: flex-end;
              .modal-card {

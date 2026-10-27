@@ -1289,6 +1289,7 @@
         .text {
             display: flex;
             align-items: center;
+            gap: $com-spacing-1;
             color: $blak;
             font-family: "roobert-arabic-trial-bold";
             @media (min-width: 1600px) {

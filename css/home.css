@@ -7088,6 +7088,7 @@
     .q-header .d-item .text {
       display: flex;
       align-items: center;
+      gap: 4px;
       color: #000;
       font-family: "roobert-arabic-trial-bold"; }
       @media (min-width: 1600px) {
@@ -7718,7 +7719,8 @@
     min-height: 75vh; }
     @media (max-width: 999px) {
       .site-questions .main-container {
-        padding: 12px 0px;
+        padding: 0px;
+        padding-bottom: 32px;
         background-size: 150% 100%;
         min-height: inherit; } }
     .site-questions .main-container .player-information {
@@ -8160,7 +8162,10 @@
           position: relative;
           width: auto;
           height: auto;
-          margin-top: 34px; } }
+          margin-top: 14px; } }
+      @media (min-width: 1900px) {
+        .site-questions .main-container .timeout-box {
+          margin-top: 16px; } }
       .site-questions .main-container .timeout-box::before {
         content: "";
         position: absolute;
@@ -8298,7 +8303,6 @@
       stroke: #ff9800;
       stroke-width: 6;
       stroke-dasharray: 264;
-      stroke-dashoffset: 0;
       transition: stroke-dashoffset 1s linear, stroke 0.3s ease; }
     .site-questions .d-question .timer-number {
       font-size: 40px;
@@ -8395,18 +8399,21 @@
     margin-bottom: 25px;
     color: #111; }
   .site-questions .options-grid,
-  .site-questions .true-false-grid {
+  .site-questions .true-false-grid,
+  .site-questions .question-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-top: 16px; }
     @media (max-width: 767px) {
       .site-questions .options-grid,
-      .site-questions .true-false-grid {
+      .site-questions .true-false-grid,
+      .site-questions .question-images {
         grid-template-columns: 1fr;
         gap: 14px; } }
     .site-questions .options-grid .option-btn,
-    .site-questions .true-false-grid .option-btn {
+    .site-questions .true-false-grid .option-btn,
+    .site-questions .question-images .option-btn {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -8420,19 +8427,23 @@
       border: 0px; }
       @media (min-width: 1900px) {
         .site-questions .options-grid .option-btn,
-        .site-questions .true-false-grid .option-btn {
+        .site-questions .true-false-grid .option-btn,
+        .site-questions .question-images .option-btn {
           padding: 18px; } }
       @media (max-width: 767px) {
         .site-questions .options-grid .option-btn,
-        .site-questions .true-false-grid .option-btn {
+        .site-questions .true-false-grid .option-btn,
+        .site-questions .question-images .option-btn {
           gap: 0px; } }
       .site-questions .options-grid .option-btn .d-flex,
-      .site-questions .true-false-grid .option-btn .d-flex {
+      .site-questions .true-false-grid .option-btn .d-flex,
+      .site-questions .question-images .option-btn .d-flex {
         display: flex;
         align-items: center;
         gap: 16px; }
       .site-questions .options-grid .option-btn .option-letter,
-      .site-questions .true-false-grid .option-btn .option-letter {
+      .site-questions .true-false-grid .option-btn .option-letter,
+      .site-questions .question-images .option-btn .option-letter {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -8442,38 +8453,46 @@
         height: 46px;
         border-radius: 16px;
         font-size: 20px;
-        color: #410179; }
+        color: #410179;
+        font-family: 'graphik-arabic-bold'; }
         @media (min-width: 1900px) {
           .site-questions .options-grid .option-btn .option-letter,
-          .site-questions .true-false-grid .option-btn .option-letter {
+          .site-questions .true-false-grid .option-btn .option-letter,
+          .site-questions .question-images .option-btn .option-letter {
             min-width: 56px;
             max-width: 56px;
             height: 56px;
             font-size: 24px; } }
       .site-questions .options-grid .option-btn .text,
-      .site-questions .true-false-grid .option-btn .text {
+      .site-questions .true-false-grid .option-btn .text,
+      .site-questions .question-images .option-btn .text {
         color: #000;
         font-size: 20px;
         font-family: "roobert-arabic-trial-bold"; }
         @media (min-width: 1900px) {
           .site-questions .options-grid .option-btn .text,
-          .site-questions .true-false-grid .option-btn .text {
+          .site-questions .true-false-grid .option-btn .text,
+          .site-questions .question-images .option-btn .text {
             font-size: 32px; } }
       .site-questions .options-grid .option-btn .disappear,
-      .site-questions .true-false-grid .option-btn .disappear {
+      .site-questions .true-false-grid .option-btn .disappear,
+      .site-questions .question-images .option-btn .disappear {
         display: none;
         font-size: 14px;
         padding: 0px 8px;
         font-family: "roobert-arabic-trial-bold"; }
         @media (min-width: 1900px) {
           .site-questions .options-grid .option-btn .disappear,
-          .site-questions .true-false-grid .option-btn .disappear {
+          .site-questions .true-false-grid .option-btn .disappear,
+          .site-questions .question-images .option-btn .disappear {
             font-size: 16px; } }
       .site-questions .options-grid .option-btn .list-player,
-      .site-questions .true-false-grid .option-btn .list-player {
+      .site-questions .true-false-grid .option-btn .list-player,
+      .site-questions .question-images .option-btn .list-player {
         display: none; }
         .site-questions .options-grid .option-btn .list-player .player-avatar,
-        .site-questions .true-false-grid .option-btn .list-player .player-avatar {
+        .site-questions .true-false-grid .option-btn .list-player .player-avatar,
+        .site-questions .question-images .option-btn .list-player .player-avatar {
           position: relative;
           display: flex;
           align-items: center;
@@ -8489,16 +8508,20 @@
           margin-inline-start: -8px;
           font-family: "roobert-arabic-trial-bold"; }
           .site-questions .options-grid .option-btn .list-player .player-avatar.yellow,
-          .site-questions .true-false-grid .option-btn .list-player .player-avatar.yellow {
+          .site-questions .true-false-grid .option-btn .list-player .player-avatar.yellow,
+          .site-questions .question-images .option-btn .list-player .player-avatar.yellow {
             background: #F9AF19; }
           .site-questions .options-grid .option-btn .list-player .player-avatar.red,
-          .site-questions .true-false-grid .option-btn .list-player .player-avatar.red {
+          .site-questions .true-false-grid .option-btn .list-player .player-avatar.red,
+          .site-questions .question-images .option-btn .list-player .player-avatar.red {
             background: #F60037; }
             .site-questions .options-grid .option-btn .list-player .player-avatar.red .online,
-            .site-questions .true-false-grid .option-btn .list-player .player-avatar.red .online {
+            .site-questions .true-false-grid .option-btn .list-player .player-avatar.red .online,
+            .site-questions .question-images .option-btn .list-player .player-avatar.red .online {
               background: #F9AF19; }
           .site-questions .options-grid .option-btn .list-player .player-avatar .online,
-          .site-questions .true-false-grid .option-btn .list-player .player-avatar .online {
+          .site-questions .true-false-grid .option-btn .list-player .player-avatar .online,
+          .site-questions .question-images .option-btn .list-player .player-avatar .online {
             position: absolute;
             left: 0px;
             bottom: 0px;
@@ -8512,7 +8535,10 @@
       .site-questions .options-grid .option-btn .retreat,
       .site-questions .true-false-grid .option-btn .textcorrect,
       .site-questions .true-false-grid .option-btn .mistake,
-      .site-questions .true-false-grid .option-btn .retreat {
+      .site-questions .true-false-grid .option-btn .retreat,
+      .site-questions .question-images .option-btn .textcorrect,
+      .site-questions .question-images .option-btn .mistake,
+      .site-questions .question-images .option-btn .retreat {
         display: none;
         height: 25px;
         padding: 0px 8px;
@@ -8527,25 +8553,33 @@
           .site-questions .options-grid .option-btn .retreat,
           .site-questions .true-false-grid .option-btn .textcorrect,
           .site-questions .true-false-grid .option-btn .mistake,
-          .site-questions .true-false-grid .option-btn .retreat {
+          .site-questions .true-false-grid .option-btn .retreat,
+          .site-questions .question-images .option-btn .textcorrect,
+          .site-questions .question-images .option-btn .mistake,
+          .site-questions .question-images .option-btn .retreat {
             font-size: 16px; } }
       .site-questions .options-grid .option-btn .mistake,
-      .site-questions .true-false-grid .option-btn .mistake {
+      .site-questions .true-false-grid .option-btn .mistake,
+      .site-questions .question-images .option-btn .mistake {
         background: #F60037;
         color: #fff; }
       .site-questions .options-grid .option-btn.selected,
-      .site-questions .true-false-grid .option-btn.selected {
+      .site-questions .true-false-grid .option-btn.selected,
+      .site-questions .question-images .option-btn.selected {
         box-shadow: inset 0 0 0 3px #410179;
         background: #F4EEFB; }
         .site-questions .options-grid .option-btn.selected .option-letter,
-        .site-questions .true-false-grid .option-btn.selected .option-letter {
+        .site-questions .true-false-grid .option-btn.selected .option-letter,
+        .site-questions .question-images .option-btn.selected .option-letter {
           background: #410179;
           color: #fff; }
         .site-questions .options-grid .option-btn.selected .text,
-        .site-questions .true-false-grid .option-btn.selected .text {
+        .site-questions .true-false-grid .option-btn.selected .text,
+        .site-questions .question-images .option-btn.selected .text {
           color: #410179; }
         .site-questions .options-grid .option-btn.selected .retreat,
-        .site-questions .true-false-grid .option-btn.selected .retreat {
+        .site-questions .true-false-grid .option-btn.selected .retreat,
+        .site-questions .question-images .option-btn.selected .retreat {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -8553,59 +8587,74 @@
           color: #fff;
           background: #410179; }
       .site-questions .options-grid .option-btn.correct,
-      .site-questions .true-false-grid .option-btn.correct {
+      .site-questions .true-false-grid .option-btn.correct,
+      .site-questions .question-images .option-btn.correct {
         box-shadow: inset 0 0 0 3px #1FA463;
         background: #E3F6EC; }
         .site-questions .options-grid .option-btn.correct .retreat,
-        .site-questions .true-false-grid .option-btn.correct .retreat {
+        .site-questions .true-false-grid .option-btn.correct .retreat,
+        .site-questions .question-images .option-btn.correct .retreat {
           display: none; }
         .site-questions .options-grid .option-btn.correct .option-letter,
-        .site-questions .true-false-grid .option-btn.correct .option-letter {
+        .site-questions .true-false-grid .option-btn.correct .option-letter,
+        .site-questions .question-images .option-btn.correct .option-letter {
           background: #1FA463;
           color: #fff; }
         .site-questions .options-grid .option-btn.correct .list-player,
-        .site-questions .true-false-grid .option-btn.correct .list-player {
+        .site-questions .true-false-grid .option-btn.correct .list-player,
+        .site-questions .question-images .option-btn.correct .list-player {
           display: flex;
           align-items: center; }
         .site-questions .options-grid .option-btn.correct .textcorrect,
-        .site-questions .true-false-grid .option-btn.correct .textcorrect {
+        .site-questions .true-false-grid .option-btn.correct .textcorrect,
+        .site-questions .question-images .option-btn.correct .textcorrect {
           display: flex;
           align-items: center;
           justify-content: center; }
       .site-questions .options-grid .option-btn.wrong,
-      .site-questions .true-false-grid .option-btn.wrong {
+      .site-questions .true-false-grid .option-btn.wrong,
+      .site-questions .question-images .option-btn.wrong {
         box-shadow: inset 0 0 0 3px #F60037;
         background: #FFE5EB; }
         .site-questions .options-grid .option-btn.wrong .retreat,
-        .site-questions .true-false-grid .option-btn.wrong .retreat {
+        .site-questions .true-false-grid .option-btn.wrong .retreat,
+        .site-questions .question-images .option-btn.wrong .retreat {
           display: none; }
         .site-questions .options-grid .option-btn.wrong .list-player,
-        .site-questions .true-false-grid .option-btn.wrong .list-player {
+        .site-questions .true-false-grid .option-btn.wrong .list-player,
+        .site-questions .question-images .option-btn.wrong .list-player {
           display: flex;
           align-items: center; }
         .site-questions .options-grid .option-btn.wrong .option-letter,
-        .site-questions .true-false-grid .option-btn.wrong .option-letter {
+        .site-questions .true-false-grid .option-btn.wrong .option-letter,
+        .site-questions .question-images .option-btn.wrong .option-letter {
           background: #F60037;
           color: #fff; }
         .site-questions .options-grid .option-btn.wrong .mistake,
-        .site-questions .true-false-grid .option-btn.wrong .mistake {
+        .site-questions .true-false-grid .option-btn.wrong .mistake,
+        .site-questions .question-images .option-btn.wrong .mistake {
           display: flex;
           align-items: center;
           justify-content: center; }
-  .site-questions .options-grid .option-btn.hidden-option {
+  .site-questions .options-grid .option-btn.hidden-option,
+  .site-questions .question-images .option-btn.hidden-option {
     opacity: 0.6;
     pointer-events: none;
     background: none;
     box-shadow: none;
     border: 2px dashed #CFC4DF; }
-    .site-questions .options-grid .option-btn.hidden-option .text {
+    .site-questions .options-grid .option-btn.hidden-option .text,
+    .site-questions .question-images .option-btn.hidden-option .text {
       color: #9A9A9A;
-      text-decoration: underline; }
-    .site-questions .options-grid .option-btn.hidden-option .option-letter {
+      text-decoration: line-through; }
+    .site-questions .options-grid .option-btn.hidden-option .option-letter,
+    .site-questions .question-images .option-btn.hidden-option .option-letter {
       background: #ECE8F2; }
-    .site-questions .options-grid .option-btn.hidden-option .retreat {
+    .site-questions .options-grid .option-btn.hidden-option .retreat,
+    .site-questions .question-images .option-btn.hidden-option .retreat {
       display: none; }
-    .site-questions .options-grid .option-btn.hidden-option .disappear {
+    .site-questions .options-grid .option-btn.hidden-option .disappear,
+    .site-questions .question-images .option-btn.hidden-option .disappear {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -8618,11 +8667,12 @@
       font-size: 13px;
       line-height: 1; }
       @media (min-width: 1900px) {
-        .site-questions .options-grid .option-btn.hidden-option .disappear {
+        .site-questions .options-grid .option-btn.hidden-option .disappear,
+        .site-questions .question-images .option-btn.hidden-option .disappear {
           font-size: 16px; } }
   @media (max-width: 767px) {
     .site-questions .true-false-grid {
-      grid-template-columns: 1fr 1fr; } }
+      grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 340px) {
     .site-questions .true-false-grid {
       grid-template-columns: 1fr; } }
@@ -8660,6 +8710,67 @@
     .site-questions .true-false-grid .option-btn.red .option-letter {
       background: #ffe5eb;
       color: #f60037; }
+  .site-questions .question-images {
+    grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 767px) {
+      .site-questions .question-images {
+        grid-template-columns: repeat(2, 1fr); } }
+    .site-questions .question-images .option-btn {
+      display: block; }
+      .site-questions .question-images .option-btn.hidden-option .d-flex .player-name {
+        text-decoration: line-through;
+        color: #898989; }
+      .site-questions .question-images .option-btn .d-flex {
+        display: block !important; }
+        .site-questions .question-images .option-btn .d-flex .list-player {
+          justify-content: flex-end;
+          margin-top: -5px; }
+          @media (min-width: 1600px) {
+            .site-questions .question-images .option-btn .d-flex .list-player {
+              margin: 0px; } }
+        .site-questions .question-images .option-btn .d-flex .option-letter {
+          position: absolute;
+          top: 14px;
+          inset-inline-start: 14px;
+          min-width: 44px;
+          max-width: 44px;
+          height: 44px; }
+        .site-questions .question-images .option-btn .d-flex .mistake,
+        .site-questions .question-images .option-btn .d-flex .retreat,
+        .site-questions .question-images .option-btn .d-flex .textcorrect,
+        .site-questions .question-images .option-btn .d-flex .disappear {
+          position: absolute;
+          top: 14px;
+          inset-inline-end: 14px; }
+        .site-questions .question-images .option-btn .d-flex .photo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 40px;
+          font-size: 48px;
+          margin-top: 30px; }
+          @media (min-width: 1600px) {
+            .site-questions .question-images .option-btn .d-flex .photo {
+              height: 78px;
+              font-size: 60px;
+              margin-top: 20px; } }
+          @media (min-width: 1900px) {
+            .site-questions .question-images .option-btn .d-flex .photo {
+              font-size: 74px; } }
+          .site-questions .question-images .option-btn .d-flex .photo img {
+            max-width: 100%;
+            max-height: 100%; }
+        .site-questions .question-images .option-btn .d-flex .player-name {
+          display: block;
+          color: #000;
+          font-size: 18px;
+          font-family: 'graphik-arabic-bold';
+          margin-top: 4px; }
+          @media (min-width: 1900px) {
+            .site-questions .question-images .option-btn .d-flex .player-name {
+              font-size: 28px;
+              margin-top: 8px; } }
   .site-questions .result-box {
     display: none;
     width: 100%;
@@ -8847,6 +8958,7 @@
           font-size: 68px; } }
     .site-questions .rewardScreen .itemreward {
       display: flex;
+      align-items: center;
       gap: 12px;
       margin: 0px auto;
       max-width: 380px;
@@ -8884,15 +8996,16 @@
           background: #F60037; }
         .site-questions .rewardScreen .itemreward .player-avatar .circle {
           position: absolute;
-          left: 20px;
+          left: 0px;
+          right: 0px;
           top: -12px;
+          margin: 0px auto;
           width: 30px;
           height: 30px;
           background: #FFDE65;
           border-radius: 50%; }
           @media (min-width: 1900px) {
             .site-questions .rewardScreen .itemreward .player-avatar .circle {
-              left: 40px;
               top: -22px;
               width: 50px;
               height: 50px; } }
@@ -8909,8 +9022,10 @@
             .site-questions .rewardScreen .itemreward .player-avatar .online {
               bottom: 20px; } }
       .site-questions .rewardScreen .itemreward .player-name {
+        display: block;
         color: #fff;
-        font-size: 30px; }
+        font-size: 30px;
+        margin: 4px 0px; }
         @media (min-width: 1900px) {
           .site-questions .rewardScreen .itemreward .player-name {
             font-size: 40px; } }
@@ -9505,15 +9620,8 @@
         .control-screen .inner .widget-container .btn-end-race:hover {
           background: #ffe6e9; }
     .control-screen .inner .modal-overlay {
-      position: fixed;
-      left: 0px;
-      top: 0px;
-      width: 100%;
-      height: 100%;
-      display: none;
-      background-color: rgba(30, 25, 45, 0.6);
+      padding: 0px;
       backdrop-filter: blur(4px);
-      z-index: 999;
       justify-content: center;
       align-items: flex-end; }
       .control-screen .inner .modal-overlay .modal-card {

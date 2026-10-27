@@ -30,7 +30,7 @@
                 </div>
                 <!-- ENd d-flex -->
                 <div class="d-item">
-                    <p class="text">سؤال <span> 1 </span> من <span>10</span></p>
+                    <p class="text">سؤال <span> 2 </span> من <span>10</span></p>
                     <ul class="list-line mo-hide">
                         <li class="active"></li>
                         <li class="ready"></li>
@@ -370,7 +370,7 @@
 
                 <div id="nextPhaseScreen" class="rewardScreen">
                     <div class="rew-item">
-                        <h2 class="title">مكافآت السؤال 1</h2>
+                        <h2 class="title">مكافآت السؤال 2</h2>
                         <p class="text">تُضاف إلى مجموع الفريق</p>
                         <div class="itemreward">
                             <div class="player-avatar red">
@@ -911,7 +911,7 @@
                             clearInterval(timerInterval);
                             userAnswered = true;
 
-                            $("#timerSubtextContainer").css('display', 'none');
+                            $("#timerSubtextContainer").css('display', 'block');
 
                             $("#timeoutMessage, #closedAnswersMessage").css('display', 'block');
 
@@ -924,7 +924,7 @@
                 }, 1000);
             }
 
-            // تشغيل العداد فور التحميل
+            // Start the timer immediately upon loading
             startQuestionTimer();
 
             $('#toggleTimerBtn').on('click', function() {
