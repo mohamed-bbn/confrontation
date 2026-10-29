@@ -1,7 +1,6 @@
    $(document).ready(function() {
        let originalTeam = null;
 
-       // تفعيل السحب والإسقاط بين القوائم
        $(".team-list").sortable({
            connectWith: ".team-list",
            placeholder: "ui-sortable-placeholder",
@@ -15,13 +14,10 @@
                let playerName = ui.item.attr("data-player-name");
                let newTeamName = targetTeam.attr("data-team-name");
 
-               // تغيير لون وستايل الكارت عند نقله لبوكس ثاني
                updatePlayerStyle(ui.item, targetTeam.attr("id"));
 
-               // تحديث الأعداد والتحقق من القوائم الفارغة
                updateCounts();
 
-               // إظهار الرسالة لو انتقل اللاعب بالفعل
                if (originalTeam && originalTeam.attr("id") !== targetTeam.attr("id")) {
                    let count1 = $("#team-1 .player-card").length;
                    let count2 = $("#team-2 .player-card").length;
@@ -30,16 +26,13 @@
            }
        }).disableSelection();
 
-       // تحديث عداد اللاعبين وإظهار رسالة: "انت هنا مفيش لاعبين"
        function updateCounts() {
            $(".team-list").each(function() {
                let count = $(this).children(".player-card").length;
                let parentBox = $(this).closest(".team-box");
 
-               // تحديث الرقم بالفريق
                parentBox.find(".count-num").text(count);
 
-               // إظهار أو إخفاء رسالة مفيش لاعبين
                if (count === 0) {
                    parentBox.find(".empty-msg").show();
                } else {
@@ -48,7 +41,6 @@
            });
        }
 
-       // تعديل ألوان كارت اللاعب فور نقله
        function updatePlayerStyle(player, teamId) {
            if (teamId === "team-1") {
                player.removeClass("team-2-theme").addClass("team-1-theme");
@@ -57,7 +49,6 @@
            }
        }
 
-       // عرض الشريط التنبيهي بالأسفل
        function showToast(message) {
            let toast = $("#toast");
            $("#toast-text").text(message);
@@ -68,7 +59,6 @@
            }, 3000);
        }
 
-       // زر التوزيع العشوائي
        $("#randomize-btn").click(function() {
            let allPlayers = $(".player-card").toArray();
            allPlayers.sort(() => Math.random() - 0.5);
@@ -89,6 +79,5 @@
            showToast("تم توزيع اللاعبين عشوائيًا!");
        });
 
-       // التشغيل الأولي عند تحميل الصفحة
        updateCounts();
    });

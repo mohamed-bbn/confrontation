@@ -3574,6 +3574,7 @@
         .modal-content {
             padding: 56px;
             border-radius: 36px;
+            border: $zero;
             box-shadow: 0px 30px 80px 0px #0000004D;
             @media (max-width: 999px) {
                 @include flex;
@@ -3971,6 +3972,7 @@
                     @media (max-width: 999px) {
                         height: auto;
                         font-size: 12px;
+                        line-height: 22px;
                     }
                 }
                 .card-badges {
@@ -4395,6 +4397,7 @@
         @media (max-width: 999px) {
             text-align: center;
             font-size: 12px;
+            line-height: 20px;
         }
     }
     .btn-back {

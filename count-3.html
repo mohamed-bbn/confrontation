@@ -74,7 +74,28 @@
                             </p>
                             <!-- <i class="icon">👑</i> -->
                         </div>
+                        <div class="all-players">
+                            <div class="player-avatar">
+                                س
+                                <span class="online"></span>
+                            </div>
 
+                            <div class="player-avatar">
+                                ح
+                                <span class="online"></span>
+                            </div>
+
+                            <div class="player-avatar">
+                                ي
+                                <span class="online"></span>
+                            </div>
+
+                            <div class="player-avatar">
+                                ه
+                                <span class="online"></span>
+                            </div>
+
+                        </div>
                     </div>
                     <!-- End team-score -->
                     <div id="resultBox" class="result-box success">
@@ -122,7 +143,7 @@
                         <span class="num">1 / 10</span>
                     </div>
                     <!-- End res-name -->
-                    <div class="position-relative">
+                    <div class="timeitems">
                         <div class="d-question" id="">
                             <div class="timer-container">
                                 <div id="timerTextContainer" class="timer-text-container">
@@ -155,7 +176,7 @@
                         </div>
                     </div>
                     <div id="readyScreen">
-                        <span class="textchoose">اختيار من متعدد</span>
+                        <span class="textchoose">سؤال صور</span>
                         <div class="ready-timer-container">
                             <svg class="timer-svg" viewBox="0 0 130 130">
                             <circle class="timer-circle-bg" cx="65" cy="65" r="58"></circle>
@@ -914,26 +935,63 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/plugin.js"></script>
+
     <script>
         $(document).ready(function() {
             const pauseSvgHtml = '<svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1V15M7 1V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#000"/></svg>';
             const playSvgHtml = '<svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L11 8L1 15V1Z" fill="#000" stroke="#000" stroke-width="2" stroke-linejoin="round"/></svg>';
 
-            let inQuestionPhase = true;
+            let inQuestionPhase = false;
 
-            // إخفاء شاشة التمهيد وإظهار شاشة الأسئلة فوراً
-            $('#readyScreen').hide();
-            $('#questionScreen,.acion .num').fadeIn(300);
-            $('.site-questions').addClass("itemstart");
-            $('.all-players,.acion .ready').css({
-                "display": "none"
-            });
-            $('.listplayers,.d-question').css({
-                "display": "flex"
-            });
+            let readyTime = 1;
+            const readyMax = 3;
+            const readyDashArray = 364;
 
-            $('#timerSubtextContainer').css('display', 'flex');
-            $('#toggleTimerBtn svg').replaceWith(pauseSvgHtml);
+            let initialReadyOffset = readyDashArray - (1 / readyMax) * readyDashArray;
+            $('#readyProgress').css('stroke-dashoffset', initialReadyOffset);
+
+            let readyIsPaused = false;
+
+            let readyInterval = setInterval(function() {
+                if (!readyIsPaused) {
+                    readyTime++;
+                    if (readyTime <= readyMax) {
+                        $('#readyCount').text(readyTime);
+                        let offset = readyDashArray - (readyTime / readyMax) * readyDashArray;
+                        $('#readyProgress').css('stroke-dashoffset', offset);
+
+                        $('.ready-box').each(function() {
+                            if (parseInt($(this).attr('data-box')) <= readyTime) {
+                                $(this).addClass('active');
+                            }
+                        });
+                    } else {
+                        clearInterval(readyInterval);
+                        $('#readyScreen').fadeOut(300, function() {
+                            $('#questionScreen,.acion .num').fadeIn(300);
+                            $('.site-questions').addClass("itemstart");
+                            $('.all-players,.acion .ready').css({
+                                "display": "none"
+                            });
+                            $('.listplayers').css({
+                                "display": "flex"
+                            });
+                            $('.timeitems').css({
+                                "display": "block"
+                            });
+
+
+                            // $('#timerSubtextContainer').css('display', 'flex');
+
+                            inQuestionPhase = true;
+
+                            $('#toggleTimerBtn svg').replaceWith(pauseSvgHtml);
+
+                            startQuestionTimer();
+                        });
+                    }
+                }
+            }, 1000);
 
             let totalTime = 30;
             let currentTime = totalTime;
@@ -941,9 +999,6 @@
             let questionIsPaused = false;
             const fullDashArray = 264;
             let userAnswered = false;
-
-            // بدء مؤقت الأسئلة مباشرة
-            startQuestionTimer();
 
             function startQuestionTimer() {
                 timerInterval = setInterval(function() {
@@ -972,10 +1027,10 @@
                                 let randomWrong = wrongOptions.eq(Math.floor(Math.random() * wrongOptions.length));
                                 randomWrong.addClass('hidden-option');
                             }
-                            $('#timerSubtextContainer').text('انتهى الاختفاء — بقي خياران').css('color', '#555');
+                            $('#timerSubtextContainer').text('انتهى الاختفاء — بقي خياران');
                         }
 
-                        let offset = (1 - (currentTime / totalTime)) * fullDashArray;
+                        let offset = fullDashArray - (currentTime / totalTime) * fullDashArray;
                         $('#timerProgress').css('stroke-dashoffset', offset);
 
                         let barPercentage = (currentTime / totalTime) * 100;
@@ -991,7 +1046,8 @@
                             clearInterval(timerInterval);
                             userAnswered = true;
 
-                            $("#timerSubtextContainer").css('display', 'none');
+                            // $("#timerSubtextContainer").css('display', 'none');
+
                             $("#timeoutMessage, #closedAnswersMessage").css('display', 'block');
 
                             setTimeout(function() {
@@ -1005,7 +1061,12 @@
 
             $('#toggleTimerBtn').on('click', function() {
                 if (!inQuestionPhase) {
-                    // تم إلغاء مرحلة التمهيد، لذا لن يتم استخدام هذا الجزء غالباً
+                    readyIsPaused = !readyIsPaused;
+                    if (readyIsPaused) {
+                        $('#toggleTimerBtn svg').replaceWith(playSvgHtml);
+                    } else {
+                        $('#toggleTimerBtn svg').replaceWith(pauseSvgHtml);
+                    }
                 } else {
                     questionIsPaused = true;
                     $('#pauseModal').css('display', 'flex');
@@ -1028,14 +1089,16 @@
                 }
             });
 
+
             function showCorrectAnswer() {
                 questionIsPaused = true;
                 userAnswered = true;
 
-                $('#timerSubtextContainer').css('display', 'none');
+                // $('#timerSubtextContainer').css('display', 'none');
 
                 $('#resultBox').fadeIn();
-                $('.d-question').css('display', 'none');
+                $(".timeitems ").css('display', 'none');
+
                 $(".textwarning").css('display', 'flex');
 
                 $('.option-btn').each(function() {
@@ -1056,6 +1119,9 @@
                     $('.textres').css('display', 'none');
                 }, 6000);
             }
+            setInterval(function() {
+                $('.true-false-grid .option-btn').removeClass('hidden-option');
+            }, 10);
         });
     </script>
 </body>

@@ -144,7 +144,7 @@
                         <span class="num">1 / 10</span>
                     </div>
                     <!-- End res-name -->
-                    <div class="position-relative">
+                    <div class="timeitems">
                         <div class="d-question" id="">
                             <div class="timer-container">
                                 <div id="timerTextContainer" class="timer-text-container">
@@ -154,7 +154,7 @@
                                 <svg class="timer-svg" viewBox="0 0 100 100">
                                 <circle class="timer-circle-bg" cx="50" cy="50" r="42"></circle>
                                 <circle id="timerProgress" class="question-circle" cx="50" cy="50" r="42"></circle>
-                            </svg>
+                                </svg>
 
                             </div>
                             <!-- ENd timer-container -->
@@ -176,6 +176,7 @@
                             <span class="res-num">x2 الآن</span>
                         </div>
                     </div>
+                    <!-- End timeitems -->
                     <div id="readyScreen">
                         <span class="textchoose">اختيار من متعدد</span>
                         <div class="ready-timer-container">
@@ -275,8 +276,6 @@
                 <!-- ENd player-information -->
 
                 <div id="questionScreen" class="question-card">
-
-
                     <!-- End timer-subtext-container -->
                     <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p>
                     <div class="timer-bar-wrapper">
@@ -976,11 +975,15 @@
                             $('.all-players,.acion .ready').css({
                                 "display": "none"
                             });
-                            $('.listplayers,.d-question').css({
+                            $('.listplayers').css({
                                 "display": "flex"
                             });
+                            $('.timeitems').css({
+                                "display": "block"
+                            });
 
-                            $('#timerSubtextContainer').css('display', 'flex');
+
+                            // $('#timerSubtextContainer').css('display', 'flex');
 
                             inQuestionPhase = true;
 
@@ -1026,7 +1029,7 @@
                                 let randomWrong = wrongOptions.eq(Math.floor(Math.random() * wrongOptions.length));
                                 randomWrong.addClass('hidden-option');
                             }
-                            $('#timerSubtextContainer').text('انتهى الاختفاء — بقي خياران').css('color', '#555');
+                            $('#timerSubtextContainer').text('انتهى الاختفاء — بقي خياران');
                         }
 
                         let offset = fullDashArray - (currentTime / totalTime) * fullDashArray;
@@ -1045,7 +1048,7 @@
                             clearInterval(timerInterval);
                             userAnswered = true;
 
-                            $("#timerSubtextContainer").css('display', 'none');
+                            // $("#timerSubtextContainer").css('display', 'none');
 
                             $("#timeoutMessage, #closedAnswersMessage").css('display', 'block');
 
@@ -1093,10 +1096,11 @@
                 questionIsPaused = true;
                 userAnswered = true;
 
-                $('#timerSubtextContainer').css('display', 'none');
+                // $('#timerSubtextContainer').css('display', 'none');
 
                 $('#resultBox').fadeIn();
-                $('.d-question').css('display', 'none');
+                $(".timeitems ").css('display', 'none');
+
                 $(".textwarning").css('display', 'flex');
 
                 $('.option-btn').each(function() {
@@ -1117,6 +1121,9 @@
                     $('.textres').css('display', 'none');
                 }, 6000);
             }
+            setInterval(function() {
+                $('.true-false-grid .option-btn').removeClass('hidden-option');
+            }, 10);
         });
     </script>
 
