@@ -30,7 +30,7 @@
                 </div>
                 <!-- ENd d-flex -->
                 <div class="d-item">
-                    <p class="text">سؤال <span> 4 </span> من <span>10</span></p>
+                    <p class="text">سؤال <span> 5 </span> من <span>10</span></p>
                     <ul class="list-line mo-hide">
                         <li class="active"></li>
                         <li class="active"></li>
@@ -294,8 +294,10 @@
                     </div>
                     <!-- End item-question -->
 
-                    <div class="options-grid">
-                        <button class="option-btn" data-answer="wrong">
+                    <div class="identify-image">
+
+                        <div class="options-grid">
+                            <button class="option-btn" data-answer="wrong">
                                 <div class="d-flex">
                                     <span class="option-letter">أ</span>
                                     <span class="text">البتراء</span>
@@ -325,8 +327,8 @@
                                         </svg>  خطأ
                                     </span>
                                 </div>
-                        </button>
-                        <button class="option-btn" data-answer="correct">
+                           </button>
+                            <button class="option-btn" data-answer="correct">
                                 <div class="d-flex">
                                    <span class="option-letter">ب</span>
                                    <span  class="text">أهرامات الجيزة</span>
@@ -339,10 +341,6 @@
                                         اختفى
                                     </span>
                                     <div class="list-player">
-                                        <div class="player-avatar yellow">
-                                            س
-                                            <span class="online"></span>
-                                        </div>
                                         <div class="player-avatar red">
                                             ع
                                             <span class="online"></span>
@@ -367,7 +365,7 @@
                                     </span>
                                 </div>
                         </button>
-                        <button class="option-btn" data-answer="wrong">
+                            <button class="option-btn" data-answer="wrong">
                                 <div class="d-flex">
                                   <span class="option-letter">ج</span>
                                    <span  class="text">سور الصين</span>
@@ -399,7 +397,7 @@
                                 
                                </div>
                         </button>
-                        <button class="option-btn" data-answer="wrong">
+                            <button class="option-btn" data-answer="wrong">
                                <div class="d-flex">
                                   <span class="option-letter">د</span>
                                   <span class="text">تاج محل</span>
@@ -430,10 +428,19 @@
                                     </span>
                                 </div>
                         </button>
+                        </div>
+                        <!-- ENd options-grid -->
+
+                        <div class="card-photo">
+                            <div class="image-wrapper">
+                                <img src="images/pyramids.jpg" alt="صورة الأهرامات" class="card-image" id="quizImage">
+                            </div>
+                            <div class="card-text" id="statusText">
+                                الصورة بتوضح أكثر بعد <span id="timer">7</span> ثانية
+                            </div>
+                        </div>
+
                     </div>
-                    <!-- ENd options-grid -->
-
-
 
 
                     <!-- ENd options-grid -->
@@ -943,9 +950,6 @@
     <script src="js/slick.min.js"></script>
     <script src="js/plugin.js"></script>
 
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-
     <script>
         $(document).ready(function() {
             const pauseSvgHtml = '<svg width="8" height="16" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1V15M7 1V15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#000"/></svg>';
@@ -1134,8 +1138,58 @@
             }, 10);
         });
     </script>
+    <script>
+        $(document).ready(function() {
+            let imageTimeLeft = 7;
+            let imageInterval = null;
+            let imageStarted = false;
+            let myImagePaused = false;
+
+            function startImageTimer() {
+                if (imageStarted) return;
+                imageStarted = true;
 
 
+                $("#quizImage").addClass("clear");
+
+                imageInterval = setInterval(function() {
+                    if (myImagePaused) {
+                        return;
+                    }
+
+                    imageTimeLeft--;
+                    if (imageTimeLeft > 0) {
+                        $("#timer").text(imageTimeLeft);
+                    } else {
+                        clearInterval(imageInterval);
+                        $("#statusText").fadeOut(500);
+                    }
+                }, 1000);
+            }
+
+            const checkStart = setInterval(function() {
+                if ($("#questionScreen").is(":visible") && !imageStarted) {
+                    startImageTimer();
+                    clearInterval(checkStart);
+                }
+            }, 100);
+
+            $('#toggleTimerBtn').on('click', function(e) {
+                myImagePaused = !myImagePaused;
+
+                if (myImagePaused) {
+                    $("#quizImage").css("animation-play-state", "paused");
+                } else {
+                    $("#quizImage").css("animation-play-state", "running");
+                }
+            });
+
+            $('#resumeBtn').on('click', function() {
+                myImagePaused = false;
+                $("#quizImage").css("animation-play-state", "running");
+            });
+        });
+    </script>
 </body>
 
 </html>
