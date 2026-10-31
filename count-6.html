@@ -175,6 +175,7 @@
                             يختفي حرف زائد <span id="subtextNumber">7</span> ثانية
                             <span class="res-num">x2 الآن</span>
                         </div>
+                        <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p>
                     </div>
                     <div id="readyScreen">
                         <span class="textchoose">  كلمات بحروف</span>
@@ -276,7 +277,7 @@
 
                 <div id="questionScreen" class="question-card">
                     <!-- End timer-subtext-container -->
-                    <!-- <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p> -->
+
                     <div class="timer-bar-wrapper">
                         <div class="timer-bar-header">
                             <span>المتبقي</span>
@@ -969,7 +970,7 @@
                             clearInterval(timerInterval);
                             userAnswered = true;
 
-                            // $("#timerSubtextContainer").css('display', 'none');
+                            $("#timerSubtextContainer").css('display', 'none');
 
                             $("#timeoutMessage, #closedAnswersMessage").css('display', 'block');
 
@@ -1034,13 +1035,13 @@
                     }
                 });
 
-                // setTimeout(function() {
-                //     $('#change-text').text('التناغم = +100 عندما يُصيب الفريق كله · الأسرع = +50');
-                //     $('.footer-widget p').css('width', '100%');
-                //     $('#questionScreen, .player-information,.listplayers').css('display', 'none');
-                //     $('#nextPhaseScreen').css('display', 'block');
-                //     $('.textres').css('display', 'none');
-                // }, 6000);
+                setTimeout(function() {
+                    $('#change-text').text('التناغم = +100 عندما يُصيب الفريق كله · الأسرع = +50');
+                    $('.footer-widget p').css('width', '100%');
+                    $('#questionScreen, .player-information,.listplayers').css('display', 'none');
+                    $('#nextPhaseScreen').css('display', 'block');
+                    $('.textres').css('display', 'none');
+                }, 6000);
             }
             setInterval(function() {
                 $('.true-false-grid .option-btn').removeClass('hidden-option');
@@ -1048,113 +1049,229 @@
         });
     </script>
 
+
     <script>
         $(document).ready(function() {
+
             const correctAnswer = ["ع", "م", "ا", "ن"];
 
             let extraLetter1Dimmed = false;
             let extraLetter2Dimmed = false;
             let finalAnswerProcessed = false;
 
+            // Monitor Timer
             const screenMonitor = setInterval(function() {
-                if (typeof questionIsPaused !== 'undefined' && questionIsPaused) {
+
+                if (
+                    typeof questionIsPaused !== 'undefined' &&
+                    questionIsPaused
+                ) {
                     return;
                 }
 
-                let displayedTime = parseInt($('#timerText2').text()) || parseInt($('#barTimerText').text());
+                let timerText =
+                    $('#timerText2').text().trim() ||
+                    $('#barTimerText').text().trim();
+
+                let displayedTime = parseInt(timerText, 10);
+
                 if (isNaN(displayedTime)) return;
 
-                if (displayedTime === 23 && !extraLetter1Dimmed) {
+                // Dim First Extra Letter
+                if (displayedTime <= 23 && !extraLetter1Dimmed) {
+
                     extraLetter1Dimmed = true;
+
                     dimExtraLetter(0);
                 }
 
-                if (displayedTime === 16 && !extraLetter2Dimmed) {
+                // Dim Second Extra Letter
+                if (displayedTime <= 16 && !extraLetter2Dimmed) {
+
                     extraLetter2Dimmed = true;
+
                     dimExtraLetter(1);
-                    $('#timerSubtextContainer').text('اختفت الحروف الزائدة');
+
+                    $('#timerSubtextContainer')
+                        .text('اختفت الحروف الزائدة');
                 }
 
+                // Timer Finished
                 if (displayedTime <= 0 && !finalAnswerProcessed) {
+
                     finalAnswerProcessed = true;
 
                     const checkTimeout = setInterval(function() {
+
                         const $msg = $("#timeoutMessage");
-                        if ($msg.length === 0 || $msg.is(":hidden") || $msg.css("display") === "none") {
+
+                        if (
+                            $msg.length === 0 ||
+                            $msg.is(":hidden") ||
+                            $msg.css("display") === "none"
+                        ) {
+
                             clearInterval(checkTimeout);
+
                             showCorrectAnswerWithGreen();
                         }
+
                     }, 50);
 
                     clearInterval(screenMonitor);
                 }
+
             }, 100);
 
+
+            // Dim Extra Letter
             function dimExtraLetter(index) {
-                const $extraBtn = $('.letter-btn.extra-btn').eq(index);
-                if ($extraBtn.length > 0) {
-                    $('.box').each(function() {
-                        if ($(this).data('btn') && $(this).data('btn').is($extraBtn)) {
-                            $(this).text('').removeData('btn');
-                        }
-                    });
-                    $extraBtn.addClass('dimmed-extra');
-                }
+
+                const $extraBtn =
+                    $('.letter-btn.extra-btn').eq(index);
+
+                if (!$extraBtn.length) return;
+
+                $('.box').each(function() {
+
+                    const $box = $(this);
+                    const $linkedBtn = $box.data('btn');
+
+                    if ($linkedBtn && $linkedBtn.is($extraBtn)) {
+
+                        $box.text('').removeData('btn');
+                    }
+
+                });
+
+                $extraBtn
+                    .removeClass('used')
+                    .addClass('dimmed-extra');
             }
 
+
+            // Show Correct Answer
             function showCorrectAnswerWithGreen() {
-                $('.box').off('click');
+
                 $('.letters-grid').css({
-                    'display': 'none',
-                    'pointer-events': 'none'
+                    display: 'none',
+                    pointerEvents: 'none'
                 });
 
                 $('.box').each(function(index) {
+
+                    const $box = $(this);
+
+                    $box.removeData('btn');
+
                     if (index < correctAnswer.length) {
-                        $(this).text(correctAnswer[index]).addClass('correct');
+
+                        $box
+                            .text(correctAnswer[index])
+                            .addClass('correct');
                     }
+
                 });
+
                 $('.results-bar').css('display', 'flex');
             }
 
+
+            // Click Letter Button
             $(document).on('click', '.letter-btn', function(e) {
-                if (finalAnswerProcessed || (typeof questionIsPaused !== 'undefined' && questionIsPaused)) {
+
+                if (
+                    finalAnswerProcessed ||
+                    (
+                        typeof questionIsPaused !== 'undefined' &&
+                        questionIsPaused
+                    )
+                ) {
                     e.stopImmediatePropagation();
                     return false;
                 }
-                if ($(this).hasClass('dimmed-extra') || $(this).hasClass('used')) return;
 
-
-                const letter = $(this).text();
                 const $btn = $(this);
 
-                let $emptyBox = $('.box').filter(function() {
+                // Prevent Dimmed Letters
+                if ($btn.hasClass('dimmed-extra')) {
+                    return;
+                }
+
+                // If Letter Already Used
+                if ($btn.hasClass('used')) {
+
+                    $('.box').each(function() {
+
+                        const $box = $(this);
+                        const $linkedBtn = $box.data('btn');
+
+                        if ($linkedBtn && $linkedBtn.is($btn)) {
+
+                            $box.text('').removeData('btn');
+                        }
+
+                    });
+
+                    $btn.removeClass('used');
+
+                    return;
+                }
+
+                // Get Letter
+                const letter = $btn.text().trim();
+
+                // Find First Empty Box
+                const $emptyBox = $('.box').filter(function() {
+
                     return $(this).text().trim() === '';
+
                 }).first();
 
-                if ($emptyBox.length > 0) {
+                // Add Letter To Box
+                if ($emptyBox.length) {
+
                     $emptyBox.text(letter);
+
                     $emptyBox.data('btn', $btn);
+
                     $btn.addClass('used');
                 }
+
             });
 
-            $(document).on('click', '.box', function() {
-                if (finalAnswerProcessed || (typeof questionIsPaused !== 'undefined' && questionIsPaused)) return;
-                const $box = $(this);
-                const letter = $box.text().trim();
 
-                if (letter !== '') {
-                    const $linkedBtn = $box.data('btn');
-                    if ($linkedBtn) {
-                        $linkedBtn.removeClass('used');
-                    }
+            // Click Box To Remove Letter
+            $(document).on('click', '.box', function() {
+
+                if (
+                    finalAnswerProcessed ||
+                    (
+                        typeof questionIsPaused !== 'undefined' &&
+                        questionIsPaused
+                    )
+                ) {
+                    return;
+                }
+
+                const $box = $(this);
+
+                const $linkedBtn = $box.data('btn');
+
+                if ($linkedBtn) {
+
+                    // Remove Used Class
+                    $linkedBtn.removeClass('used');
+
+                    // Clear Box
                     $box.text('').removeData('btn');
                 }
+
             });
 
         });
     </script>
+
 </body>
 
 </html>

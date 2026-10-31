@@ -8053,6 +8053,16 @@
       color: #C77A00 !important;
       transition: color 0.3s ease;
       font-family: "roobert-arabic-trial-bold"; }
+      @media (max-width: 999px) {
+        .site-questions .main-container .timer-subtext-container {
+          display: flex;
+          position: absolute;
+          top: 18px;
+          left: 12px;
+          margin: 0px; } }
+      @media (max-width: 550px) {
+        .site-questions .main-container .timer-subtext-container {
+          font-size: 12px; } }
       .site-questions .main-container .timer-subtext-container .subtext-number,
       .site-questions .main-container .timer-subtext-container .subtext-label {
         color: #C77A00; }
@@ -8064,20 +8074,11 @@
         color: #fff;
         font-size: 12px;
         font-family: "roobert-arabic-trial-bold"; }
-      @media (max-width: 999px) {
-        .site-questions .main-container .timer-subtext-container {
-          display: flex;
-          position: absolute;
-          top: 18px;
-          left: 12px;
-          margin: 0px; }
+        @media (max-width: 999px) {
           .site-questions .main-container .timer-subtext-container .res-num {
             display: flex;
             align-items: center;
             justify-content: center; } }
-      @media (max-width: 550px) {
-        .site-questions .main-container .timer-subtext-container {
-          font-size: 12px; } }
     .site-questions .main-container .question-card {
       margin: 0px auto;
       max-width: 726px; }
@@ -8129,6 +8130,37 @@
               color: #fff;
               font-size: 22px;
               text-align: center; } }
+        .site-questions .main-container .question-card .item-question .interrogation {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          margin-top: 4px;
+          zoom: 73%; }
+          @media (min-width: 1600px) {
+            .site-questions .main-container .question-card .item-question .interrogation {
+              zoom: 100%;
+              margin-top: 16px; } }
+          @media (max-width: 999px) {
+            .site-questions .main-container .question-card .item-question .interrogation {
+              display: none; } }
+          .site-questions .main-container .question-card .item-question .interrogation li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+            max-width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #410179;
+            color: #ffde65;
+            font-family: 'roobert-arabic-trial-bold';
+            font-size: 24px; }
+            @media (min-width: 1600px) {
+              .site-questions .main-container .question-card .item-question .interrogation li {
+                min-width: 46px;
+                max-width: 46px;
+                height: 56px; } }
     .site-questions .main-container .textwarning {
       display: none;
       align-items: center;
@@ -8156,14 +8188,11 @@
       width: 100%;
       height: 100%;
       z-index: 1005; }
-      @media (min-width: 19600px) {
+      @media (min-width: 1900px) {
         .site-questions .main-container .timeout-box {
           position: relative;
           width: auto;
           height: auto;
-          margin-top: 14px; } }
-      @media (min-width: 1900px) {
-        .site-questions .main-container .timeout-box {
           margin-top: 16px; } }
       .site-questions .main-container .timeout-box::before {
         content: "";
@@ -8236,6 +8265,11 @@
       color: #C77A00;
       margin-bottom: 12px;
       font-family: "roobert-arabic-trial-bold"; }
+      @media (max-width: 999px) {
+        .site-questions .main-container .closed-answers-box {
+          position: absolute;
+          top: 18px;
+          left: 12px; } }
   .site-questions .timeitems {
     position: relative;
     display: none; }
@@ -8402,7 +8436,8 @@
     color: #111; }
   .site-questions .options-grid,
   .site-questions .true-false-grid,
-  .site-questions .question-images {
+  .site-questions .question-images,
+  .site-questions .memory-game {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -8410,12 +8445,14 @@
     @media (max-width: 767px) {
       .site-questions .options-grid,
       .site-questions .true-false-grid,
-      .site-questions .question-images {
+      .site-questions .question-images,
+      .site-questions .memory-game {
         grid-template-columns: 1fr;
         gap: 14px; } }
     .site-questions .options-grid .option-btn,
     .site-questions .true-false-grid .option-btn,
-    .site-questions .question-images .option-btn {
+    .site-questions .question-images .option-btn,
+    .site-questions .memory-game .option-btn {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -8430,27 +8467,32 @@
       @media (min-width: 1900px) {
         .site-questions .options-grid .option-btn,
         .site-questions .true-false-grid .option-btn,
-        .site-questions .question-images .option-btn {
+        .site-questions .question-images .option-btn,
+        .site-questions .memory-game .option-btn {
           padding: 18px; } }
       @media (max-width: 767px) {
         .site-questions .options-grid .option-btn,
         .site-questions .true-false-grid .option-btn,
-        .site-questions .question-images .option-btn {
+        .site-questions .question-images .option-btn,
+        .site-questions .memory-game .option-btn {
           gap: 0px; } }
       .site-questions .options-grid .option-btn .d-flex,
       .site-questions .true-false-grid .option-btn .d-flex,
-      .site-questions .question-images .option-btn .d-flex {
+      .site-questions .question-images .option-btn .d-flex,
+      .site-questions .memory-game .option-btn .d-flex {
         display: flex;
         align-items: center;
         gap: 16px; }
         @media (max-width: 767px) {
           .site-questions .options-grid .option-btn .d-flex,
           .site-questions .true-false-grid .option-btn .d-flex,
-          .site-questions .question-images .option-btn .d-flex {
+          .site-questions .question-images .option-btn .d-flex,
+          .site-questions .memory-game .option-btn .d-flex {
             gap: 8px; } }
       .site-questions .options-grid .option-btn .option-letter,
       .site-questions .true-false-grid .option-btn .option-letter,
-      .site-questions .question-images .option-btn .option-letter {
+      .site-questions .question-images .option-btn .option-letter,
+      .site-questions .memory-game .option-btn .option-letter {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -8465,30 +8507,35 @@
         @media (min-width: 1900px) {
           .site-questions .options-grid .option-btn .option-letter,
           .site-questions .true-false-grid .option-btn .option-letter,
-          .site-questions .question-images .option-btn .option-letter {
+          .site-questions .question-images .option-btn .option-letter,
+          .site-questions .memory-game .option-btn .option-letter {
             min-width: 56px;
             max-width: 56px;
             height: 56px;
             font-size: 24px; } }
       .site-questions .options-grid .option-btn .text,
       .site-questions .true-false-grid .option-btn .text,
-      .site-questions .question-images .option-btn .text {
+      .site-questions .question-images .option-btn .text,
+      .site-questions .memory-game .option-btn .text {
         color: #000;
         font-size: 20px;
         font-family: "roobert-arabic-trial-bold"; }
         @media (min-width: 1900px) {
           .site-questions .options-grid .option-btn .text,
           .site-questions .true-false-grid .option-btn .text,
-          .site-questions .question-images .option-btn .text {
+          .site-questions .question-images .option-btn .text,
+          .site-questions .memory-game .option-btn .text {
             font-size: 32px; } }
         @media (max-width: 767px) {
           .site-questions .options-grid .option-btn .text,
           .site-questions .true-false-grid .option-btn .text,
-          .site-questions .question-images .option-btn .text {
+          .site-questions .question-images .option-btn .text,
+          .site-questions .memory-game .option-btn .text {
             font-size: 18px; } }
       .site-questions .options-grid .option-btn .disappear,
       .site-questions .true-false-grid .option-btn .disappear,
-      .site-questions .question-images .option-btn .disappear {
+      .site-questions .question-images .option-btn .disappear,
+      .site-questions .memory-game .option-btn .disappear {
         display: none;
         font-size: 14px;
         padding: 0px 8px;
@@ -8496,15 +8543,18 @@
         @media (min-width: 1900px) {
           .site-questions .options-grid .option-btn .disappear,
           .site-questions .true-false-grid .option-btn .disappear,
-          .site-questions .question-images .option-btn .disappear {
+          .site-questions .question-images .option-btn .disappear,
+          .site-questions .memory-game .option-btn .disappear {
             font-size: 16px; } }
       .site-questions .options-grid .option-btn .list-player,
       .site-questions .true-false-grid .option-btn .list-player,
-      .site-questions .question-images .option-btn .list-player {
+      .site-questions .question-images .option-btn .list-player,
+      .site-questions .memory-game .option-btn .list-player {
         display: none; }
         .site-questions .options-grid .option-btn .list-player .player-avatar,
         .site-questions .true-false-grid .option-btn .list-player .player-avatar,
-        .site-questions .question-images .option-btn .list-player .player-avatar {
+        .site-questions .question-images .option-btn .list-player .player-avatar,
+        .site-questions .memory-game .option-btn .list-player .player-avatar {
           position: relative;
           display: flex;
           align-items: center;
@@ -8521,19 +8571,23 @@
           font-family: "roobert-arabic-trial-bold"; }
           .site-questions .options-grid .option-btn .list-player .player-avatar.yellow,
           .site-questions .true-false-grid .option-btn .list-player .player-avatar.yellow,
-          .site-questions .question-images .option-btn .list-player .player-avatar.yellow {
+          .site-questions .question-images .option-btn .list-player .player-avatar.yellow,
+          .site-questions .memory-game .option-btn .list-player .player-avatar.yellow {
             background: #F9AF19; }
           .site-questions .options-grid .option-btn .list-player .player-avatar.red,
           .site-questions .true-false-grid .option-btn .list-player .player-avatar.red,
-          .site-questions .question-images .option-btn .list-player .player-avatar.red {
+          .site-questions .question-images .option-btn .list-player .player-avatar.red,
+          .site-questions .memory-game .option-btn .list-player .player-avatar.red {
             background: #F60037; }
             .site-questions .options-grid .option-btn .list-player .player-avatar.red .online,
             .site-questions .true-false-grid .option-btn .list-player .player-avatar.red .online,
-            .site-questions .question-images .option-btn .list-player .player-avatar.red .online {
+            .site-questions .question-images .option-btn .list-player .player-avatar.red .online,
+            .site-questions .memory-game .option-btn .list-player .player-avatar.red .online {
               background: #F9AF19; }
           .site-questions .options-grid .option-btn .list-player .player-avatar .online,
           .site-questions .true-false-grid .option-btn .list-player .player-avatar .online,
-          .site-questions .question-images .option-btn .list-player .player-avatar .online {
+          .site-questions .question-images .option-btn .list-player .player-avatar .online,
+          .site-questions .memory-game .option-btn .list-player .player-avatar .online {
             position: absolute;
             left: 0px;
             bottom: 0px;
@@ -8550,7 +8604,10 @@
       .site-questions .true-false-grid .option-btn .retreat,
       .site-questions .question-images .option-btn .textcorrect,
       .site-questions .question-images .option-btn .mistake,
-      .site-questions .question-images .option-btn .retreat {
+      .site-questions .question-images .option-btn .retreat,
+      .site-questions .memory-game .option-btn .textcorrect,
+      .site-questions .memory-game .option-btn .mistake,
+      .site-questions .memory-game .option-btn .retreat {
         display: none;
         height: 25px;
         padding: 0px 8px;
@@ -8568,30 +8625,38 @@
           .site-questions .true-false-grid .option-btn .retreat,
           .site-questions .question-images .option-btn .textcorrect,
           .site-questions .question-images .option-btn .mistake,
-          .site-questions .question-images .option-btn .retreat {
+          .site-questions .question-images .option-btn .retreat,
+          .site-questions .memory-game .option-btn .textcorrect,
+          .site-questions .memory-game .option-btn .mistake,
+          .site-questions .memory-game .option-btn .retreat {
             font-size: 16px; } }
       .site-questions .options-grid .option-btn .mistake,
       .site-questions .true-false-grid .option-btn .mistake,
-      .site-questions .question-images .option-btn .mistake {
+      .site-questions .question-images .option-btn .mistake,
+      .site-questions .memory-game .option-btn .mistake {
         background: #F60037;
         color: #fff; }
       .site-questions .options-grid .option-btn.selected,
       .site-questions .true-false-grid .option-btn.selected,
-      .site-questions .question-images .option-btn.selected {
+      .site-questions .question-images .option-btn.selected,
+      .site-questions .memory-game .option-btn.selected {
         box-shadow: inset 0 0 0 3px #410179;
         background: #F4EEFB; }
         .site-questions .options-grid .option-btn.selected .option-letter,
         .site-questions .true-false-grid .option-btn.selected .option-letter,
-        .site-questions .question-images .option-btn.selected .option-letter {
+        .site-questions .question-images .option-btn.selected .option-letter,
+        .site-questions .memory-game .option-btn.selected .option-letter {
           background: #410179;
           color: #fff; }
         .site-questions .options-grid .option-btn.selected .text,
         .site-questions .true-false-grid .option-btn.selected .text,
-        .site-questions .question-images .option-btn.selected .text {
+        .site-questions .question-images .option-btn.selected .text,
+        .site-questions .memory-game .option-btn.selected .text {
           color: #410179; }
         .site-questions .options-grid .option-btn.selected .retreat,
         .site-questions .true-false-grid .option-btn.selected .retreat,
-        .site-questions .question-images .option-btn.selected .retreat {
+        .site-questions .question-images .option-btn.selected .retreat,
+        .site-questions .memory-game .option-btn.selected .retreat {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -8600,74 +8665,93 @@
           background: #410179; }
       .site-questions .options-grid .option-btn.correct,
       .site-questions .true-false-grid .option-btn.correct,
-      .site-questions .question-images .option-btn.correct {
+      .site-questions .question-images .option-btn.correct,
+      .site-questions .memory-game .option-btn.correct {
         box-shadow: inset 0 0 0 3px #1FA463;
         background: #E3F6EC; }
         .site-questions .options-grid .option-btn.correct .retreat,
         .site-questions .true-false-grid .option-btn.correct .retreat,
-        .site-questions .question-images .option-btn.correct .retreat {
+        .site-questions .question-images .option-btn.correct .retreat,
+        .site-questions .memory-game .option-btn.correct .retreat {
           display: none; }
         .site-questions .options-grid .option-btn.correct .option-letter,
         .site-questions .true-false-grid .option-btn.correct .option-letter,
-        .site-questions .question-images .option-btn.correct .option-letter {
+        .site-questions .question-images .option-btn.correct .option-letter,
+        .site-questions .memory-game .option-btn.correct .option-letter {
           background: #1FA463;
           color: #fff; }
         .site-questions .options-grid .option-btn.correct .list-player,
         .site-questions .true-false-grid .option-btn.correct .list-player,
-        .site-questions .question-images .option-btn.correct .list-player {
+        .site-questions .question-images .option-btn.correct .list-player,
+        .site-questions .memory-game .option-btn.correct .list-player {
           display: flex;
           align-items: center; }
         .site-questions .options-grid .option-btn.correct .textcorrect,
         .site-questions .true-false-grid .option-btn.correct .textcorrect,
-        .site-questions .question-images .option-btn.correct .textcorrect {
+        .site-questions .question-images .option-btn.correct .textcorrect,
+        .site-questions .memory-game .option-btn.correct .textcorrect {
           display: flex;
           align-items: center;
           justify-content: center; }
       .site-questions .options-grid .option-btn.wrong,
       .site-questions .true-false-grid .option-btn.wrong,
-      .site-questions .question-images .option-btn.wrong {
+      .site-questions .question-images .option-btn.wrong,
+      .site-questions .memory-game .option-btn.wrong {
         box-shadow: inset 0 0 0 3px #F60037;
         background: #FFE5EB; }
         .site-questions .options-grid .option-btn.wrong .retreat,
         .site-questions .true-false-grid .option-btn.wrong .retreat,
-        .site-questions .question-images .option-btn.wrong .retreat {
+        .site-questions .question-images .option-btn.wrong .retreat,
+        .site-questions .memory-game .option-btn.wrong .retreat {
           display: none; }
         .site-questions .options-grid .option-btn.wrong .list-player,
         .site-questions .true-false-grid .option-btn.wrong .list-player,
-        .site-questions .question-images .option-btn.wrong .list-player {
+        .site-questions .question-images .option-btn.wrong .list-player,
+        .site-questions .memory-game .option-btn.wrong .list-player {
           display: flex;
           align-items: center; }
         .site-questions .options-grid .option-btn.wrong .option-letter,
         .site-questions .true-false-grid .option-btn.wrong .option-letter,
-        .site-questions .question-images .option-btn.wrong .option-letter {
+        .site-questions .question-images .option-btn.wrong .option-letter,
+        .site-questions .memory-game .option-btn.wrong .option-letter {
           background: #F60037;
           color: #fff; }
         .site-questions .options-grid .option-btn.wrong .mistake,
         .site-questions .true-false-grid .option-btn.wrong .mistake,
-        .site-questions .question-images .option-btn.wrong .mistake {
+        .site-questions .question-images .option-btn.wrong .mistake,
+        .site-questions .memory-game .option-btn.wrong .mistake {
           display: flex;
           align-items: center;
           justify-content: center; }
   .site-questions .options-grid .option-btn.hidden-option,
-  .site-questions .question-images .option-btn.hidden-option {
+  .site-questions .question-images .option-btn.hidden-option,
+  .site-questions .memory-game .option-btn.hidden-option {
     opacity: 0.6;
     pointer-events: none;
     background: none;
     box-shadow: none;
     border: 2px dashed #CFC4DF; }
+    .site-questions .options-grid .option-btn.hidden-option::after,
+    .site-questions .question-images .option-btn.hidden-option::after,
+    .site-questions .memory-game .option-btn.hidden-option::after {
+      display: none; }
     .site-questions .options-grid .option-btn.hidden-option .text,
-    .site-questions .question-images .option-btn.hidden-option .text {
+    .site-questions .question-images .option-btn.hidden-option .text,
+    .site-questions .memory-game .option-btn.hidden-option .text {
       color: #9A9A9A;
       text-decoration: line-through; }
     .site-questions .options-grid .option-btn.hidden-option .option-letter,
-    .site-questions .question-images .option-btn.hidden-option .option-letter {
+    .site-questions .question-images .option-btn.hidden-option .option-letter,
+    .site-questions .memory-game .option-btn.hidden-option .option-letter {
       background: #ECE8F2;
       color: #410179; }
     .site-questions .options-grid .option-btn.hidden-option .retreat,
-    .site-questions .question-images .option-btn.hidden-option .retreat {
+    .site-questions .question-images .option-btn.hidden-option .retreat,
+    .site-questions .memory-game .option-btn.hidden-option .retreat {
       display: none; }
     .site-questions .options-grid .option-btn.hidden-option .disappear,
-    .site-questions .question-images .option-btn.hidden-option .disappear {
+    .site-questions .question-images .option-btn.hidden-option .disappear,
+    .site-questions .memory-game .option-btn.hidden-option .disappear {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -8681,7 +8765,8 @@
       line-height: 1; }
       @media (min-width: 1900px) {
         .site-questions .options-grid .option-btn.hidden-option .disappear,
-        .site-questions .question-images .option-btn.hidden-option .disappear {
+        .site-questions .question-images .option-btn.hidden-option .disappear,
+        .site-questions .memory-game .option-btn.hidden-option .disappear {
           font-size: 16px; } }
   @media (max-width: 767px) {
     .site-questions .true-false-grid {
@@ -8771,7 +8856,8 @@
           @media (min-width: 1900px) {
             .site-questions .question-images .option-btn .d-flex .photo {
               font-size: 74px; } }
-          .site-questions .question-images .option-btn .d-flex .photo img {
+          .site-questions .question-images .option-btn .d-flex .photo img,
+          .site-questions .question-images .option-btn .d-flex .photo svg {
             max-width: 100%;
             max-height: 100%; }
         .site-questions .question-images .option-btn .d-flex .player-name {
@@ -8784,6 +8870,68 @@
             .site-questions .question-images .option-btn .d-flex .player-name {
               font-size: 28px;
               margin-top: 8px; } }
+  .site-questions .memory-game {
+    grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 767px) {
+      .site-questions .memory-game {
+        grid-template-columns: repeat(2, 1fr); } }
+    .site-questions .memory-game .option-btn {
+      display: block;
+      overflow: hidden; }
+      .site-questions .memory-game .option-btn .d-flex {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        height: 100%; }
+        .site-questions .memory-game .option-btn .d-flex .list-player {
+          position: absolute;
+          bottom: 16px;
+          left: 0px; }
+        .site-questions .memory-game .option-btn .d-flex .disappear,
+        .site-questions .memory-game .option-btn .d-flex .retreat,
+        .site-questions .memory-game .option-btn .d-flex .textcorrect,
+        .site-questions .memory-game .option-btn .d-flex .mistake {
+          position: absolute;
+          top: 0px;
+          left: 0px; }
+      .site-questions .memory-game .option-btn .photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px; }
+        @media (min-width: 1600px) {
+          .site-questions .memory-game .option-btn .photo {
+            height: 164px; } }
+        .site-questions .memory-game .option-btn .photo img {
+          max-width: 100%;
+          max-height: 100%; }
+      .site-questions .memory-game .option-btn::after, .site-questions .memory-game .option-btn::before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        content: "؟";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background: #410179;
+        color: #fff;
+        font-size: 80px;
+        font-family: 'roobert-arabic-trial-bold'; }
+      .site-questions .memory-game .option-btn::before {
+        content: "";
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        left: 10px;
+        top: 10px;
+        background: none;
+        border: 2.63px dashed #FFFFFF33;
+        border-radius: 24px;
+        z-index: 1; }
+      .site-questions .memory-game .option-btn.selected::after, .site-questions .memory-game .option-btn.selected::before, .site-questions .memory-game .option-btn.correct::after, .site-questions .memory-game .option-btn.correct::before, .site-questions .memory-game .option-btn.wrong::after, .site-questions .memory-game .option-btn.wrong::before {
+        display: none; }
   .site-questions .cards-ordering {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -8804,6 +8952,15 @@
         background: #1fa463;
         color: #fff; }
       .site-questions .cards-ordering.completed .event-card .event-year {
+        display: block; }
+    .site-questions .cards-ordering.er-mistake .event-card {
+      background: #FFE5EB;
+      box-shadow: inset 0 0 0 3px #F60037;
+      cursor: default; }
+      .site-questions .cards-ordering.er-mistake .event-card .icon-circle {
+        background: #F60037;
+        color: #fff; }
+      .site-questions .cards-ordering.er-mistake .event-card .event-year {
         display: block; }
     .site-questions .cards-ordering .event-card {
       display: flex;
@@ -8877,13 +9034,24 @@
           .site-questions .cards-ordering .event-card .event-year {
             position: absolute;
             inset-inline-end: 18px; } }
-    .site-questions .cards-ordering .ui-sortable-placeholder {
-      flex: 1;
-      min-height: 100px;
-      border: 2px dashed #d1c4e9;
-      background: none;
-      border-radius: 24px;
-      visibility: visible !important; }
+  .site-questions #sortable .event-card {
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none; }
+  .site-questions #sortable .ui-sortable-placeholder {
+    flex: 1;
+    min-height: 100px;
+    box-shadow: 0 0 0 1px transparent;
+    border: 2px dashed #d1c4e9;
+    background: none;
+    border-radius: 24px;
+    visibility: visible !important;
+    box-sizing: border-box; }
+  .site-questions .ui-sortable-helper {
+    flex: none !important;
+    opacity: 1 !important;
+    z-index: 99999 !important;
+    cursor: grabbing; }
   .site-questions .result-box {
     display: none;
     width: 100%;
@@ -9313,6 +9481,10 @@
           background: rgba(255, 255, 255, 0.12);
           bottom: -70px;
           left: -40px; }
+        .site-questions .rewardScreen .mobile-section .heroitem.red {
+          background: #F60037; }
+        .site-questions .rewardScreen .mobile-section .heroitem.green {
+          background: #1FA463; }
         .site-questions .rewardScreen .mobile-section .heroitem .icon {
           display: flex;
           align-items: center;
@@ -9402,6 +9574,105 @@
           .site-questions .rewardScreen .mobile-section .runner .num.red {
             color: #F60037;
             background: #FFE5EB; }
+      .site-questions .rewardScreen .mobile-section .akkanswers {
+        background: #fff;
+        border-radius: 20px;
+        padding: 14px 16px;
+        margin-top: 12px;
+        gap: 12px; }
+        .site-questions .rewardScreen .mobile-section .akkanswers .w-100 {
+          margin-bottom: 12px; }
+          .site-questions .rewardScreen .mobile-section .akkanswers .w-100:last-child {
+            margin: 0px; }
+        .site-questions .rewardScreen .mobile-section .akkanswers .innerflex {
+          display: flex;
+          align-items: center;
+          gap: 8px; }
+          .site-questions .rewardScreen .mobile-section .akkanswers .innerflex .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 30px;
+            max-width: 30px;
+            height: 30px;
+            background: #ffde65;
+            border-radius: 50%; }
+            .site-questions .rewardScreen .mobile-section .akkanswers .innerflex .icon.red {
+              background: #F60037; }
+            .site-questions .rewardScreen .mobile-section .akkanswers .innerflex .icon.green {
+              background: #1FA463; }
+          .site-questions .rewardScreen .mobile-section .akkanswers .innerflex .title {
+            font-size: 14px; }
+          .site-questions .rewardScreen .mobile-section .akkanswers .innerflex .text {
+            font-size: 12px;
+            color: #6b6b6b;
+            text-align: start;
+            font-family: 'roobert-arabic-trial-regular'; }
+        .site-questions .rewardScreen .mobile-section .akkanswers .correct {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 26px;
+          padding: 5px 10px;
+          border-radius: 60px;
+          font-family: 'roobert-arabic-trial-bold'; }
+          .site-questions .rewardScreen .mobile-section .akkanswers .correct.red {
+            background: #FFE5EB;
+            color: #F60037; }
+          .site-questions .rewardScreen .mobile-section .akkanswers .correct.green {
+            background: #E3F6EC;
+            color: #1FA463; }
+      .site-questions .rewardScreen .mobile-section .totalpoints {
+        background: #fff;
+        border-radius: 20px;
+        padding: 14px 16px;
+        margin-top: 12px;
+        gap: 12px; }
+        .site-questions .rewardScreen .mobile-section .totalpoints .p-point {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 12px; }
+          .site-questions .rewardScreen .mobile-section .totalpoints .p-point:last-child {
+            margin: 0px;
+            border-top: 1px solid #ECE8F2;
+            padding-top: 12px; }
+          .site-questions .rewardScreen .mobile-section .totalpoints .p-point p {
+            color: #000;
+            font-size: 15px;
+            font-family: 'roobert-arabic-trial-bold'; }
+          .site-questions .rewardScreen .mobile-section .totalpoints .p-point span {
+            font-size: 15px;
+            color: #000;
+            font-family: 'roobert-arabic-trial-bold'; }
+            .site-questions .rewardScreen .mobile-section .totalpoints .p-point span.green {
+              color: #1FA463;
+              font-size: 22px; }
+            .site-questions .rewardScreen .mobile-section .totalpoints .p-point span.yellow {
+              color: #C77A00; }
+      .site-questions .rewardScreen .mobile-section .alartmessage {
+        display: flex;
+        align-items: center;
+        background: #FFF1DA;
+        border-radius: 20px;
+        padding: 14px 16px;
+        margin-top: 12px;
+        gap: 12px; }
+        .site-questions .rewardScreen .mobile-section .alartmessage .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 34px;
+          max-width: 34px;
+          height: 34px;
+          background: #F9AF19;
+          border-radius: 50%; }
+        .site-questions .rewardScreen .mobile-section .alartmessage .text {
+          font-size: 13px;
+          color: #7A4A00;
+          text-align: start;
+          line-height: 20px;
+          font-family: 'roobert-arabic-trial-regular'; }
       .site-questions .rewardScreen .mobile-section .next-question {
         display: flex;
         align-items: center;
@@ -9472,7 +9743,8 @@
       padding: 0px 12px;
       font-family: "roobert-arabic-trial-bold"; }
   .site-questions .textres {
-    display: none; }
+    display: none;
+    font-family: 'roobert-arabic-trial-bold'; }
   .site-questions .btn-control {
     display: none;
     position: absolute;
@@ -9565,14 +9837,24 @@
       grid-template-columns: 1fr;
       margin: 0px;
       gap: 8px; }
-      .site-questions .identify-image .options-grid .option-btn .d-flex .option-letter {
-        min-width: 47px;
-        max-width: 47px;
-        height: 47px;
-        font-size: 19px; }
-      .site-questions .identify-image .options-grid .option-btn .d-flex .text {
-        font-size: 21px;
-        text-align: start; }
+      .site-questions .identify-image .options-grid .option-btn {
+        min-height: 65px; }
+        @media (min-width: 1900px) {
+          .site-questions .identify-image .options-grid .option-btn {
+            min-height: 70px; } }
+        .site-questions .identify-image .options-grid .option-btn .d-flex .option-letter {
+          min-width: 44px;
+          max-width: 44px;
+          height: 44px;
+          font-size: 19px; }
+          @media (min-width: 1900px) {
+            .site-questions .identify-image .options-grid .option-btn .d-flex .option-letter {
+              min-width: 47px;
+              max-width: 47px;
+              height: 47px; } }
+        .site-questions .identify-image .options-grid .option-btn .d-flex .text {
+          font-size: 21px;
+          text-align: start; }
     .site-questions .identify-image .card-photo {
       display: flex;
       flex-direction: column;
@@ -9589,10 +9871,13 @@
           margin: 0px auto; } }
       .site-questions .identify-image .card-photo .image-wrapper {
         width: 100%;
-        height: 240px;
+        height: 226px;
         border-radius: 14px;
         overflow: hidden;
         position: relative; }
+        @media (min-width: 1900px) {
+          .site-questions .identify-image .card-photo .image-wrapper {
+            height: 240px; } }
       .site-questions .identify-image .card-photo .card-image {
         width: 100%;
         height: 100%;
@@ -9604,6 +9889,18 @@
         .site-questions .identify-image .card-photo .card-image.clear {
           filter: blur(0px);
           transform: scale(1); }
+      .site-questions .identify-image .card-photo .flag-image {
+        border-radius: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); }
+        @media (max-width: 999px) {
+          .site-questions .identify-image .card-photo .flag-image {
+            height: 156px; } }
+        .site-questions .identify-image .card-photo .flag-image img {
+          width: 100%;
+          height: 100%;
+          max-width: 440px;
+          max-height: 360px;
+          border-radius: 14px; }
       .site-questions .identify-image .card-photo .card-text {
         margin-top: 12px;
         font-family: "roobert-arabic-trial-bold";
@@ -9685,7 +9982,6 @@
           transform: scale(0.92); }
         .site-questions .quiz-container .letters-grid .letter-btn.used {
           cursor: default;
-          pointer-events: none;
           background: #F4EEFB !important;
           color: #410179 !important;
           border-color: #410179; }
@@ -9696,6 +9992,135 @@
           background: #e1dfe4 !important;
           color: #fff !important;
           border: 0px !important; }
+  .site-questions .itemmemory {
+    display: none;
+    text-align: center;
+    margin-top: -50px; }
+    @media (min-width: 1900px) {
+      .site-questions .itemmemory {
+        margin: 0px; } }
+    @media (max-width: 999px) {
+      .site-questions .itemmemory {
+        margin-top: 24px; } }
+    .site-questions .itemmemory .textchoose {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 110px;
+      height: 28px;
+      border-radius: 60px;
+      background: #F4EEFB;
+      font-size: 13px;
+      color: #410179;
+      margin-bottom: 8px;
+      font-family: "roobert-arabic-trial-bold"; }
+      @media (max-width: 999px) {
+        .site-questions .itemmemory .textchoose {
+          background: #6A54B9;
+          color: #fff; } }
+    .site-questions .itemmemory .title {
+      color: #410179;
+      font-family: "roobert-arabic-trial-bold";
+      font-size: 38px;
+      text-align: center; }
+      @media (min-width: 1600px) {
+        .site-questions .itemmemory .title {
+          font-size: 64px; } }
+      @media (min-width: 1900px) {
+        .site-questions .itemmemory .title {
+          font-size: 84px; } }
+    .site-questions .itemmemory .text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      font-family: 'roobert-arabic-trial-bold';
+      color: #6b6b6b;
+      text-align: center;
+      margin-top: 4px; }
+      @media (min-width: 1600px) {
+        .site-questions .itemmemory .text {
+          font-size: 18px; } }
+      @media (min-width: 1900px) {
+        .site-questions .itemmemory .text {
+          font-size: 26px; } }
+    .site-questions .itemmemory .cardimages {
+      display: grid;
+      grid-template-columns: repeat(3, 120px);
+      justify-content: center;
+      gap: 12px;
+      margin: 16px auto 0px auto; }
+      @media (min-width: 1600px) {
+        .site-questions .itemmemory .cardimages {
+          grid-template-columns: repeat(3, 170px);
+          gap: 20px; } }
+      @media (max-width: 767px) {
+        .site-questions .itemmemory .cardimages {
+          grid-template-columns: repeat(3, 90px);
+          gap: 8px; } }
+    .site-questions .itemmemory .card {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      font-size: 58px;
+      animation: vanish 1.25s ease-in-out infinite;
+      animation-delay: var(--delay);
+      will-change: transform, opacity;
+      border-radius: 28px;
+      background: #fff;
+      box-shadow: inset 0 0 0 3px #ffde65, 0 14px 30px rgba(64, 0, 120, 0.08);
+      display: grid;
+      place-items: center; }
+      @media (min-width: 1600px) {
+        .site-questions .itemmemory .card {
+          font-size: 68px; } }
+      @media (min-width: 1900px) {
+        .site-questions .itemmemory .card {
+          font-size: 90px; } }
+      @media (max-width: 767px) {
+        .site-questions .itemmemory .card {
+          font-size: 38px; } }
+    .site-questions .itemmemory .card:nth-child(1) {
+      --delay: 0s ; }
+    .site-questions .itemmemory .card:nth-child(2) {
+      --delay: -.2s ; }
+    .site-questions .itemmemory .card:nth-child(3) {
+      --delay: -.4s ; }
+    .site-questions .itemmemory .card:nth-child(4) {
+      --delay: -.6s ; }
+    .site-questions .itemmemory .card:nth-child(5) {
+      --delay: -.8s ; }
+    .site-questions .itemmemory .card:nth-child(6) {
+      --delay: -1s ; }
+@keyframes vanish {
+  0%,
+             15%,
+             85%,
+             100% {
+    transform: scale(1);
+    opacity: 1; }
+  45%,
+             55% {
+    transform: scale(0.88);
+    opacity: 0.85; } }
+    @media (prefers-reduced-motion: reduce) {
+      .site-questions .itemmemory .card {
+        animation: none; } }
+  .site-questions .target {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: #f8f6fc;
+    border-radius: 20px;
+    padding: 10px 22px;
+    margin-top: 12px; }
+    .site-questions .target svg {
+      min-width: 140px;
+      max-width: 140px; }
+    .site-questions .target small {
+      white-space: nowrap;
+      color: #6b6b6b;
+      font-size: 18px; }
 
 .control-screen {
   display: none;

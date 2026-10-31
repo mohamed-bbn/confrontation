@@ -175,6 +175,7 @@
                             يختفي خيار خاطئ بعد <span id="subtextNumber">7</span> ثانية
                             <span class="res-num">x2 الآن</span>
                         </div>
+                        <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p>
                     </div>
                     <!-- End timeitems -->
                     <div id="readyScreen">
@@ -277,7 +278,6 @@
 
                 <div id="questionScreen" class="question-card">
                     <!-- End timer-subtext-container -->
-                    <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p>
                     <div class="timer-bar-wrapper">
                         <div class="timer-bar-header">
                             <span>المتبقي</span>
@@ -1030,6 +1030,7 @@
                                 randomWrong.addClass('hidden-option');
                             }
                             $('#timerSubtextContainer').text('انتهى الاختفاء — بقي خياران');
+
                         }
 
                         let offset = fullDashArray - (currentTime / totalTime) * fullDashArray;
@@ -1048,7 +1049,7 @@
                             clearInterval(timerInterval);
                             userAnswered = true;
 
-                            // $("#timerSubtextContainer").css('display', 'none');
+                            $("#timerSubtextContainer").css('display', 'none');
 
                             $("#timeoutMessage, #closedAnswersMessage").css('display', 'block');
 

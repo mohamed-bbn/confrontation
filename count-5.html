@@ -174,6 +174,7 @@
                             يختفي خيار خاطئ بعد <span id="subtextNumber">7</span> ثانية
                             <span class="res-num">x2 الآن</span>
                         </div>
+                        <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p>
                     </div>
                     <div id="readyScreen">
                         <span class="textchoose">  اعرف الصورة</span>
@@ -274,8 +275,7 @@
                 <!-- ENd player-information -->
 
                 <div id="questionScreen" class="question-card">
-                    <!-- End timer-subtext-container -->
-                    <!-- <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p> -->
+
                     <div class="timer-bar-wrapper">
                         <div class="timer-bar-header">
                             <span>المتبقي</span>
@@ -586,39 +586,58 @@
                     </div>
                     <!-- End rew-item -->
                     <div class="mobile-section">
-                        <div class="heroitem">
+                        <div class="heroitem red">
                             <p class="text">سؤال <span>1</span> من <span>10</span> </p>
-                            <i class="icon">⏱</i>
-                            <h2 class="title">انتهى الوقت!</h2>
-                            <span class="num">0</span>
-                            <p class="ansar">لم تلحق بالإجابة — لا خصم</p>
+                            <i class="icon">
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.90039 1.90039L11.4004 11.4004M11.4004 11.4004L20.9004 20.9004M11.4004 11.4004L20.9004 1.90039M11.4004 11.4004L1.90039 20.9004" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round" stroke="#F60037"/>
+                                </svg>
+                            </i>
+                            <h2 class="title">ليس هذه المرة يا يوسف</h2>
+                            <span class="num">−50</span>
+                            <p class="ansar">أجبت بعد 7.8 ثانية</p>
                         </div>
                         <!-- End heroitem -->
+
+
+                        <div class="akkanswers">
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                                <div class="innerflex">
+                                    <i class="icon red">
+                                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.75 3.75L7.5 7.5M7.5 7.5L11.25 11.25M7.5 7.5L11.25 3.75M7.5 7.5L3.75 11.25" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+                                    </svg>
+                                 </i>
+                                    <h3 class="title"> البتراء</h3>
+                                </div>
+                                <!-- End innerflex -->
+                                <div class="correct  red">اختيارك</div>
+                            </div>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                                <div class="innerflex">
+                                    <i class="icon green">
+                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.75 0.75L3.875 7.625L0.75 4.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
+                                    </svg>
+                                 </i>
+                                    <h3 class="title"> اهرامات الجيزة</h3>
+                                </div>
+                                <!-- End innerflex -->
+                                <div class="correct  green">الصحيحة</div>
+                            </div>
+                        </div>
+
                         <div class="points">
-                            <p>نقاطك في هذا السؤال</p>
-                            <span class="num">0</span>
+                            الخصم ثابت مهما كانت سرعتك — لا عقوبة على السرعة، بل على الخطأ فقط.
                         </div>
                         <!-- End points -->
-                        <div class="runner">
-                            <div class="innerflex">
-                                <i class="icon">
-                                    <svg viewBox="0 0 24 24" width="56%" height="56%" fill="none" stroke="#410179" stroke-width="2" stroke-linejoin="round"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"></path></svg>
-                                </i>
-                                <div>
-                                    <h3 class="title"> الفريق الثاني متصدّر</h3>
-                                    <p class="text">700 نقطة</p>
-                                </div>
-                            </div>
-                            <!-- End innerflex -->
-                            <div class="num red">+0</div>
-                        </div>
-                        <!-- End runner -->
+
                         <p class="next-question">📺 السؤال التالي على الشاشة</p>
                     </div>
                     <!-- End mobile-section -->
                 </div>
                 <!-- End nextPhaseScreen -->
-                <p class="text-center textres">اضغط الأحداث بالترتيب: الأقدم أولًا — واضغط مرة ثانية لتشيل الرقم</p>
+                <!-- <p class="text-center textres">اضغط الأحداث بالترتيب: الأقدم أولًا — واضغط مرة ثانية لتشيل الرقم</p> -->
             </div>
             <!-- End container -->
         </div>
@@ -1060,7 +1079,7 @@
                             clearInterval(timerInterval);
                             userAnswered = true;
 
-                            // $("#timerSubtextContainer").css('display', 'none');
+                            $("#timerSubtextContainer").css('display', 'none');
 
                             $("#timeoutMessage, #closedAnswersMessage").css('display', 'block');
 

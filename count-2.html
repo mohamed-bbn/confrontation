@@ -178,6 +178,7 @@
                             ⚡ x3 الآن
                             </span>
                         </div>
+                        <!-- <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p> -->
                     </div>
                     <div id="readyScreen">
                         <span class="textchoose">صح أو خطأ</span>
@@ -281,7 +282,6 @@
 
 
                     <!-- End timer-subtext-container -->
-                    <p id="closedAnswersMessage" class="closed-answers-box"> أُغلقت الإجابات </p>
                     <div class="timer-bar-wrapper">
                         <div class="timer-bar-header">
                             <span>المتبقي</span>
@@ -985,7 +985,7 @@
                             clearInterval(timerInterval);
                             userAnswered = true;
 
-                            // $("#timerSubtextContainer").css('display', 'none');
+                            $("#timerSubtextContainer").css('display', 'none');
 
                             $("#timeoutMessage, #closedAnswersMessage").css('display', 'block');
 
@@ -1063,6 +1063,7 @@
             }, 10);
         });
     </script>
+
 
 
 </body>
